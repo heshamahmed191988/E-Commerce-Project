@@ -18,6 +18,6 @@ namespace E_Commerce_Project.Models
         public virtual User User { get; set; }
 
         //Order details
-        public virtual IQueryable<OrderDetails> OrderDetails { get; set; }
+       // public virtual IQueryable<OrderDetails> OrderDetails { get; set; }
     }
 }

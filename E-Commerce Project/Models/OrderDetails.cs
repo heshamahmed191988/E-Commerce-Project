@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,3 +13,4 @@ namespace E_Commerce_Project.Models
         public Product Product { get; set; }
     }
 }
+*/

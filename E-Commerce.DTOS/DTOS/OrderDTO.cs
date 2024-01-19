@@ -17,6 +17,6 @@ namespace E_Commerce.DTOS.DTOS
         public virtual User User { get; set; }
 
         //Order details
-        public virtual IQueryable<OrderDetails> OrderDetails { get; set; }
+       // public virtual IQueryable<OrderDetails> OrderDetails { get; set; }
     }
 }

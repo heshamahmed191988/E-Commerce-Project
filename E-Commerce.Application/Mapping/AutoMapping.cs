@@ -26,14 +26,78 @@ namespace E_Commerce.Application.Mapping
                 return new UserDTO
                 { Id = user.Id, UserName=user.UserName,Email=user.Email,Password=user.Password,Address=user.Address };
             }
-    public static CategoryDTO MapCatDTO(Category category)
+    public static CategoryDTO MapCategoryDTO(Category category)
         {
            if (category == null)
            {
                return null;
            }
            return new CategoryDTO
-           { Id = category.Id, CategoryName=category.CategoryName,Description=category.Description  };
+           { Id = category.Id,
+             CategoryName=category.CategoryName,
+             Description=category.Description  };
+        }
+    public static ProductDTO MapProductDTO(Product product)
+        {
+            if (product == null)
+            {
+                return null;
+            }
+            return new ProductDTO
+            {
+                Id = product.Id,
+                ProductName=product.ProductName,
+                Price=product.Price,
+                Quantity=product.Quantity,
+                categoryID = product.categoryID
+            };
+        }
+
+        public static Product MapProduct(ProductDTO productDto)
+        {
+            if (productDto == null)
+            {
+                return null;
+            }
+            return new Product
+            {
+                Id = productDto.Id,
+                ProductName = productDto.ProductName,
+                Price = productDto.Price,
+                Quantity = productDto.Quantity,
+                categoryID = productDto.categoryID
+            };
+        }
+        public static User MapUser(UserDTO userDTO)
+        {
+            if (userDTO == null)
+            {
+                return null;
+            }
+            return new User
+            {
+                Id = userDTO.Id,
+                UserName=userDTO.UserName,
+                Email=userDTO.Email,
+                Password=userDTO.Password,
+                Address=userDTO.Address
+
+            };
+
+        }
+    public static Category MapCategory(CategoryDTO categoryDTO)
+        {
+            if (categoryDTO == null)
+            {
+                return null;
+            }
+            return new Category
+            {
+                Id = categoryDTO.Id,
+                CategoryName=categoryDTO.CategoryName,
+                Description=categoryDTO.Description
+            };
+
         }
 
     }
