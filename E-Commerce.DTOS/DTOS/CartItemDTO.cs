@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.DTOS.DTOS
 {
-    public class OrderDetailsDTO
+    public class CartItemDTO
     {
         public int Id { get; set; }
-        public OrderDTO Order { get; set; }
+        public int Quantity { get; set; }
+
+        public long ProductId { get; set; }
         public ProductDTO Product { get; set; }
+        //cart details
+        public virtual IEnumerable<CartDTO>? CartDetails { get; set; }
+
     }
 }

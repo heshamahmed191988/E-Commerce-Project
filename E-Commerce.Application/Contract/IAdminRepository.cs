@@ -10,7 +10,7 @@ namespace E_Commerce.Application.Contract
 {
     public interface IAdminRepository
     {
-        IQueryable<Admin> GetAll();
-        Admin GetByID(int id);
+       // IQueryable<Admin> GetAll();
+        //Admin GetByID(int id);
     }
 }

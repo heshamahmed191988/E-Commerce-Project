@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.Application.Contract
 {
-    public interface ICartRepository:Irepository<Cart,int>
+    public interface ICartRepository:IRepository<CartItem,int>
     {
     }
 }

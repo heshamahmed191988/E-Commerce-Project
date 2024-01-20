@@ -14,9 +14,8 @@ namespace E_Commerce.DTOS.DTOS
         public int NoOfProducts { get; set; }
         public string Status { get; set; }
         public int TotalPrice { get; set; }
-        public virtual User User { get; set; }
+        public User User { get; set; }
 
         //Order details
-        public virtual IQueryable<OrderDetails> OrderDetails { get; set; }
     }
 }

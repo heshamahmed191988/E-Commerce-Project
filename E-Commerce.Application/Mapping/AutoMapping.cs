@@ -14,27 +14,10 @@ namespace E_Commerce.Application.Mapping
     public class AutoMapping:Profile
     {
         public AutoMapping(){
-           // CreateMap<UserDTO, User>().ReverseMap();
+            CreateMap<User, UserDTO>().ReverseMap();
+
         }
 
-    public static UserDTO MapUserDto(User user)
-            {
-                if (user == null)
-                {
-                    return null;
-                }
-                return new UserDTO
-                { Id = user.Id, UserName=user.UserName,Email=user.Email,Password=user.Password,Address=user.Address };
-            }
-    public static CategoryDTO MapCatDTO(Category category)
-        {
-           if (category == null)
-           {
-               return null;
-           }
-           return new CategoryDTO
-           { Id = category.Id, CategoryName=category.CategoryName,Description=category.Description  };
-        }
-
+    
     }
 }

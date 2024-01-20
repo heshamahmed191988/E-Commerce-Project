@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.Application.Contract
 {
-    public interface IUserRepository:Irepository<User,int>
+    public interface IUserRepository:IRepository<User,int>
     {
     }
 }

@@ -25,7 +25,7 @@ namespace E_Commerce.Application.Service
             throw new NotImplementedException();
         }
 
-        public IQueryable<UserDTO> GetAllPagination(int page, int pageSize)
+        public IEnumerable<UserDTO> GetAllPagination(int page, int pageSize)
         {
             var U = _userRepository.GetAll().Skip(page * pageSize).Take(pageSize);
              

@@ -9,7 +9,7 @@ namespace E_Commerce.Application.Service
 {
     public interface IUserService
     {
-        public IQueryable<UserDTO> GetAllPagination(int page, int pageSize);
+        public IEnumerable<UserDTO> GetAllPagination(int page, int pageSize);
         public UserDTO GetUser(int id);
         public void AddUser(UserDTO userDTO);
         public void UpdateUser(UserDTO userDTO);
