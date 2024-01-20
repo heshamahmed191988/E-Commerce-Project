@@ -23,5 +23,6 @@ namespace E_Commerce.Context
         {
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-C1VVAHL\\SQLEXPRESS;Initial Catalog=ECommerce;Integrated Security=True;Encrypt=False");
         }
+
     }
 }

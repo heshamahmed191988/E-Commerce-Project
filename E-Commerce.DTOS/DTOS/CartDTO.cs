@@ -14,7 +14,7 @@ namespace E_Commerce.DTOS.DTOS
         public int Quantity { get; set; }
         public string Status { get; set; }
 
-        [ForeignKey("User")]
+       // [ForeignKey("User")]
         public int UserId { get; set; }
         public virtual User User { get; set; }
         //cart details

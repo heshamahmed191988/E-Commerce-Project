@@ -15,6 +15,8 @@ namespace E_Commerce_Project.Models
         public int NoOfProducts { get; set; }
         public string Status { get; set; }
         public int TotalPrice { get; set; }
+        [ForeignKey("User")]
+        public int UserID { get; set; }
         public virtual User User { get; set; }
 
         //Order details
