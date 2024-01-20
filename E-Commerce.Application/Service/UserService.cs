@@ -22,7 +22,8 @@ namespace E_Commerce.Application.Service
         }
         public void AddUser(UserDTO userDTO)
         {
-            throw new NotImplementedException();
+            _userRepository.Add(AutoMapping.MapUser(userDTO));
+            _userRepository.save();
         }
 
         public IQueryable<UserDTO> GetAllPagination(int page, int pageSize)
@@ -34,17 +35,25 @@ namespace E_Commerce.Application.Service
 
         public UserDTO GetUser(int id)
         {
-            throw new NotImplementedException();
+            if (id != 0)
+            {
+                var user = AutoMapping.MapUserDto(_userRepository.GetByID(id));
+                return user;
+            }
+            else
+                return null;
         }
 
         public void RemoveUser(UserDTO userDTO)
         {
-            throw new NotImplementedException();
+            _userRepository.Delete(AutoMapping.MapUser(userDTO));
+            _userRepository.save();
         }
 
         public void UpdateUser(UserDTO userDTO)
         {
-            throw new NotImplementedException();
+            _userRepository.Update(AutoMapping.MapUser(userDTO));
+            _userRepository.save();
         }
     }
 }

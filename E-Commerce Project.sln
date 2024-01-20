@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerce.Model", "E-Commerce Project\E-commerce.Model.csproj", "{4CA1592F-1FF5-47E1-A623-31DBAEB94308}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-commerce.Model", "E-Commerce Project\E-commerce.Model.csproj", "{4CA1592F-1FF5-47E1-A623-31DBAEB94308}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.DTOS", "E-Commerce.DTOS\E-Commerce.DTOS.csproj", "{19445B6F-1C9B-4C7D-BF41-949C0A3D2FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.DTOS", "E-Commerce.DTOS\E-Commerce.DTOS.csproj", "{19445B6F-1C9B-4C7D-BF41-949C0A3D2FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.Application", "E-Commerce.Application\E-Commerce.Application.csproj", "{1EE4373E-8967-4368-B124-5385E444FF18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.Application", "E-Commerce.Application\E-Commerce.Application.csproj", "{1EE4373E-8967-4368-B124-5385E444FF18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.Presentation", "E-Commerce.Presentation\E-Commerce.Presentation.csproj", "{9F8A3F4E-E9A2-42EB-BD5A-9AC069A50330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.Presentation", "E-Commerce.Presentation\E-Commerce.Presentation.csproj", "{9F8A3F4E-E9A2-42EB-BD5A-9AC069A50330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.Infrustructure", "E-Commerce.Infrustructure\E-Commerce.Infrustructure.csproj", "{C52D1FF8-5CCD-417A-9B93-8C4675CEBB4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.Infrustructure", "E-Commerce.Infrustructure\E-Commerce.Infrustructure.csproj", "{C52D1FF8-5CCD-417A-9B93-8C4675CEBB4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.Context", "E-Commerce.Context\E-Commerce.Context.csproj", "{4C45FC1A-4585-44C4-BC36-395210CAD29A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.Context", "E-Commerce.Context\E-Commerce.Context.csproj", "{4C45FC1A-4585-44C4-BC36-395210CAD29A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4C45FC1A-4585-44C4-BC36-395210CAD29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C45FC1A-4585-44C4-BC36-395210CAD29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C45FC1A-4585-44C4-BC36-395210CAD29A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using E_Commerce.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commerce.Context.Migrations
 {
     [DbContext(typeof(E_CommerceContext))]
-    partial class E_CommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20240119160547_editRelation")]
+    partial class editRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,34 @@ namespace E_Commerce.Context.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("E_Commerce_Project.Models.Admin", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Type")
+                        .HasColumnType("bit");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Admins");
+                });
 
             modelBuilder.Entity("E_Commerce_Project.Models.Cart", b =>
                 {
@@ -131,6 +162,9 @@ namespace E_Commerce.Context.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -141,12 +175,9 @@ namespace E_Commerce.Context.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("categoryID")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("categoryID");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -228,7 +259,7 @@ namespace E_Commerce.Context.Migrations
                 {
                     b.HasOne("E_Commerce_Project.Models.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("categoryID")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
