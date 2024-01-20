@@ -38,7 +38,7 @@
             label7 = new Label();
             Email = new TextBox();
             pass = new TextBox();
-            textBox3 = new TextBox();
+            Status = new TextBox();
             Phone = new TextBox();
             Address = new TextBox();
             UserName = new TextBox();
@@ -140,13 +140,13 @@
             pass.Size = new Size(181, 23);
             pass.TabIndex = 8;
             // 
-            // textBox3
+            // Status
             // 
-            textBox3.Location = new Point(471, 227);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(181, 23);
-            textBox3.TabIndex = 9;
+            Status.Location = new Point(471, 227);
+            Status.Margin = new Padding(2);
+            Status.Name = "Status";
+            Status.Size = new Size(181, 23);
+            Status.TabIndex = 9;
             // 
             // Phone
             // 
@@ -180,7 +180,7 @@
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(248, 286);
+            button1.Location = new Point(136, 287);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(119, 24);
@@ -199,7 +199,7 @@
             Controls.Add(UserName);
             Controls.Add(Address);
             Controls.Add(Phone);
-            Controls.Add(textBox3);
+            Controls.Add(Status);
             Controls.Add(pass);
             Controls.Add(Email);
             Controls.Add(label7);
@@ -227,7 +227,7 @@
         private Label label7;
         private TextBox Email;
         private TextBox pass;
-        private TextBox textBox3;
+        private TextBox Status;
         private TextBox Phone;
         private TextBox Address;
         private TextBox UserName;

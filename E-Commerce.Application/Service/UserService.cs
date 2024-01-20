@@ -21,7 +21,7 @@ namespace E_Commerce.Application.Service
             _userRepository = userRepository;
         }
         public void AddUser(UserDTO userDTO)
-        {
+        { 
             _userRepository.Add(AutoMapping.MapUser(userDTO));
             _userRepository.save();
         }

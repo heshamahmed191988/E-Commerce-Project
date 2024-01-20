@@ -19,5 +19,6 @@ namespace E_Commerce.DTOS.DTOS
         public int categoryID { get; set; }
         public virtual Category Category { get; set; }
         public virtual IQueryable<CartDetails> CartDetails { get; set; }
+        public virtual IQueryable<OrderItems> OrderItems { get; set; }
     }
 }

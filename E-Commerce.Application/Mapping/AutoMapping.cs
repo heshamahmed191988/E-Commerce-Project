@@ -26,7 +26,7 @@ namespace E_Commerce.Application.Mapping
                 return new UserDTO
                 { Id = user.Id,
                  UserName=user.UserName,
-                 Email=user.Email,Phone=user.Phone,
+                 Email=user.Email,//Phone=user.Phone,
                  Password=user.Password,Address=user.Address };
             }
      public static CategoryDTO MapCategoryDTO(Category category)
@@ -102,8 +102,20 @@ namespace E_Commerce.Application.Mapping
                 
             };
         }
+     public static OrderItemDTO MapOrderItemDTO(OrderItems orderItems)
+        {
+            if (orderItems == null)
+            {
+                return null;
+            }
+            return new OrderItemDTO
+            {
+               id= orderItems.id,
+               OrderId= orderItems.OrderId,
+               productId= orderItems.productId
 
-        
+            };
+        }
      public static User MapUser(UserDTO userDTO)
         {
             if (userDTO == null)
@@ -115,7 +127,7 @@ namespace E_Commerce.Application.Mapping
                 Id = userDTO.Id,
                 UserName=userDTO.UserName,
                 Email=userDTO.Email,
-                Phone = userDTO.Phone,
+               // Phone = userDTO.Phone,
                 Password=userDTO.Password,
                 Address=userDTO.Address
 
@@ -194,6 +206,20 @@ namespace E_Commerce.Application.Mapping
                 Id = cartDetailsDto.Id,
                 cartID = cartDetailsDto.cartID,
                 productID = cartDetailsDto.productID
+
+            };
+        }
+     public static OrderItems MapOrderItem(OrderItemDTO orderItemsDTO)
+        {
+            if (orderItemsDTO == null)
+            {
+                return null;
+            }
+            return new OrderItems
+            {
+                id = orderItemsDTO.id,
+                OrderId = orderItemsDTO.OrderId,
+                productId = orderItemsDTO.productId
 
             };
         }

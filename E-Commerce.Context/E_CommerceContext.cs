@@ -16,7 +16,7 @@ namespace E_Commerce.Context
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
-        //  public virtual DbSet<OrderDetails> OrderDetails { get; set; }
+          public virtual DbSet<OrderItems> OrderItems { get; set; }
         public virtual DbSet<CartDetails> CartDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

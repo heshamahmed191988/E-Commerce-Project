@@ -10,11 +10,10 @@ namespace E_Commerce_Project.Models
     public class Cart
     {
         public int Id { get; set; }
-        public int Quantity { get; set; }
-        public string Status { get; set; }
-
         [ForeignKey("User")]
         public int UserId { get; set; }
+        public int Quantity { get; set; }
+        public string Status { get; set; }
         public virtual User User { get; set; }
 
         //cart details
