@@ -36,8 +36,8 @@ namespace E_Commerce.Presentation
         static bool ValidatePassword(string password)
         {
             // Check if the password meets the specified criteria
-            return ContainsDigit(password);// &&
-                 //  ContainsSpecialCharacter(password);
+            return ContainsDigit(password) &&
+                  ContainsSpecialCharacter(password);
         }
         static bool ValidatePhoneNumber(string phoneNumber)
         { 
@@ -45,19 +45,28 @@ namespace E_Commerce.Presentation
             Regex regex = new Regex(pattern);
             return regex.IsMatch(phoneNumber);
         }
-
+         void clearForm()
+        {
+           // string username = UserName.Text;
+            UserName.Text = null;
+            Email.Text = null;
+            pass.Text = null;
+            Phone.Text = null;
+            Address.Text = null;
+             Status.Text= null;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string username = UserName.Text;
             string email = Email.Text;
-            //string phone=Phone.Text;
+            string phone=Phone.Text;
             string password = pass.Text;
             string address = Address.Text;
             string type = Status.Text; /////////
             bool result = bool.Parse(type);
-            UserDTO u1 = new UserDTO() { UserName = username,Email=email,Password=password,Address=address,type= result };
-            if (!(username.Length > 5) & !email.Contains("@.") & !ValidatePassword(password)  )
+            UserDTO u1 = new UserDTO() { UserName = username,Email=email,Phone=phone, Password=password,Address=address,type= result };
+            if (!(username.Length > 5) & !email.Contains("@.") & !ValidatePassword(password) &!ValidatePhoneNumber(phone)  )
             {
                 MessageBox.Show("your data is Invalid");
                 
@@ -66,6 +75,8 @@ namespace E_Commerce.Presentation
             {
                 _userService.AddUser(u1);
                 MessageBox.Show("Thank you for your Registration");
+                clearForm();
+
             }
 
 
