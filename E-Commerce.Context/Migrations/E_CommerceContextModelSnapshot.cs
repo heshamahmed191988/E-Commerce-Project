@@ -202,6 +202,10 @@ namespace E_Commerce.Context.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserName")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
