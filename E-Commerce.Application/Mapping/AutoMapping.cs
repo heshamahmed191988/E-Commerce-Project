@@ -26,7 +26,7 @@ namespace E_Commerce.Application.Mapping
                 return new UserDTO
                 { Id = user.Id,
                  UserName=user.UserName,
-                 Email=user.Email,//Phone=user.Phone,
+                 Email=user.Email,Phone=user.Phone,
                  Password=user.Password,Address=user.Address };
             }
      public static CategoryDTO MapCategoryDTO(Category category)
@@ -127,7 +127,7 @@ namespace E_Commerce.Application.Mapping
                 Id = userDTO.Id,
                 UserName=userDTO.UserName,
                 Email=userDTO.Email,
-               // Phone = userDTO.Phone,
+                 Phone = userDTO.Phone,
                 Password=userDTO.Password,
                 Address=userDTO.Address
 

@@ -43,6 +43,7 @@
             Address = new TextBox();
             UserName = new TextBox();
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -116,7 +117,9 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Transparent;
             label7.Location = new Point(11, 59);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
@@ -188,6 +191,20 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.MenuHighlight;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Location = new Point(388, 287);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(119, 24);
+            button2.TabIndex = 14;
+            button2.Text = " L o g i n";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -195,6 +212,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(685, 337);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(UserName);
             Controls.Add(Address);
@@ -232,5 +250,6 @@
         private TextBox Address;
         private TextBox UserName;
         private Button button1;
+        private Button button2;
     }
 }
