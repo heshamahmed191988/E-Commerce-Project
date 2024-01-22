@@ -31,25 +31,25 @@
             dataGridView1 = new DataGridView();
             dataGridView2 = new DataGridView();
             AddProduct = new Label();
-            UpdateProduct = new Label();
+            DisplayProduct = new Label();
             EditProduct = new Label();
             DeleteProduct = new Label();
             DeleteCtegorey = new Label();
             EditCtegorey = new Label();
-            UpdateCtegorey = new Label();
+            DisplayCtegorey = new Label();
             AddCtegorey = new Label();
             label9 = new Label();
             label10 = new Label();
-            textBox1 = new TextBox();
+            ProductNameBox = new TextBox();
             label11 = new Label();
             label12 = new Label();
-            textBox2 = new TextBox();
+            ProductPriceBox = new TextBox();
             label13 = new Label();
-            textBox3 = new TextBox();
+            ProductQuantityBox = new TextBox();
             label14 = new Label();
-            textBox4 = new TextBox();
+            CatogeryDescriptionBox = new TextBox();
             label15 = new Label();
-            textBox5 = new TextBox();
+            CatogeryNameBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -79,14 +79,14 @@
             AddProduct.TabIndex = 2;
             AddProduct.Text = "Add";
             // 
-            // UpdateProduct
+            // DisplayProduct
             // 
-            UpdateProduct.AutoSize = true;
-            UpdateProduct.Location = new Point(127, 473);
-            UpdateProduct.Name = "UpdateProduct";
-            UpdateProduct.Size = new Size(58, 20);
-            UpdateProduct.TabIndex = 3;
-            UpdateProduct.Text = "Update";
+            DisplayProduct.AutoSize = true;
+            DisplayProduct.Location = new Point(127, 473);
+            DisplayProduct.Name = "DisplayProduct";
+            DisplayProduct.Size = new Size(58, 20);
+            DisplayProduct.TabIndex = 3;
+            DisplayProduct.Text = "Display";
             // 
             // EditProduct
             // 
@@ -114,6 +114,7 @@
             DeleteCtegorey.Size = new Size(53, 20);
             DeleteCtegorey.TabIndex = 9;
             DeleteCtegorey.Text = "Delete";
+            DeleteCtegorey.Click += DeleteCtegorey_Click;
             // 
             // EditCtegorey
             // 
@@ -123,15 +124,16 @@
             EditCtegorey.Size = new Size(35, 20);
             EditCtegorey.TabIndex = 8;
             EditCtegorey.Text = "Edit";
+            EditCtegorey.Click += EditCtegorey_Click;
             // 
-            // UpdateCtegorey
+            // DisplayCtegorey
             // 
-            UpdateCtegorey.AutoSize = true;
-            UpdateCtegorey.Location = new Point(996, 484);
-            UpdateCtegorey.Name = "UpdateCtegorey";
-            UpdateCtegorey.Size = new Size(58, 20);
-            UpdateCtegorey.TabIndex = 7;
-            UpdateCtegorey.Text = "Update";
+            DisplayCtegorey.AutoSize = true;
+            DisplayCtegorey.Location = new Point(996, 484);
+            DisplayCtegorey.Name = "DisplayCtegorey";
+            DisplayCtegorey.Size = new Size(58, 20);
+            DisplayCtegorey.TabIndex = 7;
+            DisplayCtegorey.Text = "Display";
             // 
             // AddCtegorey
             // 
@@ -141,6 +143,7 @@
             AddCtegorey.Size = new Size(37, 20);
             AddCtegorey.TabIndex = 6;
             AddCtegorey.Text = "Add";
+            AddCtegorey.Click += AddCtegorey_Click;
             // 
             // label9
             // 
@@ -160,12 +163,12 @@
             label10.TabIndex = 11;
             label10.Text = "Products";
             // 
-            // textBox1
+            // ProductNameBox
             // 
-            textBox1.Location = new Point(386, 136);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 27);
-            textBox1.TabIndex = 12;
+            ProductNameBox.Location = new Point(386, 136);
+            ProductNameBox.Name = "ProductNameBox";
+            ProductNameBox.Size = new Size(100, 27);
+            ProductNameBox.TabIndex = 12;
             // 
             // label11
             // 
@@ -175,7 +178,6 @@
             label11.Size = new Size(104, 20);
             label11.TabIndex = 13;
             label11.Text = "Product Name";
-            label11.Click += label11_Click;
             // 
             // label12
             // 
@@ -186,12 +188,12 @@
             label12.TabIndex = 15;
             label12.Text = "Product Price";
             // 
-            // textBox2
+            // ProductPriceBox
             // 
-            textBox2.Location = new Point(382, 242);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 27);
-            textBox2.TabIndex = 14;
+            ProductPriceBox.Location = new Point(382, 242);
+            ProductPriceBox.Name = "ProductPriceBox";
+            ProductPriceBox.Size = new Size(100, 27);
+            ProductPriceBox.TabIndex = 14;
             // 
             // label13
             // 
@@ -202,12 +204,12 @@
             label13.TabIndex = 17;
             label13.Text = "Product Quantity";
             // 
-            // textBox3
+            // ProductQuantityBox
             // 
-            textBox3.Location = new Point(382, 357);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 27);
-            textBox3.TabIndex = 16;
+            ProductQuantityBox.Location = new Point(382, 357);
+            ProductQuantityBox.Name = "ProductQuantityBox";
+            ProductQuantityBox.Size = new Size(100, 27);
+            ProductQuantityBox.TabIndex = 16;
             // 
             // label14
             // 
@@ -218,12 +220,12 @@
             label14.TabIndex = 21;
             label14.Text = "Catogery Description";
             // 
-            // textBox4
+            // CatogeryDescriptionBox
             // 
-            textBox4.Location = new Point(794, 222);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 27);
-            textBox4.TabIndex = 20;
+            CatogeryDescriptionBox.Location = new Point(794, 222);
+            CatogeryDescriptionBox.Name = "CatogeryDescriptionBox";
+            CatogeryDescriptionBox.Size = new Size(100, 27);
+            CatogeryDescriptionBox.TabIndex = 20;
             // 
             // label15
             // 
@@ -234,13 +236,12 @@
             label15.TabIndex = 19;
             label15.Text = "Catogery Name";
             // 
-            // textBox5
+            // CatogeryNameBox
             // 
-            textBox5.Location = new Point(794, 116);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 27);
-            textBox5.TabIndex = 18;
-            textBox5.TextChanged += textBox5_TextChanged;
+            CatogeryNameBox.Location = new Point(794, 116);
+            CatogeryNameBox.Name = "CatogeryNameBox";
+            CatogeryNameBox.Size = new Size(100, 27);
+            CatogeryNameBox.TabIndex = 18;
             // 
             // Admin_Category_Product
             // 
@@ -250,24 +251,24 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1291, 608);
             Controls.Add(label14);
-            Controls.Add(textBox4);
+            Controls.Add(CatogeryDescriptionBox);
             Controls.Add(label15);
-            Controls.Add(textBox5);
+            Controls.Add(CatogeryNameBox);
             Controls.Add(label13);
-            Controls.Add(textBox3);
+            Controls.Add(ProductQuantityBox);
             Controls.Add(label12);
-            Controls.Add(textBox2);
+            Controls.Add(ProductPriceBox);
             Controls.Add(label11);
-            Controls.Add(textBox1);
+            Controls.Add(ProductNameBox);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(DeleteCtegorey);
             Controls.Add(EditCtegorey);
-            Controls.Add(UpdateCtegorey);
+            Controls.Add(DisplayCtegorey);
             Controls.Add(AddCtegorey);
             Controls.Add(DeleteProduct);
             Controls.Add(EditProduct);
-            Controls.Add(UpdateProduct);
+            Controls.Add(DisplayProduct);
             Controls.Add(AddProduct);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
@@ -284,24 +285,24 @@
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
         private Label AddProduct;
-        private Label UpdateProduct;
+        private Label DisplayProduct;
         private Label EditProduct;
         private Label DeleteProduct;
         private Label DeleteCtegorey;
         private Label EditCtegorey;
-        private Label UpdateCtegorey;
+        private Label DisplayCtegorey;
         private Label AddCtegorey;
         private Label label9;
         private Label label10;
-        private TextBox textBox1;
+        private TextBox ProductNameBox;
         private Label label11;
         private Label label12;
-        private TextBox textBox2;
+        private TextBox ProductPriceBox;
         private Label label13;
-        private TextBox textBox3;
+        private TextBox ProductQuantityBox;
         private Label label14;
-        private TextBox textBox4;
+        private TextBox CatogeryDescriptionBox;
         private Label label15;
-        private TextBox textBox5;
+        private TextBox CatogeryNameBox;
     }
 }
