@@ -217,7 +217,6 @@
             label14.Size = new Size(149, 20);
             label14.TabIndex = 21;
             label14.Text = "Catogery Description";
-            label14.Click += this.label14_Click;
             // 
             // textBox4
             // 
@@ -225,7 +224,6 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(100, 27);
             textBox4.TabIndex = 20;
-            textBox4.TextChanged += this.textBox4_TextChanged;
             // 
             // label15
             // 
@@ -235,7 +233,6 @@
             label15.Size = new Size(113, 20);
             label15.TabIndex = 19;
             label15.Text = "Catogery Name";
-            label15.Click += this.label15_Click;
             // 
             // textBox5
             // 
