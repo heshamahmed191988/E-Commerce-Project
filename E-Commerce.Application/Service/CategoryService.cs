@@ -13,6 +13,11 @@ namespace E_Commerce.Application.Service
     {
         ICategoryRepository _categoryRepository;
         AutoMapping _mapper;
+
+        public CategoryService()
+        {
+        }
+
         public CategoryService(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;

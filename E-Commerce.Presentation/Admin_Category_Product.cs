@@ -20,13 +20,20 @@ namespace E_Commerce.Presentation
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
 
-        public Admin_Category_Product()
+        //public Admin_Category_Product()
+        //{
+        //    InitializeComponent();
+        //    LoadCategories();
+        //}
+        public Admin_Category_Product(ICategoryService categoryService, IProductService productService)
         {
             InitializeComponent();
+            _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
+            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
             LoadCategories();
         }
 
-   
+
         private void LoadCategories()
         {
             try
@@ -72,7 +79,7 @@ namespace E_Commerce.Presentation
                         CategoryName = name,
                         Description = description,
                         image = "123",
-                        Products = (IQueryable<Product>)Enumerable.Empty<Product>().ToList()
+                        Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().ToList()
                     };
 
                     _categoryService.AddCategory(newCategory);

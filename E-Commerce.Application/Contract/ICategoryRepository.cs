@@ -9,5 +9,6 @@ namespace E_Commerce.Application.Contract
 {
     public interface ICategoryRepository:Irepository<Category,int>
     {
+
     }
 }

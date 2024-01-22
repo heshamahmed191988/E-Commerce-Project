@@ -67,7 +67,7 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(953, 73);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(240, 346);
+            dataGridView2.Size = new Size(281, 346);
             dataGridView2.TabIndex = 1;
             // 
             // AddProduct

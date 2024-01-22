@@ -14,7 +14,6 @@ namespace E_Commerce_Project.Models
         public decimal Price { get; set; }
         public string image { get; set; }
         public int Quantity { get; set; }
-        [ForeignKey("Category")]
         public int categoryID { get; set; }
         public virtual Category Category { get; set; }
         //public virtual IQueryable<OrderDetails> OrderDetails { get; set; }

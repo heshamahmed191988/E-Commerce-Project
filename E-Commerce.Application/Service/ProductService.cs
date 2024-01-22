@@ -12,7 +12,12 @@ namespace E_Commerce.Application.Service
     public class ProductService : IProductService
     {
         IProductRepository _productRepository;
-       // AutoMapping _mapper;
+
+        public ProductService()
+        {
+        }
+
+        // AutoMapping _mapper;
         public ProductService(IProductRepository productRepository)
         {
             _productRepository = productRepository;

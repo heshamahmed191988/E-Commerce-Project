@@ -13,11 +13,12 @@ namespace E_Commerce.DTOS.DTOS
         public int Id { get; set; }
         public string ProductName { get; set; }
         public decimal Price { get; set; }
-        public int Quantity { get; set; }
         public string image { get; set; }
+
+        public int Quantity { get; set; }
         //[ForeignKey("Category")]
         public int categoryID { get; set; }
-        public virtual Category Category { get; set; }
-        public virtual IQueryable<CartDetails> CartDetails { get; set; }
+        public virtual CategoryDTO Category { get; set; }
+        public virtual IQueryable<CartDetailsDTO> CartDetails { get; set; }
     }
 }
