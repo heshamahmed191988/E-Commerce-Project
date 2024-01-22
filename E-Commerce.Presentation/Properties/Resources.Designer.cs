@@ -63,6 +63,36 @@ namespace E_Commerce.Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10_14_Night {
+            get {
+                object obj = ResourceManager.GetObject("10-14-Night", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _11_0_Big_Sur_Color_Night {
+            get {
+                object obj = ResourceManager.GetObject("11-0-Big-Sur-Color-Night", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _11_0_Color_Day {
+            get {
+                object obj = ResourceManager.GetObject("11-0-Color-Day", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blog_1 {
             get {
                 object obj = ResourceManager.GetObject("blog-1", resourceCulture);
