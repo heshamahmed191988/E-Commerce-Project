@@ -24,9 +24,9 @@ namespace E_Commerce.Application.Service
             _productRepository.save();
         }
 
-        public IQueryable<ProductDTO> GetAllPagination(int page, int pageSize)
+        public IQueryable<ProductDTO> GetAll()
         {
-            var p = _productRepository.GetAll().Skip(page * pageSize).Take(pageSize);
+            var p = _productRepository.GetAll();
 
             return p.Select(i => AutoMapping.MapProductDTO(i));
         }
