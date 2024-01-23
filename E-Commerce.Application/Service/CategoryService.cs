@@ -32,6 +32,8 @@ namespace E_Commerce.Application.Service
         {
             var c = _categoryRepository.GetAll();
 
+
+
             return c.Select(i => AutoMapping.MapCategoryDTO(i));
         }
 

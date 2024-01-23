@@ -1,5 +1,8 @@
-﻿using E_Commerce.Application.Service;
+﻿using E_Commerce.Application.Contract;
+using E_Commerce.Application.Service;
+using E_Commerce.Context;
 using E_Commerce.DTOS.DTOS;
+using E_Commerce.Infrustructure.Repository;
 using E_Commerce_Project.Models;
 using System;
 using System.Collections.Generic;
@@ -28,7 +31,8 @@ namespace E_Commerce.Presentation
         public Admin_Category_Product(ICategoryService categoryService, IProductService productService)
         {
             InitializeComponent();
-            _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
+            _categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
+           // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
             LoadCategories();
         }

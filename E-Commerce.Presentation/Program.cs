@@ -17,8 +17,10 @@ namespace E_Commerce.Presentation
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             // System.Windows.Forms.Application.Run(new Admin_Category_Product());
-           
-          
+            ICategoryService categoryService = new CategoryService();
+            IProductService productService = new ProductService();
+
+
             System.Windows.Forms.Application.Run(new Admin_Category_Product(categoryService, productService));
         }
     }
