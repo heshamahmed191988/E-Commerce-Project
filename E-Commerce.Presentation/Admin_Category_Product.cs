@@ -83,8 +83,8 @@ namespace E_Commerce.Presentation
                         CategoryName = name,
                         Description = description,
                         image = "123",
-                        Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().ToList()
-                    };
+                        //Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().AsQueryable(),
+                };
 
                     _categoryService.AddCategory(newCategory);
                     LoadCategories();
