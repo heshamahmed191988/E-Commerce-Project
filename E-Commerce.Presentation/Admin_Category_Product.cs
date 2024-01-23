@@ -4,6 +4,7 @@ using E_Commerce.Context;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce.Infrustructure.Repository;
 using E_Commerce_Project.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,11 +31,14 @@ namespace E_Commerce.Presentation
         //}
         public Admin_Category_Product(ICategoryService categoryService, IProductService productService)
         {
+
             InitializeComponent();
             _categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-           // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
-            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
+            _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
+            // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
+            //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
             LoadCategories();
+            LoadProduct();
         }
 
 
@@ -83,11 +87,12 @@ namespace E_Commerce.Presentation
                         CategoryName = name,
                         Description = description,
                         image = "123",
-                        //Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().AsQueryable(),
-                };
+                       // Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().AsQueryable(),
+                    };
 
                     _categoryService.AddCategory(newCategory);
                     LoadCategories();
+
                 }
                 else
                 {
@@ -104,47 +109,137 @@ namespace E_Commerce.Presentation
 
 
 
-    
+
 
 
         private void EditCtegorey_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow != null)
+            // dataGridView2.AutoGenerateColumns = true;
+            try
             {
-                CategoryDTO selectedCategory = dataGridView2.CurrentRow.DataBoundItem as CategoryDTO;
-
-                if (selectedCategory != null)
+                if (_categoryService != null)
                 {
-                    string updatedName = CatogeryNameBox.Text;
-                    string updatedDescription = CatogeryDescriptionBox.Text;
+                    if (dataGridView2.SelectedRows.Count > 0)
+                    {
+                        // Get the selected category from the DataGridView
+                        DataGridViewRow selectedRow = dataGridView2.SelectedRows[0];
+                        int categoryId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
-                    selectedCategory.CategoryName = updatedName;
-                    selectedCategory.Description = updatedDescription;
+                        // Retrieve the existing category entity from the database
+                        E_Commerce_Project.Models.Category existingCategoryEntity;
 
-                    _categoryService.UpdateCategory(selectedCategory);
-                    LoadCategories();
+                        using (var context = new E_CommerceContext())
+                        {
+                            existingCategoryEntity = context.Categories.Find(categoryId);
+                        }
+
+                        if (existingCategoryEntity != null)
+                        {
+                            // Convert the entity to a DTO
+                            CategoryDTO existingCategoryDTO = ConvertToDTO(existingCategoryEntity);
+
+                            // Update the properties of the existing category DTO
+                            existingCategoryDTO.CategoryName = CatogeryNameBox.Text;
+                            existingCategoryDTO.Description = CatogeryDescriptionBox.Text;
+                            existingCategoryDTO.image = "123";
+                            // You may want to update other properties as needed
+
+                            // Perform the category update
+                            _categoryService.UpdateCategory(existingCategoryDTO);
+
+                            // Update the corresponding row in the DataGridView
+                            selectedRow.Cells["CategoryName"].Value = existingCategoryDTO.CategoryName;
+                            selectedRow.Cells["Description"].Value = existingCategoryDTO.Description;
+                            // Update other cells as needed
+
+                            MessageBox.Show("Category updated successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Category not found.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No rows selected.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("_categoryService is null");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please select a category to update.");
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
 
+        private CategoryDTO ConvertToDTO(E_Commerce_Project.Models.Category entity)
+        {
+            // Implement the conversion logic based on your entity and DTO structure
+            // For simplicity, assuming a CategoryDTO constructor that accepts an entity
+            return new CategoryDTO
+            {
+                // Assign properties based on your entity structure
+                CategoryName = entity.CategoryName,
+                Description = entity.Description,
+                // Other properties...
+            };
+        }
+
+
         private void DeleteCtegorey_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow != null)
+            if (dataGridView2.SelectedRows.Count > 0)
             {
-                CategoryDTO selectedCategory = dataGridView2.CurrentRow.DataBoundItem as CategoryDTO;
+                DataGridViewRow selectedRow = dataGridView2.SelectedRows[0];
+                int categoryId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
-                if (selectedCategory != null)
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this category?", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this category?", "Confirmation", MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.Yes)
+                    try
                     {
-                        _categoryService.RemoveCategory(selectedCategory);
-                        LoadCategories();
+                        if (_categoryService != null)
+                        {
+                            using (var context = new E_CommerceContext())
+                            {
+                                // Retrieve the existing category entity from the database
+                                E_Commerce_Project.Models.Category existingCategoryEntity = context.Categories.Find(categoryId);
+
+                                if (existingCategoryEntity != null)
+                                {
+                                    // Ensure the entity is being tracked by the context
+                                    context.Entry(existingCategoryEntity).State = EntityState.Detached;
+
+                                    // Attach the entity to the context and mark it as deleted
+                                    context.Categories.Attach(existingCategoryEntity);
+                                    context.Categories.Remove(existingCategoryEntity);
+
+                                    // Save changes to the database
+                                    context.SaveChanges();
+
+                                    // Reload categories after deletion
+                                    LoadCategories();
+
+                                    MessageBox.Show("Category deleted successfully.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Category not found.");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("_categoryService is null");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred: {ex.Message}");
                     }
                 }
             }
@@ -152,6 +247,74 @@ namespace E_Commerce.Presentation
             {
                 MessageBox.Show("Please select a category to delete.");
             }
+
+
+
+        }
+        private void LoadProduct()
+        {
+            try
+            {
+                if (_productService != null)
+                {
+                    var products = _productService.GetAll();
+
+                    if (products != null)
+                    {
+                        dataGridView1.DataSource = products.ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No categories found.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("_categoryService is null");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private void AddProduct_Click(object sender, EventArgs e)
+        {
+            dataGridView1.AutoGenerateColumns = true;
+            try
+            {
+                if (_productService != null)
+                {
+                    string name = ProductNameBox.Text;
+                    decimal price = decimal.Parse(ProductPriceBox.Text);
+                    int quantity =int.Parse(ProductQuantityBox.Text);
+                    int categoryid = int.Parse(CategoryIdBox.Text);
+
+                    ProductDTO newproduct = new ProductDTO
+                    {
+                        ProductName = name,
+                        Price = price,
+                        image = "123",
+                        Quantity = quantity,
+                        categoryID = categoryid,
+                        
+                    };
+
+                    _productService.AddProduct(newproduct);
+                    LoadProduct();
+
+                }
+                else
+                {
+                    MessageBox.Show("_productService");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+
         }
     }
 
