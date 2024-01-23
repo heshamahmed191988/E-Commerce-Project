@@ -13,7 +13,7 @@ namespace E_Commerce.Presentation
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
              ApplicationConfiguration.Initialize();
-            System.Windows.Forms.Application.Run(new Registration());
+            System.Windows.Forms.Application.Run(new Home_User());
            // Application.Run(new Login());
         }
     }

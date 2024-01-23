@@ -32,16 +32,29 @@ namespace E_Commerce.Application.Service
              
             return U.Select(i => AutoMapping.MapUserDto(i));
         }
-
-        public UserDTO GetUser(int id)
+        public IQueryable<UserDTO> GetAll()
         {
-            if (id != 0)
-            {
-                var user = AutoMapping.MapUserDto(_userRepository.GetByID(id));
-                return user;
-            }
-            else
-                return null;
+            var U = _userRepository.GetAll();
+
+            return U.Select(i => AutoMapping.MapUserDto(i));
+        }
+        //public UserDTO GetUser(int id)
+        //{
+        //    if (id != 0)
+        //    {
+        //        var user = AutoMapping.MapUserDto(_userRepository.GetByID(id));
+        //        return user;
+        //    }
+        //    else
+        //        return null;
+        //}
+
+        public UserDTO GetUser(string username, string pass)
+        { 
+                
+           var user = AutoMapping.MapUserDto(_userRepository.GetUser(username ,pass));
+            return user;
+             
         }
 
         public void RemoveUser(UserDTO userDTO)

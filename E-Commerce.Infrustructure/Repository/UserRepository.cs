@@ -14,5 +14,10 @@ namespace E_Commerce.Infrustructure.Repository
         E_CommerceContext context;
         public UserRepository(E_CommerceContext _context) : base(_context) { context = _context; }
 
+        public User GetUser(string username, string pass)
+        {
+           User user = context.Users.FirstOrDefault(c=>c.UserName == username && c.Password == pass );
+            return user;
+        }
     }
 }

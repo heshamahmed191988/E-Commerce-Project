@@ -14,8 +14,8 @@ namespace ConsoleTest
             UserDTO u1 = new UserDTO()
             { UserName = "Ahmed", Email = "ahmed@mail.com", Address = "sohag", Password = "1234567", type = false };
             //_userService.AddUser(u1);   
-           var x = _userService.GetUser(1).UserName;
-            Console.WriteLine(x);
+         //  var x = _userService.GetUser(1).UserName;
+         //   Console.WriteLine(x);
         }
     }
 }

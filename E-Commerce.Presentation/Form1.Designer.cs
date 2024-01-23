@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            userName = new TextBox();
+            pass = new TextBox();
             button1 = new Button();
             SuspendLayout();
             // 
@@ -60,27 +60,27 @@
             label2.TabIndex = 1;
             label2.Text = "Password :";
             // 
-            // textBox1
+            // userName
             // 
-            textBox1.BackColor = SystemColors.ActiveCaption;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Mudir MT", 11.25F, FontStyle.Bold);
-            textBox1.Location = new Point(220, 119);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(190, 23);
-            textBox1.TabIndex = 2;
+            userName.BackColor = SystemColors.ActiveCaption;
+            userName.BorderStyle = BorderStyle.None;
+            userName.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            userName.Location = new Point(220, 119);
+            userName.Multiline = true;
+            userName.Name = "userName";
+            userName.Size = new Size(190, 23);
+            userName.TabIndex = 2;
             // 
-            // textBox2
+            // pass
             // 
-            textBox2.BackColor = SystemColors.ActiveCaption;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Mudir MT", 11.25F, FontStyle.Bold);
-            textBox2.Location = new Point(220, 169);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(190, 23);
-            textBox2.TabIndex = 3;
+            pass.BackColor = SystemColors.ActiveCaption;
+            pass.BorderStyle = BorderStyle.None;
+            pass.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            pass.Location = new Point(220, 169);
+            pass.Multiline = true;
+            pass.Name = "pass";
+            pass.Size = new Size(190, 23);
+            pass.TabIndex = 3;
             // 
             // button1
             // 
@@ -104,8 +104,8 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(689, 450);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(pass);
+            Controls.Add(userName);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -120,8 +120,8 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox userName;
+        private TextBox pass;
         private Button button1;
     }
 }

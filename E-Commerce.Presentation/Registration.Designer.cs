@@ -1,4 +1,6 @@
-﻿namespace E_Commerce.Presentation
+﻿using Forms_ProjectVC_;
+
+namespace E_Commerce.Presentation
 {
     partial class Registration
     {
@@ -204,8 +206,9 @@
             button2.TabIndex = 14;
             button2.Text = " L o g i n";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
-            // Registration
+            // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -228,7 +231,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(2);
-            Name = "Registration";
+            Name = "Form1";
             Text = "Registration";
             ResumeLayout(false);
             PerformLayout();
