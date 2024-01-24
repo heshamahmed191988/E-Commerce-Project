@@ -34,16 +34,16 @@ namespace E_Commerce.Presentation
         {
             
         }
-        public Admin_Category_Product(ICategoryService categoryService, IProductService productService)
+        public Admin_Category_Product(ICategoryService categoryService)
         {
 
             InitializeComponent();
             _categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-            _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
+            //_productService = new ProductService(new ProductRepository(new E_CommerceContext()));
             // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
             //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
             LoadCategories();
-            LoadProduct();
+            
         }
 
 
@@ -256,195 +256,7 @@ namespace E_Commerce.Presentation
 
 
         }
-        private void LoadProduct()
-        {
-            try
-            {
-                if (_productService != null)
-                {
-                    var products = _productService.GetAll();
-
-                    if (products != null)
-                    {
-                        dataGridView1.DataSource = products.ToList();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No categories found.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("_categoryService is null");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
-
-        private void AddProduct_Click(object sender, EventArgs e)
-        {
-            dataGridView1.AutoGenerateColumns = true;
-            try
-            {
-                if (_productService != null)
-                {
-                    string name = ProductNameBox.Text;
-                    decimal price = decimal.Parse(ProductPriceBox.Text);
-                    int quantity = int.Parse(ProductQuantityBox.Text);
-                    int categoryid = int.Parse(CategoryIdBox.Text);
-
-                    ProductDTO newproduct = new ProductDTO
-                    {
-                        ProductName = name,
-                        Price = price,
-                        image = "123",
-                        Quantity = quantity,
-                        categoryID = categoryid,
-
-                    };
-
-                    _productService.AddProduct(newproduct);
-                    LoadProduct();
-
-                }
-                else
-                {
-                    MessageBox.Show("_productService");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-
-        }
-
-        private void EditProduct_Click(object sender, EventArgs e)
-        {
-            dataGridView1.AutoGenerateColumns = true;
-
-            try
-            {
-                if (_productService != null)
-                {
-                    if (dataGridView1.SelectedRows.Count > 0)
-                    {
-                        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-                        // Assuming your DataGridView columns are in order of: ProductName, ProductPrice, ProductQuantity, CategoryId
-                        string name = ProductNameBox.Text;
-                        decimal price = decimal.Parse(ProductPriceBox.Text);
-                        int quantity = int.Parse(ProductQuantityBox.Text);
-                        int categoryid = int.Parse(CategoryIdBox.Text);
-
-                        // Update the selected row in the DataGridView
-                        selectedRow.Cells["ProductName"].Value = name;
-                        selectedRow.Cells["Price"].Value = price;
-                        selectedRow.Cells["Quantity"].Value = quantity;
-                        selectedRow.Cells["CategoryId"].Value = categoryid;
-
-                        // Now, allow the user to make modifications
-
-                        // After the modifications are done, update the data in the service
-                        ProductDTO updatedProduct = new ProductDTO
-                        {
-                            ProductName = name,
-                            Price = price,
-                            image = "123",
-                            Quantity = quantity,
-                            categoryID = categoryid
-                        };
-
-                        // Update the existing product in the service with the modified one
-                        _productService.UpdateProduct(updatedProduct);
-
-                        // No need to create a new row or refresh the entire DataGridView as we updated the existing row
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please select a row to edit.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("_productService is null.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
-
-        private void DeleteProduct_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                    int productId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "Confirmation", MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            if (_productService != null)
-                            {
-                                using (var context = new E_CommerceContext())
-                                {
-                                    // Retrieve the existing product entity from the database
-                                    E_Commerce_Project.Models.Product existingProductEntity = context.Products.Find(productId);
-
-                                    if (existingProductEntity != null)
-                                    {
-                                        // Ensure the entity is being tracked by the context
-                                        context.Entry(existingProductEntity).State = EntityState.Detached;
-
-                                        // Attach the entity to the context and mark it as deleted
-                                        context.Products.Attach(existingProductEntity);
-                                        context.Products.Remove(existingProductEntity);
-
-                                        // Save changes to the database
-                                        context.SaveChanges();
-
-                                        // Reload products after deletion
-                                        LoadProduct();
-
-                                        MessageBox.Show("Product deleted successfully.");
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Product not found.");
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("_productService is null");
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"An error occurred: {ex.Message}");
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please select a product to delete.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
+       
     }
 
 
