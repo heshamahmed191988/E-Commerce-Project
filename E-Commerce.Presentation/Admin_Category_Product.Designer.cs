@@ -59,15 +59,15 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 73);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(473, 346);
+            dataGridView1.Size = new Size(473, 358);
             dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(865, 73);
+            dataGridView2.Location = new Point(877, 73);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(414, 384);
+            dataGridView2.Size = new Size(561, 384);
             dataGridView2.TabIndex = 1;
             // 
             // AddProduct
@@ -88,6 +88,7 @@
             EditProduct.Size = new Size(35, 20);
             EditProduct.TabIndex = 4;
             EditProduct.Text = "Edit";
+            EditProduct.Click += EditProduct_Click;
             // 
             // DeleteProduct
             // 
@@ -97,11 +98,12 @@
             DeleteProduct.Size = new Size(53, 20);
             DeleteProduct.TabIndex = 5;
             DeleteProduct.Text = "Delete";
+            DeleteProduct.Click += DeleteProduct_Click;
             // 
             // DeleteCtegorey
             // 
             DeleteCtegorey.AutoSize = true;
-            DeleteCtegorey.Location = new Point(1140, 484);
+            DeleteCtegorey.Location = new Point(1209, 495);
             DeleteCtegorey.Name = "DeleteCtegorey";
             DeleteCtegorey.Size = new Size(53, 20);
             DeleteCtegorey.TabIndex = 9;
@@ -111,7 +113,7 @@
             // EditCtegorey
             // 
             EditCtegorey.AutoSize = true;
-            EditCtegorey.Location = new Point(1065, 484);
+            EditCtegorey.Location = new Point(1134, 495);
             EditCtegorey.Name = "EditCtegorey";
             EditCtegorey.Size = new Size(35, 20);
             EditCtegorey.TabIndex = 8;
@@ -121,7 +123,7 @@
             // AddCtegorey
             // 
             AddCtegorey.AutoSize = true;
-            AddCtegorey.Location = new Point(1000, 484);
+            AddCtegorey.Location = new Point(1069, 495);
             AddCtegorey.Name = "AddCtegorey";
             AddCtegorey.Size = new Size(37, 20);
             AddCtegorey.TabIndex = 6;
@@ -131,7 +133,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(1032, 34);
+            label9.Location = new Point(1126, 34);
             label9.Name = "label9";
             label9.Size = new Size(80, 20);
             label9.TabIndex = 10;
@@ -230,7 +232,7 @@
             // 
             label1.AutoSize = true;
             label1.CausesValidation = false;
-            label1.Location = new Point(525, 411);
+            label1.Location = new Point(515, 411);
             label1.Name = "label1";
             label1.Size = new Size(86, 20);
             label1.TabIndex = 23;
@@ -239,7 +241,7 @@
             // CategoryIdBox
             // 
             CategoryIdBox.CausesValidation = false;
-            CategoryIdBox.Location = new Point(519, 466);
+            CategoryIdBox.Location = new Point(511, 456);
             CategoryIdBox.Name = "CategoryIdBox";
             CategoryIdBox.Size = new Size(100, 27);
             CategoryIdBox.TabIndex = 22;
@@ -250,7 +252,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._11_0_Color_Day;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1291, 608);
+            ClientSize = new Size(1469, 608);
             Controls.Add(label1);
             Controls.Add(CategoryIdBox);
             Controls.Add(label14);
