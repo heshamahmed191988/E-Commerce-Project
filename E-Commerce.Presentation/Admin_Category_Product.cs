@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Application.Contract;
 using E_Commerce.Application.Service;
 using E_Commerce.Context;
+using Autofac;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce.Infrustructure.Repository;
 using E_Commerce_Project.Models;
@@ -29,6 +30,10 @@ namespace E_Commerce.Presentation
         //    InitializeComponent();
         //    LoadCategories();
         //}
+        public Admin_Category_Product()
+        {
+            
+        }
         public Admin_Category_Product(ICategoryService categoryService, IProductService productService)
         {
 
