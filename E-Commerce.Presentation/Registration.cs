@@ -20,7 +20,6 @@ namespace E_Commerce.Presentation
     {
         static IUserService _userService;
         static ICartService _cartService;
-        //public event Func<int,CartDTO> cartId;
         Form1 login = new Form1();
         public Registration()
         {
@@ -28,7 +27,12 @@ namespace E_Commerce.Presentation
             _userService = container.Resolve<IUserService>();
             _cartService = container.Resolve<ICartService>();
             InitializeComponent();
+            comboBox1.Items.Insert(0, "true");
+            comboBox1.Items.Add("false");
+            // comboBox1.Items.Add("false");
+            comboBox1.SelectedIndex = 1;
         }
+        #region functions
         static bool ContainsSpecialCharacter(string password)
         {
             return Regex.IsMatch(password, "[!@#$%^&*(),.?\":{}|<>]");
@@ -40,6 +44,7 @@ namespace E_Commerce.Presentation
         }
         static bool ValidatePassword(string password)
         {
+            //pass.Text = "*";
             // Check if the password meets the specified criteria
             return ContainsDigit(password) &&
                   ContainsSpecialCharacter(password);
@@ -58,9 +63,10 @@ namespace E_Commerce.Presentation
             pass.Text = null;
             Phone.Text = null;
             Address.Text = null;
-            Status.Text = null;
+            // comboBox1.Text = null;
         }
 
+        #endregion
         private void button1_Click(object sender, EventArgs e)
         {
             string username = UserName.Text;
@@ -68,35 +74,119 @@ namespace E_Commerce.Presentation
             string phone = Phone.Text;
             string password = pass.Text;
             string address = Address.Text;
-            string type = Status.Text; /////////
+            string type = comboBox1.Text; /////////
             bool result = bool.Parse(type);
             UserDTO u1 = new UserDTO() { UserName = username, Email = email, Phone = phone, Password = password, Address = address, type = result };
-            CartDTO c1 = new CartDTO() { Quantity = 0, Status = "Empty" };
-            if (!(username.Length > 5) & !email.Contains("@.") & !ValidatePassword(password) & !ValidatePhoneNumber(phone))
-            {
-                MessageBox.Show("your data is Invalid");
+            #region conditions
+            /* if (username.Length < 5)
+             {
+                 nameMsg.Text = "*";
+             }
+             else
+             {
+                 nameMsg.Text = "";
+             }
+             if (!email.Contains("@.") || email == null)
+             {
+                 EmailMsg.Text = "*";
+             }
+             else
+             {
+                 EmailMsg.Text = "";
+             }
+             if (!ValidatePassword(password) || password == null)
+             {
+                 PassMSg.Text = "*";
+             }
+             else
+             {
+                 PassMSg.Text = "";
+             }
 
+             if (!ValidatePhoneNumber(phone) || phone == null)
+             {
+                 PhonMSG.Text = "*";
+             }
+             else
+             {
+                 PhonMSG.Text = "";
+             }
+             if (address == "")
+             {
+                 AddressMSG.Text = "*";
+             }
+             else
+             {
+                 AddressMSG.Text = "";
+             }
+             if (!(username.Length > 5) & !email.Contains("@.") & !ValidatePassword(password) & !ValidatePhoneNumber(phone) & !(address.Length > 5))
+             {
+                 MessageBox.Show("Please Enter Correct Data");
+             }
+             else
+             {
+                 UserDTO user = _userService.AddUser(u1);
+                 var uId = _userService.GetUser(username, password).Id;
+                 CartDTO c1 = new CartDTO() { Quantity = 0, Status = "Empty", UserId = uId };
+                 _cartService.AddCart(c1);
+                 clearForm();
+
+             }*/
+
+            #endregion
+
+            if (username.Length < 5 ||
+            !email.Contains("@") || email == null ||
+            !ValidatePassword(password) || password == null ||
+            !ValidatePhoneNumber(phone) || phone == null ||
+            address.Length == 0)
+            {
+                nameMsg.Text = (username.Length < 5) ? "*" : "";
+                EmailMsg.Text = (!email.Contains("@") || email == null) ? "*" : "";
+                PassMSg.Text = (!ValidatePassword(password) || password == null) ? "*" : "";
+                PhonMSG.Text = (!ValidatePhoneNumber(phone) || phone == null) ? "*" : "";
+                AddressMSG.Text = (address.Length == 0) ? "*" : "";
+
+                MessageBox.Show("Please Enter Correct Data");
             }
             else
             {
-                _userService.AddUser(u1);
-                _cartService.AddCart(c1);
-                /*if (cartId != null)
+                UserDTO user = _userService.AddUser(u1);
+                var uId = _userService.GetUser(username, password)?.Id; // Added null-conditional operator (?)
+                if (uId != null)
                 {
-                    cartId(c1.Id);
-                }*/
-                MessageBox.Show("Thank you for your Registration");
+                    CartDTO c1 = new CartDTO() { Quantity = 0, Status = "Empty", UserId = uId.Value }; // Assuming UserId is not nullable
+                    _cartService.AddCart(c1);
+                }
+                MessageBox.Show("thank you!");
                 clearForm();
-
+            
             }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login.Show();
+        }
 
+        private void Registration_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void PhonMSG_Click(object sender, EventArgs e)
         {
-            
-            login.Show();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pass_TextChanged(object sender, EventArgs e)
+        {
+            pass.PasswordChar = '*';
         }
     }
 }

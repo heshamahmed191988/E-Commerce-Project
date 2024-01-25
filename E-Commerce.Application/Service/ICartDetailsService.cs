@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.Application.Service
 {
-    public interface ICartService
+    public interface ICartDetailsService
     {
-        public void AddCart(CartDTO cartDTO);
-        public IQueryable<CartDTO> GetAll();
-        public CartDTO GetCart(int id);
-        
+        public CartDetailsDTO AddCartItems(ProductDTO productDTO, CartDTO cartDTO);
     }
 }

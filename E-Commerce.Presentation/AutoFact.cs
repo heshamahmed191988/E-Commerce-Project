@@ -28,6 +28,7 @@ namespace E_Commerce.Presentation
             builder.RegisterType<ProductService>().As<IProductService>();
             builder.RegisterType<CartService>().As<ICartService>();
             builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<CartDetailsService>().As<ICartDetailsService>();
             builder.RegisterType<E_CommerceContext>().As<E_CommerceContext>();
 
             return builder.Build();

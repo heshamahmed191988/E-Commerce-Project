@@ -11,7 +11,12 @@ namespace Forms_ProjectVC_
     {
         static IUserService _userService;
         Home_User userProducts = new Home_User();
-        public event Action<int> UserId;
+        public event EventHandler<int> userIdEvent;
+        private void invokeIDEvent(int id)
+        {
+            if (userIdEvent != null)
+                userIdEvent(this, id);
+        }
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +26,6 @@ namespace Forms_ProjectVC_
         static UserDTO Authentication(string username, string password)
         {
           var u1 = _userService.GetUser(username, password);
-
          return u1;
 
 
@@ -37,19 +41,20 @@ namespace Forms_ProjectVC_
            
            var user =Authentication(username, password);
 
-           if(  user != null )
+           if(  user !=null  )
             {
               if(user.type )
                 {
+                    
                     MessageBox.Show("Admin");
                     ///////////////////admin
                 }
               else
                 {
-                    /*if (UserId != null)
-                    {
-                        UserId(user.Id);
-                    }*/
+                    int id = user.Id;
+                    //int cartid = user.Cart.Id;///////////////////////////////
+                    //invokeIDEvent(cartid);
+                    MessageBox.Show($"{id}");
                     userProducts.Show();
                     // userProducts.Close();
                 }
@@ -59,12 +64,7 @@ namespace Forms_ProjectVC_
                 MessageBox.Show("TRy Again");
             }
             
-            
-
-
-            
-
-
+          
         }
     }
 }
