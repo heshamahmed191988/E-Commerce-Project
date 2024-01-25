@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Application.Contract;
 using E_Commerce.Context;
 using E_Commerce_Project.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace E_Commerce.Infrustructure.Repository
         public User GetUser(string username, string pass)
         {
            User user = context.Users.FirstOrDefault(c=>c.UserName == username && c.Password == pass );
+           
             return user;
         }
     }

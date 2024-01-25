@@ -17,12 +17,18 @@ namespace E_Commerce.Application.Service
         {
             _cartDetailsRepository = cartDetailsRepository;
         }
-        public CartDetailsDTO AddCartItems(ProductDTO productDTO, CartDTO cartDTO)
+      /*  public CartDetailsDTO AddCartItems(ProductDTO productDTO, CartDTO cartDTO)
         {
             CartDetailsDTO cartDetailsDTO = new CartDetailsDTO() { cartID = cartDTO.Id, productID = productDTO.Id };
             _cartDetailsRepository.Add(AutoMapping.MapCartDetails(cartDetailsDTO));
             _cartDetailsRepository.save();
             return cartDetailsDTO;
+        }*/
+
+        public void AddCartItems(CartDetailsDTO cartDetailsDTO)
+        {
+            _cartDetailsRepository.Add(AutoMapping.MapCartDetails(cartDetailsDTO));
+            _cartDetailsRepository.save();
         }
     }
 }

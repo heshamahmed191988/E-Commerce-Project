@@ -22,27 +22,24 @@ namespace E_Commerce.Presentation
         static IProductService _ProductService;
         static ICartService _cartService;
         static ICartDetailsService _cartDetailsService;
-        private void UserIdHandler(object sender, int userId)
-        {
-            var pro = _ProductService.SearchProduct(Pro_Name.Text).FirstOrDefault();
-            var cart = _cartService.GetCart(userId);
-            if (pro != null && cart != null)
-            {
-                _cartDetailsService.AddCartItems(pro, cart);
-            }
-            else
-              MessageBox.Show("You can't add this Product to your cart");
-            
-            // return userId;
-        }
-        public Home_User()
+        private int userId;
+        public Home_User(int userId)
         {
             var container = AutoFact.Inject();
             _ProductService = container.Resolve<IProductService>();
             _cartService = container.Resolve<ICartService>();
             _cartDetailsService= container.Resolve<ICartDetailsService>();
             InitializeComponent();
+            productQuantity.Items.Insert(0, "1");
+            productQuantity.Items.Add("2");
+            productQuantity.Items.Add("3");
+            productQuantity.Items.Add("4");
+            productQuantity.Items.Add("5");
+            // comboBox1.Items.Add("false");
+            productQuantity.SelectedIndex = 0;
+            this.userId=userId;
         }
+
         private void Home_User_Load(object sender, EventArgs e)
         {
             var Pro = _ProductService.GetAll().ToList();
@@ -132,10 +129,21 @@ namespace E_Commerce.Presentation
 
         private void Add_Card_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.userIdEvent += UserIdHandler;
-            form1.userIdEvent += UserIdHandler;
-            form1.userIdEvent += UserIdHandler;
+            
+            var pro = _ProductService.SearchProduct(Pro_Name.Text).FirstOrDefault();
+           
+            // var cart = _cartService.GetCart(4).Id;
+            int quantity = int.Parse(productQuantity.Text);
+            if (pro != null && userId != null && quantity != 0)
+            {
+                var cartItem = new CartDetailsDTO() { cartID = userId, productID = pro.Id, Quantity = quantity };
+                _cartDetailsService.AddCartItems(cartItem);
+                MessageBox.Show("Product Added");
+
+            }
+            else
+                MessageBox.Show("You can't add this Product to your cart");
+            MessageBox.Show($"");
         }
     }
 }

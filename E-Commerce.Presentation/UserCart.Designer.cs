@@ -89,9 +89,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(309, 268);
+            button1.Location = new Point(328, 265);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(100, 35);
             button1.TabIndex = 3;
             button1.Text = "Order";
             button1.UseVisualStyleBackColor = true;

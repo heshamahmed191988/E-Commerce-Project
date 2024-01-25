@@ -7,13 +7,13 @@ namespace ConsoleTest
 {
     internal class Program
     {
-        static IUserService _userService;
+        //static IUserService _userService;
         static void Main(string[] args)
         {
-            _userService = new UserService(new UserRepository(new E_CommerceContext()));
+           /* _userService = new UserService(new UserRepository(new E_CommerceContext()));
             UserDTO u1 = new UserDTO()
-            { UserName = "Ahmed", Email = "ahmed@mail.com", Address = "sohag", Password = "1234567", type = false };
-            //_userService.AddUser(u1);   
+            { UserName = "Ahmed", Email = "ahmed@mail.com", Address = "sohag", Password = "1234567", type = 1 };
+            /*////_userService.AddUser(u1);   
          //  var x = _userService.GetUser(1).UserName;
          //   Console.WriteLine(x);
         }

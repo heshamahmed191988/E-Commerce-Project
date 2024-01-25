@@ -75,7 +75,7 @@ namespace E_Commerce.Presentation
             string password = pass.Text;
             string address = Address.Text;
             string type = comboBox1.Text; /////////
-            bool result = bool.Parse(type);
+            int result = int.Parse(type);
             UserDTO u1 = new UserDTO() { UserName = username, Email = email, Phone = phone, Password = password, Address = address, type = result };
             #region conditions
             /* if (username.Length < 5)
@@ -135,6 +135,7 @@ namespace E_Commerce.Presentation
 
             #endregion
 
+            #region condition edit
             if (username.Length < 5 ||
             !email.Contains("@") || email == null ||
             !ValidatePassword(password) || password == null ||
@@ -161,6 +162,7 @@ namespace E_Commerce.Presentation
                 MessageBox.Show("thank you!");
                 clearForm();
             }
+            #endregion
         }
         private void button2_Click(object sender, EventArgs e)
         {
