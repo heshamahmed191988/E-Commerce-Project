@@ -12,7 +12,7 @@ namespace E_Commerce.Application.Service
     public class CartService:ICartService
     {
         ICartRepository _cartRepository;
-        ICartDetailsRepository _cartItemRepository;
+        
         public CartService(ICartRepository cartRepository)
         {
             _cartRepository = cartRepository;
@@ -40,12 +40,7 @@ namespace E_Commerce.Application.Service
 
             return C.Select(i => AutoMapping.MapCartDTO(i));
         }
-        public void AddCartItems(ProductDTO productDTO)
-        {
-            /*CartDetailsDTO cartDetailsDTO = new CartDetailsDTO() { productID = productDTO.Id };
-            _cartItemRepository.Add(cartDetailsDTO);
-            _cartItemRepository.save();*/
-        }
+       
     }  
 }
 

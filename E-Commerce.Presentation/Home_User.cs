@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,20 +21,28 @@ namespace E_Commerce.Presentation
     {
         static IProductService _ProductService;
         static ICartService _cartService;
-       // Registration form1 = new Registration();
-        public int id;
-       // Form1 loginForm = new Form1();
+        static ICartDetailsService _cartDetailsService;
+        private void UserIdHandler(object sender, int userId)
+        {
+            var pro = _ProductService.SearchProduct(Pro_Name.Text).FirstOrDefault();
+            var cart = _cartService.GetCart(userId);
+            if (pro != null && cart != null)
+            {
+                _cartDetailsService.AddCartItems(pro, cart);
+            }
+            else
+              MessageBox.Show("You can't add this Product to your cart");
+            
+            // return userId;
+        }
         public Home_User()
         {
             var container = AutoFact.Inject();
             _ProductService = container.Resolve<IProductService>();
+            _cartService = container.Resolve<ICartService>();
+            _cartDetailsService= container.Resolve<ICartDetailsService>();
             InitializeComponent();
         }
-        public CartDTO cart (int id) {
-            var c = _cartService.GetCart(id);
-            return c;
-           }
-
         private void Home_User_Load(object sender, EventArgs e)
         {
             var Pro = _ProductService.GetAll().ToList();
@@ -58,15 +67,8 @@ namespace E_Commerce.Presentation
         private void ProductdataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = ProductdataGridView.Rows[e.RowIndex];
-
-            // Populate textboxes with data from the selected row
             Pro_Name.Text = row.Cells["ProductName"].Value.ToString();
-
             Pro_Price.Text = row.Cells["Price"].Value.ToString();
-             id = (int)row.Cells["Id"].Value;
-
-
-
 
 
         }
@@ -93,11 +95,7 @@ namespace E_Commerce.Presentation
                 Pro_Name.Text = pro.ProductName;
                 Pro_Price.Text = pro.Price.ToString();
                 label2.Text = "";
-                /* foreach (var item in pro)
-                 {
-                     Pro_Name.Text = item.ProductName;
-                     Pro_Price.Text = item.Price.ToString();
-                 }*/
+                
             }
             else
             {
@@ -134,12 +132,10 @@ namespace E_Commerce.Presentation
 
         private void Add_Card_Click(object sender, EventArgs e)
         {
-            /*var pro = _ProductService.SearchProduct(Pro_Name.Text).FirstOrDefault();
-            int prodId = pro.Id;
-            form1.cartId += cart;
-            int cartId = ;*/
-            //loginForm.UserId +=;
-
+            Form1 form1 = new Form1();
+            form1.userIdEvent += UserIdHandler;
+            form1.userIdEvent += UserIdHandler;
+            form1.userIdEvent += UserIdHandler;
         }
     }
 }

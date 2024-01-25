@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_User));
             ProductdataGridView = new DataGridView();
             ProductName = new Label();
@@ -39,8 +40,12 @@
             textBox1 = new TextBox();
             Filter_by_Name = new Label();
             label2 = new Label();
+            label1 = new Label();
+            productQuantity = new ComboBox();
+            userDTOBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)ProductdataGridView).BeginInit();
             product.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
             SuspendLayout();
             // 
             // ProductdataGridView
@@ -81,6 +86,8 @@
             // product
             // 
             product.BackColor = Color.Transparent;
+            product.Controls.Add(productQuantity);
+            product.Controls.Add(label1);
             product.Controls.Add(Add_Card);
             product.Controls.Add(Pro_Price);
             product.Controls.Add(Pro_Name);
@@ -90,7 +97,7 @@
             product.ForeColor = Color.White;
             product.Location = new Point(28, 183);
             product.Name = "product";
-            product.Size = new Size(242, 203);
+            product.Size = new Size(242, 240);
             product.TabIndex = 9;
             product.TabStop = false;
             product.Text = "Product";
@@ -104,7 +111,7 @@
             Add_Card.FlatStyle = FlatStyle.Flat;
             Add_Card.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             Add_Card.ForeColor = Color.Transparent;
-            Add_Card.Location = new Point(46, 123);
+            Add_Card.Location = new Point(63, 182);
             Add_Card.Name = "Add_Card";
             Add_Card.Size = new Size(129, 52);
             Add_Card.TabIndex = 10;
@@ -157,10 +164,36 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.Red;
             label2.Location = new Point(121, 71);
             label2.Name = "label2";
             label2.Size = new Size(0, 15);
             label2.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(6, 112);
+            label1.Name = "label1";
+            label1.Size = new Size(105, 15);
+            label1.TabIndex = 12;
+            label1.Text = "Product Quantity:";
+            // 
+            // productQuantity
+            // 
+            productQuantity.FormattingEnabled = true;
+            productQuantity.Location = new Point(117, 107);
+            productQuantity.Name = "productQuantity";
+            productQuantity.Size = new Size(65, 25);
+            productQuantity.TabIndex = 13;
+            // 
+            // userDTOBindingSource
+            // 
+            userDTOBindingSource.DataSource = typeof(DTOS.DTOS.UserDTO);
             // 
             // Home_User
             // 
@@ -180,6 +213,7 @@
             ((System.ComponentModel.ISupportInitialize)ProductdataGridView).EndInit();
             product.ResumeLayout(false);
             product.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +229,8 @@
         private Label Filter_by_Name;
         private Button Add_Card;
         private Label label2;
+        private Label label1;
+        private ComboBox productQuantity;
+        private BindingSource userDTOBindingSource;
     }
 }
