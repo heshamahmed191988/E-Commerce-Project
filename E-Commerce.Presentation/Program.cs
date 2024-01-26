@@ -1,3 +1,6 @@
+using Forms_ProjectVC_;
+using System;
+using System.Windows.Forms;
 namespace E_Commerce.Presentation
 {
     internal static class Program
@@ -10,8 +13,9 @@ namespace E_Commerce.Presentation
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+             ApplicationConfiguration.Initialize();
+            System.Windows.Forms.Application.Run(new Admin_product());
+           // Application.Run(new Login());
         }
     }
 }

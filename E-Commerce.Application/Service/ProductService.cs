@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Application.Contract;
 using E_Commerce.Application.Mapping;
 using E_Commerce.DTOS.DTOS;
+using E_Commerce_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,9 @@ namespace E_Commerce.Application.Service
             _productRepository.save();
         }
 
-        public IQueryable<ProductDTO> GetAllPagination(int page, int pageSize)
+        public IQueryable<ProductDTO> GetAll()
         {
-            var p = _productRepository.GetAll().Skip(page * pageSize).Take(pageSize);
+            var p = _productRepository.GetAll();
 
             return p.Select(i => AutoMapping.MapProductDTO(i));
         }
@@ -52,6 +53,29 @@ namespace E_Commerce.Application.Service
         {
             _productRepository.Update(AutoMapping.MapProduct(productDTO));
             _productRepository.save();
+        }
+        public IQueryable<ProductDTO> SearchProduct(string item)
+        {
+            if (item != null)
+            {
+                var p = _productRepository.SearchProduct(item);
+
+                return p.Select(i => AutoMapping.MapProductDTO(i));
+            }
+            else
+                return null;
+
+        }
+        public IQueryable<ProductDTO> SearchProductByPrice(decimal item)
+        {
+            if (item != 0)
+            {
+                var p = _productRepository.SearchProductByPrice(item);
+
+                return p.Select(i => AutoMapping.MapProductDTO(i));
+            }
+            else
+                return null;
         }
     }
 }

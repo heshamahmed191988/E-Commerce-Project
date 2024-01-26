@@ -28,187 +28,184 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_User));
-            groupBox1 = new GroupBox();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            Product = new GroupBox();
-            panel1 = new Panel();
+            ProductdataGridView = new DataGridView();
+            ProductName = new Label();
+            Price = new Label();
+            product = new GroupBox();
+            productQuantity = new ComboBox();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
+            Add_Card = new Button();
+            Pro_Price = new Label();
+            Pro_Name = new Label();
+            textBox1 = new TextBox();
+            Filter_by_Name = new Label();
             label2 = new Label();
-            button6 = new Button();
-            groupBox1.SuspendLayout();
-            Product.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            userDTOBindingSource = new BindingSource(components);
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)ProductdataGridView).BeginInit();
+            product.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // groupBox1
+            // ProductdataGridView
             // 
-            groupBox1.BackColor = Color.Transparent;
-            groupBox1.Controls.Add(button5);
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(886, 78);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(332, 582);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Categorys";
+            ProductdataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
+            ProductdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ProductdataGridView.Location = new Point(294, 23);
+            ProductdataGridView.Name = "ProductdataGridView";
+            ProductdataGridView.Size = new Size(644, 554);
+            ProductdataGridView.TabIndex = 0;
+            ProductdataGridView.CellClick += ProductdataGridView_CellClick;
+            ProductdataGridView.CellContentClick += ProductdataGridView_CellContentClick;
             // 
-            // button5
+            // ProductName
             // 
-            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
-            button5.BackgroundImageLayout = ImageLayout.Stretch;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.ForeColor = Color.Transparent;
-            button5.Location = new Point(30, 476);
-            button5.Name = "button5";
-            button5.Size = new Size(273, 70);
-            button5.TabIndex = 4;
-            button5.Text = "          button1";
-            button5.UseVisualStyleBackColor = true;
+            ProductName.AutoSize = true;
+            ProductName.BackColor = Color.Transparent;
+            ProductName.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ProductName.ForeColor = Color.White;
+            ProductName.Location = new Point(19, 40);
+            ProductName.Name = "ProductName";
+            ProductName.Size = new Size(94, 15);
+            ProductName.TabIndex = 2;
+            ProductName.Text = "Product Name : ";
             // 
-            // button4
+            // Price
             // 
-            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
-            button4.BackgroundImageLayout = ImageLayout.Stretch;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.Transparent;
-            button4.Location = new Point(30, 366);
-            button4.Name = "button4";
-            button4.Size = new Size(273, 70);
-            button4.TabIndex = 3;
-            button4.Text = "          button1";
-            button4.UseVisualStyleBackColor = true;
+            Price.AutoSize = true;
+            Price.BackColor = Color.Transparent;
+            Price.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Price.ForeColor = Color.White;
+            Price.Location = new Point(19, 80);
+            Price.Name = "Price";
+            Price.Size = new Size(93, 15);
+            Price.TabIndex = 6;
+            Price.Text = "Product Price : ";
             // 
-            // button3
+            // product
             // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.Transparent;
-            button3.Location = new Point(30, 256);
-            button3.Name = "button3";
-            button3.Size = new Size(273, 70);
-            button3.TabIndex = 2;
-            button3.Text = "          button1";
-            button3.UseVisualStyleBackColor = true;
+            product.BackColor = Color.Transparent;
+            product.Controls.Add(productQuantity);
+            product.Controls.Add(label1);
+            product.Controls.Add(Add_Card);
+            product.Controls.Add(Pro_Price);
+            product.Controls.Add(Pro_Name);
+            product.Controls.Add(ProductName);
+            product.Controls.Add(Price);
+            product.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            product.ForeColor = Color.White;
+            product.Location = new Point(28, 183);
+            product.Name = "product";
+            product.Size = new Size(242, 240);
+            product.TabIndex = 9;
+            product.TabStop = false;
+            product.Text = "Product";
             // 
-            // button2
+            // productQuantity
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.Transparent;
-            button2.Location = new Point(29, 152);
-            button2.Name = "button2";
-            button2.Size = new Size(273, 70);
-            button2.TabIndex = 1;
-            button2.Text = "          button1";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.Transparent;
-            button1.Location = new Point(29, 48);
-            button1.Name = "button1";
-            button1.Size = new Size(273, 70);
-            button1.TabIndex = 0;
-            button1.Text = "          button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // Product
-            // 
-            Product.BackColor = Color.Transparent;
-            Product.Controls.Add(panel1);
-            Product.Font = new Font("Showcard Gothic", 14.25F);
-            Product.ForeColor = Color.White;
-            Product.Location = new Point(31, 78);
-            Product.Name = "Product";
-            Product.Size = new Size(839, 582);
-            Product.TabIndex = 1;
-            Product.TabStop = false;
-            Product.Text = "Product";
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(button6);
-            panel1.Location = new Point(588, 30);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(231, 249);
-            panel1.TabIndex = 0;
+            productQuantity.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            productQuantity.FormattingEnabled = true;
+            productQuantity.Location = new Point(117, 107);
+            productQuantity.Name = "productQuantity";
+            productQuantity.Size = new Size(65, 24);
+            productQuantity.TabIndex = 13;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(81, 133);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(6, 112);
             label1.Name = "label1";
-            label1.Size = new Size(60, 23);
-            label1.TabIndex = 1;
-            label1.Text = "Name";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
+            label1.Size = new Size(105, 15);
+            label1.TabIndex = 12;
+            label1.Text = "Product Quantity:";
             // 
-            // pictureBox1
+            // Add_Card
             // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = Properties.Resources.blog_1;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(231, 130);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            Add_Card.AccessibleRole = AccessibleRole.None;
+            Add_Card.BackColor = Color.IndianRed;
+            Add_Card.BackgroundImageLayout = ImageLayout.Stretch;
+            Add_Card.FlatAppearance.BorderSize = 0;
+            Add_Card.FlatStyle = FlatStyle.Flat;
+            Add_Card.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            Add_Card.ForeColor = Color.Transparent;
+            Add_Card.Location = new Point(63, 182);
+            Add_Card.Name = "Add_Card";
+            Add_Card.Size = new Size(129, 52);
+            Add_Card.TabIndex = 10;
+            Add_Card.Text = "Add to Cart";
+            Add_Card.UseVisualStyleBackColor = false;
+            Add_Card.Click += Add_Card_Click;
+            // 
+            // Pro_Price
+            // 
+            Pro_Price.AutoSize = true;
+            Pro_Price.BackColor = Color.Transparent;
+            Pro_Price.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pro_Price.ForeColor = Color.Moccasin;
+            Pro_Price.Location = new Point(118, 80);
+            Pro_Price.Name = "Pro_Price";
+            Pro_Price.Size = new Size(0, 15);
+            Pro_Price.TabIndex = 9;
+            // 
+            // Pro_Name
+            // 
+            Pro_Name.AutoSize = true;
+            Pro_Name.BackColor = Color.Transparent;
+            Pro_Name.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pro_Name.ForeColor = Color.Moccasin;
+            Pro_Name.Location = new Point(119, 42);
+            Pro_Name.Name = "Pro_Name";
+            Pro_Name.Size = new Size(0, 15);
+            Pro_Name.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(122, 45);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(148, 23);
+            textBox1.TabIndex = 10;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // Filter_by_Name
+            // 
+            Filter_by_Name.AutoSize = true;
+            Filter_by_Name.BackColor = Color.Transparent;
+            Filter_by_Name.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Filter_by_Name.ForeColor = Color.White;
+            Filter_by_Name.Location = new Point(22, 48);
+            Filter_by_Name.Name = "Filter_by_Name";
+            Filter_by_Name.Size = new Size(87, 15);
+            Filter_by_Name.TabIndex = 11;
+            Filter_by_Name.Text = "Filter by Name";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Salmon;
-            label2.Location = new Point(81, 166);
+            label2.ForeColor = Color.Red;
+            label2.Location = new Point(121, 71);
             label2.Name = "label2";
-            label2.RightToLeft = RightToLeft.No;
-            label2.Size = new Size(58, 23);
-            label2.TabIndex = 3;
-            label2.Text = "222$";
+            label2.Size = new Size(0, 15);
+            label2.TabIndex = 14;
             // 
-            // button6
+            // userDTOBindingSource
             // 
-            button6.AccessibleRole = AccessibleRole.None;
-            button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
-            button6.BackgroundImageLayout = ImageLayout.Stretch;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.Transparent;
-            button6.Location = new Point(38, 192);
-            button6.Name = "button6";
-            button6.Size = new Size(152, 54);
-            button6.TabIndex = 2;
-            button6.Text = "Add Cart";
-            button6.TextAlign = ContentAlignment.MiddleRight;
-            button6.UseVisualStyleBackColor = true;
+            userDTOBindingSource.DataSource = typeof(DTOS.DTOS.UserDTO);
+            // 
+            // button1
+            // 
+            button1.Location = new Point(113, 468);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 15;
+            button1.Text = "Cart";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // Home_User
             // 
@@ -216,33 +213,38 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1257, 709);
-            Controls.Add(Product);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(1005, 709);
+            Controls.Add(button1);
+            Controls.Add(label2);
+            Controls.Add(Filter_by_Name);
+            Controls.Add(textBox1);
+            Controls.Add(product);
+            Controls.Add(ProductdataGridView);
             Name = "Home_User";
             Text = "Home_User";
             Load += Home_User_Load;
-            groupBox1.ResumeLayout(false);
-            Product.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ProductdataGridView).EndInit();
+            product.ResumeLayout(false);
+            product.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private GroupBox groupBox1;
-        private Button button1;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private GroupBox Product;
-        private Panel panel1;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Button button6;
+        private DataGridView ProductdataGridView;
+        private Label ProductName;
+        private Label Price;
+        private GroupBox product;
+        private Label Pro_Price;
+        private Label Pro_Name;
+        private TextBox textBox1;
+        private Label Filter_by_Name;
+        private Button Add_Card;
         private Label label2;
+        private Label label1;
+        private ComboBox productQuantity;
+        private BindingSource userDTOBindingSource;
+        private Button button1;
     }
 }

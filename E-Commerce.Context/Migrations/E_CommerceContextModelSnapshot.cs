@@ -56,17 +56,20 @@ namespace E_Commerce.Context.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("cartId")
+                    b.Property<int>("cartID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("productID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("cartID");
 
-                    b.HasIndex("cartId");
+                    b.HasIndex("productID");
 
                     b.ToTable("CartDetails");
                 });
@@ -84,6 +87,10 @@ namespace E_Commerce.Context.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -113,14 +120,37 @@ namespace E_Commerce.Context.Migrations
                     b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("UserID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserID");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("E_Commerce_Project.Models.OrderItems", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("productId")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("productId");
+
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("E_Commerce_Project.Models.Product", b =>
@@ -143,6 +173,10 @@ namespace E_Commerce.Context.Migrations
 
                     b.Property<int>("categoryID")
                         .HasColumnType("int");
+
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -171,12 +205,18 @@ namespace E_Commerce.Context.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("type")
-                        .HasColumnType("bit");
+                    b.Property<string>("UserName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("type")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 
@@ -196,15 +236,15 @@ namespace E_Commerce.Context.Migrations
 
             modelBuilder.Entity("E_Commerce_Project.Models.CartDetails", b =>
                 {
-                    b.HasOne("E_Commerce_Project.Models.Product", "Product")
+                    b.HasOne("E_Commerce_Project.Models.Cart", "cart")
                         .WithMany("CartDetails")
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("cartID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("E_Commerce_Project.Models.Cart", "cart")
+                    b.HasOne("E_Commerce_Project.Models.Product", "Product")
                         .WithMany("CartDetails")
-                        .HasForeignKey("cartId")
+                        .HasForeignKey("productID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -217,11 +257,30 @@ namespace E_Commerce.Context.Migrations
                 {
                     b.HasOne("E_Commerce_Project.Models.User", "User")
                         .WithMany("orders")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("E_Commerce_Project.Models.OrderItems", b =>
+                {
+                    b.HasOne("E_Commerce_Project.Models.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("E_Commerce_Project.Models.Product", "product")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("productId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("product");
                 });
 
             modelBuilder.Entity("E_Commerce_Project.Models.Product", b =>
@@ -245,15 +304,21 @@ namespace E_Commerce.Context.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("E_Commerce_Project.Models.Order", b =>
+                {
+                    b.Navigation("OrderItems");
+                });
+
             modelBuilder.Entity("E_Commerce_Project.Models.Product", b =>
                 {
                     b.Navigation("CartDetails");
+
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("E_Commerce_Project.Models.User", b =>
                 {
-                    b.Navigation("Cart")
-                        .IsRequired();
+                    b.Navigation("Cart");
 
                     b.Navigation("orders");
                 });

@@ -27,7 +27,7 @@ namespace E_Commerce.Application.Mapping
                 { Id = user.Id,
                  UserName=user.UserName,
                  Email=user.Email,Phone=user.Phone,
-                 Password=user.Password,Address=user.Address };
+                 Password=user.Password,type=user.type,Address=user.Address };
             }
      public static CategoryDTO MapCategoryDTO(Category category)
         {
@@ -98,12 +98,25 @@ namespace E_Commerce.Application.Mapping
             {
                 Id = cartDetails.Id,
                 cartID=cartDetails.cartID,
-                productID=cartDetails.productID
-                
+                productID=cartDetails.productID,
+                Quantity = cartDetails.Quantity
+
             };
         }
+     public static OrderItemDTO MapOrderItemDTO(OrderItems orderItems)
+        {
+            if (orderItems == null)
+            {
+                return null;
+            }
+            return new OrderItemDTO
+            {
+               id= orderItems.id,
+               OrderId= orderItems.OrderId,
+               productId= orderItems.productId
 
-        
+            };
+        }
      public static User MapUser(UserDTO userDTO)
         {
             if (userDTO == null)
@@ -115,9 +128,10 @@ namespace E_Commerce.Application.Mapping
                 Id = userDTO.Id,
                 UserName=userDTO.UserName,
                 Email=userDTO.Email,
-                Phone = userDTO.Phone,
+                 Phone = userDTO.Phone,
                 Password=userDTO.Password,
-                Address=userDTO.Address
+                Address=userDTO.Address,
+                type = userDTO.type
 
             };
 
@@ -193,7 +207,22 @@ namespace E_Commerce.Application.Mapping
             {
                 Id = cartDetailsDto.Id,
                 cartID = cartDetailsDto.cartID,
-                productID = cartDetailsDto.productID
+                productID = cartDetailsDto.productID,
+                Quantity = cartDetailsDto.Quantity
+
+            };
+        }
+     public static OrderItems MapOrderItem(OrderItemDTO orderItemsDTO)
+        {
+            if (orderItemsDTO == null)
+            {
+                return null;
+            }
+            return new OrderItems
+            {
+                id = orderItemsDTO.id,
+                OrderId = orderItemsDTO.OrderId,
+                productId = orderItemsDTO.productId
 
             };
         }

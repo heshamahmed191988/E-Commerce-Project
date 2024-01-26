@@ -23,9 +23,9 @@ namespace E_Commerce.Application.Service
             _categoryRepository.save();
         }
 
-        public IQueryable<CategoryDTO> GetAllPagination(int page, int pageSize)
+        public IQueryable<CategoryDTO> GetAll()
         {
-            var c = _categoryRepository.GetAll().Skip(page * pageSize).Take(pageSize);
+            var c = _categoryRepository.GetAll();
 
             return c.Select(i => AutoMapping.MapCategoryDTO(i));
         }
