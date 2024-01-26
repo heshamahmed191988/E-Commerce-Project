@@ -37,7 +37,7 @@ namespace E_Commerce.Context.Migrations
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    type = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
+                    type = table.Column<int>(type: "int", nullable: false, defaultValue: 0)
                 },
                 constraints: table =>
                 {
@@ -118,7 +118,8 @@ namespace E_Commerce.Context.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     cartID = table.Column<int>(type: "int", nullable: false),
-                    productID = table.Column<int>(type: "int", nullable: false)
+                    productID = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -14,9 +14,9 @@ namespace E_Commerce_Project.Models
         public string Phone { get; set; }
         public string Password { get; set; }
         public string Address { get; set; }
-        public bool type { get; set; }
-        public IQueryable<Order>? orders { get; set; }
-        public virtual Cart? Cart { get; set; }
+        public int type { get; set; }
+        public virtual IQueryable<Order>? orders { get; set; }
+        public virtual Cart Cart { get; set; }
        /* public enum UserType
         {
             admin=0 ,

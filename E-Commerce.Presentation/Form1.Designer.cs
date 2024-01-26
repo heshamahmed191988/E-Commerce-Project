@@ -81,6 +81,7 @@
             pass.Name = "pass";
             pass.Size = new Size(190, 23);
             pass.TabIndex = 3;
+            pass.TextChanged += pass_TextChanged;
             // 
             // button1
             // 

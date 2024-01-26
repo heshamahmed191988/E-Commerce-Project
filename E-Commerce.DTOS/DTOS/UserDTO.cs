@@ -15,7 +15,7 @@ namespace E_Commerce.DTOS.DTOS
         public string Phone { get; set; }
         public string Password { get; set; }
         public string Address { get; set; }
-        public bool type { get; set; }
+        public int type { get; set; }
         public IQueryable<Order>? orders { get; set; }
         public virtual Cart? Cart { get; set; }
 
