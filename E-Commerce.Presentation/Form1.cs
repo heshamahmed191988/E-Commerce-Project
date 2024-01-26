@@ -55,7 +55,7 @@ namespace Forms_ProjectVC_
                    // NewsHappened.Invoke(id);
                     var cart = _cartService.GetAll().ToList().Where(i => i.UserId == id).FirstOrDefault();
                     var cartid = cart.Id;
-                    MessageBox.Show($"{cartid}");
+                    //MessageBox.Show($"{cartid}");
                     Home_User userProducts = new Home_User(cartid);
                     this.Hide();
                     userProducts.Show();

@@ -29,44 +29,21 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            Product = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            price = new DataGridViewTextBoxColumn();
-            Remove = new DataGridViewTextBoxColumn();
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
+            prodNo = new Label();
+            price = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product, Quantity, price, Remove });
             dataGridView1.Location = new Point(175, 55);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(443, 119);
             dataGridView1.TabIndex = 0;
-            // 
-            // Product
-            // 
-            Product.HeaderText = "Product";
-            Product.Name = "Product";
-            // 
-            // Quantity
-            // 
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            // 
-            // price
-            // 
-            price.HeaderText = "price";
-            price.Name = "price";
-            // 
-            // Remove
-            // 
-            Remove.HeaderText = "Remove";
-            Remove.Name = "Remove";
             // 
             // label1
             // 
@@ -96,17 +73,37 @@
             button1.Text = "Order";
             button1.UseVisualStyleBackColor = true;
             // 
+            // prodNo
+            // 
+            prodNo.AutoSize = true;
+            prodNo.Location = new Point(328, 195);
+            prodNo.Name = "prodNo";
+            prodNo.Size = new Size(0, 15);
+            prodNo.TabIndex = 4;
+            // 
+            // price
+            // 
+            price.AutoSize = true;
+            price.Location = new Point(328, 232);
+            price.Name = "price";
+            price.Size = new Size(95, 15);
+            price.TabIndex = 5;
+            price.Text = "NO. of Products:";
+            // 
             // UserCart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(price);
+            Controls.Add(prodNo);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "UserCart";
             Text = "UserCart";
+            Load += UserCart_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -115,12 +112,11 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Product;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn price;
-        private DataGridViewTextBoxColumn Remove;
         private Label label1;
         private Label label2;
         private Button button1;
+        private Label prodNo;
+        private Label label4;
+        private Label price;
     }
 }

@@ -30,5 +30,11 @@ namespace E_Commerce.Application.Service
             _cartDetailsRepository.Add(AutoMapping.MapCartDetails(cartDetailsDTO));
             _cartDetailsRepository.save();
         }
+        public IQueryable<CartDetailsDTO> GetCartItems()
+        {
+            var C = _cartDetailsRepository.GetAll();
+
+            return C.Select(i => AutoMapping.MapCartDetailsDTO(i));
+        }
     }
 }

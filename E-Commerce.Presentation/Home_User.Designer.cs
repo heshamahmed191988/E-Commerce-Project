@@ -34,15 +34,16 @@
             ProductName = new Label();
             Price = new Label();
             product = new GroupBox();
+            productQuantity = new ComboBox();
+            label1 = new Label();
             Add_Card = new Button();
             Pro_Price = new Label();
             Pro_Name = new Label();
             textBox1 = new TextBox();
             Filter_by_Name = new Label();
             label2 = new Label();
-            label1 = new Label();
-            productQuantity = new ComboBox();
             userDTOBindingSource = new BindingSource(components);
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)ProductdataGridView).BeginInit();
             product.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
@@ -101,6 +102,27 @@
             product.TabIndex = 9;
             product.TabStop = false;
             product.Text = "Product";
+            // 
+            // productQuantity
+            // 
+            productQuantity.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            productQuantity.FormattingEnabled = true;
+            productQuantity.Location = new Point(117, 107);
+            productQuantity.Name = "productQuantity";
+            productQuantity.Size = new Size(65, 24);
+            productQuantity.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(6, 112);
+            label1.Name = "label1";
+            label1.Size = new Size(105, 15);
+            label1.TabIndex = 12;
+            label1.Text = "Product Quantity:";
             // 
             // Add_Card
             // 
@@ -171,29 +193,19 @@
             label2.Size = new Size(0, 15);
             label2.TabIndex = 14;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(6, 112);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 15);
-            label1.TabIndex = 12;
-            label1.Text = "Product Quantity:";
-            // 
-            // productQuantity
-            // 
-            productQuantity.FormattingEnabled = true;
-            productQuantity.Location = new Point(117, 107);
-            productQuantity.Name = "productQuantity";
-            productQuantity.Size = new Size(65, 25);
-            productQuantity.TabIndex = 13;
-            // 
             // userDTOBindingSource
             // 
             userDTOBindingSource.DataSource = typeof(DTOS.DTOS.UserDTO);
+            // 
+            // button1
+            // 
+            button1.Location = new Point(113, 468);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 15;
+            button1.Text = "Cart";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // Home_User
             // 
@@ -202,6 +214,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1005, 709);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(Filter_by_Name);
             Controls.Add(textBox1);
@@ -232,5 +245,6 @@
         private Label label1;
         private ComboBox productQuantity;
         private BindingSource userDTOBindingSource;
+        private Button button1;
     }
 }
