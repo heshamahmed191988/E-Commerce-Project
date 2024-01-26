@@ -21,7 +21,7 @@ namespace E_Commerce.Presentation
             IProductService productService = new ProductService();
 
 
-            System.Windows.Forms.Application.Run(new Admin_Category_Product(categoryService));
+            //System.Windows.Forms.Application.Run(new Admin_Category_Product(categoryService));
            // System.Windows.Forms.Application.Run(new Admin_product());
         }
     }
