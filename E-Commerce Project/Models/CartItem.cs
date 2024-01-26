@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_Project.Models
 {
-    public class CartItem
+    public class CartDetails
     {
         public int Id { get; set; }
+        [ForeignKey("Cart")]
+        public int cartID { get; set; }
+        [ForeignKey("Product")]
+        public int productID { get; set; }
         public int Quantity { get; set; }
-
-        public long ProductId {  get; set; }
-        public Product Product { get; set; }
-        //cart details
-        public virtual IEnumerable<Cart>? Carts { get; set; }
-
+        public virtual Cart cart { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

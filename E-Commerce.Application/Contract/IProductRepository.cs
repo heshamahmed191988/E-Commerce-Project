@@ -9,5 +9,7 @@ namespace E_Commerce.Application.Contract
 {
     public interface IProductRepository:IRepository<Product,int>
     {
+        public IQueryable<Product> SearchProduct(string item);
+        public IQueryable<Product> SearchProductByPrice(decimal item);
     }
 }

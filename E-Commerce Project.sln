@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.Infrustructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.Context", "E-Commerce.Context\E-Commerce.Context.csproj", "{4C45FC1A-4585-44C4-BC36-395210CAD29A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{4C45FC1A-4585-44C4-BC36-395210CAD29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C45FC1A-4585-44C4-BC36-395210CAD29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C45FC1A-4585-44C4-BC36-395210CAD29A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C18007C-D8FF-4132-BABA-149BDEBB6FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

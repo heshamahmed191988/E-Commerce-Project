@@ -20,9 +20,11 @@ namespace E_Commerce.Application.Service
         {
             _userRepository = userRepository;
         }
-        public void AddUser(UserDTO userDTO)
-        {
-            throw new NotImplementedException();
+        public UserDTO AddUser(UserDTO userDTO)
+        { 
+            _userRepository.Add(AutoMapping.MapUser(userDTO));
+            _userRepository.save();
+            return userDTO;
         }
 
         public IEnumerable<UserDTO> GetAllPagination(int page, int pageSize)
@@ -31,20 +33,42 @@ namespace E_Commerce.Application.Service
              
             return U.Select(i => AutoMapping.MapUserDto(i));
         }
+        public IQueryable<UserDTO> GetAll()
+        {
+            var U = _userRepository.GetAll();
 
+            return U.Select(i => AutoMapping.MapUserDto(i));
+        }
         public UserDTO GetUser(int id)
         {
-            throw new NotImplementedException();
+            if (id != 0)
+            {
+                var user = AutoMapping.MapUserDto(_userRepository.GetByID(id));
+                return user;
+            }
+            else
+                return null;
+        }
+
+        public UserDTO GetUser(string username, string pass)
+        { 
+                
+           var user = AutoMapping.MapUserDto(_userRepository.GetUser(username ,pass));
+            return user;
+             
         }
 
         public void RemoveUser(UserDTO userDTO)
         {
-            throw new NotImplementedException();
+            _userRepository.Delete(AutoMapping.MapUser(userDTO));
+            _userRepository.save();
         }
 
         public void UpdateUser(UserDTO userDTO)
         {
-            throw new NotImplementedException();
+            _userRepository.Update(AutoMapping.MapUser(userDTO));
+            _userRepository.save();
         }
+        
     }
 }

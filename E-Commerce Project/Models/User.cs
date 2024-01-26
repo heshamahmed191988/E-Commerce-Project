@@ -8,18 +8,20 @@ namespace E_Commerce_Project.Models
 {
     public class User
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public string Phone { get; set; }
         public string Password { get; set; }
         public string Address { get; set; }
-        public UserType Type { get; set; }
-        public ICollection<Order>? Orders { get; set; }
-        public virtual ICollection <CartItem> Carts { get; set; }
-    }
-    public enum UserType
-    {
-        admin=1,
-        customer=2
+        public int type { get; set; }
+        public virtual IQueryable<Order>? orders { get; set; }
+        public virtual Cart Cart { get; set; }
+       /* public enum UserType
+        {
+            admin=0 ,
+            customer =1
+        }*/
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using E_Commerce_Project.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,10 @@ namespace E_Commerce.DTOS.DTOS
         public int NoOfProducts { get; set; }
         public string Status { get; set; }
         public int TotalPrice { get; set; }
-        public User User { get; set; }
+        //[ForeignKey("User")]
+        public int UserID { get; set; }
+        public virtual User User { get; set; }
+        public virtual IQueryable<OrderItems> OrderItems { get; set; }
 
-        //Order details
     }
 }

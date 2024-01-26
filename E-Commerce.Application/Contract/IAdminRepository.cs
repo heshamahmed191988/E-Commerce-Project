@@ -1,4 +1,4 @@
-﻿using E_Commerce_Project.Models;
+﻿/*using E_Commerce_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,3 +14,4 @@ namespace E_Commerce.Application.Contract
         //Admin GetByID(int id);
     }
 }
+*/

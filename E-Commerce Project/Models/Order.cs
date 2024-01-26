@@ -11,15 +11,14 @@ namespace E_Commerce_Project.Models
     public class Order
     {
         public int Id { get; set; }
+        [ForeignKey("User")]
+        public int UserID { get; set; }
         public DateTime OrderDate  { get; set; }
         public int NoOfProducts { get; set; }
         public string Status { get; set; }
-        public decimal TotalPrice { get; set; }
-        public long UserId { get;set; }
+        public int TotalPrice { get; set; }
         public virtual User User { get; set; }
-        public List<Product> Products { get;  set; }
-        //Order details
-       // public virtual IQueryable<OrderDetails> OrderDetails { get; set; }
-   
+        public virtual IQueryable<OrderItems> OrderItems { get; set; }
+
     }
 }
