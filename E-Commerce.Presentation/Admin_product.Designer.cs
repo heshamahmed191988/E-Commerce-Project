@@ -151,7 +151,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.blog_11;
+            //BackgroundImage = Properties.Resources.blog_11;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1156, 548);
             Controls.Add(DeleteProduct);
