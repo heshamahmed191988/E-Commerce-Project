@@ -28,6 +28,8 @@ namespace E_Commerce.Presentation
         private int UserId;
         int totalPrice = 0;
         int productsNo = 0;
+        OrderDTO order;
+        int id = 10;
         public UserCart(int cartId, int UserId)
         {
             var container = AutoFact.Inject();
@@ -73,20 +75,25 @@ namespace E_Commerce.Presentation
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime currentDate = DateTime.Now;
-            OrderDTO order = new OrderDTO() { NoOfProducts = productsNo, TotalPrice = totalPrice, Status = "processing", OrderDate = currentDate, UserID = UserId };
+            
+            order = new OrderDTO() { NoOfProducts = productsNo, TotalPrice = totalPrice, Status = "processing", OrderDate = currentDate, UserID = UserId };
+            
             _orderService.AddOrder(order);
-            MessageBox.Show($"{order.Id}");
-            var cartItems = load();
-
-            foreach (var item in cartItems)
+            MessageBox.Show($"{id}");
+            if (id != 0)
             {
-                var product = _ProductService.GetProduct(item.productID).Id;
-                OrderItemDTO orderitems = new OrderItemDTO() { productId = product, OrderId = order.Id };
-                _orderItemService.AddOrderItems(orderitems);
-            }
-            MessageBox.Show("Order Added");
-        }
+                var cartItems = load();
 
+                foreach (var item in cartItems)
+                {
+                    var product = _ProductService.GetProduct(item.productID).Id;
+                    OrderItemDTO orderitems = new OrderItemDTO() { productId = product, OrderId = id };
+                    _orderItemService.AddOrderItems(orderitems);
+                }
+                MessageBox.Show("Order Added");
+                id++;
+            }
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -129,6 +136,7 @@ namespace E_Commerce.Presentation
 
         private void update_Click(object sender, EventArgs e)
         {
+            
             int ID = int.Parse(label5.Text);
 
             if (ID != 0)

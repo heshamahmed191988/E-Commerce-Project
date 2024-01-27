@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.Infrustructure.Repository
 {
-    public class Repository<T,Tid>:Irepository<T,Tid>where T : class
+    public class Repository<T, Tid> : Irepository<T, Tid> where T : class
     {
         E_CommerceContext _context;
         DbSet<T> _Entity;
@@ -37,6 +37,7 @@ namespace E_Commerce.Infrustructure.Repository
         public T GetByID(Tid id)
         {
             return _Entity.Find(id);
+            //return _Entity.Find(id);
         }
 
         public T Update(T entity)
@@ -45,10 +46,8 @@ namespace E_Commerce.Infrustructure.Repository
         }
         public int save()
         {
+
             return _context.SaveChanges();
-            
         }
-   
-        
-    }
+    } 
 }

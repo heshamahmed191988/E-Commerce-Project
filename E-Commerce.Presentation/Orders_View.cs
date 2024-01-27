@@ -53,14 +53,11 @@ namespace E_Commerce.Presentation
 
             int id = int.Parse(NProduct.Text);
 
-
+            OrderDTO orderDTO = _orderService.GetAll().ToList().Where(i => i.Id == id).FirstOrDefault();
             string Status = OStates.Text;
-            OrderDTO orderDTO = _orderService.GetOrder(id);
+           // OrderDTO orderDTO = _orderService.GetOrder(id);
             orderDTO.Status= Status;
             _orderService.UpdateOrder(orderDTO);
-
-
-
             Orders_View_Load(sender, e);
         }
 
