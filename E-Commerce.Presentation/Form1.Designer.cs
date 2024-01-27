@@ -42,7 +42,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(83, 116);
+            label1.Location = new Point(95, 155);
             label1.Name = "label1";
             label1.Size = new Size(122, 22);
             label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(83, 169);
+            label2.Location = new Point(95, 225);
             label2.Name = "label2";
             label2.Size = new Size(111, 22);
             label2.TabIndex = 1;
@@ -65,10 +65,11 @@
             userName.BackColor = SystemColors.ActiveCaption;
             userName.BorderStyle = BorderStyle.None;
             userName.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            userName.Location = new Point(220, 119);
+            userName.Location = new Point(251, 159);
+            userName.Margin = new Padding(3, 4, 3, 4);
             userName.Multiline = true;
             userName.Name = "userName";
-            userName.Size = new Size(190, 23);
+            userName.Size = new Size(217, 31);
             userName.TabIndex = 2;
             // 
             // pass
@@ -76,10 +77,11 @@
             pass.BackColor = SystemColors.ActiveCaption;
             pass.BorderStyle = BorderStyle.None;
             pass.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            pass.Location = new Point(220, 169);
+            pass.Location = new Point(251, 225);
+            pass.Margin = new Padding(3, 4, 3, 4);
             pass.Multiline = true;
             pass.Name = "pass";
-            pass.Size = new Size(190, 23);
+            pass.Size = new Size(217, 31);
             pass.TabIndex = 3;
             pass.TextChanged += pass_TextChanged;
             // 
@@ -90,26 +92,28 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(220, 236);
+            button1.Location = new Point(251, 315);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(155, 54);
+            button1.Size = new Size(177, 72);
             button1.TabIndex = 4;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(689, 450);
+            ClientSize = new Size(787, 600);
             Controls.Add(button1);
             Controls.Add(pass);
             Controls.Add(userName);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
