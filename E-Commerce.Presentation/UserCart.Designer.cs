@@ -43,6 +43,11 @@
             PTcategory = new Button();
             PTproduct = new Button();
             BTlogin = new Button();
+            label3 = new Label();
+            ChangeQuantity = new ComboBox();
+            Remove = new Button();
+            label5 = new Label();
+            update = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
             SuspendLayout();
@@ -54,6 +59,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(580, 220);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label1
             // 
@@ -92,6 +98,7 @@
             button1.Name = "button1";
             button1.Size = new Size(183, 49);
             button1.TabIndex = 3;
+            button1.Text = "Order";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -243,6 +250,57 @@
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
             BTlogin.UseVisualStyleBackColor = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
+            label3.Location = new Point(301, 315);
+            label3.Name = "label3";
+            label3.Size = new Size(142, 23);
+            label3.TabIndex = 17;
+            label3.Text = "Change Quantity";
+            // 
+            // ChangeQuantity
+            // 
+            ChangeQuantity.FormattingEnabled = true;
+            ChangeQuantity.Location = new Point(450, 318);
+            ChangeQuantity.Margin = new Padding(4, 6, 4, 6);
+            ChangeQuantity.Name = "ChangeQuantity";
+            ChangeQuantity.Size = new Size(60, 23);
+            ChangeQuantity.TabIndex = 19;
+            // 
+            // Remove
+            // 
+            Remove.Location = new Point(587, 318);
+            Remove.Name = "Remove";
+            Remove.Size = new Size(75, 23);
+            Remove.TabIndex = 20;
+            Remove.Text = "Remove";
+            Remove.UseVisualStyleBackColor = true;
+            Remove.Click += Remove_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
+            label5.Location = new Point(659, 316);
+            label5.Name = "label5";
+            label5.Size = new Size(70, 23);
+            label5.TabIndex = 21;
+            label5.Text = "Prod.Id";
+            // 
+            // update
+            // 
+            update.Location = new Point(517, 317);
+            update.Name = "update";
+            update.Size = new Size(75, 23);
+            update.TabIndex = 22;
+            update.Text = "update";
+            update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
+            // 
             // UserCart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -250,6 +308,11 @@
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(914, 359);
+            Controls.Add(update);
+            Controls.Add(label5);
+            Controls.Add(Remove);
+            Controls.Add(ChangeQuantity);
+            Controls.Add(label3);
             Controls.Add(Navebar);
             Controls.Add(price);
             Controls.Add(prodNo);
@@ -283,5 +346,12 @@
         private Button PTcategory;
         private Button PTproduct;
         private Button BTlogin;
+        private Label label3;
+       // private Label ChangeQuantity;
+        private Button updateQuantity;
+        private ComboBox ChangeQuantity;
+        private Button Remove;
+        private Label label5;
+        private Button update;
     }
 }

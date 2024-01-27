@@ -100,6 +100,8 @@ namespace E_Commerce.Application.Mapping
                 cartID=cartDetails.cartID,
                 productID=cartDetails.productID,
                 Quantity = cartDetails.Quantity
+                
+
 
             };
         }
@@ -209,6 +211,7 @@ namespace E_Commerce.Application.Mapping
                 cartID = cartDetailsDto.cartID,
                 productID = cartDetailsDto.productID,
                 Quantity = cartDetailsDto.Quantity
+               // productName = cartDetailsDto.Product.ProductName
 
             };
         }
