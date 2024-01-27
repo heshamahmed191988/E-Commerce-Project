@@ -86,12 +86,13 @@
             label1.ForeColor = Color.Goldenrod;
             label1.Location = new Point(42, 182);
             label1.Name = "label1";
-            label1.Size = new Size(87, 29);
+            label1.Size = new Size(57, 18);
             label1.TabIndex = 2;
             label1.Text = "Go To";
             // 
             // GoCategory
             // 
+            GoCategory.BackgroundImage = Properties.Resources.pngegg__4_;
             GoCategory.BackgroundImageLayout = ImageLayout.Stretch;
             GoCategory.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
             GoCategory.FlatAppearance.BorderSize = 0;
@@ -145,12 +146,13 @@
             label2.ForeColor = Color.Goldenrod;
             label2.Location = new Point(47, 182);
             label2.Name = "label2";
-            label2.Size = new Size(87, 29);
+            label2.Size = new Size(57, 18);
             label2.TabIndex = 2;
             label2.Text = "Go To";
             // 
             // GoProducts
             // 
+            GoProducts.BackgroundImage = Properties.Resources.pngegg__4_;
             GoProducts.BackgroundImageLayout = ImageLayout.Stretch;
             GoProducts.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
             GoProducts.FlatAppearance.BorderSize = 0;
@@ -202,12 +204,13 @@
             label3.ForeColor = Color.Goldenrod;
             label3.Location = new Point(47, 182);
             label3.Name = "label3";
-            label3.Size = new Size(87, 29);
+            label3.Size = new Size(57, 18);
             label3.TabIndex = 2;
             label3.Text = "Go To";
             // 
             // GoOrders
             // 
+            GoOrders.BackgroundImage = Properties.Resources.pngegg__4_;
             GoOrders.BackgroundImageLayout = ImageLayout.Stretch;
             GoOrders.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
             GoOrders.FlatAppearance.BorderSize = 0;
@@ -245,7 +248,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(48, 12);
             label4.Name = "label4";
-            label4.Size = new Size(178, 39);
+            label4.Size = new Size(120, 25);
             label4.TabIndex = 20;
             label4.Text = "Logo/Name";
             // 
@@ -311,6 +314,7 @@
             PTproduct.TabIndex = 16;
             PTproduct.Text = "  Product";
             PTproduct.UseVisualStyleBackColor = false;
+            PTproduct.Click += PTproduct_Click;
             // 
             // PTregister
             // 
@@ -359,11 +363,12 @@
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1334, 48);
+            Navebar.Size = new Size(1025, 48);
             Navebar.TabIndex = 14;
             // 
             // slider
             // 
+            slider.Image = Properties.Resources.Slide4;
             slider.Location = new Point(183, 67);
             slider.Name = "slider";
             slider.Size = new Size(662, 152);
@@ -382,7 +387,7 @@
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1334, 537);
+            ClientSize = new Size(1025, 537);
             Controls.Add(slider);
             Controls.Add(Navebar);
             Controls.Add(groupBox3);

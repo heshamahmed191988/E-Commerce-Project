@@ -197,7 +197,7 @@
             PTorders.FlatAppearance.BorderSize = 0;
             PTorders.FlatStyle = FlatStyle.Flat;
             PTorders.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PTorders.ForeColor = Color.White;
+            PTorders.ForeColor = Color.Red;
             PTorders.Image = (Image)resources.GetObject("PTorders.Image");
             PTorders.ImageAlign = ContentAlignment.MiddleLeft;
             PTorders.Location = new Point(480, 6);
@@ -291,7 +291,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.blog_1;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1040, 506);
             Controls.Add(Navebar);

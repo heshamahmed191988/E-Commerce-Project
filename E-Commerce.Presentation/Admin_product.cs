@@ -21,21 +21,21 @@ namespace E_Commerce.Presentation
 {
     public partial class Admin_product : Form
     {
-       // private readonly ICategoryService _categoryService;
+        // private readonly ICategoryService _categoryService;
 
         private readonly IProductService _productService;
-      
+
         public Admin_product()
         {
             var container = AutoFact.Inject();
-            
+
             _productService = container.Resolve<IProductService>();
             InitializeComponent();
             //_categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-           // _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
+            // _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
             // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
             //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
-           // LoadCategories();
+            // LoadCategories();
             LoadProduct();
         }
         private void LoadProduct()
@@ -212,6 +212,11 @@ namespace E_Commerce.Presentation
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        private void Admin_product_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

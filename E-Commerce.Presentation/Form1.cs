@@ -45,7 +45,8 @@ namespace Forms_ProjectVC_
             {
                 if (user.type == 1)
                 {
-                    MessageBox.Show("Admin");
+                    Admin_Category_Product admin_Category_Product = new Admin_Category_Product();
+                    admin_Category_Product.Show();
                     this.Hide();
                     ///////////////////admin
                 }
@@ -75,9 +76,14 @@ namespace Forms_ProjectVC_
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
             Registration registration = new Registration();
             registration.Show();
-            this.Hide();    
+            this.Hide();
         }
     }
 }
