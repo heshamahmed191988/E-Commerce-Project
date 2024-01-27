@@ -115,22 +115,7 @@ namespace E_Commerce.Presentation
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            /* string text1 = textBox2.Text;
-
-             if (text1 != null)
-             {
-                 var pro = _ProductService.SearchProductByPrice(decimal.Parse(textBox2.Text)).FirstOrDefault();
-
-                 if(pro != null) { 
-                     Pro_Name.Text = pro.ProductName;
-                     Pro_Price.Text = pro.Price.ToString();
-                 }
-             }
-             else
-             {
-                 label2.Text = "Not Found";
-                 label2.Text = "";
-             }*/
+         
 
 
         }
@@ -147,6 +132,7 @@ namespace E_Commerce.Presentation
                 var cartItem = new CartDetailsDTO() { cartID = cartId, productID = pro.Id, Quantity = quantity };
                 _cartDetailsService.AddCartItems(cartItem);
                 MessageBox.Show("Product Added");
+                
 
             }
             else

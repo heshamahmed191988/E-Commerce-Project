@@ -55,7 +55,8 @@ namespace E_Commerce.Application.Mapping
                 Price=product.Price,
                 image=product.image,
                 Quantity=product.Quantity,
-                categoryID = product.categoryID
+                categoryID = product.categoryID//,
+                //category=product.
             };
         }
      public static OrderDTO MapOrderDTO(Order order)
@@ -113,9 +114,11 @@ namespace E_Commerce.Application.Mapping
             }
             return new OrderItemDTO
             {
-               id= orderItems.id,
-               OrderId= orderItems.OrderId,
-               productId= orderItems.productId
+                id = orderItems.id,
+                OrderId = orderItems.OrderId,
+                productId = orderItems.productId,
+                Order = orderItems.Order,
+                product=orderItems.product
 
             };
         }
@@ -225,7 +228,9 @@ namespace E_Commerce.Application.Mapping
             {
                 id = orderItemsDTO.id,
                 OrderId = orderItemsDTO.OrderId,
-                productId = orderItemsDTO.productId
+                productId = orderItemsDTO.productId,
+                Order=orderItemsDTO.Order,
+                product=orderItemsDTO.product
 
             };
         }
