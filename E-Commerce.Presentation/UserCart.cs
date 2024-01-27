@@ -36,18 +36,33 @@ namespace E_Commerce.Presentation
 
         private void UserCart_Load(object sender, EventArgs e)
         {
-           // var cart = _cartService.GetCart(cartId).Id;
-            var cartItems = _cartDetailsService.GetCartItems().ToList().Where(i=>i.cartID== cartId).ToList();
-            
+            // var cart = _cartService.GetCart(cartId).Id;
+            var cartItems = _cartDetailsService.GetCartItems().ToList().Where(i => i.cartID == cartId).ToList();
+
             dataGridView1.DataSource = cartItems;
-            prodNo.Text =cartItems.Count().ToString() ;
-            decimal totalPrice=0 ;
+            prodNo.Text = cartItems.Count().ToString();
+            decimal totalPrice = 0;
             foreach (var item in cartItems)
             {
                 var product = _ProductService.GetProduct(item.productID);
-                totalPrice += (item.Quantity* product.Price);
+                totalPrice += (item.Quantity * product.Price);
             }
-            price.Text=totalPrice.ToString();
+            price.Text = totalPrice.ToString();
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void price_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

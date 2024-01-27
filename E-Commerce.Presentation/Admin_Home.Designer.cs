@@ -92,7 +92,7 @@
             // 
             // GoCategory
             // 
-            //GoCategory.BackgroundImage = Properties.Resources.pngegg__4_1;
+            GoCategory.BackgroundImage = Properties.Resources.pngegg__4_;
             GoCategory.BackgroundImageLayout = ImageLayout.Stretch;
             GoCategory.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
             GoCategory.FlatAppearance.BorderSize = 0;
@@ -152,7 +152,7 @@
             // 
             // GoProducts
             // 
-            //GoProducts.BackgroundImage = Properties.Resources.pngegg__4_1;
+            GoProducts.BackgroundImage = Properties.Resources.pngegg__4_;
             GoProducts.BackgroundImageLayout = ImageLayout.Stretch;
             GoProducts.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
             GoProducts.FlatAppearance.BorderSize = 0;
@@ -210,7 +210,7 @@
             // 
             // GoOrders
             // 
-            //GoOrders.BackgroundImage = Properties.Resources.pngegg__4_1;
+            GoOrders.BackgroundImage = Properties.Resources.pngegg__4_;
             GoOrders.BackgroundImageLayout = ImageLayout.Stretch;
             GoOrders.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
             GoOrders.FlatAppearance.BorderSize = 0;
@@ -314,6 +314,7 @@
             PTproduct.TabIndex = 16;
             PTproduct.Text = "  Product";
             PTproduct.UseVisualStyleBackColor = false;
+            PTproduct.Click += PTproduct_Click;
             // 
             // PTregister
             // 
@@ -367,7 +368,7 @@
             // 
             // slider
             // 
-            //slider.Image = Properties.Resources.Slide4;
+            slider.Image = Properties.Resources.Slide4;
             slider.Location = new Point(183, 67);
             slider.Name = "slider";
             slider.Size = new Size(662, 152);

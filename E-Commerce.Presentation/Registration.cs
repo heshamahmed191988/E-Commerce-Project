@@ -27,8 +27,8 @@ namespace E_Commerce.Presentation
             _userService = container.Resolve<IUserService>();
             _cartService = container.Resolve<ICartService>();
             InitializeComponent();
-            comboBox1.Items.Insert(0, "true");
-            comboBox1.Items.Add("false");
+            comboBox1.Items.Insert(0, "0");
+            comboBox1.Items.Add("1");
             // comboBox1.Items.Add("false");
             comboBox1.SelectedIndex = 1;
         }

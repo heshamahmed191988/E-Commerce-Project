@@ -101,6 +101,11 @@ namespace E_Commerce.Presentation
         {
 
         }
+
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
