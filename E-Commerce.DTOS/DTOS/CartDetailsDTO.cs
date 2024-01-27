@@ -15,8 +15,9 @@ namespace E_Commerce.DTOS.DTOS
         public int cartID { get; set; }
        // [ForeignKey("ProductDTO")]
         public int productID { get; set; }
+        //public string productName { get; set; }
         public int Quantity { get; set; }
-        public CartDTO? cart { get; set; }
-        public ProductDTO? Product { get; set; }
+       // public CartDTO? cart { get; set; }
+        // public ProductDTO? Product { get; set; }
     }
 }
