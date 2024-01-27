@@ -98,8 +98,9 @@
             // prodNo
             // 
             prodNo.AutoSize = true;
+            prodNo.BackColor = Color.Transparent;
             prodNo.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
-            prodNo.ForeColor = SystemColors.WindowFrame;
+            prodNo.ForeColor = SystemColors.AppWorkspace;
             prodNo.Location = new Point(180, 129);
             prodNo.Name = "prodNo";
             prodNo.Size = new Size(0, 13);
@@ -108,6 +109,7 @@
             // price
             // 
             price.AutoSize = true;
+            price.BackColor = Color.Transparent;
             price.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
             price.ForeColor = SystemColors.WindowFrame;
             price.Location = new Point(180, 171);
