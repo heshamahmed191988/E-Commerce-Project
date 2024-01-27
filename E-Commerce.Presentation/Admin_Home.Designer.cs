@@ -169,6 +169,7 @@
             GoProducts.Text = "Products";
             GoProducts.TextAlign = ContentAlignment.MiddleLeft;
             GoProducts.UseVisualStyleBackColor = true;
+            GoProducts.Click += GoProducts_Click;
             // 
             // pictureBox2
             // 
@@ -227,6 +228,7 @@
             GoOrders.Text = "Orders";
             GoOrders.TextAlign = ContentAlignment.MiddleLeft;
             GoOrders.UseVisualStyleBackColor = true;
+            GoOrders.Click += GoOrders_Click;
             // 
             // pictureBox3
             // 
@@ -267,6 +269,7 @@
             PTorders.TabIndex = 18;
             PTorders.Text = "  Orders";
             PTorders.UseVisualStyleBackColor = false;
+            PTorders.Click += PTorders_Click;
             // 
             // PTlogout
             // 
@@ -282,6 +285,7 @@
             PTlogout.Size = new Size(34, 38);
             PTlogout.TabIndex = 19;
             PTlogout.UseVisualStyleBackColor = false;
+            PTlogout.Click += PTlogout_Click;
             // 
             // PTcategory
             // 
@@ -298,6 +302,7 @@
             PTcategory.TabIndex = 17;
             PTcategory.Text = "   Category";
             PTcategory.UseVisualStyleBackColor = false;
+            PTcategory.Click += PTcategory_Click;
             // 
             // PTproduct
             // 
@@ -331,6 +336,7 @@
             PTregister.TabIndex = 15;
             PTregister.Text = "  Register";
             PTregister.UseVisualStyleBackColor = false;
+            PTregister.Click += PTregister_Click;
             // 
             // BTlogin
             // 

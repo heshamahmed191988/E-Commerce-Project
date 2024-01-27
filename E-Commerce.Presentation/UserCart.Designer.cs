@@ -98,7 +98,6 @@
             button1.Name = "button1";
             button1.Size = new Size(183, 49);
             button1.TabIndex = 3;
-            button1.Text = "Order";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -272,7 +271,7 @@
             // 
             // Remove
             // 
-            Remove.Location = new Point(587, 318);
+            Remove.Location = new Point(587, 317);
             Remove.Name = "Remove";
             Remove.Size = new Size(75, 23);
             Remove.TabIndex = 20;
@@ -285,7 +284,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label5.Location = new Point(659, 316);
+            label5.Location = new Point(665, 316);
             label5.Name = "label5";
             label5.Size = new Size(70, 23);
             label5.TabIndex = 21;
@@ -293,7 +292,7 @@
             // 
             // update
             // 
-            update.Location = new Point(517, 317);
+            update.Location = new Point(516, 317);
             update.Name = "update";
             update.Size = new Size(75, 23);
             update.TabIndex = 22;
@@ -307,7 +306,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(914, 359);
+            ClientSize = new Size(914, 379);
             Controls.Add(update);
             Controls.Add(label5);
             Controls.Add(Remove);
