@@ -24,7 +24,8 @@ namespace E_Commerce.Presentation
         static ICartService _cartService;
         static ICartDetailsService _cartDetailsService;
         private int cartId;
-        public Home_User(int cartId)
+        private int userId;
+        public Home_User(int cartId,int userId)
         {
             var container = AutoFact.Inject();
             _ProductService = container.Resolve<IProductService>();
@@ -44,6 +45,7 @@ namespace E_Commerce.Presentation
             // comboBox1.Items.Add("false");
             productQuantity.SelectedIndex = 0;
             this.cartId = cartId;
+            this.userId= userId;
         }
 
         private void Home_User_Load(object sender, EventArgs e)
@@ -153,9 +155,7 @@ namespace E_Commerce.Presentation
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            UserCart userCart = new UserCart(cartId);
-            
-            userCart.Show();
+            UserCart userCart = new UserCart(cartId,userId);
             //this.Hide();
         }
     }

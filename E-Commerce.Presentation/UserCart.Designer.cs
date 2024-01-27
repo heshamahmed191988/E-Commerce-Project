@@ -50,10 +50,13 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(201, 60);
             dataGridView1.Location = new Point(301, 78);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(363, 119);
             dataGridView1.Size = new Size(580, 220);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label1
             // 
@@ -92,6 +95,9 @@
             button1.Name = "button1";
             button1.Size = new Size(183, 49);
             button1.TabIndex = 3;
+            button1.Text = "Order";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -112,6 +118,7 @@
             price.ForeColor = SystemColors.WindowFrame;
             price.Location = new Point(180, 171);
             price.Name = "price";
+            price.Size = new Size(0, 15);
             price.Size = new Size(0, 13);
             price.TabIndex = 5;
             price.Click += price_Click;

@@ -77,63 +77,7 @@ namespace E_Commerce.Presentation
             string type = comboBox1.Text; /////////
             int result = int.Parse(type);
             UserDTO u1 = new UserDTO() { UserName = username, Email = email, Phone = phone, Password = password, Address = address, type = result };
-            #region conditions
-            /* if (username.Length < 5)
-             {
-                 nameMsg.Text = "*";
-             }
-             else
-             {
-                 nameMsg.Text = "";
-             }
-             if (!email.Contains("@.") || email == null)
-             {
-                 EmailMsg.Text = "*";
-             }
-             else
-             {
-                 EmailMsg.Text = "";
-             }
-             if (!ValidatePassword(password) || password == null)
-             {
-                 PassMSg.Text = "*";
-             }
-             else
-             {
-                 PassMSg.Text = "";
-             }
-
-             if (!ValidatePhoneNumber(phone) || phone == null)
-             {
-                 PhonMSG.Text = "*";
-             }
-             else
-             {
-                 PhonMSG.Text = "";
-             }
-             if (address == "")
-             {
-                 AddressMSG.Text = "*";
-             }
-             else
-             {
-                 AddressMSG.Text = "";
-             }
-             if (!(username.Length > 5) & !email.Contains("@.") & !ValidatePassword(password) & !ValidatePhoneNumber(phone) & !(address.Length > 5))
-             {
-                 MessageBox.Show("Please Enter Correct Data");
-             }
-             else
-             {
-                 UserDTO user = _userService.AddUser(u1);
-                 var uId = _userService.GetUser(username, password).Id;
-                 CartDTO c1 = new CartDTO() { Quantity = 0, Status = "Empty", UserId = uId };
-                 _cartService.AddCart(c1);
-                 clearForm();
-
-             }*/
-
-            #endregion
+            
 
             #region condition edit
             if (username.Length < 5 ||
