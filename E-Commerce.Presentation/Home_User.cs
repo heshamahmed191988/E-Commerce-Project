@@ -157,6 +157,7 @@ namespace E_Commerce.Presentation
         {
             UserCart userCart = new UserCart(cartId,userId);
             //this.Hide();
+            userCart.Show();
         }
     }
 }

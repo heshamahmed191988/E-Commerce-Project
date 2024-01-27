@@ -40,7 +40,18 @@ namespace E_Commerce.Application.Service
 
             return C.Select(i => AutoMapping.MapCartDTO(i));
         }
-       
+
+        public void UpdateCart(CartDTO cartDTO)
+        {
+            _cartRepository.Update(AutoMapping.MapCart(cartDTO));
+            _cartRepository.save();
+        }
+
+        public void RemoveProductFromCart(CartDTO cartDTO)
+        {
+            _cartRepository.Delete(AutoMapping.MapCart(cartDTO));
+            _cartRepository.save();
+        }
     }  
 }
 

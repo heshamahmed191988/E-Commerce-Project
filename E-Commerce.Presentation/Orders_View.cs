@@ -56,7 +56,7 @@ namespace E_Commerce.Presentation
 
             string Status = OStates.Text;
             OrderDTO orderDTO = _orderService.GetOrder(id);
-          
+            orderDTO.Status= Status;
             _orderService.UpdateOrder(orderDTO);
 
 

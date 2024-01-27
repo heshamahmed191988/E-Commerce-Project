@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.Application.Service
 {
-    public class CartDetailsService:ICartDetailsService
+    public class CartDetailsService : ICartDetailsService
     {
         ICartDetailsRepository _cartDetailsRepository;
 
@@ -17,13 +17,13 @@ namespace E_Commerce.Application.Service
         {
             _cartDetailsRepository = cartDetailsRepository;
         }
-      /*  public CartDetailsDTO AddCartItems(ProductDTO productDTO, CartDTO cartDTO)
-        {
-            CartDetailsDTO cartDetailsDTO = new CartDetailsDTO() { cartID = cartDTO.Id, productID = productDTO.Id };
-            _cartDetailsRepository.Add(AutoMapping.MapCartDetails(cartDetailsDTO));
-            _cartDetailsRepository.save();
-            return cartDetailsDTO;
-        }*/
+        /*  public CartDetailsDTO AddCartItems(ProductDTO productDTO, CartDTO cartDTO)
+          {
+              CartDetailsDTO cartDetailsDTO = new CartDetailsDTO() { cartID = cartDTO.Id, productID = productDTO.Id };
+              _cartDetailsRepository.Add(AutoMapping.MapCartDetails(cartDetailsDTO));
+              _cartDetailsRepository.save();
+              return cartDetailsDTO;
+          }*/
 
         public void AddCartItems(CartDetailsDTO cartDetailsDTO)
         {
@@ -35,6 +35,22 @@ namespace E_Commerce.Application.Service
             var C = _cartDetailsRepository.GetAll();
 
             return C.Select(i => AutoMapping.MapCartDetailsDTO(i));
+        }
+
+        public void RemoveProductFromCart(CartDetailsDTO cartDetailsDTO)
+        {
+            _cartDetailsRepository.Delete(AutoMapping.MapCartDetails(cartDetailsDTO));
+            _cartDetailsRepository.save();
+        }
+
+        public void UpdateCart(CartDetailsDTO cartDetailsDTO)
+        {
+            _cartDetailsRepository.Update(AutoMapping.MapCartDetails(cartDetailsDTO));
+            _cartDetailsRepository.save();
+        }
+        public void GetOneCartItem(int id)
+        {
+
         }
     }
 }

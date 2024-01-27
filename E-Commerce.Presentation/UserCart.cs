@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Core;
 using E_Commerce.Application.Service;
+using E_Commerce.Context.Migrations;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -74,7 +75,7 @@ namespace E_Commerce.Presentation
             DateTime currentDate = DateTime.Now;
             OrderDTO order = new OrderDTO() { NoOfProducts = productsNo, TotalPrice = totalPrice, Status = "processing", OrderDate = currentDate, UserID = UserId };
             _orderService.AddOrder(order);
-
+            MessageBox.Show($"{order.Id}");
             var cartItems = load();
 
             foreach (var item in cartItems)
@@ -88,10 +89,17 @@ namespace E_Commerce.Presentation
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-           // Pro_Name.Text = row.Cells["Quantity"].Value.ToString();
-            
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                label5.Text = row.Cells["Id"].Value.ToString();
+                ChangeQuantity.Text = row.Cells["Quantity"].Value.ToString();
+                // ChangeQuantity.Text = oldQuantityValue;
+            }
+
         }
+
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -100,6 +108,42 @@ namespace E_Commerce.Presentation
         private void price_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void updateQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Remove_Click(object sender, EventArgs e)
+        {
+            int ID = int.Parse(label5.Text);
+            if (ID != 0)
+            {
+             var cartitemDelete = _cartDetailsService.GetCartItems().ToList().Where(i => i.Id == ID).FirstOrDefault();
+            MessageBox.Show("are you sure to delete this item");
+            _cartDetailsService.RemoveProductFromCart(cartitemDelete);
+            load();
+            }
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            int ID = int.Parse(label5.Text);
+
+            if (ID != 0)
+            {
+                string newQuantityValue = ChangeQuantity.Text;
+                if (newQuantityValue != "")
+                {
+                    var cartitemUpdate = _cartDetailsService.GetCartItems().ToList().Where(i => i.Id == ID).FirstOrDefault();
+                    cartitemUpdate.Quantity = int.Parse(newQuantityValue);
+                    _cartDetailsService.UpdateCart(cartitemUpdate);
+                    MessageBox.Show("updated");
+                    load();
+
+                }
+            }
         }
     }
 }

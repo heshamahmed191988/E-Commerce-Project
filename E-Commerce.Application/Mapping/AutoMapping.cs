@@ -96,7 +96,7 @@ namespace E_Commerce.Application.Mapping
             }
             return new CartDetailsDTO
             {
-               // Id = cartDetails.Id,
+                Id = cartDetails.Id,
                 cartID=cartDetails.cartID,
                 productID=cartDetails.productID,
                 Quantity = cartDetails.Quantity
@@ -207,7 +207,7 @@ namespace E_Commerce.Application.Mapping
             }
             return new CartDetails
             {
-               // Id = cartDetailsDto.Id,
+                Id = cartDetailsDto.Id,
                 cartID = cartDetailsDto.cartID,
                 productID = cartDetailsDto.productID,
                 Quantity = cartDetailsDto.Quantity
