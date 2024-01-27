@@ -56,7 +56,7 @@ namespace Forms_ProjectVC_
                     var cart = _cartService.GetAll().ToList().Where(i => i.UserId == id).FirstOrDefault();
                     var cartid = cart.Id;
                     //MessageBox.Show($"{cartid}");
-                    Home_User userProducts = new Home_User(cartid);
+                    Home_User userProducts = new Home_User(cartid,id);
                     this.Hide();
                     userProducts.Show();
 

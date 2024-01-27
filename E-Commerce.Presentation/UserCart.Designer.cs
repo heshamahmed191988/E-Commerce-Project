@@ -40,10 +40,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(175, 55);
+            dataGridView1.Location = new Point(201, 60);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(443, 119);
+            dataGridView1.Size = new Size(363, 119);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label1
             // 
@@ -72,6 +73,7 @@
             button1.TabIndex = 3;
             button1.Text = "Order";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // prodNo
             // 
@@ -86,9 +88,8 @@
             price.AutoSize = true;
             price.Location = new Point(328, 232);
             price.Name = "price";
-            price.Size = new Size(95, 15);
+            price.Size = new Size(0, 15);
             price.TabIndex = 5;
-            price.Text = "NO. of Products:";
             // 
             // UserCart
             // 

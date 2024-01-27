@@ -10,13 +10,14 @@ namespace E_Commerce.DTOS.DTOS
 {
     public class CartDetailsDTO
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
        // [ForeignKey("CartDTO")]
         public int cartID { get; set; }
        // [ForeignKey("ProductDTO")]
         public int productID { get; set; }
+        //public string productName { get; set; }
         public int Quantity { get; set; }
-        public CartDTO? cart { get; set; }
-        public ProductDTO? Product { get; set; }
+       // public CartDTO? cart { get; set; }
+        // public ProductDTO? Product { get; set; }
     }
 }
