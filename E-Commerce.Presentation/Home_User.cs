@@ -25,7 +25,7 @@ namespace E_Commerce.Presentation
         static ICartDetailsService _cartDetailsService;
         private int cartId;
         private int userId;
-        public Home_User(int cartId,int userId)
+        public Home_User(int cartId, int userId)
         {
             var container = AutoFact.Inject();
             _ProductService = container.Resolve<IProductService>();
@@ -45,7 +45,7 @@ namespace E_Commerce.Presentation
             // comboBox1.Items.Add("false");
             productQuantity.SelectedIndex = 0;
             this.cartId = cartId;
-            this.userId= userId;
+            this.userId = userId;
         }
 
         private void Home_User_Load(object sender, EventArgs e)
@@ -155,9 +155,48 @@ namespace E_Commerce.Presentation
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            UserCart userCart = new UserCart(cartId,userId);
+            UserCart userCart = new UserCart(cartId, userId);
             //this.Hide();
             userCart.Show();
+        }
+
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+            Home_User home_User = new Home_User(cartId, userId);
+            home_User.Show();
+            this.Hide();
+
+        }
+
+        private void PTorders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PTcart_Click(object sender, EventArgs e)
+        {
+            UserCart userCart = new UserCart(cartId, userId);
+        }
+
+        private void BTlogin_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void PTlogout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void PTregister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
         }
     }
 }

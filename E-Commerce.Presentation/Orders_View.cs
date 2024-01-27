@@ -3,6 +3,7 @@ using E_Commerce.Application.Service;
 using E_Commerce.Context;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
+using Forms_ProjectVC_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +57,7 @@ namespace E_Commerce.Presentation
 
             string Status = OStates.Text;
             OrderDTO orderDTO = _orderService.GetOrder(id);
-            orderDTO.Status= Status;
+            orderDTO.Status = Status;
             _orderService.UpdateOrder(orderDTO);
 
 
@@ -69,6 +70,48 @@ namespace E_Commerce.Presentation
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+            Admin_product admin_Product = new Admin_product();
+            admin_Product.Show();
+            this.Hide();
+        }
+
+        private void PTcategory_Click(object sender, EventArgs e)
+        {
+            Admin_Category_Product admin_Category_Product = new Admin_Category_Product();
+            admin_Category_Product.Show();
+            this.Hide();
+        }
+
+        private void PTorders_Click(object sender, EventArgs e)
+        {
+            Orders_View orders_View = new Orders_View();
+            orders_View.Show();
+            this.Hide();
+        }
+
+        private void BTlogin_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void PTregister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+        }
+
+        private void PTlogout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }
