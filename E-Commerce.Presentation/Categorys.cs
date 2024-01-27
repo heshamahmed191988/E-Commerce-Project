@@ -26,5 +26,15 @@ namespace E_Commerce.Presentation
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Product_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
