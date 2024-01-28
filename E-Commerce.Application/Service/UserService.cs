@@ -15,13 +15,14 @@ namespace E_Commerce.Application.Service
     public class UserService : IUserService
     {
         IUserRepository _userRepository;
-        AutoMapping _mapper;
-        public UserService(IUserRepository userRepository )
+        private readonly IMapper _mapper;
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
         }
         public UserDTO AddUser(UserDTO userDTO)
-        { 
+        {
             _userRepository.Add(AutoMapping.MapUser(userDTO));
             _userRepository.save();
             return userDTO;
@@ -30,8 +31,9 @@ namespace E_Commerce.Application.Service
         public IQueryable<UserDTO> GetAllPagination(int page, int pageSize)
         {
             var U = _userRepository.GetAll().Skip(page * pageSize).Take(pageSize);
-             
-            return U.Select(i => AutoMapping.MapUserDto(i));
+             var r= _mapper.Map<IQueryable<UserDTO>>(U);
+            //return U.Select(i => AutoMapping.MapUserDto(i));
+            return r;
         }
         public IQueryable<UserDTO> GetAll()
         {

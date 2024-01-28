@@ -14,7 +14,13 @@ namespace E_Commerce.Application.Mapping
     public class AutoMapping:Profile
     {
         public AutoMapping(){
-           // CreateMap<UserDTO, User>().ReverseMap();
+            CreateMap<UserDTO, User>().ReverseMap();
+            CreateMap<ProductDTO, Product>().ReverseMap();
+            CreateMap<CategoryDTO, Category>().ReverseMap();
+            CreateMap<OrderDTO, Order>().ReverseMap();
+            CreateMap<CartDTO, Cart>().ReverseMap();
+            CreateMap<OrderItemDTO, OrderItems>().ReverseMap();
+            CreateMap<CartDetailsDTO, CartDetails>().ReverseMap();
         }
 
      public static UserDTO MapUserDto(User user)
@@ -54,8 +60,8 @@ namespace E_Commerce.Application.Mapping
                 ProductName=product.ProductName,
                 Price=product.Price,
                 image=product.image,
-                Quantity=product.Quantity,
-                categoryID = product.categoryID//,
+                Quantity=product.Quantity//,
+               // categoryID = product.categoryID//,
                 //category=product.
             };
         }
@@ -168,8 +174,8 @@ namespace E_Commerce.Application.Mapping
                 ProductName = productDto.ProductName,
                 Price = productDto.Price,
                 Quantity = productDto.Quantity,
-                image = productDto.image,
-                categoryID = productDto.categoryID
+                image = productDto.image//,
+                //categoryID = productDto.categoryID
             };
         }
      public static Order MapOrder(OrderDTO orderDTO)
