@@ -154,6 +154,7 @@
             PTorders.TabIndex = 18;
             PTorders.Text = "  Orders";
             PTorders.UseVisualStyleBackColor = false;
+            PTorders.Click += PTorders_Click;
             // 
             // PTlogout
             // 
@@ -169,6 +170,7 @@
             PTlogout.Size = new Size(34, 38);
             PTlogout.TabIndex = 19;
             PTlogout.UseVisualStyleBackColor = false;
+            PTlogout.Click += PTlogout_Click;
             // 
             // PTcategory
             // 
@@ -176,7 +178,7 @@
             PTcategory.FlatAppearance.BorderSize = 0;
             PTcategory.FlatStyle = FlatStyle.Flat;
             PTcategory.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PTcategory.ForeColor = Color.White;
+            PTcategory.ForeColor = Color.Red;
             PTcategory.Image = (Image)resources.GetObject("PTcategory.Image");
             PTcategory.ImageAlign = ContentAlignment.MiddleLeft;
             PTcategory.Location = new Point(358, 5);
@@ -185,6 +187,7 @@
             PTcategory.TabIndex = 17;
             PTcategory.Text = "   Category";
             PTcategory.UseVisualStyleBackColor = false;
+            PTcategory.Click += PTcategory_Click;
             // 
             // PTproduct
             // 
@@ -192,7 +195,7 @@
             PTproduct.FlatAppearance.BorderSize = 0;
             PTproduct.FlatStyle = FlatStyle.Flat;
             PTproduct.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PTproduct.ForeColor = Color.Red;
+            PTproduct.ForeColor = Color.White;
             PTproduct.Image = (Image)resources.GetObject("PTproduct.Image");
             PTproduct.ImageAlign = ContentAlignment.MiddleLeft;
             PTproduct.Location = new Point(234, 5);
@@ -201,6 +204,7 @@
             PTproduct.TabIndex = 16;
             PTproduct.Text = "  Product";
             PTproduct.UseVisualStyleBackColor = false;
+            PTproduct.Click += PTproduct_Click;
             // 
             // PTregister
             // 
@@ -217,6 +221,7 @@
             PTregister.TabIndex = 15;
             PTregister.Text = "  Register";
             PTregister.UseVisualStyleBackColor = false;
+            PTregister.Click += PTregister_Click;
             // 
             // BTlogin
             // 
@@ -234,6 +239,7 @@
             BTlogin.Text = "LogIn";
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
             BTlogin.UseVisualStyleBackColor = false;
+            BTlogin.Click += BTlogin_Click;
             // 
             // Navebar
             // 

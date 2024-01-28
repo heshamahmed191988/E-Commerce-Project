@@ -48,7 +48,7 @@
             label4 = new Label();
             PTorders = new Button();
             PTlogout = new Button();
-            PTcategory = new Button();
+            PTcart = new Button();
             PTproduct = new Button();
             PTregister = new Button();
             BTlogin = new Button();
@@ -235,7 +235,7 @@
             Navebar.Controls.Add(label4);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
-            Navebar.Controls.Add(PTcategory);
+            Navebar.Controls.Add(PTcart);
             Navebar.Controls.Add(PTproduct);
             Navebar.Controls.Add(PTregister);
             Navebar.Controls.Add(BTlogin);
@@ -273,6 +273,7 @@
             PTorders.TabIndex = 18;
             PTorders.Text = "  Orders";
             PTorders.UseVisualStyleBackColor = false;
+            PTorders.Click += PTorders_Click;
             // 
             // PTlogout
             // 
@@ -288,22 +289,24 @@
             PTlogout.Size = new Size(34, 38);
             PTlogout.TabIndex = 19;
             PTlogout.UseVisualStyleBackColor = false;
+            PTlogout.Click += PTlogout_Click;
             // 
-            // PTcategory
+            // PTcart
             // 
-            PTcategory.BackColor = Color.Black;
-            PTcategory.FlatAppearance.BorderSize = 0;
-            PTcategory.FlatStyle = FlatStyle.Flat;
-            PTcategory.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PTcategory.ForeColor = Color.White;
-            PTcategory.Image = (Image)resources.GetObject("PTcategory.Image");
-            PTcategory.ImageAlign = ContentAlignment.MiddleLeft;
-            PTcategory.Location = new Point(358, 5);
-            PTcategory.Name = "PTcategory";
-            PTcategory.Size = new Size(118, 38);
-            PTcategory.TabIndex = 17;
-            PTcategory.Text = "   Category";
-            PTcategory.UseVisualStyleBackColor = false;
+            PTcart.BackColor = Color.Black;
+            PTcart.FlatAppearance.BorderSize = 0;
+            PTcart.FlatStyle = FlatStyle.Flat;
+            PTcart.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTcart.ForeColor = Color.White;
+            PTcart.Image = (Image)resources.GetObject("PTcart.Image");
+            PTcart.ImageAlign = ContentAlignment.MiddleLeft;
+            PTcart.Location = new Point(358, 5);
+            PTcart.Name = "PTcart";
+            PTcart.Size = new Size(118, 38);
+            PTcart.TabIndex = 17;
+            PTcart.Text = "Cart";
+            PTcart.UseVisualStyleBackColor = false;
+            PTcart.Click += PTcart_Click;
             // 
             // PTproduct
             // 
@@ -320,6 +323,7 @@
             PTproduct.TabIndex = 16;
             PTproduct.Text = "  Product";
             PTproduct.UseVisualStyleBackColor = false;
+            PTproduct.Click += PTproduct_Click;
             // 
             // PTregister
             // 
@@ -336,6 +340,7 @@
             PTregister.TabIndex = 15;
             PTregister.Text = "  Register";
             PTregister.UseVisualStyleBackColor = false;
+            PTregister.Click += PTregister_Click;
             // 
             // BTlogin
             // 
@@ -353,6 +358,7 @@
             BTlogin.Text = "LogIn";
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
             BTlogin.UseVisualStyleBackColor = false;
+            BTlogin.Click += BTlogin_Click;
             // 
             // Home_User
             // 
@@ -400,7 +406,7 @@
         private Label label4;
         private Button PTorders;
         private Button PTlogout;
-        private Button PTcategory;
+        private Button PTcart;
         private Button PTproduct;
         private Button PTregister;
         private Button BTlogin;
