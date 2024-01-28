@@ -75,9 +75,9 @@ namespace E_Commerce.Presentation
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime currentDate = DateTime.Now;
-            
+
             order = new OrderDTO() { NoOfProducts = productsNo, TotalPrice = totalPrice, Status = "processing", OrderDate = currentDate, UserID = UserId };
-            
+
             _orderService.AddOrder(order);
             MessageBox.Show($"{id}");
             if (id != 0)
@@ -127,16 +127,16 @@ namespace E_Commerce.Presentation
             int ID = int.Parse(label5.Text);
             if (ID != 0)
             {
-             var cartitemDelete = _cartDetailsService.GetCartItems().ToList().Where(i => i.Id == ID).FirstOrDefault();
-            MessageBox.Show("are you sure to delete this item");
-            _cartDetailsService.RemoveProductFromCart(cartitemDelete);
-            load();
+                var cartitemDelete = _cartDetailsService.GetCartItems().ToList().Where(i => i.Id == ID).FirstOrDefault();
+                MessageBox.Show("are you sure to delete this item");
+                _cartDetailsService.RemoveProductFromCart(cartitemDelete);
+                load();
             }
         }
 
         private void update_Click(object sender, EventArgs e)
         {
-            
+
             int ID = int.Parse(label5.Text);
 
             if (ID != 0)
@@ -152,6 +152,21 @@ namespace E_Commerce.Presentation
 
                 }
             }
+        }
+
+        private void ChangeQuantity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

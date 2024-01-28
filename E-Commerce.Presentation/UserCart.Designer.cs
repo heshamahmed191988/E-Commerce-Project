@@ -48,6 +48,7 @@
             Remove = new Button();
             label5 = new Label();
             update = new Button();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
             SuspendLayout();
@@ -57,7 +58,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(301, 78);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(580, 220);
+            dataGridView1.Size = new Size(580, 271);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -66,7 +67,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label1.Location = new Point(24, 123);
+            label1.Location = new Point(21, 83);
             label1.Name = "label1";
             label1.Size = new Size(138, 23);
             label1.TabIndex = 1;
@@ -78,7 +79,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label2.Location = new Point(24, 165);
+            label2.Location = new Point(21, 125);
             label2.Name = "label2";
             label2.Size = new Size(103, 23);
             label2.TabIndex = 2;
@@ -94,7 +95,7 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(39, 236);
+            button1.Location = new Point(48, 203);
             button1.Name = "button1";
             button1.Size = new Size(183, 49);
             button1.TabIndex = 3;
@@ -107,7 +108,7 @@
             prodNo.BackColor = Color.Transparent;
             prodNo.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
             prodNo.ForeColor = SystemColors.AppWorkspace;
-            prodNo.Location = new Point(180, 129);
+            prodNo.Location = new Point(177, 89);
             prodNo.Name = "prodNo";
             prodNo.Size = new Size(0, 13);
             prodNo.TabIndex = 4;
@@ -118,7 +119,7 @@
             price.BackColor = Color.Transparent;
             price.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
             price.ForeColor = SystemColors.WindowFrame;
-            price.Location = new Point(180, 171);
+            price.Location = new Point(177, 131);
             price.Name = "price";
             price.Size = new Size(0, 13);
             price.TabIndex = 5;
@@ -254,51 +255,80 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label3.Location = new Point(301, 315);
+            label3.Location = new Point(21, 275);
             label3.Name = "label3";
             label3.Size = new Size(142, 23);
             label3.TabIndex = 17;
             label3.Text = "Change Quantity";
+            label3.Click += label3_Click;
             // 
             // ChangeQuantity
             // 
             ChangeQuantity.FormattingEnabled = true;
-            ChangeQuantity.Location = new Point(450, 318);
+            ChangeQuantity.Location = new Point(177, 275);
             ChangeQuantity.Margin = new Padding(4, 6, 4, 6);
             ChangeQuantity.Name = "ChangeQuantity";
-            ChangeQuantity.Size = new Size(60, 23);
+            ChangeQuantity.Size = new Size(82, 23);
             ChangeQuantity.TabIndex = 19;
+            ChangeQuantity.SelectedIndexChanged += ChangeQuantity_SelectedIndexChanged;
             // 
             // Remove
             // 
-            Remove.Location = new Point(587, 317);
+            Remove.BackColor = Color.Transparent;
+            Remove.BackgroundImage = (Image)resources.GetObject("Remove.BackgroundImage");
+            Remove.BackgroundImageLayout = ImageLayout.Stretch;
+            Remove.FlatAppearance.BorderSize = 0;
+            Remove.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Remove.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Remove.FlatStyle = FlatStyle.Flat;
+            Remove.Location = new Point(141, 319);
             Remove.Name = "Remove";
-            Remove.Size = new Size(75, 23);
+            Remove.Size = new Size(109, 37);
             Remove.TabIndex = 20;
-            Remove.Text = "Remove";
-            Remove.UseVisualStyleBackColor = true;
+            Remove.UseVisualStyleBackColor = false;
             Remove.Click += Remove_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label5.Location = new Point(665, 316);
+            label5.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.AppWorkspace;
+            label5.Location = new Point(177, 167);
             label5.Name = "label5";
-            label5.Size = new Size(70, 23);
+            label5.Size = new Size(0, 13);
             label5.TabIndex = 21;
-            label5.Text = "Prod.Id";
+            label5.Click += label5_Click;
             // 
             // update
             // 
-            update.Location = new Point(516, 317);
+            update.BackColor = Color.Transparent;
+            update.BackgroundImage = (Image)resources.GetObject("update.BackgroundImage");
+            update.BackgroundImageLayout = ImageLayout.Stretch;
+            update.FlatAppearance.BorderSize = 0;
+            update.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            update.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            update.FlatStyle = FlatStyle.Flat;
+            update.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            update.ImageAlign = ContentAlignment.MiddleLeft;
+            update.Location = new Point(33, 321);
             update.Name = "update";
-            update.Size = new Size(75, 23);
+            update.Size = new Size(102, 33);
             update.TabIndex = 22;
-            update.Text = "update";
-            update.UseVisualStyleBackColor = true;
+            update.Text = "Edit";
+            update.UseVisualStyleBackColor = false;
             update.Click += update_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
+            label6.Location = new Point(21, 167);
+            label6.Name = "label6";
+            label6.Size = new Size(70, 23);
+            label6.TabIndex = 23;
+            label6.Text = "Prod.Id";
             // 
             // UserCart
             // 
@@ -307,6 +337,7 @@
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(914, 379);
+            Controls.Add(label6);
             Controls.Add(update);
             Controls.Add(label5);
             Controls.Add(Remove);
@@ -352,5 +383,6 @@
         private Button Remove;
         private Label label5;
         private Button update;
+        private Label label6;
     }
 }
