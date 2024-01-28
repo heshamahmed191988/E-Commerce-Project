@@ -85,7 +85,7 @@ namespace E_Commerce.Presentation
                         Price = price,
                         image = "123",
                         Quantity = quantity,
-                        categoryID = categoryid,
+                        //categoryID = categoryid,
 
                     };
 
@@ -131,7 +131,7 @@ namespace E_Commerce.Presentation
                             Price = decimal.Parse(ProductPriceBox.Text),
                             image = "123", // Modify as needed
                             Quantity = int.Parse(ProductQuantityBox.Text),
-                            categoryID = int.Parse(CategoryIdBox.Text)
+                            //categoryID = int.Parse(CategoryIdBox.Text)
                         };
 
                         _productService.UpdateProduct(updatedProduct);
