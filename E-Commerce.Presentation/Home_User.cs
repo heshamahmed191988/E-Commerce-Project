@@ -142,8 +142,8 @@ namespace E_Commerce.Presentation
         private void button1_Click_1(object sender, EventArgs e)
         {
             UserCart userCart = new UserCart(cartId, userId);
-            //this.Hide();
             userCart.Show();
+            this.Hide();
         }
 
         private void PTproduct_Click(object sender, EventArgs e)
@@ -162,6 +162,8 @@ namespace E_Commerce.Presentation
         private void PTcart_Click(object sender, EventArgs e)
         {
             UserCart userCart = new UserCart(cartId, userId);
+            userCart.Show();
+            this.Hide();
         }
 
         private void BTlogin_Click(object sender, EventArgs e)
