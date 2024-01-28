@@ -31,13 +31,13 @@ namespace E_Commerce.Infrustructure.Repository
         public IQueryable<T> GetAll()
         {
 
-            return _Entity.AsNoTracking(); //(IQueryable<T>)_Entity.ToList();
+            return _Entity.AsNoTracking(); 
         }
 
         public T GetByID(Tid id)
         {
             return _Entity.Find(id);
-            //return _Entity.Find(id);
+           
         }
 
         public T Update(T entity)

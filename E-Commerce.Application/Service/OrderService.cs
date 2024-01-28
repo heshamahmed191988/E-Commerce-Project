@@ -1,4 +1,5 @@
-﻿using E_Commerce.Application.Contract;
+﻿using AutoMapper;
+using E_Commerce.Application.Contract;
 using E_Commerce.Application.Mapping;
 using E_Commerce.DTOS.DTOS;
 using System;
@@ -13,10 +14,11 @@ namespace E_Commerce.Application.Service
     { 
       IOrderRepository _orderRepository;
 
-        // AutoMapping _mapper;
-        public OrderService(IOrderRepository OrderRepository)
+         IMapper _mapper;
+        public OrderService(IOrderRepository OrderRepository, IMapper mapper)
         {
             _orderRepository = OrderRepository;
+            _mapper = mapper;
         }
         public void AddOrder(OrderDTO orderDTO)
         {

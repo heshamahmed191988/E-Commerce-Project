@@ -1,4 +1,5 @@
-﻿using E_Commerce.Application.Contract;
+﻿using AutoMapper;
+using E_Commerce.Application.Contract;
 using E_Commerce.Application.Mapping;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
@@ -13,25 +14,26 @@ namespace E_Commerce.Application.Service
     public class ProductService : IProductService
     {
         IProductRepository _productRepository;
-       // AutoMapping _mapper;
-        public ProductService(IProductRepository productRepository)
+        private readonly IMapper _mapper;
+        public ProductService(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
+            _mapper = mapper;
         }
 
         public void AddProduct(ProductDTO productDTO)
         {
-           _productRepository.Add(AutoMapping.MapProduct(productDTO));
+            var AddedData = _mapper.Map<Product>(productDTO);
+            var Data = _productRepository.Add(AddedData);
             _productRepository.save();
         }
 
         public IQueryable<ProductDTO> GetAll()
         {
             var p = _productRepository.GetAll();
-
             return p.Select(i => AutoMapping.MapProductDTO(i));
+            
         }
-
         public ProductDTO GetProduct(int id)
         {
             if (id != 0)
@@ -45,13 +47,17 @@ namespace E_Commerce.Application.Service
 
         public void RemoveProduct(ProductDTO productDTO)
         {
-            _productRepository.Delete(AutoMapping.MapProduct(productDTO));
+            var AddedData = _mapper.Map<Product>(productDTO);
+
+             _productRepository.Delete(AddedData);
             _productRepository.save();
         }
 
         public void UpdateProduct(ProductDTO productDTO)
         {
-            _productRepository.Update(AutoMapping.MapProduct(productDTO));
+            var AddedData = _mapper.Map<Product>(productDTO);
+
+            _productRepository.Update(AddedData);
             _productRepository.save();
         }
         public IQueryable<ProductDTO> SearchProduct(string item)

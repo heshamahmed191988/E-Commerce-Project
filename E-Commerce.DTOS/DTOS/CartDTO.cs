@@ -17,6 +17,6 @@ namespace E_Commerce.DTOS.DTOS
         public string Status { get; set; }
         public virtual User User { get; set; }
         //cart details
-        public virtual IQueryable<CartDetails> CartDetails { get; set; }
+        public virtual IQueryable<CartDetailsDTO> CartDetails { get; set; }
     }
 }

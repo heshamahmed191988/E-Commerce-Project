@@ -86,11 +86,11 @@ namespace E_Commerce.Presentation
             !ValidatePhoneNumber(phone) || phone == null ||
             address.Length == 0)
             {
-                nameMsg.Text = (username.Length < 5) ? "*" : "";
-                EmailMsg.Text = (!email.Contains("@") || email == null) ? "*" : "";
-                PassMSg.Text = (!ValidatePassword(password) || password == null) ? "*" : "";
-                PhonMSG.Text = (!ValidatePhoneNumber(phone) || phone == null) ? "*" : "";
-                AddressMSG.Text = (address.Length == 0) ? "*" : "";
+                nameMsg.Text = (username.Length < 5) ? "Name must be more than 5letter" : "";
+                EmailMsg.Text = (!email.Contains("@") || email == null) ? "Email must contain @ " : "";
+                PassMSg.Text = (!ValidatePassword(password) || password == null) ? "Password must be complex" : "";
+                PhonMSG.Text = (!ValidatePhoneNumber(phone) || phone == null) ? "Phone must be 11 number" : "";
+                AddressMSG.Text = (address.Length == 0) ? "Enter your Adress,please" : "";
 
                 MessageBox.Show("Please Enter Correct Data");
             }
