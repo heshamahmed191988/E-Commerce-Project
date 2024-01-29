@@ -285,13 +285,13 @@ namespace E_Commerce.Context.Migrations
 
             modelBuilder.Entity("E_Commerce_Project.Models.Product", b =>
                 {
-                    b.HasOne("E_Commerce_Project.Models.Category", "Category")
+                    b.HasOne("E_Commerce_Project.Models.Category", "category")
                         .WithMany("Products")
                         .HasForeignKey("categoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("category");
                 });
 
             modelBuilder.Entity("E_Commerce_Project.Models.Cart", b =>
@@ -318,7 +318,8 @@ namespace E_Commerce.Context.Migrations
 
             modelBuilder.Entity("E_Commerce_Project.Models.User", b =>
                 {
-                    b.Navigation("Cart");
+                    b.Navigation("Cart")
+                        .IsRequired();
 
                     b.Navigation("orders");
                 });

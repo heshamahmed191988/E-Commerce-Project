@@ -16,26 +16,27 @@ using System.Runtime.Loader;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Forms_ProjectVC_;
 
 namespace E_Commerce.Presentation
 {
     public partial class Admin_product : Form
     {
-       // private readonly ICategoryService _categoryService;
+        // private readonly ICategoryService _categoryService;
 
         private readonly IProductService _productService;
-      
+
         public Admin_product()
         {
             var container = AutoFact.Inject();
-            
+
             _productService = container.Resolve<IProductService>();
             InitializeComponent();
             //_categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-           // _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
+            // _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
             // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
             //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
-           // LoadCategories();
+            // LoadCategories();
             LoadProduct();
         }
         private void LoadProduct()
@@ -44,11 +45,11 @@ namespace E_Commerce.Presentation
             {
                 if (_productService != null)
                 {
-                    var products = _productService.GetAll();
+                    var products = _productService.GetAllDisplay().ToList();
 
                     if (products != null)
                     {
-                        dataGridView1.DataSource = products.ToList();
+                        dataGridView1.DataSource = products.Select(e=>new {e.Id,e.ProductName,e.Price,e.categoryID ,e.image}).ToList();
                     }
                     else
                     {
@@ -77,14 +78,16 @@ namespace E_Commerce.Presentation
                     decimal price = decimal.Parse(ProductPriceBox.Text);
                     int quantity = int.Parse(ProductQuantityBox.Text);
                     int categoryid = int.Parse(CategoryIdBox.Text);
+                    string image = ImageBox.Text;
+
 
                     ProductDTO newproduct = new ProductDTO
                     {
                         ProductName = name,
                         Price = price,
-                        image = "123",
+                        image = image,
                         Quantity = quantity,
-                        categoryID = categoryid,
+                        //categoryID = categoryid,
 
                     };
 
@@ -120,6 +123,7 @@ namespace E_Commerce.Presentation
                         selectedRow.Cells["Price"].Value = decimal.Parse(ProductPriceBox.Text);
                         selectedRow.Cells["Quantity"].Value = int.Parse(ProductQuantityBox.Text);
                         selectedRow.Cells["CategoryId"].Value = int.Parse(CategoryIdBox.Text);
+                        selectedRow.Cells["Image"].Value = ImageBox.Text;
 
                         // After the modifications are done, update the data in the service
                         int productId = int.Parse(selectedRow.Cells["ProductId"].Value.ToString()); // Assuming you have a column named "ProductId"
@@ -128,9 +132,9 @@ namespace E_Commerce.Presentation
                             Id = productId,
                             ProductName = ProductNameBox.Text,
                             Price = decimal.Parse(ProductPriceBox.Text),
-                            image = "123", // Modify as needed
+                            image = ImageBox.Text, // Modify as needed
                             Quantity = int.Parse(ProductQuantityBox.Text),
-                            categoryID = int.Parse(CategoryIdBox.Text)
+                            //categoryID = int.Parse(CategoryIdBox.Text)
                         };
 
                         _productService.UpdateProduct(updatedProduct);
@@ -140,6 +144,7 @@ namespace E_Commerce.Presentation
                         ProductPriceBox.Text = "";
                         ProductQuantityBox.Text = "";
                         CategoryIdBox.Text = "";
+                        ImageBox.Text = "";
                     }
                     else
                     {
@@ -212,6 +217,53 @@ namespace E_Commerce.Presentation
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        private void Admin_product_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+            Admin_product admin_Product = new Admin_product();
+            admin_Product.Show();
+            this.Hide();
+        }
+
+        private void PTcategory_Click(object sender, EventArgs e)
+        {
+            Admin_Category_Product admin_Category_Product = new Admin_Category_Product();
+            admin_Category_Product.Show();
+            this.Hide();
+        }
+
+        private void PTorders_Click(object sender, EventArgs e)
+        {
+            Orders_View orders_View = new Orders_View();
+            orders_View.Show();
+            this.Hide();
+        }
+
+        private void BTlogin_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void PTregister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+        }
+
+        private void PTlogout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

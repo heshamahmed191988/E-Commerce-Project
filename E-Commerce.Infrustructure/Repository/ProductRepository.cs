@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Application.Contract;
 using E_Commerce.Context;
 using E_Commerce_Project.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,5 @@
-﻿using E_Commerce.Application.Contract;
+﻿using AutoMapper;
+using E_Commerce.Application.Contract;
 using E_Commerce.Application.Mapping;
 using E_Commerce.DTOS.DTOS;
 using System;
@@ -12,10 +13,11 @@ namespace E_Commerce.Application.Service
     public class CategoryService:ICategoryService
     {
         ICategoryRepository _categoryRepository;
-        AutoMapping _mapper;
-        public CategoryService(ICategoryRepository categoryRepository)
+        IMapper _mapper;
+        public CategoryService(ICategoryRepository categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
+            _mapper = mapper;
         }
         public void AddCategory(CategoryDTO categoryDTO)
         {
@@ -29,7 +31,28 @@ namespace E_Commerce.Application.Service
 
             return c.Select(i => AutoMapping.MapCategoryDTO(i));
         }
+      
 
+        public IQueryable<CategoryDTO> GetAllDisplay()
+        {
+            var categories = _categoryRepository.GetAll();
+            // Manual mapping 
+            var categoryDTOs = new List<CategoryDTO>();
+            foreach (var category in categories)
+            {
+                var categoryDTO = new CategoryDTO
+                {
+                    Id = category.Id,
+                    CategoryName = category.CategoryName,
+                    Description = category.Description,
+                    //image = category.image 
+                };
+
+                //categoryDTOs.Add(categoryDTO);
+            }
+
+            return  categories.Select(i => AutoMapping.MapCategoryDTO(i));
+        }
         public CategoryDTO GetCategory(int id)
         {
             if (id != 0)

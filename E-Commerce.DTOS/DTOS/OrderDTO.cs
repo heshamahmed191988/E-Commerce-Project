@@ -18,7 +18,7 @@ namespace E_Commerce.DTOS.DTOS
         //[ForeignKey("User")]
         public int UserID { get; set; }
         public virtual User User { get; set; }
-        public virtual IQueryable<OrderItems> OrderItems { get; set; }
+        public virtual IQueryable<OrderItemDTO> OrderItems { get; set; }
 
     }
 }

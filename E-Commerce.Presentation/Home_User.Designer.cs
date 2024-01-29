@@ -44,18 +44,27 @@
             label2 = new Label();
             userDTOBindingSource = new BindingSource(components);
             button1 = new Button();
+            Navebar = new Panel();
+            label4 = new Label();
+            PTorders = new Button();
+            PTlogout = new Button();
+            PTcart = new Button();
+            PTproduct = new Button();
+            PTregister = new Button();
+            BTlogin = new Button();
             ((System.ComponentModel.ISupportInitialize)ProductdataGridView).BeginInit();
             product.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
+            Navebar.SuspendLayout();
             SuspendLayout();
             // 
             // ProductdataGridView
             // 
             ProductdataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             ProductdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductdataGridView.Location = new Point(294, 23);
+            ProductdataGridView.Location = new Point(313, 86);
             ProductdataGridView.Name = "ProductdataGridView";
-            ProductdataGridView.Size = new Size(644, 554);
+            ProductdataGridView.Size = new Size(687, 446);
             ProductdataGridView.TabIndex = 0;
             ProductdataGridView.CellClick += ProductdataGridView_CellClick;
             ProductdataGridView.CellContentClick += ProductdataGridView_CellContentClick;
@@ -65,7 +74,7 @@
             ProductName.AutoSize = true;
             ProductName.BackColor = Color.Transparent;
             ProductName.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProductName.ForeColor = Color.White;
+            ProductName.ForeColor = Color.Black;
             ProductName.Location = new Point(19, 40);
             ProductName.Name = "ProductName";
             ProductName.Size = new Size(94, 15);
@@ -77,7 +86,7 @@
             Price.AutoSize = true;
             Price.BackColor = Color.Transparent;
             Price.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Price.ForeColor = Color.White;
+            Price.ForeColor = Color.Black;
             Price.Location = new Point(19, 80);
             Price.Name = "Price";
             Price.Size = new Size(93, 15);
@@ -95,8 +104,8 @@
             product.Controls.Add(ProductName);
             product.Controls.Add(Price);
             product.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            product.ForeColor = Color.White;
-            product.Location = new Point(28, 183);
+            product.ForeColor = Color.Black;
+            product.Location = new Point(47, 152);
             product.Name = "product";
             product.Size = new Size(242, 240);
             product.TabIndex = 9;
@@ -107,7 +116,7 @@
             // 
             productQuantity.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             productQuantity.FormattingEnabled = true;
-            productQuantity.Location = new Point(117, 107);
+            productQuantity.Location = new Point(152, 108);
             productQuantity.Name = "productQuantity";
             productQuantity.Size = new Size(65, 24);
             productQuantity.TabIndex = 13;
@@ -117,8 +126,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(6, 112);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(19, 112);
             label1.Name = "label1";
             label1.Size = new Size(105, 15);
             label1.TabIndex = 12;
@@ -127,17 +136,20 @@
             // Add_Card
             // 
             Add_Card.AccessibleRole = AccessibleRole.None;
-            Add_Card.BackColor = Color.IndianRed;
+            Add_Card.BackColor = Color.Transparent;
+            Add_Card.BackgroundImage = (Image)resources.GetObject("Add_Card.BackgroundImage");
             Add_Card.BackgroundImageLayout = ImageLayout.Stretch;
             Add_Card.FlatAppearance.BorderSize = 0;
+            Add_Card.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Add_Card.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Add_Card.FlatStyle = FlatStyle.Flat;
             Add_Card.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             Add_Card.ForeColor = Color.Transparent;
-            Add_Card.Location = new Point(63, 182);
+            Add_Card.Location = new Point(46, 170);
             Add_Card.Name = "Add_Card";
-            Add_Card.Size = new Size(129, 52);
+            Add_Card.Size = new Size(154, 52);
             Add_Card.TabIndex = 10;
-            Add_Card.Text = "Add to Cart";
+            Add_Card.Text = "      Add to Cart";
             Add_Card.UseVisualStyleBackColor = false;
             Add_Card.Click += Add_Card_Click;
             // 
@@ -165,7 +177,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(122, 45);
+            textBox1.Location = new Point(141, 105);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(148, 23);
             textBox1.TabIndex = 10;
@@ -176,8 +188,8 @@
             Filter_by_Name.AutoSize = true;
             Filter_by_Name.BackColor = Color.Transparent;
             Filter_by_Name.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Filter_by_Name.ForeColor = Color.White;
-            Filter_by_Name.Location = new Point(22, 48);
+            Filter_by_Name.ForeColor = Color.Black;
+            Filter_by_Name.Location = new Point(41, 108);
             Filter_by_Name.Name = "Filter_by_Name";
             Filter_by_Name.Size = new Size(87, 15);
             Filter_by_Name.TabIndex = 11;
@@ -188,7 +200,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(121, 71);
+            label2.Location = new Point(140, 134);
             label2.Name = "label2";
             label2.Size = new Size(0, 15);
             label2.TabIndex = 14;
@@ -199,21 +211,163 @@
             // 
             // button1
             // 
-            button1.Location = new Point(113, 468);
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Forte", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleRight;
+            button1.Location = new Point(78, 432);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(160, 40);
             button1.TabIndex = 15;
-            button1.Text = "Cart";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Go To Cart  ";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
+            // 
+            // Navebar
+            // 
+            Navebar.BackColor = Color.Black;
+            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(PTorders);
+            Navebar.Controls.Add(PTlogout);
+            Navebar.Controls.Add(PTcart);
+            Navebar.Controls.Add(PTproduct);
+            Navebar.Controls.Add(PTregister);
+            Navebar.Controls.Add(BTlogin);
+            Navebar.Dock = DockStyle.Top;
+            Navebar.Location = new Point(0, 0);
+            Navebar.Name = "Navebar";
+            Navebar.Size = new Size(1032, 48);
+            Navebar.TabIndex = 16;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Enabled = false;
+            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(48, 12);
+            label4.Name = "label4";
+            label4.Size = new Size(120, 25);
+            label4.TabIndex = 20;
+            label4.Text = "Logo/Name";
+            // 
+            // PTorders
+            // 
+            PTorders.BackColor = Color.Black;
+            PTorders.FlatAppearance.BorderSize = 0;
+            PTorders.FlatStyle = FlatStyle.Flat;
+            PTorders.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTorders.ForeColor = Color.White;
+            PTorders.Image = (Image)resources.GetObject("PTorders.Image");
+            PTorders.ImageAlign = ContentAlignment.MiddleLeft;
+            PTorders.Location = new Point(480, 6);
+            PTorders.Name = "PTorders";
+            PTorders.Size = new Size(118, 38);
+            PTorders.TabIndex = 18;
+            PTorders.Text = "  Orders";
+            PTorders.UseVisualStyleBackColor = false;
+            PTorders.Click += PTorders_Click;
+            // 
+            // PTlogout
+            // 
+            PTlogout.BackColor = Color.Black;
+            PTlogout.FlatAppearance.BorderSize = 0;
+            PTlogout.FlatStyle = FlatStyle.Flat;
+            PTlogout.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTlogout.ForeColor = Color.White;
+            PTlogout.Image = (Image)resources.GetObject("PTlogout.Image");
+            PTlogout.ImageAlign = ContentAlignment.MiddleLeft;
+            PTlogout.Location = new Point(979, 7);
+            PTlogout.Name = "PTlogout";
+            PTlogout.Size = new Size(34, 38);
+            PTlogout.TabIndex = 19;
+            PTlogout.UseVisualStyleBackColor = false;
+            PTlogout.Click += PTlogout_Click;
+            // 
+            // PTcart
+            // 
+            PTcart.BackColor = Color.Black;
+            PTcart.FlatAppearance.BorderSize = 0;
+            PTcart.FlatStyle = FlatStyle.Flat;
+            PTcart.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTcart.ForeColor = Color.White;
+            PTcart.Image = (Image)resources.GetObject("PTcart.Image");
+            PTcart.ImageAlign = ContentAlignment.MiddleLeft;
+            PTcart.Location = new Point(358, 5);
+            PTcart.Name = "PTcart";
+            PTcart.Size = new Size(118, 38);
+            PTcart.TabIndex = 17;
+            PTcart.Text = "Cart";
+            PTcart.UseVisualStyleBackColor = false;
+            PTcart.Click += PTcart_Click;
+            // 
+            // PTproduct
+            // 
+            PTproduct.BackColor = Color.Black;
+            PTproduct.FlatAppearance.BorderSize = 0;
+            PTproduct.FlatStyle = FlatStyle.Flat;
+            PTproduct.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTproduct.ForeColor = Color.Red;
+            PTproduct.Image = (Image)resources.GetObject("PTproduct.Image");
+            PTproduct.ImageAlign = ContentAlignment.MiddleLeft;
+            PTproduct.Location = new Point(234, 5);
+            PTproduct.Name = "PTproduct";
+            PTproduct.Size = new Size(118, 38);
+            PTproduct.TabIndex = 16;
+            PTproduct.Text = "  Product";
+            PTproduct.UseVisualStyleBackColor = false;
+            PTproduct.Click += PTproduct_Click;
+            // 
+            // PTregister
+            // 
+            PTregister.BackColor = Color.Black;
+            PTregister.FlatAppearance.BorderSize = 0;
+            PTregister.FlatStyle = FlatStyle.Flat;
+            PTregister.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTregister.ForeColor = Color.White;
+            PTregister.Image = (Image)resources.GetObject("PTregister.Image");
+            PTregister.ImageAlign = ContentAlignment.MiddleLeft;
+            PTregister.Location = new Point(855, 6);
+            PTregister.Name = "PTregister";
+            PTregister.Size = new Size(118, 38);
+            PTregister.TabIndex = 15;
+            PTregister.Text = "  Register";
+            PTregister.UseVisualStyleBackColor = false;
+            PTregister.Click += PTregister_Click;
+            // 
+            // BTlogin
+            // 
+            BTlogin.BackColor = Color.Black;
+            BTlogin.FlatAppearance.BorderSize = 0;
+            BTlogin.FlatStyle = FlatStyle.Flat;
+            BTlogin.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BTlogin.ForeColor = Color.White;
+            BTlogin.Image = (Image)resources.GetObject("BTlogin.Image");
+            BTlogin.ImageAlign = ContentAlignment.MiddleLeft;
+            BTlogin.Location = new Point(753, 5);
+            BTlogin.Name = "BTlogin";
+            BTlogin.Size = new Size(92, 38);
+            BTlogin.TabIndex = 14;
+            BTlogin.Text = "LogIn";
+            BTlogin.TextAlign = ContentAlignment.MiddleRight;
+            BTlogin.UseVisualStyleBackColor = false;
+            BTlogin.Click += BTlogin_Click;
             // 
             // Home_User
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.bg1;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1005, 709);
+            ClientSize = new Size(1032, 556);
+            Controls.Add(Navebar);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(Filter_by_Name);
@@ -227,6 +381,8 @@
             product.ResumeLayout(false);
             product.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).EndInit();
+            Navebar.ResumeLayout(false);
+            Navebar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -246,5 +402,13 @@
         private ComboBox productQuantity;
         private BindingSource userDTOBindingSource;
         private Button button1;
+        private Panel Navebar;
+        private Label label4;
+        private Button PTorders;
+        private Button PTlogout;
+        private Button PTcart;
+        private Button PTproduct;
+        private Button PTregister;
+        private Button BTlogin;
     }
 }

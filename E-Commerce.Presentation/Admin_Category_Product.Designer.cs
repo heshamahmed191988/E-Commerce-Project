@@ -28,30 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Category_Product));
             dataGridView2 = new DataGridView();
             DeleteCtegorey = new Label();
             EditCtegorey = new Label();
             AddCtegorey = new Label();
-            label9 = new Label();
             label14 = new Label();
             CatogeryDescriptionBox = new TextBox();
             label15 = new Label();
             CatogeryNameBox = new TextBox();
+            label4 = new Label();
+            PTorders = new Button();
+            PTlogout = new Button();
+            PTcategory = new Button();
+            PTproduct = new Button();
+            PTregister = new Button();
+            BTlogin = new Button();
+            Navebar = new Panel();
+            label1 = new Label();
+            Imagebox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            Navebar.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(284, 73);
+            dataGridView2.Location = new Point(288, 161);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(1154, 384);
+            dataGridView2.Size = new Size(870, 384);
             dataGridView2.TabIndex = 1;
             // 
             // DeleteCtegorey
             // 
             DeleteCtegorey.AutoSize = true;
-            DeleteCtegorey.Location = new Point(1209, 495);
+            DeleteCtegorey.Location = new Point(603, 588);
             DeleteCtegorey.Name = "DeleteCtegorey";
             DeleteCtegorey.Size = new Size(53, 20);
             DeleteCtegorey.TabIndex = 9;
@@ -61,7 +72,7 @@
             // EditCtegorey
             // 
             EditCtegorey.AutoSize = true;
-            EditCtegorey.Location = new Point(1134, 495);
+            EditCtegorey.Location = new Point(528, 588);
             EditCtegorey.Name = "EditCtegorey";
             EditCtegorey.Size = new Size(35, 20);
             EditCtegorey.TabIndex = 8;
@@ -71,66 +82,218 @@
             // AddCtegorey
             // 
             AddCtegorey.AutoSize = true;
-            AddCtegorey.Location = new Point(1069, 495);
+            AddCtegorey.Location = new Point(463, 588);
             AddCtegorey.Name = "AddCtegorey";
             AddCtegorey.Size = new Size(37, 20);
             AddCtegorey.TabIndex = 6;
             AddCtegorey.Text = "Add";
             AddCtegorey.Click += AddCtegorey_Click;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(832, 30);
-            label9.Name = "label9";
-            label9.Size = new Size(80, 20);
-            label9.TabIndex = 10;
-            label9.Text = "Catogeries";
-            // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(53, 247);
+            label14.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            label14.Location = new Point(47, 333);
             label14.Name = "label14";
-            label14.Size = new Size(149, 20);
+            label14.Size = new Size(132, 18);
             label14.TabIndex = 21;
             label14.Text = "Catogery Description";
             // 
             // CatogeryDescriptionBox
             // 
-            CatogeryDescriptionBox.Location = new Point(66, 284);
+            CatogeryDescriptionBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            CatogeryDescriptionBox.Location = new Point(47, 372);
             CatogeryDescriptionBox.Name = "CatogeryDescriptionBox";
-            CatogeryDescriptionBox.Size = new Size(100, 27);
+            CatogeryDescriptionBox.Size = new Size(210, 23);
             CatogeryDescriptionBox.TabIndex = 20;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(66, 135);
+            label15.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            label15.Location = new Point(47, 229);
             label15.Name = "label15";
-            label15.Size = new Size(113, 20);
+            label15.Size = new Size(97, 18);
             label15.TabIndex = 19;
             label15.Text = "Catogery Name";
             // 
             // CatogeryNameBox
             // 
-            CatogeryNameBox.Location = new Point(66, 178);
+            CatogeryNameBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            CatogeryNameBox.Location = new Point(47, 267);
             CatogeryNameBox.Name = "CatogeryNameBox";
-            CatogeryNameBox.Size = new Size(100, 27);
+            CatogeryNameBox.Size = new Size(210, 23);
             CatogeryNameBox.TabIndex = 18;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Enabled = false;
+            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(55, 16);
+            label4.Name = "label4";
+            label4.Size = new Size(120, 25);
+            label4.TabIndex = 20;
+            label4.Text = "Logo/Name";
+            // 
+            // PTorders
+            // 
+            PTorders.BackColor = Color.Black;
+            PTorders.FlatAppearance.BorderSize = 0;
+            PTorders.FlatStyle = FlatStyle.Flat;
+            PTorders.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTorders.ForeColor = Color.White;
+            PTorders.Image = (Image)resources.GetObject("PTorders.Image");
+            PTorders.ImageAlign = ContentAlignment.MiddleLeft;
+            PTorders.Location = new Point(549, 8);
+            PTorders.Margin = new Padding(3, 4, 3, 4);
+            PTorders.Name = "PTorders";
+            PTorders.Size = new Size(135, 51);
+            PTorders.TabIndex = 18;
+            PTorders.Text = "  Orders";
+            PTorders.UseVisualStyleBackColor = false;
+            PTorders.Click += PTorders_Click;
+            // 
+            // PTlogout
+            // 
+            PTlogout.BackColor = Color.Black;
+            PTlogout.FlatAppearance.BorderSize = 0;
+            PTlogout.FlatStyle = FlatStyle.Flat;
+            PTlogout.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTlogout.ForeColor = Color.White;
+            PTlogout.Image = (Image)resources.GetObject("PTlogout.Image");
+            PTlogout.ImageAlign = ContentAlignment.MiddleLeft;
+            PTlogout.Location = new Point(1119, 9);
+            PTlogout.Margin = new Padding(3, 4, 3, 4);
+            PTlogout.Name = "PTlogout";
+            PTlogout.Size = new Size(39, 51);
+            PTlogout.TabIndex = 19;
+            PTlogout.UseVisualStyleBackColor = false;
+            PTlogout.Click += PTlogout_Click;
+            // 
+            // PTcategory
+            // 
+            PTcategory.BackColor = Color.Black;
+            PTcategory.FlatAppearance.BorderSize = 0;
+            PTcategory.FlatStyle = FlatStyle.Flat;
+            PTcategory.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTcategory.ForeColor = Color.Red;
+            PTcategory.Image = (Image)resources.GetObject("PTcategory.Image");
+            PTcategory.ImageAlign = ContentAlignment.MiddleLeft;
+            PTcategory.Location = new Point(409, 7);
+            PTcategory.Margin = new Padding(3, 4, 3, 4);
+            PTcategory.Name = "PTcategory";
+            PTcategory.Size = new Size(135, 51);
+            PTcategory.TabIndex = 17;
+            PTcategory.Text = "   Category";
+            PTcategory.UseVisualStyleBackColor = false;
+            PTcategory.Click += PTcategory_Click;
+            // 
+            // PTproduct
+            // 
+            PTproduct.BackColor = Color.Black;
+            PTproduct.FlatAppearance.BorderSize = 0;
+            PTproduct.FlatStyle = FlatStyle.Flat;
+            PTproduct.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTproduct.ForeColor = Color.White;
+            PTproduct.Image = (Image)resources.GetObject("PTproduct.Image");
+            PTproduct.ImageAlign = ContentAlignment.MiddleLeft;
+            PTproduct.Location = new Point(267, 7);
+            PTproduct.Margin = new Padding(3, 4, 3, 4);
+            PTproduct.Name = "PTproduct";
+            PTproduct.Size = new Size(135, 51);
+            PTproduct.TabIndex = 16;
+            PTproduct.Text = "  Product";
+            PTproduct.UseVisualStyleBackColor = false;
+            PTproduct.Click += PTproduct_Click;
+            // 
+            // PTregister
+            // 
+            PTregister.BackColor = Color.Black;
+            PTregister.FlatAppearance.BorderSize = 0;
+            PTregister.FlatStyle = FlatStyle.Flat;
+            PTregister.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PTregister.ForeColor = Color.White;
+            PTregister.Image = (Image)resources.GetObject("PTregister.Image");
+            PTregister.ImageAlign = ContentAlignment.MiddleLeft;
+            PTregister.Location = new Point(977, 8);
+            PTregister.Margin = new Padding(3, 4, 3, 4);
+            PTregister.Name = "PTregister";
+            PTregister.Size = new Size(135, 51);
+            PTregister.TabIndex = 15;
+            PTregister.Text = "  Register";
+            PTregister.UseVisualStyleBackColor = false;
+            PTregister.Click += PTregister_Click;
+            // 
+            // BTlogin
+            // 
+            BTlogin.BackColor = Color.Black;
+            BTlogin.FlatAppearance.BorderSize = 0;
+            BTlogin.FlatStyle = FlatStyle.Flat;
+            BTlogin.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BTlogin.ForeColor = Color.White;
+            BTlogin.Image = (Image)resources.GetObject("BTlogin.Image");
+            BTlogin.ImageAlign = ContentAlignment.MiddleLeft;
+            BTlogin.Location = new Point(861, 7);
+            BTlogin.Margin = new Padding(3, 4, 3, 4);
+            BTlogin.Name = "BTlogin";
+            BTlogin.Size = new Size(105, 51);
+            BTlogin.TabIndex = 14;
+            BTlogin.Text = "LogIn";
+            BTlogin.TextAlign = ContentAlignment.MiddleRight;
+            BTlogin.UseVisualStyleBackColor = false;
+            BTlogin.Click += BTlogin_Click;
+            // 
+            // Navebar
+            // 
+            Navebar.BackColor = Color.Black;
+            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(PTorders);
+            Navebar.Controls.Add(PTlogout);
+            Navebar.Controls.Add(PTcategory);
+            Navebar.Controls.Add(PTproduct);
+            Navebar.Controls.Add(PTregister);
+            Navebar.Controls.Add(BTlogin);
+            Navebar.Dock = DockStyle.Top;
+            Navebar.Location = new Point(0, 0);
+            Navebar.Margin = new Padding(3, 4, 3, 4);
+            Navebar.Name = "Navebar";
+            Navebar.Size = new Size(1179, 64);
+            Navebar.TabIndex = 22;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            label1.Location = new Point(47, 458);
+            label1.Name = "label1";
+            label1.Size = new Size(44, 18);
+            label1.TabIndex = 24;
+            label1.Text = "Image";
+            // 
+            // Imagebox
+            // 
+            Imagebox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            Imagebox.Location = new Point(47, 497);
+            Imagebox.Name = "Imagebox";
+            Imagebox.Size = new Size(210, 23);
+            Imagebox.TabIndex = 23;
             // 
             // Admin_Category_Product
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            //BackgroundImage = Properties.Resources.project_Backgrowind;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1469, 608);
+            ClientSize = new Size(1179, 665);
+            Controls.Add(label1);
+            Controls.Add(Imagebox);
+            Controls.Add(Navebar);
             Controls.Add(label14);
             Controls.Add(CatogeryDescriptionBox);
             Controls.Add(label15);
             Controls.Add(CatogeryNameBox);
-            Controls.Add(label9);
             Controls.Add(DeleteCtegorey);
             Controls.Add(EditCtegorey);
             Controls.Add(AddCtegorey);
@@ -138,6 +301,8 @@
             Name = "Admin_Category_Product";
             Text = "Admin_Category_Product";
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            Navebar.ResumeLayout(false);
+            Navebar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,10 +312,19 @@
         private Label DeleteCtegorey;
         private Label EditCtegorey;
         private Label AddCtegorey;
-        private Label label9;
         private Label label14;
         private TextBox CatogeryDescriptionBox;
         private Label label15;
         private TextBox CatogeryNameBox;
+        private Label label4;
+        private Button PTorders;
+        private Button PTlogout;
+        private Button PTcategory;
+        private Button PTproduct;
+        private Button PTregister;
+        private Button BTlogin;
+        private Panel Navebar;
+        private Label label1;
+        private TextBox Imagebox;
     }
 }

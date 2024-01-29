@@ -16,6 +16,7 @@ using System.Runtime.Loader;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Forms_ProjectVC_;
 
 namespace E_Commerce.Presentation
 {
@@ -38,19 +39,19 @@ namespace E_Commerce.Presentation
             InitializeComponent();
             LoadCategories();
         }
-     /*   public Admin_Category_Product(ICategoryService categoryService)
-        { 
-            var container = AutoFact.Inject();
-            _categoryService = container.Resolve<ICategoryService>();
-            _productService = container.Resolve<IProductService>();
-            InitializeComponent();
-            // _categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-            //_productService = new ProductService(new ProductRepository(new E_CommerceContext()));
-            // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
-            //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
-            LoadCategories();
-            
-        }*/
+        /*   public Admin_Category_Product(ICategoryService categoryService)
+           { 
+               var container = AutoFact.Inject();
+               _categoryService = container.Resolve<ICategoryService>();
+               _productService = container.Resolve<IProductService>();
+               InitializeComponent();
+               // _categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
+               //_productService = new ProductService(new ProductRepository(new E_CommerceContext()));
+               // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
+               //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
+               LoadCategories();
+
+           }*/
 
 
         private void LoadCategories()
@@ -59,11 +60,11 @@ namespace E_Commerce.Presentation
             {
                 if (_categoryService != null)
                 {
-                    var categories = _categoryService.GetAll();
+                    var categories = _categoryService.GetAll().ToList();
 
                     if (categories != null)
                     {
-                        dataGridView2.DataSource = categories.ToList();
+                        dataGridView2.DataSource = categories.Select(e => new { e.Id, e.CategoryName, e.Description, e.image }).ToList();
                     }
                     else
                     {
@@ -92,12 +93,14 @@ namespace E_Commerce.Presentation
                 {
                     string name = CatogeryNameBox.Text;
                     string description = CatogeryDescriptionBox.Text;
+                    string Image = Imagebox.Text;
+
 
                     CategoryDTO newCategory = new CategoryDTO
                     {
                         CategoryName = name,
                         Description = description,
-                        image = "123",
+                        image = Image,
                         // Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().AsQueryable(),
                     };
 
@@ -125,7 +128,8 @@ namespace E_Commerce.Presentation
 
         private void EditCtegorey_Click(object sender, EventArgs e)
         {
-            // dataGridView2.AutoGenerateColumns = true;
+            dataGridView2.AutoGenerateColumns = true;
+
             try
             {
                 if (_categoryService != null)
@@ -146,24 +150,28 @@ namespace E_Commerce.Presentation
 
                         if (existingCategoryEntity != null)
                         {
-                            // Convert the entity to a DTO
-                            CategoryDTO existingCategoryDTO = ConvertToDTO(existingCategoryEntity);
+                            // Update the properties of the existing category entity
+                            existingCategoryEntity.CategoryName = CatogeryNameBox.Text;
+                            existingCategoryEntity.Description = CatogeryDescriptionBox.Text;
+                            existingCategoryEntity.image = Imagebox.Text;
 
-                            // Update the properties of the existing category DTO
-                            existingCategoryDTO.CategoryName = CatogeryNameBox.Text;
-                            existingCategoryDTO.Description = CatogeryDescriptionBox.Text;
-                            existingCategoryDTO.image = "123";
                             // You may want to update other properties as needed
 
-                            // Perform the category update
-                            _categoryService.UpdateCategory(existingCategoryDTO);
+                            // Save changes to the database
+                            using (var context = new E_CommerceContext())
+                            {
+                                context.Entry(existingCategoryEntity).State = EntityState.Modified;
+                                context.SaveChanges();
+                            }
 
                             // Update the corresponding row in the DataGridView
-                            selectedRow.Cells["CategoryName"].Value = existingCategoryDTO.CategoryName;
-                            selectedRow.Cells["Description"].Value = existingCategoryDTO.Description;
+                            selectedRow.Cells["CategoryName"].Value = existingCategoryEntity.CategoryName;
+                            selectedRow.Cells["Description"].Value = existingCategoryEntity.Description;
+                            selectedRow.Cells["Image"].Value = existingCategoryEntity.image;
                             // Update other cells as needed
 
                             MessageBox.Show("Category updated successfully.");
+                            LoadCategories();
                         }
                         else
                         {
@@ -195,6 +203,7 @@ namespace E_Commerce.Presentation
                 // Assign properties based on your entity structure
                 CategoryName = entity.CategoryName,
                 Description = entity.Description,
+                image = entity.image,
                 // Other properties...
             };
         }
@@ -262,7 +271,53 @@ namespace E_Commerce.Presentation
 
 
         }
-       
+
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+            Admin_product admin_Product = new Admin_product();
+            admin_Product.Show();
+            this.Hide();
+        }
+
+        private void PTorders_Click(object sender, EventArgs e)
+        {
+            Orders_View orders_View = new Orders_View();
+            orders_View.Show();
+            this.Hide();
+        }
+
+        private void PTcategory_Click(object sender, EventArgs e)
+        {
+            Admin_Category_Product admin_Category_Product = new Admin_Category_Product();
+            admin_Category_Product.Show();
+            this.Hide();
+        }
+
+        private void BTlogin_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void PTregister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+        }
+
+        private void PTlogout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
