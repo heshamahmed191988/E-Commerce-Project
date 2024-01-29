@@ -1,4 +1,5 @@
-﻿using E_Commerce.Application.Contract;
+﻿using AutoMapper;
+using E_Commerce.Application.Contract;
 using E_Commerce.Application.Mapping;
 using E_Commerce.DTOS.DTOS;
 using System;
@@ -12,19 +13,12 @@ namespace E_Commerce.Application.Service
     public class CartDetailsService : ICartDetailsService
     {
         ICartDetailsRepository _cartDetailsRepository;
-
-        public CartDetailsService(ICartDetailsRepository cartDetailsRepository)
+        private readonly IMapper _mapper;
+        public CartDetailsService(ICartDetailsRepository cartDetailsRepository,IMapper mapper)
         {
             _cartDetailsRepository = cartDetailsRepository;
+            _mapper = mapper;
         }
-        /*  public CartDetailsDTO AddCartItems(ProductDTO productDTO, CartDTO cartDTO)
-          {
-              CartDetailsDTO cartDetailsDTO = new CartDetailsDTO() { cartID = cartDTO.Id, productID = productDTO.Id };
-              _cartDetailsRepository.Add(AutoMapping.MapCartDetails(cartDetailsDTO));
-              _cartDetailsRepository.save();
-              return cartDetailsDTO;
-          }*/
-
         public void AddCartItems(CartDetailsDTO cartDetailsDTO)
         {
             _cartDetailsRepository.Add(AutoMapping.MapCartDetails(cartDetailsDTO));
@@ -48,9 +42,11 @@ namespace E_Commerce.Application.Service
             _cartDetailsRepository.Update(AutoMapping.MapCartDetails(cartDetailsDTO));
             _cartDetailsRepository.save();
         }
-        public void GetOneCartItem(int id)
+        public IQueryable<CartDetailsDTO> getAll(int cartId)
         {
+            var C = _cartDetailsRepository.GetAll().Where(i=>i.cartID==cartId);
 
+            return C.Select(i => AutoMapping.MapCartDetailsDTO(i));
         }
     }
 }

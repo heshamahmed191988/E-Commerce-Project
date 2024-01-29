@@ -45,7 +45,7 @@ namespace E_Commerce.Presentation
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            Categorys categorys = new Categorys();
+            Admin_Category_Product categorys = new Admin_Category_Product();
             categorys.Show();
 
         }

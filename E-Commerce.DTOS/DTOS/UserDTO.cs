@@ -19,15 +19,6 @@ namespace E_Commerce.DTOS.DTOS
         public IQueryable<Order>? orders { get; set; }
         public virtual Cart? Cart { get; set; }
 
-      /*  public enum UserType:short
-        {
-            admin=0 ,
-            customer=1 
-        }*/
-       /* public static int userTypeInt(UserType x)
-        {
-            int y = (int)x;
-            return y;
-        }*/
+     
     }
 }
