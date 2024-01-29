@@ -21,7 +21,8 @@ namespace E_Commerce.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True;Encrypt=False").UseLazyLoadingProxies();
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-C1VVAHL\\SQLEXPRESS;Initial Catalog=ECommerce;Integrated Security=True;Encrypt=False");//.UseLazyLoadingProxies();
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

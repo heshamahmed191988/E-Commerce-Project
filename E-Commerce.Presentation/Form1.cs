@@ -15,7 +15,7 @@ namespace Forms_ProjectVC_
     {
         static IUserService _userService;
         static ICartService _cartService;
-        //  public event Action<int> NewsHappened;
+        
 
         public Form1()
         {
@@ -45,18 +45,16 @@ namespace Forms_ProjectVC_
             {
                 if (user.type == 1)
                 {
-                    Admin_Category_Product admin_Category_Product = new Admin_Category_Product();
-                    admin_Category_Product.Show();
+                    Admin_Home admin_Home = new Admin_Home();
+                    admin_Home.Show();
                     this.Hide();
                     ///////////////////admin
                 }
                 else
                 {
                     int id = user.Id;
-                    // NewsHappened.Invoke(id);
                     var cart = _cartService.GetAll().ToList().Where(i => i.UserId == id).FirstOrDefault();
                     var cartid = cart.Id;
-                    //MessageBox.Show($"{cartid}");
                     Home_User userProducts = new Home_User(cartid,id);
                     this.Hide();
                     userProducts.Show();

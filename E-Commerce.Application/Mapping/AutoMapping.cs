@@ -42,7 +42,7 @@ namespace E_Commerce.Application.Mapping
                return null;
            }
            return new CategoryDTO
-           { //Id = category.Id,
+           { Id = category.Id,
              CategoryName=category.CategoryName,
              Description=category.Description ,
              image = category.image
@@ -61,8 +61,10 @@ namespace E_Commerce.Application.Mapping
                 Price=product.Price,
                 image=product.image,
                 Quantity=product.Quantity,
-               // categoryID = product.categoryID,
-                //category=product.
+               // category=product.category,
+                categoryID=product.categoryID,
+                CartDetails=product.CartDetails,
+                OrderItems=product.OrderItems,
             };
         }
      public static OrderDTO MapOrderDTO(Order order)
@@ -162,7 +164,7 @@ namespace E_Commerce.Application.Mapping
             };
 
         }
-     public static Product MapProduct(ProductDTO productDto)
+     public static Product MapProduct(ProductDTO productDto,CategoryDTO categoryDTO)
         {
             if (productDto == null)
             {
@@ -174,8 +176,10 @@ namespace E_Commerce.Application.Mapping
                 ProductName = productDto.ProductName,
                 Price = productDto.Price,
                 Quantity = productDto.Quantity,
-                image = productDto.image//,
-                //categoryID = productDto.categoryID
+                image = productDto.image,
+                categoryID = productDto.categoryID,
+                OrderItems=productDto.OrderItems,
+                CartDetails=productDto.CartDetails,
             };
         }
      public static Order MapOrder(OrderDTO orderDTO)

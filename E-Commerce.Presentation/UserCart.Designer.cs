@@ -199,6 +199,7 @@
             PTorders.TabIndex = 18;
             PTorders.Text = "  Orders";
             PTorders.UseVisualStyleBackColor = false;
+            PTorders.Click += PTorders_Click;
             // 
             // PTcategory
             // 

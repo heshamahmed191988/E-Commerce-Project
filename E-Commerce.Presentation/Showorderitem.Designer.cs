@@ -1,6 +1,6 @@
 ﻿namespace E_Commerce.Presentation
 {
-    partial class userOrder
+    partial class Showorderitem
     {
         /// <summary>
         /// Required designer variable.
@@ -35,19 +35,22 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(477, 30);
+            dataGridView1.Location = new Point(40, 56);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(240, 151);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(953, 433);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // userOrder
+            // Showorderitem
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1057, 544);
             Controls.Add(dataGridView1);
-            Name = "userOrder";
-            Text = "userOrder";
+            Name = "Showorderitem";
+            Text = "Showorderitem";
+            Load += Showorderitem_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
