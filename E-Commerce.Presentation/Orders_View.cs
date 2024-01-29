@@ -33,7 +33,7 @@ namespace E_Commerce.Presentation
         private void Orders_View_Load(object sender, EventArgs e)
         {
             var Ord = _orderService.GetAll().ToList();
-            OrderdataGridView.DataSource = Ord;
+            OrderdataGridView.DataSource = Ord.Select(i => new {i.Id,i.UserID,i.OrderDate,i.NoOfProducts,i.TotalPrice,i.Status}).ToList();
         }
 
         private void OrderdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

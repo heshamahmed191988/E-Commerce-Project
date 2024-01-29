@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Core;
+using E_Commerce.Application.Mapping;
 using E_Commerce.Application.Service;
 using E_Commerce.Context.Migrations;
 using E_Commerce.DTOS.DTOS;
@@ -85,27 +86,54 @@ namespace E_Commerce.Presentation
         {
             DateTime currentDate = DateTime.Now;
             var cartItems = load().ToList();
-            if (cartItems != null)
+            if (cartItems != null && cartItems.Any())
             {
-                var order = new OrderDTO() { NoOfProducts = productsNo, TotalPrice = totalPrice, Status = "processing", OrderDate = currentDate, UserID = UserId };
+                var order = new OrderDTO() {
+                    NoOfProducts = productsNo,
+                    TotalPrice = totalPrice, 
+                    Status = "processing", 
+                    OrderDate = currentDate,
+                    UserID = UserId };
 
                 _orderService.AddOrder(order);
-                int num = _orderService.GetAll().AsNoTracking().Count();
-                MessageBox.Show($"{num}");
 
-                if (num - 1 != 0)
+                int num = _orderService .GetAll().AsEnumerable().OrderByDescending(i => AutoMapping.MapOrder(i).Id).FirstOrDefault()?.Id ?? 0; ;
+
+                if (num != 0)
                 {
 
                     foreach (var item in cartItems)
                     {
-                        var product = _ProductService.GetProduct(item.productID).Id;
-                        OrderItemDTO orderitems = new OrderItemDTO() { productId = product, OrderId = num - 1 };
-                        _orderItemService.AddOrderItems(orderitems);
-                    }
+                        var product = _ProductService.GetProduct(item.productID);
+                        if (product != null)
+                        {
+                            OrderItemDTO orderitems = new OrderItemDTO()
+                            {
+                                productId = product.Id,
+                                OrderId = num
+                            };
+                            _orderItemService.AddOrderItems(orderitems);
+                            _cartDetailsService.RemoveProductFromCart(item);
+                            //MessageBox.Show("items Added");
+                        }
+                        else
+                        {
+                           // MessageBox.Show($"Product with ID {item.productID} not found.");
+                        }
+                    } 
                     MessageBox.Show("Order Added");
 
+
+                }
+                else
+                {
+                    MessageBox.Show("Failed to retrieve Order ID.");
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("No items in the cart.");
             }
 
         }
@@ -163,6 +191,8 @@ namespace E_Commerce.Presentation
                     var cartitemUpdate = _cartDetailsService.GetCartItems().AsNoTracking().ToList().Where(i => i.productID == product.Id).FirstOrDefault();
                     if (cartitemUpdate != null && int.Parse(newQuantityValue) != cartitemUpdate.Quantity)
                     {
+                        //CartDetailsDTO updatedCartitem= new CartDetailsDTO() { Id = cartitemUpdate.Id, Quantity = int.Parse(newQuantityValue),productID=cartitemUpdate.productID,cartID=cartitemUpdate.cartID };
+                    
                         cartitemUpdate.Quantity = int.Parse(newQuantityValue);
                         _cartDetailsService.UpdateCart(cartitemUpdate);
                         MessageBox.Show("updated");

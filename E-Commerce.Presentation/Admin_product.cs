@@ -45,11 +45,11 @@ namespace E_Commerce.Presentation
             {
                 if (_productService != null)
                 {
-                    var products = _productService.GetAll();
+                    var products = _productService.GetAll().ToList();
 
                     if (products != null)
                     {
-                        dataGridView1.DataSource = products.ToList();
+                        dataGridView1.DataSource = products.Select(e => new { e.Id, e.ProductName,e.Quantity, e.Price, e.categoryID, e.image }).ToList();
                     }
                     else
                     {
@@ -78,14 +78,15 @@ namespace E_Commerce.Presentation
                     decimal price = decimal.Parse(ProductPriceBox.Text);
                     int quantity = int.Parse(ProductQuantityBox.Text);
                     int categoryid = int.Parse(CategoryIdBox.Text);
+                    string image = ImageBox.Text;
 
                     ProductDTO newproduct = new ProductDTO
                     {
                         ProductName = name,
                         Price = price,
-                        image = "123",
+                        image = image,
                         Quantity = quantity,
-                        //categoryID = categoryid,
+                        categoryID = categoryid,
 
                     };
 
@@ -115,12 +116,13 @@ namespace E_Commerce.Presentation
                     if (dataGridView1.SelectedRows.Count > 0)
                     {
                         DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
+                        ProductNameBox.Text = selectedRow.Cells["ProductName"].Value.ToString();
                         // Modify the columns based on their names
                         selectedRow.Cells["ProductName"].Value = ProductNameBox.Text;
                         selectedRow.Cells["Price"].Value = decimal.Parse(ProductPriceBox.Text);
                         selectedRow.Cells["Quantity"].Value = int.Parse(ProductQuantityBox.Text);
                         selectedRow.Cells["CategoryId"].Value = int.Parse(CategoryIdBox.Text);
+                        selectedRow.Cells["Image"].Value = ImageBox.Text;
 
                         // After the modifications are done, update the data in the service
                         int productId = int.Parse(selectedRow.Cells["ProductId"].Value.ToString()); // Assuming you have a column named "ProductId"
@@ -129,7 +131,7 @@ namespace E_Commerce.Presentation
                             Id = productId,
                             ProductName = ProductNameBox.Text,
                             Price = decimal.Parse(ProductPriceBox.Text),
-                            image = "123", // Modify as needed
+                            image = ImageBox.Text, // Modify as needed
                             Quantity = int.Parse(ProductQuantityBox.Text),
                             //categoryID = int.Parse(CategoryIdBox.Text)
                         };
@@ -141,6 +143,7 @@ namespace E_Commerce.Presentation
                         ProductPriceBox.Text = "";
                         ProductQuantityBox.Text = "";
                         CategoryIdBox.Text = "";
+                        ImageBox.Text = "";
                     }
                     else
                     {

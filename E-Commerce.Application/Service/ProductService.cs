@@ -23,8 +23,7 @@ namespace E_Commerce.Application.Service
 
         public void AddProduct(ProductDTO productDTO)
         {
-            var AddedData = _mapper.Map<Product>(productDTO);
-            var Data = _productRepository.Add(AddedData);
+            _productRepository.Add(AutoMapping.MapProduct(productDTO));
             _productRepository.save();
         }
 

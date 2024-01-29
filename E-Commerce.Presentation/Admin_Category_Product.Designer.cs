@@ -45,6 +45,8 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            label1 = new Label();
+            Imagebox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             Navebar.SuspendLayout();
             SuspendLayout();
@@ -52,18 +54,17 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(252, 121);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Location = new Point(288, 161);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(761, 288);
+            dataGridView2.Size = new Size(870, 384);
             dataGridView2.TabIndex = 1;
             // 
             // DeleteCtegorey
             // 
             DeleteCtegorey.AutoSize = true;
-            DeleteCtegorey.Location = new Point(528, 441);
+            DeleteCtegorey.Location = new Point(603, 588);
             DeleteCtegorey.Name = "DeleteCtegorey";
-            DeleteCtegorey.Size = new Size(40, 15);
+            DeleteCtegorey.Size = new Size(53, 20);
             DeleteCtegorey.TabIndex = 9;
             DeleteCtegorey.Text = "Delete";
             DeleteCtegorey.Click += DeleteCtegorey_Click;
@@ -71,9 +72,9 @@
             // EditCtegorey
             // 
             EditCtegorey.AutoSize = true;
-            EditCtegorey.Location = new Point(462, 441);
+            EditCtegorey.Location = new Point(528, 588);
             EditCtegorey.Name = "EditCtegorey";
-            EditCtegorey.Size = new Size(27, 15);
+            EditCtegorey.Size = new Size(35, 20);
             EditCtegorey.TabIndex = 8;
             EditCtegorey.Text = "Edit";
             EditCtegorey.Click += EditCtegorey_Click;
@@ -81,9 +82,9 @@
             // AddCtegorey
             // 
             AddCtegorey.AutoSize = true;
-            AddCtegorey.Location = new Point(405, 441);
+            AddCtegorey.Location = new Point(463, 588);
             AddCtegorey.Name = "AddCtegorey";
-            AddCtegorey.Size = new Size(29, 15);
+            AddCtegorey.Size = new Size(37, 20);
             AddCtegorey.TabIndex = 6;
             AddCtegorey.Text = "Add";
             AddCtegorey.Click += AddCtegorey_Click;
@@ -92,7 +93,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            label14.Location = new Point(41, 250);
+            label14.Location = new Point(47, 333);
             label14.Name = "label14";
             label14.Size = new Size(132, 18);
             label14.TabIndex = 21;
@@ -101,17 +102,16 @@
             // CatogeryDescriptionBox
             // 
             CatogeryDescriptionBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            CatogeryDescriptionBox.Location = new Point(41, 279);
-            CatogeryDescriptionBox.Margin = new Padding(3, 2, 3, 2);
+            CatogeryDescriptionBox.Location = new Point(47, 372);
             CatogeryDescriptionBox.Name = "CatogeryDescriptionBox";
-            CatogeryDescriptionBox.Size = new Size(184, 23);
+            CatogeryDescriptionBox.Size = new Size(210, 23);
             CatogeryDescriptionBox.TabIndex = 20;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            label15.Location = new Point(41, 172);
+            label15.Location = new Point(47, 229);
             label15.Name = "label15";
             label15.Size = new Size(97, 18);
             label15.TabIndex = 19;
@@ -120,10 +120,9 @@
             // CatogeryNameBox
             // 
             CatogeryNameBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            CatogeryNameBox.Location = new Point(41, 200);
-            CatogeryNameBox.Margin = new Padding(3, 2, 3, 2);
+            CatogeryNameBox.Location = new Point(47, 267);
             CatogeryNameBox.Name = "CatogeryNameBox";
-            CatogeryNameBox.Size = new Size(184, 23);
+            CatogeryNameBox.Size = new Size(210, 23);
             CatogeryNameBox.TabIndex = 18;
             // 
             // label4
@@ -133,7 +132,7 @@
             label4.Enabled = false;
             label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
+            label4.Location = new Point(55, 16);
             label4.Name = "label4";
             label4.Size = new Size(120, 25);
             label4.TabIndex = 20;
@@ -148,9 +147,10 @@
             PTorders.ForeColor = Color.White;
             PTorders.Image = (Image)resources.GetObject("PTorders.Image");
             PTorders.ImageAlign = ContentAlignment.MiddleLeft;
-            PTorders.Location = new Point(480, 6);
+            PTorders.Location = new Point(549, 8);
+            PTorders.Margin = new Padding(3, 4, 3, 4);
             PTorders.Name = "PTorders";
-            PTorders.Size = new Size(118, 38);
+            PTorders.Size = new Size(135, 51);
             PTorders.TabIndex = 18;
             PTorders.Text = "  Orders";
             PTorders.UseVisualStyleBackColor = false;
@@ -165,9 +165,10 @@
             PTlogout.ForeColor = Color.White;
             PTlogout.Image = (Image)resources.GetObject("PTlogout.Image");
             PTlogout.ImageAlign = ContentAlignment.MiddleLeft;
-            PTlogout.Location = new Point(979, 7);
+            PTlogout.Location = new Point(1119, 9);
+            PTlogout.Margin = new Padding(3, 4, 3, 4);
             PTlogout.Name = "PTlogout";
-            PTlogout.Size = new Size(34, 38);
+            PTlogout.Size = new Size(39, 51);
             PTlogout.TabIndex = 19;
             PTlogout.UseVisualStyleBackColor = false;
             PTlogout.Click += PTlogout_Click;
@@ -181,9 +182,10 @@
             PTcategory.ForeColor = Color.Red;
             PTcategory.Image = (Image)resources.GetObject("PTcategory.Image");
             PTcategory.ImageAlign = ContentAlignment.MiddleLeft;
-            PTcategory.Location = new Point(358, 5);
+            PTcategory.Location = new Point(409, 7);
+            PTcategory.Margin = new Padding(3, 4, 3, 4);
             PTcategory.Name = "PTcategory";
-            PTcategory.Size = new Size(118, 38);
+            PTcategory.Size = new Size(135, 51);
             PTcategory.TabIndex = 17;
             PTcategory.Text = "   Category";
             PTcategory.UseVisualStyleBackColor = false;
@@ -198,9 +200,10 @@
             PTproduct.ForeColor = Color.White;
             PTproduct.Image = (Image)resources.GetObject("PTproduct.Image");
             PTproduct.ImageAlign = ContentAlignment.MiddleLeft;
-            PTproduct.Location = new Point(234, 5);
+            PTproduct.Location = new Point(267, 7);
+            PTproduct.Margin = new Padding(3, 4, 3, 4);
             PTproduct.Name = "PTproduct";
-            PTproduct.Size = new Size(118, 38);
+            PTproduct.Size = new Size(135, 51);
             PTproduct.TabIndex = 16;
             PTproduct.Text = "  Product";
             PTproduct.UseVisualStyleBackColor = false;
@@ -215,9 +218,10 @@
             PTregister.ForeColor = Color.White;
             PTregister.Image = (Image)resources.GetObject("PTregister.Image");
             PTregister.ImageAlign = ContentAlignment.MiddleLeft;
-            PTregister.Location = new Point(855, 6);
+            PTregister.Location = new Point(977, 8);
+            PTregister.Margin = new Padding(3, 4, 3, 4);
             PTregister.Name = "PTregister";
-            PTregister.Size = new Size(118, 38);
+            PTregister.Size = new Size(135, 51);
             PTregister.TabIndex = 15;
             PTregister.Text = "  Register";
             PTregister.UseVisualStyleBackColor = false;
@@ -232,9 +236,10 @@
             BTlogin.ForeColor = Color.White;
             BTlogin.Image = (Image)resources.GetObject("BTlogin.Image");
             BTlogin.ImageAlign = ContentAlignment.MiddleLeft;
-            BTlogin.Location = new Point(753, 5);
+            BTlogin.Location = new Point(861, 7);
+            BTlogin.Margin = new Padding(3, 4, 3, 4);
             BTlogin.Name = "BTlogin";
-            BTlogin.Size = new Size(92, 38);
+            BTlogin.Size = new Size(105, 51);
             BTlogin.TabIndex = 14;
             BTlogin.Text = "LogIn";
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
@@ -253,16 +258,37 @@
             Navebar.Controls.Add(BTlogin);
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
+            Navebar.Margin = new Padding(3, 4, 3, 4);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1032, 48);
+            Navebar.Size = new Size(1179, 64);
             Navebar.TabIndex = 22;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            label1.Location = new Point(47, 458);
+            label1.Name = "label1";
+            label1.Size = new Size(44, 18);
+            label1.TabIndex = 24;
+            label1.Text = "Image";
+            // 
+            // Imagebox
+            // 
+            Imagebox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            Imagebox.Location = new Point(47, 497);
+            Imagebox.Name = "Imagebox";
+            Imagebox.Size = new Size(210, 23);
+            Imagebox.TabIndex = 23;
             // 
             // Admin_Category_Product
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1032, 499);
+            ClientSize = new Size(1179, 665);
+            Controls.Add(label1);
+            Controls.Add(Imagebox);
             Controls.Add(Navebar);
             Controls.Add(label14);
             Controls.Add(CatogeryDescriptionBox);
@@ -272,7 +298,6 @@
             Controls.Add(EditCtegorey);
             Controls.Add(AddCtegorey);
             Controls.Add(dataGridView2);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Admin_Category_Product";
             Text = "Admin_Category_Product";
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
@@ -299,5 +324,7 @@
         private Button PTregister;
         private Button BTlogin;
         private Panel Navebar;
+        private Label label1;
+        private TextBox Imagebox;
     }
 }
