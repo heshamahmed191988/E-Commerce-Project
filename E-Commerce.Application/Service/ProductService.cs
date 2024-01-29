@@ -34,6 +34,30 @@ namespace E_Commerce.Application.Service
             return p.Select(i => AutoMapping.MapProductDTO(i));
             
         }
+
+        public IQueryable<ProductDTO> GetAllDisplay()
+        {
+            var products = _productRepository.GetAll();
+
+            // Manual mapping 
+            var productDTOs = new List<ProductDTO>();
+            foreach (var product in products)
+            {
+                var productDTO = new ProductDTO
+                {
+                    // Id = product.Id,
+                    ProductName = product.ProductName,
+                    Price = product.Price,
+                    Quantity = product.Quantity,
+                    image = product.image,
+                    categoryID = product.categoryID,
+                };
+
+              
+            }
+
+            return products.Select(i => AutoMapping.MapProductDTO(i));
+        }
         public ProductDTO GetProduct(int id)
         {
             if (id != 0)

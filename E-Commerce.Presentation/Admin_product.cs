@@ -45,7 +45,7 @@ namespace E_Commerce.Presentation
             {
                 if (_productService != null)
                 {
-                    var products = _productService.GetAll();
+                    var products = _productService.GetAllDisplay();
 
                     if (products != null)
                     {

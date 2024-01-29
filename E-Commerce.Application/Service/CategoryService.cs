@@ -31,7 +31,7 @@ namespace E_Commerce.Application.Service
 
             return c.Select(i => AutoMapping.MapCategoryDTO(i));
         }
-
+      
 
         public IQueryable<CategoryDTO> GetAllDisplay()
         {
@@ -42,7 +42,7 @@ namespace E_Commerce.Application.Service
             {
                 var categoryDTO = new CategoryDTO
                 {
-                    //Id = category.Id,
+                    Id = category.Id,
                     CategoryName = category.CategoryName,
                     Description = category.Description,
                     image = category.image 
