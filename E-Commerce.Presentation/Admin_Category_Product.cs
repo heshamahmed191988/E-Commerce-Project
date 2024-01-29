@@ -98,7 +98,7 @@ namespace E_Commerce.Presentation
                     {
                         CategoryName = name,
                         Description = description,
-                        image = "123",
+                        //image = "123",
                         // Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().AsQueryable(),
                     };
 
@@ -153,7 +153,7 @@ namespace E_Commerce.Presentation
                             // Update the properties of the existing category DTO
                             existingCategoryDTO.CategoryName = CatogeryNameBox.Text;
                             existingCategoryDTO.Description = CatogeryDescriptionBox.Text;
-                            existingCategoryDTO.image = "123";
+                            //existingCategoryDTO.image = "123";
                             // You may want to update other properties as needed
 
                             // Perform the category update

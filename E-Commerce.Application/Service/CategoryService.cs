@@ -45,7 +45,7 @@ namespace E_Commerce.Application.Service
                     Id = category.Id,
                     CategoryName = category.CategoryName,
                     Description = category.Description,
-                    image = category.image 
+                    //image = category.image 
                 };
 
                 //categoryDTOs.Add(categoryDTO);
