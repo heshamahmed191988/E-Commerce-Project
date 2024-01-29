@@ -45,7 +45,7 @@ namespace E_Commerce.Application.Mapping
            { Id = category.Id,
              CategoryName=category.CategoryName,
              Description=category.Description ,
-             //image = category.image
+             image = category.image
            };
         }
      public static ProductDTO MapProductDTO(Product product)
@@ -160,7 +160,7 @@ namespace E_Commerce.Application.Mapping
                 Id = categoryDTO.Id,
                 CategoryName=categoryDTO.CategoryName,
                 Description=categoryDTO.Description,
-                //image=categoryDTO.image
+                image=categoryDTO.image
             };
 
         }
