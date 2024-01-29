@@ -58,7 +58,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(301, 78);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(580, 271);
+            dataGridView1.Size = new Size(580, 278);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -95,7 +95,7 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(48, 203);
+            button1.Location = new Point(48, 206);
             button1.Name = "button1";
             button1.Size = new Size(183, 49);
             button1.TabIndex = 3;
@@ -268,7 +268,7 @@
             ChangeQuantity.Location = new Point(177, 275);
             ChangeQuantity.Margin = new Padding(4, 6, 4, 6);
             ChangeQuantity.Name = "ChangeQuantity";
-            ChangeQuantity.Size = new Size(82, 23);
+            ChangeQuantity.Size = new Size(73, 23);
             ChangeQuantity.TabIndex = 19;
             ChangeQuantity.SelectedIndexChanged += ChangeQuantity_SelectedIndexChanged;
             // 
@@ -281,7 +281,7 @@
             Remove.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Remove.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Remove.FlatStyle = FlatStyle.Flat;
-            Remove.Location = new Point(141, 319);
+            Remove.Location = new Point(138, 319);
             Remove.Name = "Remove";
             Remove.Size = new Size(109, 37);
             Remove.TabIndex = 20;
@@ -311,7 +311,7 @@
             update.FlatStyle = FlatStyle.Flat;
             update.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             update.ImageAlign = ContentAlignment.MiddleLeft;
-            update.Location = new Point(33, 321);
+            update.Location = new Point(30, 321);
             update.Name = "update";
             update.Size = new Size(102, 33);
             update.TabIndex = 22;
@@ -326,9 +326,9 @@
             label6.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
             label6.Location = new Point(21, 167);
             label6.Name = "label6";
-            label6.Size = new Size(70, 23);
+            label6.Size = new Size(76, 23);
             label6.TabIndex = 23;
-            label6.Text = "Prod.Id";
+            label6.Text = "Prod.Id:";
             // 
             // UserCart
             // 

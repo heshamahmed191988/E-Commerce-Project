@@ -182,7 +182,7 @@
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1040, 48);
+            Navebar.Size = new Size(1060, 48);
             Navebar.TabIndex = 15;
             // 
             // label4
@@ -306,7 +306,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1040, 506);
+            ClientSize = new Size(1060, 506);
             Controls.Add(Navebar);
             Controls.Add(groupBox1);
             Controls.Add(OrderdataGridView);
