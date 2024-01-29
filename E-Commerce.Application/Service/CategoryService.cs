@@ -23,13 +23,34 @@ namespace E_Commerce.Application.Service
             _categoryRepository.save();
         }
 
-        public IQueryable<CategoryDTO> GetAll()
+        //public IQueryable<CategoryDTO> GetAll()
+        //{
+        //    var c = _categoryRepository.GetAll();
+
+        //    return c.Select(i => AutoMapping.MapCategoryDTO(i));
+        //}
+
+
+        public IEnumerable<CategoryDTO> GetAll()
         {
-            var c = _categoryRepository.GetAll();
+            var categories = _categoryRepository.GetAll(); 
+            // Manual mapping 
+            var categoryDTOs = new List<CategoryDTO>();
+            foreach (var category in categories)
+            {
+                var categoryDTO = new CategoryDTO
+                {
+                    //Id = category.Id,
+                    CategoryName = category.CategoryName,
+                    Description = category.Description,
+                    //image = category.image 
+                };
 
-            return c.Select(i => AutoMapping.MapCategoryDTO(i));
+                categoryDTOs.Add(categoryDTO);
+            }
+
+            return categoryDTOs;
         }
-
         public CategoryDTO GetCategory(int id)
         {
             if (id != 0)

@@ -10,7 +10,7 @@ namespace E_Commerce.Application.Service
 {
     public interface IProductService
     {
-        public IQueryable<ProductDTO> GetAll();
+        public IEnumerable<ProductDTO> GetAll();
         public ProductDTO GetProduct(int id);
         public void AddProduct(ProductDTO productDTO);
         public void UpdateProduct(ProductDTO productDTO);
