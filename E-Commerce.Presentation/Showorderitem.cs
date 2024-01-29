@@ -31,7 +31,13 @@ namespace E_Commerce.Presentation
         private void  LoadOrderItems()
         {
             var Order = _orderService.GetAll().ToList().Where(i => i.UserID == UserId).ToList();
-            dataGridView1.DataSource = Order;
+            dataGridView1.DataSource = Order.Select(i => new
+            {
+                i.OrderDate,
+                i.NoOfProducts,
+                i.Status
+            }
+            ).ToList(); ;
         }
         private void Showorderitem_Load(object sender, EventArgs e)
         {
