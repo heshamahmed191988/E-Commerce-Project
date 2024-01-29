@@ -60,7 +60,7 @@ namespace E_Commerce.Presentation
             {
                 if (_categoryService != null)
                 {
-                    var categories = _categoryService.GetAll();
+                    var categories = _categoryService.GetAllDisplay();
 
                     if (categories != null)
                     {

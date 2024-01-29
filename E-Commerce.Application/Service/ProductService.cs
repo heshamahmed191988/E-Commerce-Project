@@ -25,37 +25,37 @@ namespace E_Commerce.Application.Service
             _productRepository.save();
         }
 
-        //public IQueryable<ProductDTO> GetAll()
-        //{
-        //    var p = _productRepository.GetAll();
-
-        //    return p.Select(i => AutoMapping.MapProductDTO(i));
-        //}
-
-
-
-        public IEnumerable<ProductDTO> GetAll()
+        public IQueryable<ProductDTO> GetAll()
         {
-            var products = _productRepository.GetAll();
+            var p = _productRepository.GetAll();
 
-            // Manual mapping 
-            var productDTOs = new List<ProductDTO>();
-            foreach (var product in products)
-            {
-                var productDTO = new ProductDTO
-                {
-                   // Id = product.Id,
-                    ProductName = product.ProductName,
-                    Price = product.Price,
-                    Quantity = product.Quantity,
-                    //image = product.image 
-                };
-
-                productDTOs.Add(productDTO);
-            }
-
-            return productDTOs;
+            return p.Select(i => AutoMapping.MapProductDTO(i));
         }
+
+
+
+        //public IEnumerable<ProductDTO> GetAll()
+        //{
+        //    var products = _productRepository.GetAll();
+
+        //    // Manual mapping 
+        //    var productDTOs = new List<ProductDTO>();
+        //    foreach (var product in products)
+        //    {
+        //        var productDTO = new ProductDTO
+        //        {
+        //           // Id = product.Id,
+        //            ProductName = product.ProductName,
+        //            Price = product.Price,
+        //            Quantity = product.Quantity,
+        //            //image = product.image 
+        //        };
+
+        //        productDTOs.Add(productDTO);
+        //    }
+
+        //    return productDTOs;
+        //}
 
         public ProductDTO GetProduct(int id)
         {
@@ -103,9 +103,6 @@ namespace E_Commerce.Application.Service
                 return null;
         }
 
-        IQueryable<ProductDTO> IProductService.GetAll()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

@@ -9,7 +9,8 @@ namespace E_Commerce.Application.Service
 {
     public interface ICategoryService
     {
-        public IEnumerable<CategoryDTO> GetAll();
+        public IQueryable<CategoryDTO> GetAll();
+        public IQueryable<CategoryDTO> GetAllDisplay();
         public CategoryDTO GetCategory(int id);
         public void AddCategory(CategoryDTO categoryDTO);
         public void UpdateCategory(CategoryDTO categoryDTO);

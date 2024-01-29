@@ -42,7 +42,7 @@ namespace E_Commerce.Application.Mapping
                return null;
            }
            return new CategoryDTO
-           { Id = category.Id,
+           { //Id = category.Id,
              CategoryName=category.CategoryName,
              Description=category.Description ,
              image = category.image
@@ -60,8 +60,8 @@ namespace E_Commerce.Application.Mapping
                 ProductName=product.ProductName,
                 Price=product.Price,
                 image=product.image,
-                Quantity=product.Quantity//,
-               // categoryID = product.categoryID//,
+                Quantity=product.Quantity,
+               // categoryID = product.categoryID,
                 //category=product.
             };
         }

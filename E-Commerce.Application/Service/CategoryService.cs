@@ -23,17 +23,17 @@ namespace E_Commerce.Application.Service
             _categoryRepository.save();
         }
 
-        //public IQueryable<CategoryDTO> GetAll()
-        //{
-        //    var c = _categoryRepository.GetAll();
-
-        //    return c.Select(i => AutoMapping.MapCategoryDTO(i));
-        //}
-
-
-        public IEnumerable<CategoryDTO> GetAll()
+        public IQueryable<CategoryDTO> GetAll()
         {
-            var categories = _categoryRepository.GetAll(); 
+            var c = _categoryRepository.GetAll();
+
+            return c.Select(i => AutoMapping.MapCategoryDTO(i));
+        }
+
+
+        public IQueryable<CategoryDTO> GetAllDisplay()
+        {
+            var categories = _categoryRepository.GetAll();
             // Manual mapping 
             var categoryDTOs = new List<CategoryDTO>();
             foreach (var category in categories)
@@ -43,13 +43,13 @@ namespace E_Commerce.Application.Service
                     //Id = category.Id,
                     CategoryName = category.CategoryName,
                     Description = category.Description,
-                    //image = category.image 
+                    image = category.image 
                 };
 
-                categoryDTOs.Add(categoryDTO);
+                //categoryDTOs.Add(categoryDTO);
             }
 
-            return categoryDTOs;
+            return  categories.Select(i => AutoMapping.MapCategoryDTO(i));
         }
         public CategoryDTO GetCategory(int id)
         {
