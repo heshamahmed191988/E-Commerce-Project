@@ -1,5 +1,7 @@
 ﻿using Autofac;
+using AutoMapper;
 using E_Commerce.Application.Contract;
+using E_Commerce.Application.Mapping;
 using E_Commerce.Application.Service;
 using E_Commerce.Context;
 using E_Commerce.Infrustructure.Repository;
@@ -32,6 +34,15 @@ namespace E_Commerce.Presentation
             builder.RegisterType<CartDetailsService>().As<ICartDetailsService>();
             builder.RegisterType<OrderItemService>().As<IOrderItemService>();
             builder.RegisterType<E_CommerceContext>().As<E_CommerceContext>();
+            builder.Register(c => new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<AutoMapping>();
+            })).AsSelf().SingleInstance();
+
+            builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper(c.Resolve))
+                   .As<IMapper>()
+                   .InstancePerLifetimeScope();
+
 
             return builder.Build();
         }

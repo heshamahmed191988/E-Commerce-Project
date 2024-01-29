@@ -13,5 +13,8 @@ namespace E_Commerce.Application.Service
         //public CartDetailsDTO AddCartItems(CartDTO cartDTO);
         public void AddCartItems(CartDetailsDTO cartDetailsDTO);
         public IQueryable<CartDetailsDTO> GetCartItems();
+        public void UpdateCart(CartDetailsDTO cartDetailsDTO);
+        public void RemoveProductFromCart(CartDetailsDTO cartDetailsDTO);
+        public IQueryable<CartDetailsDTO> getAll(int cartId);
     }
 }

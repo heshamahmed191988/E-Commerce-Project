@@ -1,8 +1,10 @@
 ﻿using Autofac;
 using Autofac.Core;
 using E_Commerce.Application.Service;
+using E_Commerce.Context.Migrations;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,7 @@ namespace E_Commerce.Presentation
         private int UserId;
         int totalPrice = 0;
         int productsNo = 0;
+
         public UserCart(int cartId, int UserId)
         {
             var container = AutoFact.Inject();
@@ -44,7 +47,18 @@ namespace E_Commerce.Presentation
         private List<CartDetailsDTO> load()
         {
             var cartItems = _cartDetailsService.GetCartItems().ToList().Where(i => i.cartID == cartId).ToList();
-            dataGridView1.DataSource = cartItems;
+            var pro = _ProductService.GetAll().ToList();
+            foreach (var item in cartItems)
+            {
+                item.Product = pro.FirstOrDefault(i => i.Id == item.productID);
+            }
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = cartItems.Select(i => new
+            {
+                productName = i.Product.ProductName,
+                quantity = i.Quantity
+            }
+            ).ToList();
             return cartItems;
         }
         private void label1_Click(object sender, EventArgs e)
@@ -54,8 +68,6 @@ namespace E_Commerce.Presentation
 
         private void UserCart_Load(object sender, EventArgs e)
         {
-            // var cart = _cartService.GetCart(cartId).Id;
-
             var cartItems = load();
 
             foreach (var item in cartItems)
@@ -72,24 +84,100 @@ namespace E_Commerce.Presentation
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime currentDate = DateTime.Now;
-            OrderDTO order = new OrderDTO() { NoOfProducts = productsNo, TotalPrice = totalPrice, Status = "processing", OrderDate = currentDate, UserID = UserId };
-            _orderService.AddOrder(order);
-
-            var cartItems = load();
-
-            foreach (var item in cartItems)
+            var cartItems = load().ToList();
+            if (cartItems != null)
             {
-                var product = _ProductService.GetProduct(item.productID).Id;
-                OrderItemDTO orderitems = new OrderItemDTO() { productId = product, OrderId = order.Id };
-                _orderItemService.AddOrderItems(orderitems);
+                var order = new OrderDTO() { NoOfProducts = productsNo, TotalPrice = totalPrice, Status = "processing", OrderDate = currentDate, UserID = UserId };
+
+                _orderService.AddOrder(order);
+                int num = _orderService.GetAll().AsNoTracking().Count();
+                MessageBox.Show($"{num}");
+
+                if (num - 1 != 0)
+                {
+
+                    foreach (var item in cartItems)
+                    {
+                        var product = _ProductService.GetProduct(item.productID).Id;
+                        OrderItemDTO orderitems = new OrderItemDTO() { productId = product, OrderId = num - 1 };
+                        _orderItemService.AddOrderItems(orderitems);
+                    }
+                    MessageBox.Show("Order Added");
+
+                }
+
+            }
+
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                label5.Text = row.Cells["productName"].Value.ToString();
+                ChangeQuantity.Text = row.Cells["Quantity"].Value.ToString();
+
+            }
+
+        }
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void price_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Remove_Click(object sender, EventArgs e)
+        {
+            string name = label5.Text;
+            var product = _ProductService.SearchProduct(name).AsNoTracking().FirstOrDefault();
+            if (product.Id != 0)
+            {
+                var cartitemDelete = _cartDetailsService.GetCartItems().AsNoTracking().ToList().Where(i => i.productID == product.Id).FirstOrDefault();
+                MessageBox.Show("are you sure to delete this item");
+                _cartDetailsService.RemoveProductFromCart(cartitemDelete);
+                var x = load();
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void update_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-           // Pro_Name.Text = row.Cells["Quantity"].Value.ToString();
-            
+
+            string name = label5.Text;
+            var product = _ProductService.SearchProduct(name).FirstOrDefault();
+            if (product != null)
+            {
+                string newQuantityValue = ChangeQuantity.Text;
+                if (newQuantityValue != "")
+                {
+                    var cartitemUpdate = _cartDetailsService.GetCartItems().AsNoTracking().ToList().Where(i => i.productID == product.Id).FirstOrDefault();
+                    if (cartitemUpdate != null && int.Parse(newQuantityValue) != cartitemUpdate.Quantity)
+                    {
+                        cartitemUpdate.Quantity = int.Parse(newQuantityValue);
+                        _cartDetailsService.UpdateCart(cartitemUpdate);
+                        MessageBox.Show("updated");
+                        var x = load();
+                    }
+
+
+                }
+            }
+        }
+
+        private void PTorders_Click(object sender, EventArgs e)
+        {
+            Showorderitem showorder = new Showorderitem(UserId);
+            showorder.Show();
         }
     }
 }

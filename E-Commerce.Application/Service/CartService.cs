@@ -1,4 +1,5 @@
-﻿using E_Commerce.Application.Contract;
+﻿using AutoMapper;
+using E_Commerce.Application.Contract;
 using E_Commerce.Application.Mapping;
 using E_Commerce.DTOS.DTOS;
 using System;
@@ -12,10 +13,11 @@ namespace E_Commerce.Application.Service
     public class CartService:ICartService
     {
         ICartRepository _cartRepository;
-        
-        public CartService(ICartRepository cartRepository)
+        private readonly IMapper _mapper;
+        public CartService(ICartRepository cartRepository, IMapper mapper)
         {
             _cartRepository = cartRepository;
+            _mapper = mapper;
         }
         public void AddCart(CartDTO cartDTO)
         {
@@ -40,7 +42,18 @@ namespace E_Commerce.Application.Service
 
             return C.Select(i => AutoMapping.MapCartDTO(i));
         }
-       
+
+        public void UpdateCart(CartDTO cartDTO)
+        {
+            _cartRepository.Update(AutoMapping.MapCart(cartDTO));
+            _cartRepository.save();
+        }
+
+        public void RemoveProductFromCart(CartDTO cartDTO)
+        {
+            _cartRepository.Delete(AutoMapping.MapCart(cartDTO));
+            _cartRepository.save();
+        }
     }  
 }
 

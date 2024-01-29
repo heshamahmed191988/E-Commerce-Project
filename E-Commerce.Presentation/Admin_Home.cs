@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_ProjectVC_;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,7 +45,7 @@ namespace E_Commerce.Presentation
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            Categorys categorys = new Categorys();
+            Admin_Category_Product categorys = new Admin_Category_Product();
             categorys.Show();
 
         }
@@ -99,7 +100,58 @@ namespace E_Commerce.Presentation
 
         private void BTlogin_Click(object sender, EventArgs e)
         {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
 
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+            Admin_product admin_Product = new Admin_product();
+            admin_Product.Show();
+            this.Hide();
+        }
+
+        private void PTcategory_Click(object sender, EventArgs e)
+        {
+            Admin_Category_Product admin_Category_Product = new Admin_Category_Product();
+            admin_Category_Product.Show();
+            this.Hide();
+        }
+
+        private void PTorders_Click(object sender, EventArgs e)
+        {
+            Orders_View orders_View = new Orders_View();
+            orders_View.Show();
+            this.Hide();
+        }
+
+        private void PTregister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+        }
+
+        private void GoProducts_Click(object sender, EventArgs e)
+        {
+            Admin_product admin_Product = new Admin_product();
+            admin_Product.Show();
+            this.Hide();
+        }
+
+        private void GoOrders_Click(object sender, EventArgs e)
+        {
+            Orders_View orders_View = new Orders_View();
+            orders_View.Show();
+            this.Hide();
+        }
+
+        private void PTlogout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 

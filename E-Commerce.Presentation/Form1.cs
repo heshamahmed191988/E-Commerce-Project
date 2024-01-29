@@ -15,8 +15,8 @@ namespace Forms_ProjectVC_
     {
         static IUserService _userService;
         static ICartService _cartService;
-      //  public event Action<int> NewsHappened;
-       
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace Forms_ProjectVC_
             var u1 = _userService.GetUser(username, password);
             return u1;
         }
-       
+
         private void Form1_Load(object sender, EventArgs e)
         { }
 
@@ -45,17 +45,16 @@ namespace Forms_ProjectVC_
             {
                 if (user.type == 1)
                 {
-                    MessageBox.Show("Admin");
+                    Admin_Home admin_Home = new Admin_Home();
+                    admin_Home.Show();
                     this.Hide();
                     ///////////////////admin
                 }
                 else
                 {
                     int id = user.Id;
-                   // NewsHappened.Invoke(id);
                     var cart = _cartService.GetAll().ToList().Where(i => i.UserId == id).FirstOrDefault();
                     var cartid = cart.Id;
-                    //MessageBox.Show($"{cartid}");
                     Home_User userProducts = new Home_User(cartid,id);
                     this.Hide();
                     userProducts.Show();
@@ -71,6 +70,18 @@ namespace Forms_ProjectVC_
         private void pass_TextChanged(object sender, EventArgs e)
         {
             pass.PasswordChar = '*';
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
         }
     }
 }

@@ -16,26 +16,27 @@ using System.Runtime.Loader;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Forms_ProjectVC_;
 
 namespace E_Commerce.Presentation
 {
     public partial class Admin_product : Form
     {
-       // private readonly ICategoryService _categoryService;
+        // private readonly ICategoryService _categoryService;
 
         private readonly IProductService _productService;
-      
+
         public Admin_product()
         {
             var container = AutoFact.Inject();
-            
+
             _productService = container.Resolve<IProductService>();
             InitializeComponent();
             //_categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-           // _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
+            // _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
             // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
             //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
-           // LoadCategories();
+            // LoadCategories();
             LoadProduct();
         }
         private void LoadProduct()
@@ -84,7 +85,7 @@ namespace E_Commerce.Presentation
                         Price = price,
                         image = "123",
                         Quantity = quantity,
-                        categoryID = categoryid,
+                        //categoryID = categoryid,
 
                     };
 
@@ -130,7 +131,7 @@ namespace E_Commerce.Presentation
                             Price = decimal.Parse(ProductPriceBox.Text),
                             image = "123", // Modify as needed
                             Quantity = int.Parse(ProductQuantityBox.Text),
-                            categoryID = int.Parse(CategoryIdBox.Text)
+                            //categoryID = int.Parse(CategoryIdBox.Text)
                         };
 
                         _productService.UpdateProduct(updatedProduct);
@@ -212,6 +213,53 @@ namespace E_Commerce.Presentation
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        private void Admin_product_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+            Admin_product admin_Product = new Admin_product();
+            admin_Product.Show();
+            this.Hide();
+        }
+
+        private void PTcategory_Click(object sender, EventArgs e)
+        {
+            Admin_Category_Product admin_Category_Product = new Admin_Category_Product();
+            admin_Category_Product.Show();
+            this.Hide();
+        }
+
+        private void PTorders_Click(object sender, EventArgs e)
+        {
+            Orders_View orders_View = new Orders_View();
+            orders_View.Show();
+            this.Hide();
+        }
+
+        private void BTlogin_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void PTregister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+        }
+
+        private void PTlogout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }
