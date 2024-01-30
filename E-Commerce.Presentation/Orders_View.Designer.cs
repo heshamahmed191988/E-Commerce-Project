@@ -156,9 +156,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(22, 76);
             label2.Name = "label2";
-            label2.Size = new Size(122, 17);
+            label2.Size = new Size(67, 17);
             label2.TabIndex = 1;
-            label2.Text = "No Of Products :";
+            label2.Text = "Order ID";
             // 
             // label1
             // 

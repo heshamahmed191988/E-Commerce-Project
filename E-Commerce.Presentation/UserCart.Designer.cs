@@ -83,7 +83,6 @@
             label2.Size = new Size(103, 23);
             label2.TabIndex = 2;
             label2.Text = "Total Price:";
-            label2.Click += label2_Click;
             // 
             // button1
             // 
@@ -122,7 +121,6 @@
             price.Name = "price";
             price.Size = new Size(0, 13);
             price.TabIndex = 5;
-            price.Click += price_Click;
             // 
             // PTlogout
             // 

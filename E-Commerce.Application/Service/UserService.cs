@@ -31,9 +31,7 @@ namespace E_Commerce.Application.Service
         public IQueryable<UserDTO> GetAllPagination(int page, int pageSize)
         {
             var U = _userRepository.GetAll().Skip(page * pageSize).Take(pageSize);
-             var r= _mapper.Map<IQueryable<UserDTO>>(U);
-            //return U.Select(i => AutoMapping.MapUserDto(i));
-            return r;
+            return U.Select(i => AutoMapping.MapUserDto(i));
         }
         public IQueryable<UserDTO> GetAll()
         {
