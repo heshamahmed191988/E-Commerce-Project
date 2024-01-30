@@ -73,7 +73,22 @@ namespace E_Commerce.Infrustructure.Repository
         public int save()
         {
 
-            return _context.SaveChanges();
+            try
+            {
+                int result = _context.SaveChanges();
+
+                // Detach all entities from the context
+                foreach (var entry in _context.ChangeTracker.Entries())
+                {
+                    entry.State = EntityState.Detached;
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     } 
 }
