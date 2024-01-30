@@ -2,6 +2,7 @@
 using E_Commerce.Application.Service;
 using E_Commerce.Context;
 using E_Commerce.DTOS.DTOS;
+using E_Commerce_Project.Models;
 using Forms_ProjectVC_;
 using System;
 using System.Collections.Generic;
@@ -32,41 +33,44 @@ namespace E_Commerce.Presentation
         private void Orders_View_Load(object sender, EventArgs e)
         {
             var Ord = _orderService.GetAll().ToList();
-            OrderdataGridView.DataSource = Ord.Select(i => new {i.Id,i.UserID,i.OrderDate,i.NoOfProducts,i.TotalPrice,i.Status}).ToList();
-        }
+            //OrderdataGridView.DataSource = Ord;
 
+
+           
+            var OrderIds = Ord.Select(Order => Order.Id).ToList();
+
+           
+           
+
+           
+
+            var result = Ord
+    .Select(Order => new
+    {
+        OrderDate = Order.OrderDate,
+        //NoOfProducts = Order.NoOfProducts,       
+        Status = Order.Status,
+        TotalPrice = Order.TotalPrice,
+       
+
+    })
+    .ToList();
+            OrderdataGridView.DataSource = result;
+
+        }
+       
+        
         private void OrderdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
+            DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
 
-                    ODate.Text = row.Cells["OrderDate"].Value.ToString();
-                    NProduct.Text = row.Cells["Id"].Value.ToString();
-                    OStates.Text = row.Cells["Status"].Value.ToString();
-                    OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
+            // Populate textboxes with data from the selected row
+            ODate.Text = row.Cells["OrderDate"].Value.ToString();
+            NProduct.Text = row.Cells["Id"].Value.ToString();
+            OStates.Text = row.Cells["Status"].Value.ToString();
+            OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
 
-        // Helper method to validate and get cell value from a DataGridViewRow
-        private string ValidateAndGetCellValue(DataGridViewRow row, string columnName)
-        {
-            if (row.Cells[columnName].Value != null)
-            {
-                return row.Cells[columnName].Value.ToString();
-            }
-            else
-            {
-                MessageBox.Show($"Value for column '{columnName}' is null.");
-                return string.Empty; // or handle as appropriate for your application
-            }
+
         }
 
         private void BOUpdate_Click(object sender, EventArgs e)

@@ -44,7 +44,6 @@ namespace E_Commerce.Presentation
             Address = new TextBox();
             UserName = new TextBox();
             button1 = new Button();
-            button2 = new Button();
             nameMsg = new Label();
             EmailMsg = new Label();
             PassMSg = new Label();
@@ -52,6 +51,8 @@ namespace E_Commerce.Presentation
             PhonMSG = new Label();
             AddressMSG = new Label();
             userDTOBindingSource = new BindingSource(components);
+            linkLabel1 = new LinkLabel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -61,7 +62,7 @@ namespace E_Commerce.Presentation
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(60, 376);
+            label2.Location = new Point(60, 381);
             label2.Name = "label2";
             label2.Size = new Size(55, 29);
             label2.TabIndex = 1;
@@ -165,32 +166,21 @@ namespace E_Commerce.Presentation
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.MenuHighlight;
+            button1.BackColor = Color.Transparent;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(160, 432);
+            button1.Location = new Point(241, 432);
             button1.Name = "button1";
             button1.Size = new Size(135, 47);
             button1.TabIndex = 13;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.MenuHighlight;
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(337, 431);
-            button2.Name = "button2";
-            button2.Size = new Size(136, 47);
-            button2.TabIndex = 14;
-            button2.Text = " L o g i n";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // nameMsg
             // 
@@ -262,19 +252,40 @@ namespace E_Commerce.Presentation
             // 
             userDTOBindingSource.DataSource = typeof(DTOS.DTOS.UserDTO);
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(681, 450);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(50, 29);
+            linkLabel1.TabIndex = 22;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Login";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(492, 450);
+            label1.Name = "label1";
+            label1.Size = new Size(183, 29);
+            label1.TabIndex = 21;
+            label1.Text = "Already have an account?";
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(9F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(886, 505);
+            ClientSize = new Size(886, 523);
+            Controls.Add(linkLabel1);
+            Controls.Add(label1);
             Controls.Add(AddressMSG);
             Controls.Add(PhonMSG);
             Controls.Add(comboBox1);
             Controls.Add(PassMSg);
             Controls.Add(EmailMsg);
             Controls.Add(nameMsg);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(UserName);
             Controls.Add(Address);
@@ -288,6 +299,7 @@ namespace E_Commerce.Presentation
             Controls.Add(label3);
             Controls.Add(label2);
             Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Registration";
             Text = "Registration";
             Load += Registration_Load;
@@ -309,7 +321,6 @@ namespace E_Commerce.Presentation
         private TextBox Address;
         private TextBox UserName;
         private Button button1;
-        private Button button2;
         private Label nameMsg;
         private Label EmailMsg;
         private Label PassMSg;
@@ -317,5 +328,7 @@ namespace E_Commerce.Presentation
         private Label PhonMSG;
         private Label AddressMSG;
         private BindingSource userDTOBindingSource;
+        private LinkLabel linkLabel1;
+        private Label label1;
     }
 }

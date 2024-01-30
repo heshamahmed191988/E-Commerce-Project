@@ -225,7 +225,7 @@
             GoOrders.Padding = new Padding(0, 20, 0, 0);
             GoOrders.Size = new Size(169, 70);
             GoOrders.TabIndex = 1;
-            GoOrders.Text = "Orders";
+            GoOrders.Text = "  Orders";
             GoOrders.TextAlign = ContentAlignment.MiddleLeft;
             GoOrders.UseVisualStyleBackColor = true;
             GoOrders.Click += GoOrders_Click;
@@ -350,7 +350,7 @@
             BTlogin.Location = new Point(753, 5);
             BTlogin.Name = "BTlogin";
             BTlogin.Size = new Size(92, 38);
-            BTlogin.TabIndex = 14;
+            BTlogin.TabIndex = 1;
             BTlogin.Text = "LogIn";
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
             BTlogin.UseVisualStyleBackColor = false;
@@ -369,7 +369,7 @@
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1025, 48);
+            Navebar.Size = new Size(1045, 48);
             Navebar.TabIndex = 14;
             // 
             // slider
@@ -393,15 +393,17 @@
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1025, 537);
+            ClientSize = new Size(1045, 542);
             Controls.Add(slider);
             Controls.Add(Navebar);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Admin_Home";
-            Text = "Admin_Home";
+            Text = "Admin Home";
+            WindowState = FormWindowState.Maximized;
             Load += Admin_Home_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

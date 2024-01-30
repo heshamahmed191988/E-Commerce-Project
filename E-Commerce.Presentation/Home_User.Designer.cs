@@ -87,7 +87,7 @@
             Price.BackColor = Color.Transparent;
             Price.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Price.ForeColor = Color.Black;
-            Price.Location = new Point(19, 80);
+            Price.Location = new Point(19, 79);
             Price.Name = "Price";
             Price.Size = new Size(93, 15);
             Price.TabIndex = 6;
@@ -364,7 +364,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.bg1;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1032, 556);
             Controls.Add(Navebar);

@@ -70,7 +70,7 @@
             userName.Location = new Point(166, 59);
             userName.Multiline = true;
             userName.Name = "userName";
-            userName.Size = new Size(190, 23);
+            userName.Size = new Size(272, 23);
             userName.TabIndex = 2;
             // 
             // pass
@@ -81,7 +81,7 @@
             pass.Location = new Point(166, 109);
             pass.Multiline = true;
             pass.Name = "pass";
-            pass.Size = new Size(190, 23);
+            pass.Size = new Size(272, 23);
             pass.TabIndex = 3;
             pass.TextChanged += pass_TextChanged;
             // 
@@ -92,7 +92,7 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(179, 164);
+            button1.Location = new Point(217, 164);
             button1.Name = "button1";
             button1.Size = new Size(155, 54);
             button1.TabIndex = 4;
@@ -102,7 +102,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(29, 255);
+            label3.Location = new Point(112, 250);
             label3.Name = "label3";
             label3.Size = new Size(134, 15);
             label3.TabIndex = 5;
@@ -111,7 +111,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(217, 254);
+            linkLabel1.Location = new Point(300, 249);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(50, 15);
             linkLabel1.TabIndex = 6;
@@ -124,7 +124,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(483, 358);
+            ClientSize = new Size(500, 358);
             Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(button1);
@@ -133,6 +133,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Log In";
             Load += Form1_Load;

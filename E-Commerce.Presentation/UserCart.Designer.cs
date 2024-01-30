@@ -83,11 +83,12 @@
             label2.Size = new Size(103, 23);
             label2.TabIndex = 2;
             label2.Text = "Total Price:";
+            //label2.Click += label2_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.BuyN1;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Zoom;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -121,6 +122,7 @@
             price.Name = "price";
             price.Size = new Size(0, 13);
             price.TabIndex = 5;
+           // price.Click += price_Click;
             // 
             // PTlogout
             // 

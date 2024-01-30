@@ -56,9 +56,9 @@
             // OrderdataGridView
             // 
             OrderdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrderdataGridView.Location = new Point(333, 145);
+            OrderdataGridView.Location = new Point(333, 121);
             OrderdataGridView.Name = "OrderdataGridView";
-            OrderdataGridView.Size = new Size(680, 258);
+            OrderdataGridView.Size = new Size(680, 282);
             OrderdataGridView.TabIndex = 0;
             OrderdataGridView.CellClick += OrderdataGridView_CellContentClick;
             OrderdataGridView.CellContentClick += OrderdataGridView_CellContentClick;
@@ -76,9 +76,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI Emoji", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(57, 145);
+            groupBox1.Location = new Point(57, 111);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(257, 258);
+            groupBox1.Size = new Size(257, 292);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Edit Your Orders";
@@ -113,11 +113,18 @@
             // 
             // BOUpdate
             // 
-            BOUpdate.Location = new Point(89, 213);
+            BOUpdate.BackgroundImage = (Image)resources.GetObject("BOUpdate.BackgroundImage");
+            BOUpdate.BackgroundImageLayout = ImageLayout.Stretch;
+            BOUpdate.FlatAppearance.BorderSize = 0;
+            BOUpdate.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            BOUpdate.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            BOUpdate.FlatStyle = FlatStyle.Flat;
+            BOUpdate.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BOUpdate.Location = new Point(41, 213);
             BOUpdate.Name = "BOUpdate";
-            BOUpdate.Size = new Size(75, 23);
+            BOUpdate.Size = new Size(171, 51);
             BOUpdate.TabIndex = 8;
-            BOUpdate.Text = "Edit Orders";
+            BOUpdate.Text = "Edit ";
             BOUpdate.UseVisualStyleBackColor = true;
             BOUpdate.Click += BOUpdate_Click;
             // 
@@ -149,9 +156,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(22, 76);
             label2.Name = "label2";
-            label2.Size = new Size(67, 17);
+            label2.Size = new Size(122, 17);
             label2.TabIndex = 1;
-            label2.Text = "Order ID";
+            label2.Text = "No Of Products :";
             // 
             // label1
             // 
@@ -175,7 +182,7 @@
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1040, 48);
+            Navebar.Size = new Size(1060, 48);
             Navebar.TabIndex = 15;
             // 
             // label4
@@ -299,7 +306,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1040, 506);
+            ClientSize = new Size(1060, 506);
             Controls.Add(Navebar);
             Controls.Add(groupBox1);
             Controls.Add(OrderdataGridView);

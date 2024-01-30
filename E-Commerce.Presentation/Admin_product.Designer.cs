@@ -49,120 +49,143 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
-            label2 = new Label();
+            panel3 = new Panel();
+            panel2 = new Panel();
+            panel1 = new Panel();
+            Image = new Label();
             ImageBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(268, 98);
+            dataGridView1.Location = new Point(389, 98);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(734, 268);
+            dataGridView1.Size = new Size(613, 268);
             dataGridView1.TabIndex = 1;
-            dataGridView1.CellClick += dataGridView2_CellClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.CausesValidation = false;
-            label1.Location = new Point(16, 273);
+            label1.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label1.Location = new Point(15, 274);
             label1.Name = "label1";
-            label1.Size = new Size(68, 15);
+            label1.Size = new Size(125, 19);
             label1.TabIndex = 31;
-            label1.Text = "Category Id";
+            label1.Text = "Category Id:";
             // 
             // CategoryIdBox
             // 
             CategoryIdBox.CausesValidation = false;
-            CategoryIdBox.Location = new Point(16, 290);
+            CategoryIdBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CategoryIdBox.Location = new Point(214, 269);
             CategoryIdBox.Margin = new Padding(3, 2, 3, 2);
             CategoryIdBox.Name = "CategoryIdBox";
-            CategoryIdBox.Size = new Size(210, 23);
+            CategoryIdBox.Size = new Size(138, 29);
             CategoryIdBox.TabIndex = 30;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(16, 219);
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label13.Location = new Point(15, 222);
             label13.Name = "label13";
-            label13.Size = new Size(98, 15);
+            label13.Size = new Size(184, 19);
             label13.TabIndex = 29;
-            label13.Text = "Product Quantity";
+            label13.Text = "Product Quantity:";
             // 
             // ProductQuantityBox
             // 
-            ProductQuantityBox.Location = new Point(16, 236);
+            ProductQuantityBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProductQuantityBox.Location = new Point(214, 217);
             ProductQuantityBox.Margin = new Padding(3, 2, 3, 2);
             ProductQuantityBox.Name = "ProductQuantityBox";
-            ProductQuantityBox.Size = new Size(210, 23);
+            ProductQuantityBox.Size = new Size(138, 29);
             ProductQuantityBox.TabIndex = 28;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(16, 163);
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label12.Location = new Point(15, 169);
             label12.Name = "label12";
-            label12.Size = new Size(78, 15);
+            label12.Size = new Size(148, 19);
             label12.TabIndex = 27;
-            label12.Text = "Product Price";
+            label12.Text = "Product Price:";
             // 
             // ProductPriceBox
             // 
-            ProductPriceBox.Location = new Point(16, 180);
+            ProductPriceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProductPriceBox.Location = new Point(214, 164);
             ProductPriceBox.Margin = new Padding(3, 2, 3, 2);
             ProductPriceBox.Name = "ProductPriceBox";
-            ProductPriceBox.Size = new Size(210, 23);
+            ProductPriceBox.Size = new Size(138, 29);
             ProductPriceBox.TabIndex = 26;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(16, 106);
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label11.Location = new Point(15, 81);
             label11.Name = "label11";
-            label11.Size = new Size(84, 15);
+            label11.Size = new Size(145, 19);
             label11.TabIndex = 25;
-            label11.Text = "Product Name";
+            label11.Text = "Product Name:";
             // 
             // ProductNameBox
             // 
-            ProductNameBox.Location = new Point(16, 123);
+            ProductNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProductNameBox.Location = new Point(15, 111);
             ProductNameBox.Margin = new Padding(3, 2, 3, 2);
             ProductNameBox.Name = "ProductNameBox";
-            ProductNameBox.Size = new Size(210, 23);
+            ProductNameBox.Size = new Size(337, 29);
             ProductNameBox.TabIndex = 24;
             // 
             // DeleteProduct
             // 
-            DeleteProduct.AutoSize = true;
-            DeleteProduct.Location = new Point(625, 387);
+            DeleteProduct.BackColor = Color.Transparent;
+            DeleteProduct.ForeColor = SystemColors.ControlText;
+            DeleteProduct.Location = new Point(-9, -11);
             DeleteProduct.Name = "DeleteProduct";
-            DeleteProduct.Size = new Size(40, 15);
+            DeleteProduct.Size = new Size(102, 40);
             DeleteProduct.TabIndex = 34;
-            DeleteProduct.Text = "Delete";
             DeleteProduct.Click += DeleteProduct_Click;
             // 
             // EditProduct
             // 
-            EditProduct.AutoSize = true;
-            EditProduct.Location = new Point(540, 387);
+            EditProduct.BackColor = Color.Transparent;
+            EditProduct.Font = new Font("Arial Rounded MT Bold", 14.25F);
+            EditProduct.ForeColor = Color.White;
+            EditProduct.Location = new Point(-3, 0);
             EditProduct.Name = "EditProduct";
-            EditProduct.Size = new Size(27, 15);
+            EditProduct.Size = new Size(102, 40);
             EditProduct.TabIndex = 33;
             EditProduct.Text = "Edit";
+            EditProduct.TextAlign = ContentAlignment.MiddleCenter;
             EditProduct.Click += EditProduct_Click;
             // 
             // AddProduct
             // 
-            AddProduct.AutoSize = true;
-            AddProduct.Location = new Point(475, 387);
+            AddProduct.BackColor = Color.Transparent;
+            AddProduct.Font = new Font("Arial Rounded MT Bold", 14.25F);
+            AddProduct.ForeColor = Color.White;
+            AddProduct.Location = new Point(3, 0);
             AddProduct.Name = "AddProduct";
-            AddProduct.Size = new Size(29, 15);
+            AddProduct.Size = new Size(102, 40);
             AddProduct.TabIndex = 32;
             AddProduct.Text = "Add";
+            AddProduct.TextAlign = ContentAlignment.MiddleCenter;
             AddProduct.Click += AddProduct_Click;
             // 
             // label4
@@ -296,37 +319,71 @@
             Navebar.Size = new Size(1025, 48);
             Navebar.TabIndex = 35;
             // 
-            // label2
+            // panel3
             // 
-            label2.AutoSize = true;
-            label2.CausesValidation = false;
-            label2.Location = new Point(16, 326);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 15);
-            label2.TabIndex = 37;
-            label2.Text = "Image";
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(AddProduct);
+            panel3.Location = new Point(20, 354);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(102, 40);
+            panel3.TabIndex = 38;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(EditProduct);
+            panel2.Location = new Point(131, 354);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(102, 40);
+            panel2.TabIndex = 37;
+            // 
+            // panel1
+            // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(DeleteProduct);
+            panel1.Location = new Point(259, 354);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(102, 40);
+            panel1.TabIndex = 36;
+            // 
+            // Image
+            // 
+            Image.AutoSize = true;
+            Image.BackColor = Color.Transparent;
+            Image.CausesValidation = false;
+            Image.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            Image.Location = new Point(15, 317);
+            Image.Name = "Image";
+            Image.Size = new Size(119, 19);
+            Image.TabIndex = 39;
+            Image.Text = "Image Path:";
             // 
             // ImageBox
             // 
             ImageBox.CausesValidation = false;
-            ImageBox.Location = new Point(16, 343);
+            ImageBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ImageBox.Location = new Point(214, 312);
             ImageBox.Margin = new Padding(3, 2, 3, 2);
             ImageBox.Name = "ImageBox";
-            ImageBox.Size = new Size(210, 23);
-            ImageBox.TabIndex = 36;
+            ImageBox.Size = new Size(138, 29);
+            ImageBox.TabIndex = 40;
             // 
             // Admin_product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1025, 461);
-            Controls.Add(label2);
+            ClientSize = new Size(1025, 418);
             Controls.Add(ImageBox);
+            Controls.Add(Image);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(Navebar);
-            Controls.Add(DeleteProduct);
-            Controls.Add(EditProduct);
-            Controls.Add(AddProduct);
             Controls.Add(label1);
             Controls.Add(CategoryIdBox);
             Controls.Add(label13);
@@ -336,6 +393,7 @@
             Controls.Add(label11);
             Controls.Add(ProductNameBox);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Admin_product";
             Text = "Admin_product";
@@ -343,6 +401,9 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             Navebar.ResumeLayout(false);
             Navebar.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -369,7 +430,10 @@
         private Button PTregister;
         private Button BTlogin;
         private Panel Navebar;
-        private Label label2;
+        private Panel panel3;
+        private Panel panel2;
+        private Panel panel1;
+        private Label Image;
         private TextBox ImageBox;
     }
 }
