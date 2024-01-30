@@ -45,85 +45,101 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             Navebar.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(252, 121);
+            dataGridView2.Location = new Point(394, 121);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(761, 288);
+            dataGridView2.Size = new Size(600, 288);
             dataGridView2.TabIndex = 1;
             // 
             // DeleteCtegorey
             // 
-            DeleteCtegorey.AutoSize = true;
-            DeleteCtegorey.Location = new Point(528, 441);
+            DeleteCtegorey.BackColor = Color.Transparent;
+            DeleteCtegorey.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeleteCtegorey.Location = new Point(0, 0);
             DeleteCtegorey.Name = "DeleteCtegorey";
-            DeleteCtegorey.Size = new Size(40, 15);
-            DeleteCtegorey.TabIndex = 9;
-            DeleteCtegorey.Text = "Delete";
+            DeleteCtegorey.Size = new Size(102, 40);
+            DeleteCtegorey.TabIndex = 2;
+            DeleteCtegorey.TextAlign = ContentAlignment.MiddleCenter;
             DeleteCtegorey.Click += DeleteCtegorey_Click;
             // 
             // EditCtegorey
             // 
-            EditCtegorey.AutoSize = true;
-            EditCtegorey.Location = new Point(462, 441);
+            EditCtegorey.BackColor = Color.Transparent;
+            EditCtegorey.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EditCtegorey.ForeColor = Color.White;
+            EditCtegorey.Location = new Point(0, 1);
             EditCtegorey.Name = "EditCtegorey";
-            EditCtegorey.Size = new Size(27, 15);
+            EditCtegorey.Size = new Size(102, 40);
             EditCtegorey.TabIndex = 8;
             EditCtegorey.Text = "Edit";
+            EditCtegorey.TextAlign = ContentAlignment.MiddleCenter;
             EditCtegorey.Click += EditCtegorey_Click;
             // 
             // AddCtegorey
             // 
-            AddCtegorey.AutoSize = true;
-            AddCtegorey.Location = new Point(405, 441);
+            AddCtegorey.AutoEllipsis = true;
+            AddCtegorey.BackColor = Color.Transparent;
+            AddCtegorey.Font = new Font("Arial Rounded MT Bold", 14.25F);
+            AddCtegorey.ForeColor = Color.White;
+            AddCtegorey.Location = new Point(0, 0);
             AddCtegorey.Name = "AddCtegorey";
-            AddCtegorey.Size = new Size(29, 15);
+            AddCtegorey.Size = new Size(102, 40);
             AddCtegorey.TabIndex = 6;
             AddCtegorey.Text = "Add";
+            AddCtegorey.TextAlign = ContentAlignment.MiddleCenter;
             AddCtegorey.Click += AddCtegorey_Click;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            label14.Location = new Point(41, 250);
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label14.Location = new Point(31, 243);
             label14.Name = "label14";
-            label14.Size = new Size(132, 18);
+            label14.Size = new Size(219, 19);
             label14.TabIndex = 21;
-            label14.Text = "Catogery Description";
+            label14.Text = "Catogery Description:";
             // 
             // CatogeryDescriptionBox
             // 
-            CatogeryDescriptionBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            CatogeryDescriptionBox.Location = new Point(41, 279);
+            CatogeryDescriptionBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CatogeryDescriptionBox.Location = new Point(31, 285);
             CatogeryDescriptionBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryDescriptionBox.Name = "CatogeryDescriptionBox";
-            CatogeryDescriptionBox.Size = new Size(184, 23);
+            CatogeryDescriptionBox.Size = new Size(338, 31);
             CatogeryDescriptionBox.TabIndex = 20;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            label15.Location = new Point(41, 172);
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Stencil", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(31, 121);
             label15.Name = "label15";
-            label15.Size = new Size(97, 18);
+            label15.Size = new Size(154, 19);
             label15.TabIndex = 19;
-            label15.Text = "Catogery Name";
+            label15.Text = "Catogery Name:";
             // 
             // CatogeryNameBox
             // 
-            CatogeryNameBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            CatogeryNameBox.Location = new Point(41, 200);
+            CatogeryNameBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CatogeryNameBox.Location = new Point(31, 167);
             CatogeryNameBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryNameBox.Name = "CatogeryNameBox";
-            CatogeryNameBox.Size = new Size(184, 23);
+            CatogeryNameBox.Size = new Size(338, 31);
             CatogeryNameBox.TabIndex = 18;
             // 
             // label4
@@ -257,27 +273,62 @@
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 22;
             // 
+            // panel1
+            // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(DeleteCtegorey);
+            panel1.Location = new Point(267, 369);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(102, 40);
+            panel1.TabIndex = 23;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(EditCtegorey);
+            panel2.Location = new Point(150, 369);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(102, 40);
+            panel2.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(AddCtegorey);
+            panel3.Location = new Point(31, 369);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(102, 40);
+            panel3.TabIndex = 25;
+            // 
             // Admin_Category_Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1032, 499);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(Navebar);
             Controls.Add(label14);
             Controls.Add(CatogeryDescriptionBox);
             Controls.Add(label15);
             Controls.Add(CatogeryNameBox);
-            Controls.Add(DeleteCtegorey);
-            Controls.Add(EditCtegorey);
-            Controls.Add(AddCtegorey);
             Controls.Add(dataGridView2);
+            Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Admin_Category_Product";
-            Text = "Admin_Category_Product";
+            Text = "Admin Category";
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             Navebar.ResumeLayout(false);
             Navebar.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -299,5 +350,8 @@
         private Button PTregister;
         private Button BTlogin;
         private Panel Navebar;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
     }
 }

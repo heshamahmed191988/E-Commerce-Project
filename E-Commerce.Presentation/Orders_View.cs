@@ -33,9 +33,33 @@ namespace E_Commerce.Presentation
         private void Orders_View_Load(object sender, EventArgs e)
         {
             var Ord = _orderService.GetAll().ToList();
-            OrderdataGridView.DataSource = Ord;
-        }
+            //OrderdataGridView.DataSource = Ord;
 
+
+           
+            var OrderIds = Ord.Select(Order => Order.Id).ToList();
+
+           
+           
+
+           
+
+            var result = Ord
+    .Select(Order => new
+    {
+        OrderDate = Order.OrderDate,
+        //NoOfProducts = Order.NoOfProducts,       
+        Status = Order.Status,
+        TotalPrice = Order.TotalPrice,
+       
+
+    })
+    .ToList();
+            OrderdataGridView.DataSource = result;
+
+        }
+       
+        
         private void OrderdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
