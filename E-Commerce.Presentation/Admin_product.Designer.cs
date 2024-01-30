@@ -52,6 +52,8 @@
             panel3 = new Panel();
             panel2 = new Panel();
             panel1 = new Panel();
+            Image = new Label();
+            ImageBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
             panel3.SuspendLayout();
@@ -154,7 +156,7 @@
             // 
             DeleteProduct.BackColor = Color.Transparent;
             DeleteProduct.ForeColor = SystemColors.ControlText;
-            DeleteProduct.Location = new Point(0, 0);
+            DeleteProduct.Location = new Point(-9, -11);
             DeleteProduct.Name = "DeleteProduct";
             DeleteProduct.Size = new Size(102, 40);
             DeleteProduct.TabIndex = 34;
@@ -165,7 +167,7 @@
             EditProduct.BackColor = Color.Transparent;
             EditProduct.Font = new Font("Arial Rounded MT Bold", 14.25F);
             EditProduct.ForeColor = Color.White;
-            EditProduct.Location = new Point(0, 0);
+            EditProduct.Location = new Point(-3, 0);
             EditProduct.Name = "EditProduct";
             EditProduct.Size = new Size(102, 40);
             EditProduct.TabIndex = 33;
@@ -178,7 +180,7 @@
             AddProduct.BackColor = Color.Transparent;
             AddProduct.Font = new Font("Arial Rounded MT Bold", 14.25F);
             AddProduct.ForeColor = Color.White;
-            AddProduct.Location = new Point(0, 0);
+            AddProduct.Location = new Point(3, 0);
             AddProduct.Name = "AddProduct";
             AddProduct.Size = new Size(102, 40);
             AddProduct.TabIndex = 32;
@@ -322,7 +324,7 @@
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Controls.Add(AddProduct);
-            panel3.Location = new Point(23, 326);
+            panel3.Location = new Point(20, 354);
             panel3.Name = "panel3";
             panel3.Size = new Size(102, 40);
             panel3.TabIndex = 38;
@@ -332,7 +334,7 @@
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(EditProduct);
-            panel2.Location = new Point(142, 326);
+            panel2.Location = new Point(131, 354);
             panel2.Name = "panel2";
             panel2.Size = new Size(102, 40);
             panel2.TabIndex = 37;
@@ -342,10 +344,32 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(DeleteProduct);
-            panel1.Location = new Point(259, 326);
+            panel1.Location = new Point(259, 354);
             panel1.Name = "panel1";
             panel1.Size = new Size(102, 40);
             panel1.TabIndex = 36;
+            // 
+            // Image
+            // 
+            Image.AutoSize = true;
+            Image.BackColor = Color.Transparent;
+            Image.CausesValidation = false;
+            Image.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            Image.Location = new Point(15, 317);
+            Image.Name = "Image";
+            Image.Size = new Size(119, 19);
+            Image.TabIndex = 39;
+            Image.Text = "Image Path:";
+            // 
+            // ImageBox
+            // 
+            ImageBox.CausesValidation = false;
+            ImageBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ImageBox.Location = new Point(214, 312);
+            ImageBox.Margin = new Padding(3, 2, 3, 2);
+            ImageBox.Name = "ImageBox";
+            ImageBox.Size = new Size(138, 29);
+            ImageBox.TabIndex = 40;
             // 
             // Admin_product
             // 
@@ -354,6 +378,8 @@
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1025, 418);
+            Controls.Add(ImageBox);
+            Controls.Add(Image);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -407,5 +433,7 @@
         private Panel panel3;
         private Panel panel2;
         private Panel panel1;
+        private Label Image;
+        private TextBox ImageBox;
     }
 }

@@ -48,6 +48,8 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            Image = new Label();
+            Imagebox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             Navebar.SuspendLayout();
             panel1.SuspendLayout();
@@ -80,7 +82,7 @@
             EditCtegorey.BackColor = Color.Transparent;
             EditCtegorey.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             EditCtegorey.ForeColor = Color.White;
-            EditCtegorey.Location = new Point(0, 1);
+            EditCtegorey.Location = new Point(0, 0);
             EditCtegorey.Name = "EditCtegorey";
             EditCtegorey.Size = new Size(102, 40);
             EditCtegorey.TabIndex = 8;
@@ -94,7 +96,7 @@
             AddCtegorey.BackColor = Color.Transparent;
             AddCtegorey.Font = new Font("Arial Rounded MT Bold", 14.25F);
             AddCtegorey.ForeColor = Color.White;
-            AddCtegorey.Location = new Point(0, 0);
+            AddCtegorey.Location = new Point(3, 0);
             AddCtegorey.Name = "AddCtegorey";
             AddCtegorey.Size = new Size(102, 40);
             AddCtegorey.TabIndex = 6;
@@ -278,7 +280,7 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(DeleteCtegorey);
-            panel1.Location = new Point(267, 369);
+            panel1.Location = new Point(276, 415);
             panel1.Name = "panel1";
             panel1.Size = new Size(102, 40);
             panel1.TabIndex = 23;
@@ -288,7 +290,7 @@
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(EditCtegorey);
-            panel2.Location = new Point(150, 369);
+            panel2.Location = new Point(150, 415);
             panel2.Name = "panel2";
             panel2.Size = new Size(102, 40);
             panel2.TabIndex = 24;
@@ -298,10 +300,30 @@
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Controls.Add(AddCtegorey);
-            panel3.Location = new Point(31, 369);
+            panel3.Location = new Point(31, 415);
             panel3.Name = "panel3";
             panel3.Size = new Size(102, 40);
             panel3.TabIndex = 25;
+            // 
+            // Image
+            // 
+            Image.AutoSize = true;
+            Image.BackColor = Color.Transparent;
+            Image.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            Image.Location = new Point(34, 328);
+            Image.Name = "Image";
+            Image.Size = new Size(119, 19);
+            Image.TabIndex = 26;
+            Image.Text = "Image Path:";
+            // 
+            // Imagebox
+            // 
+            Imagebox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Imagebox.Location = new Point(31, 365);
+            Imagebox.Margin = new Padding(3, 2, 3, 2);
+            Imagebox.Name = "Imagebox";
+            Imagebox.Size = new Size(338, 31);
+            Imagebox.TabIndex = 27;
             // 
             // Admin_Category_Product
             // 
@@ -310,6 +332,8 @@
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1032, 499);
+            Controls.Add(Imagebox);
+            Controls.Add(Image);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(Navebar);
@@ -353,5 +377,7 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
+        private Label Image;
+        private TextBox Imagebox;
     }
 }

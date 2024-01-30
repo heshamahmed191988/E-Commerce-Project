@@ -77,7 +77,7 @@ namespace E_Commerce.Presentation
             string type = comboBox1.Text; /////////
             int result = int.Parse(type);
             UserDTO u1 = new UserDTO() { UserName = username, Email = email, Phone = phone, Password = password, Address = address, type = result };
-            
+
 
             #region condition edit
             if (username.Length < 5 ||
@@ -133,6 +133,7 @@ namespace E_Commerce.Presentation
         {
             pass.PasswordChar = '*';
         }
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form1 form1 = new Form1();

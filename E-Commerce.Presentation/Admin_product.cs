@@ -46,7 +46,7 @@ namespace E_Commerce.Presentation
 
                     if (products != null)
                     {
-                        dataGridView1.DataSource = products.Select(e => new { e.Id, e.ProductName,e.Quantity, e.Price, e.categoryID, e.image }).ToList();
+                        dataGridView1.DataSource = products.Select(e => new { e.Id, e.ProductName, e.Quantity, e.Price, e.categoryID, e.image }).ToList();
                     }
                     else
                     {
@@ -124,9 +124,9 @@ namespace E_Commerce.Presentation
                     {
                         DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                         int productId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                        ProductDTO product= _productService.GetProduct(productId);
+                        ProductDTO product = _productService.GetProduct(productId);
 
-                        if (product != null) 
+                        if (product != null)
                         {
                             product.ProductName = ProductNameBox.Text;
                             product.Price = decimal.Parse(ProductPriceBox.Text);
@@ -154,7 +154,7 @@ namespace E_Commerce.Presentation
                             MessageBox.Show("Category not found.");
                         }
 
-                        
+
                     }
                     else
                     {
@@ -274,5 +274,6 @@ namespace E_Commerce.Presentation
             form1.Show();
             this.Hide();
         }
+
     }
 }
