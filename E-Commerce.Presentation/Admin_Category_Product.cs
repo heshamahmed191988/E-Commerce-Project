@@ -4,7 +4,6 @@ using E_Commerce.Context;
 using Autofac;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce.Infrustructure.Repository;
-using E_Commerce_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,12 +24,6 @@ namespace E_Commerce.Presentation
 
         ICategoryService _categoryService;
         private readonly IProductService _productService;
-
-        //public Admin_Category_Product()
-        //{
-        //    InitializeComponent();
-        //    LoadCategories();
-        //}
         public Admin_Category_Product()
         {
             var container = AutoFact.Inject();
@@ -39,21 +32,6 @@ namespace E_Commerce.Presentation
             InitializeComponent();
             LoadCategories();
         }
-        /*   public Admin_Category_Product(ICategoryService categoryService)
-           { 
-               var container = AutoFact.Inject();
-               _categoryService = container.Resolve<ICategoryService>();
-               _productService = container.Resolve<IProductService>();
-               InitializeComponent();
-               // _categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-               //_productService = new ProductService(new ProductRepository(new E_CommerceContext()));
-               // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
-               //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
-               LoadCategories();
-
-           }*/
-
-
         private void LoadCategories()
         {
             try
@@ -91,9 +69,18 @@ namespace E_Commerce.Presentation
             {
                 if (_categoryService != null)
                 {
-                    string name = CatogeryNameBox.Text;
-                    string description = CatogeryDescriptionBox.Text;
-                    string Image = Imagebox.Text;
+                    string name = CatogeryNameBox.Text.Trim();
+                    string description = CatogeryDescriptionBox.Text.Trim();
+                    string Image = Imagebox.Text.Trim();
+
+                    if (string.IsNullOrWhiteSpace(name))
+                    {
+                        MessageBox.Show("Category name cannot be empty.");
+                        return;
+                    }
+
+                    // Add additional validations as needed for description, image, etc.
+
                     CategoryDTO newCategory = new CategoryDTO
                     {
                         CategoryName = name,
@@ -104,7 +91,6 @@ namespace E_Commerce.Presentation
 
                     _categoryService.AddCategory(newCategory);
                     LoadCategories();
-
                 }
                 else
                 {
@@ -121,8 +107,15 @@ namespace E_Commerce.Presentation
 
 
 
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
 
-
+            // Populate textboxes with data from the selected row
+            CatogeryNameBox.Text = row.Cells["CategoryName"].Value.ToString();
+            CatogeryDescriptionBox.Text = row.Cells["Description"].Value.ToString();
+            Imagebox.Text = row.Cells["Image"].Value.ToString();
+        }
 
         private void EditCtegorey_Click(object sender, EventArgs e)
         {
@@ -193,18 +186,14 @@ namespace E_Commerce.Presentation
         }
 
 
-        private CategoryDTO ConvertToDTO(E_Commerce_Project.Models.Category entity)
-        {
-            // Implement the conversion logic based on your entity and DTO structure
-            // For simplicity, assuming a CategoryDTO constructor that accepts an entity
-            return new CategoryDTO
-            {
-                // Assign properties based on your entity structure
-                CategoryName = entity.CategoryName,
-                Description = entity.Description,
-                // Other properties...
-            };
-        }
+        /*   private CategoryDTO ConvertToDTO(E_Commerce_Project.Models.Category entity)
+           {
+               return new CategoryDTO
+               {
+                   CategoryName = entity.CategoryName,
+                   Description = entity.Description,
+               };
+           }*/
 
 
         private void DeleteCtegorey_Click(object sender, EventArgs e)

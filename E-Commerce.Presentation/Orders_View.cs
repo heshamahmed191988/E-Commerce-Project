@@ -2,7 +2,6 @@
 using E_Commerce.Application.Service;
 using E_Commerce.Context;
 using E_Commerce.DTOS.DTOS;
-using E_Commerce_Project.Models;
 using Forms_ProjectVC_;
 using System;
 using System.Collections.Generic;
@@ -38,15 +37,36 @@ namespace E_Commerce.Presentation
 
         private void OrderdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
 
-            // Populate textboxes with data from the selected row
-            ODate.Text = row.Cells["OrderDate"].Value.ToString();
-            NProduct.Text = row.Cells["Id"].Value.ToString();
-            OStates.Text = row.Cells["Status"].Value.ToString();
-            OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
+                    ODate.Text = row.Cells["OrderDate"].Value.ToString();
+                    NProduct.Text = row.Cells["Id"].Value.ToString();
+                    OStates.Text = row.Cells["Status"].Value.ToString();
+                    OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
 
-
+        // Helper method to validate and get cell value from a DataGridViewRow
+        private string ValidateAndGetCellValue(DataGridViewRow row, string columnName)
+        {
+            if (row.Cells[columnName].Value != null)
+            {
+                return row.Cells[columnName].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show($"Value for column '{columnName}' is null.");
+                return string.Empty; // or handle as appropriate for your application
+            }
         }
 
         private void BOUpdate_Click(object sender, EventArgs e)

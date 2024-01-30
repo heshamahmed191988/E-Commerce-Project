@@ -114,16 +114,14 @@ namespace E_Commerce.Presentation
                             };
                             _orderItemService.AddOrderItems(orderitems);
                             _cartDetailsService.RemoveProductFromCart(item);
-                            //MessageBox.Show("items Added");
+                            dataGridView1.DataSource = null;
                         }
                         else
                         {
-                           // MessageBox.Show($"Product with ID {item.productID} not found.");
+                           
                         }
                     } 
                     MessageBox.Show("Order Added");
-
-
                 }
                 else
                 {
@@ -150,31 +148,35 @@ namespace E_Commerce.Presentation
         }
 
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void price_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void updateQuantity_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Remove_Click(object sender, EventArgs e)
         {
             string name = label5.Text;
-            var product = _ProductService.SearchProduct(name).AsNoTracking().FirstOrDefault();
-            if (product.Id != 0)
+            var product = _ProductService.SearchProduct(name).FirstOrDefault();
+
+            if (product != null )
             {
-                var cartitemDelete = _cartDetailsService.GetCartItems().AsNoTracking().ToList().Where(i => i.productID == product.Id).FirstOrDefault();
-                MessageBox.Show("are you sure to delete this item");
-                _cartDetailsService.RemoveProductFromCart(cartitemDelete);
-                var x = load();
+                var cartitemDelete = _cartDetailsService.GetCartItems().AsNoTracking().ToList().FirstOrDefault(i => i.productID == product.Id);
+
+                if (cartitemDelete != null)
+                {
+                   
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        _cartDetailsService.RemoveProductFromCart(cartitemDelete);
+                        var x = load();
+                        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Item not found in the cart.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Product not found or has an invalid ID.");
             }
         }
 
@@ -183,24 +185,49 @@ namespace E_Commerce.Presentation
 
             string name = label5.Text;
             var product = _ProductService.SearchProduct(name).FirstOrDefault();
+
             if (product != null)
             {
                 string newQuantityValue = ChangeQuantity.Text;
-                if (newQuantityValue != "")
+
+                if (!string.IsNullOrEmpty(newQuantityValue))
                 {
-                    var cartitemUpdate = _cartDetailsService.GetCartItems().AsNoTracking().ToList().Where(i => i.productID == product.Id).FirstOrDefault();
-                    if (cartitemUpdate != null && int.Parse(newQuantityValue) != cartitemUpdate.Quantity)
+                    if (int.TryParse(newQuantityValue, out int newQuantity))
                     {
-                        //CartDetailsDTO updatedCartitem= new CartDetailsDTO() { Id = cartitemUpdate.Id, Quantity = int.Parse(newQuantityValue),productID=cartitemUpdate.productID,cartID=cartitemUpdate.cartID };
-                    
-                        cartitemUpdate.Quantity = int.Parse(newQuantityValue);
-                        _cartDetailsService.UpdateCart(cartitemUpdate);
-                        MessageBox.Show("updated");
-                        var x = load();
+                        if (newQuantity > 0)
+                        {
+                            var cartitemUpdate = _cartDetailsService.GetCartItems().AsNoTracking().ToList().FirstOrDefault(i => i.productID == product.Id);
+
+                            if (cartitemUpdate != null && newQuantity != cartitemUpdate.Quantity)
+                            {
+                                cartitemUpdate.Quantity = newQuantity;
+                                _cartDetailsService.UpdateCart(cartitemUpdate);
+                                MessageBox.Show("Quantity updated successfully");
+                                var x = load();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Quantity is already set to the provided value or item not found in the cart.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a positive quantity value.");
+                        }
                     }
-
-
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid numeric quantity.");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Please enter a quantity value.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Product not found.");
             }
         }
 
