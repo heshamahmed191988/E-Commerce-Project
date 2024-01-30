@@ -4,7 +4,6 @@ using E_Commerce.Context;
 using Autofac;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce.Infrustructure.Repository;
-using E_Commerce_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,12 +24,6 @@ namespace E_Commerce.Presentation
 
         ICategoryService _categoryService;
         private readonly IProductService _productService;
-
-        //public Admin_Category_Product()
-        //{
-        //    InitializeComponent();
-        //    LoadCategories();
-        //}
         public Admin_Category_Product()
         {
             var container = AutoFact.Inject();
@@ -39,32 +32,17 @@ namespace E_Commerce.Presentation
             InitializeComponent();
             LoadCategories();
         }
-        /*   public Admin_Category_Product(ICategoryService categoryService)
-           { 
-               var container = AutoFact.Inject();
-               _categoryService = container.Resolve<ICategoryService>();
-               _productService = container.Resolve<IProductService>();
-               InitializeComponent();
-               // _categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-               //_productService = new ProductService(new ProductRepository(new E_CommerceContext()));
-               // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
-               //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
-               LoadCategories();
-
-           }*/
-
-
         private void LoadCategories()
         {
             try
             {
                 if (_categoryService != null)
                 {
-                    var categories = _categoryService.GetAll();
+                    var categories = _categoryService.GetAll().ToList();
 
                     if (categories != null)
                     {
-                        dataGridView2.DataSource = categories.ToList();
+                        dataGridView2.DataSource = categories.Select(e => new { e.Id, e.CategoryName, e.Description, e.image }).ToList();
                     }
                     else
                     {
@@ -91,20 +69,28 @@ namespace E_Commerce.Presentation
             {
                 if (_categoryService != null)
                 {
-                    string name = CatogeryNameBox.Text;
-                    string description = CatogeryDescriptionBox.Text;
+                    string name = CatogeryNameBox.Text.Trim();
+                    string description = CatogeryDescriptionBox.Text.Trim();
+                    string Image = Imagebox.Text.Trim();
+
+                    if (string.IsNullOrWhiteSpace(name))
+                    {
+                        MessageBox.Show("Category name cannot be empty.");
+                        return;
+                    }
+
+                    // Add additional validations as needed for description, image, etc.
 
                     CategoryDTO newCategory = new CategoryDTO
                     {
                         CategoryName = name,
                         Description = description,
-                        image = "123",
+                        image = Image,
                         // Products = (IQueryable<ProductDTO>)Enumerable.Empty<Product>().AsQueryable(),
                     };
 
                     _categoryService.AddCategory(newCategory);
                     LoadCategories();
-
                 }
                 else
                 {
@@ -121,12 +107,20 @@ namespace E_Commerce.Presentation
 
 
 
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
 
-
+            // Populate textboxes with data from the selected row
+            CatogeryNameBox.Text = row.Cells["CategoryName"].Value.ToString();
+            CatogeryDescriptionBox.Text = row.Cells["Description"].Value.ToString();
+            Imagebox.Text = row.Cells["Image"].Value.ToString();
+        }
 
         private void EditCtegorey_Click(object sender, EventArgs e)
         {
-            // dataGridView2.AutoGenerateColumns = true;
+            dataGridView2.AutoGenerateColumns = true;
+
             try
             {
                 if (_categoryService != null)
@@ -147,24 +141,28 @@ namespace E_Commerce.Presentation
 
                         if (existingCategoryEntity != null)
                         {
-                            // Convert the entity to a DTO
-                            CategoryDTO existingCategoryDTO = ConvertToDTO(existingCategoryEntity);
+                            // Update the properties of the existing category entity
+                            existingCategoryEntity.CategoryName = CatogeryNameBox.Text;
+                            existingCategoryEntity.Description = CatogeryDescriptionBox.Text;
+                            existingCategoryEntity.image = Imagebox.Text;
 
-                            // Update the properties of the existing category DTO
-                            existingCategoryDTO.CategoryName = CatogeryNameBox.Text;
-                            existingCategoryDTO.Description = CatogeryDescriptionBox.Text;
-                            existingCategoryDTO.image = "123";
                             // You may want to update other properties as needed
 
-                            // Perform the category update
-                            _categoryService.UpdateCategory(existingCategoryDTO);
+                            // Save changes to the database
+                            using (var context = new E_CommerceContext())
+                            {
+                                context.Entry(existingCategoryEntity).State = EntityState.Modified;
+                                context.SaveChanges();
+                            }
 
                             // Update the corresponding row in the DataGridView
-                            selectedRow.Cells["CategoryName"].Value = existingCategoryDTO.CategoryName;
-                            selectedRow.Cells["Description"].Value = existingCategoryDTO.Description;
+                            selectedRow.Cells["CategoryName"].Value = existingCategoryEntity.CategoryName;
+                            selectedRow.Cells["Description"].Value = existingCategoryEntity.Description;
+                            selectedRow.Cells["Image"].Value = existingCategoryEntity.image;
                             // Update other cells as needed
 
                             MessageBox.Show("Category updated successfully.");
+                            LoadCategories();
                         }
                         else
                         {
@@ -187,18 +185,15 @@ namespace E_Commerce.Presentation
             }
         }
 
-        private CategoryDTO ConvertToDTO(E_Commerce_Project.Models.Category entity)
-        {
-            // Implement the conversion logic based on your entity and DTO structure
-            // For simplicity, assuming a CategoryDTO constructor that accepts an entity
-            return new CategoryDTO
-            {
-                // Assign properties based on your entity structure
-                CategoryName = entity.CategoryName,
-                Description = entity.Description,
-                // Other properties...
-            };
-        }
+
+        /*   private CategoryDTO ConvertToDTO(E_Commerce_Project.Models.Category entity)
+           {
+               return new CategoryDTO
+               {
+                   CategoryName = entity.CategoryName,
+                   Description = entity.Description,
+               };
+           }*/
 
 
         private void DeleteCtegorey_Click(object sender, EventArgs e)

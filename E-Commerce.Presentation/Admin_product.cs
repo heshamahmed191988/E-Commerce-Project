@@ -17,6 +17,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Forms_ProjectVC_;
+using static System.Net.Mime.MediaTypeNames;
+using System.Diagnostics;
 
 namespace E_Commerce.Presentation
 {
@@ -32,11 +34,6 @@ namespace E_Commerce.Presentation
 
             _productService = container.Resolve<IProductService>();
             InitializeComponent();
-            //_categoryService = new CategoryService(new CategoryRepository(new E_CommerceContext()));
-            // _productService = new ProductService(new ProductRepository(new E_CommerceContext()));
-            // _categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
-            //_productService = productService ?? throw new ArgumentNullException(nameof(productService));
-            // LoadCategories();
             LoadProduct();
         }
         private void LoadProduct()
@@ -45,11 +42,11 @@ namespace E_Commerce.Presentation
             {
                 if (_productService != null)
                 {
-                    var products = _productService.GetAll();
+                    var products = _productService.GetAll().ToList();
 
                     if (products != null)
                     {
-                        dataGridView1.DataSource = products.ToList();
+                        dataGridView1.DataSource = products.Select(e => new { e.Id, e.ProductName,e.Quantity, e.Price, e.categoryID, e.image }).ToList();
                     }
                     else
                     {
@@ -78,14 +75,15 @@ namespace E_Commerce.Presentation
                     decimal price = decimal.Parse(ProductPriceBox.Text);
                     int quantity = int.Parse(ProductQuantityBox.Text);
                     int categoryid = int.Parse(CategoryIdBox.Text);
+                    string image = ImageBox.Text;
 
                     ProductDTO newproduct = new ProductDTO
                     {
                         ProductName = name,
                         Price = price,
-                        image = "123",
+                        image = image,
                         Quantity = quantity,
-                        //categoryID = categoryid,
+                        categoryID = categoryid,
 
                     };
 
@@ -103,7 +101,17 @@ namespace E_Commerce.Presentation
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
+            // Populate textboxes with data from the selected row
+            ProductNameBox.Text = row.Cells["ProductName"].Value.ToString();
+            ProductPriceBox.Text = row.Cells["Price"].Value.ToString();
+            ProductQuantityBox.Text = row.Cells["Quantity"].Value.ToString();
+            CategoryIdBox.Text = row.Cells["CategoryId"].Value.ToString();
+            ImageBox.Text = row.Cells["Image"].Value.ToString();
+        }
         private void EditProduct_Click(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = true;
@@ -115,32 +123,38 @@ namespace E_Commerce.Presentation
                     if (dataGridView1.SelectedRows.Count > 0)
                     {
                         DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                        int productId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                        ProductDTO product= _productService.GetProduct(productId);
 
-                        // Modify the columns based on their names
-                        selectedRow.Cells["ProductName"].Value = ProductNameBox.Text;
-                        selectedRow.Cells["Price"].Value = decimal.Parse(ProductPriceBox.Text);
-                        selectedRow.Cells["Quantity"].Value = int.Parse(ProductQuantityBox.Text);
-                        selectedRow.Cells["CategoryId"].Value = int.Parse(CategoryIdBox.Text);
-
-                        // After the modifications are done, update the data in the service
-                        int productId = int.Parse(selectedRow.Cells["ProductId"].Value.ToString()); // Assuming you have a column named "ProductId"
-                        ProductDTO updatedProduct = new ProductDTO
+                        if (product != null) 
                         {
-                            Id = productId,
-                            ProductName = ProductNameBox.Text,
-                            Price = decimal.Parse(ProductPriceBox.Text),
-                            image = "123", // Modify as needed
-                            Quantity = int.Parse(ProductQuantityBox.Text),
-                            //categoryID = int.Parse(CategoryIdBox.Text)
-                        };
+                            product.ProductName = ProductNameBox.Text;
+                            product.Price = decimal.Parse(ProductPriceBox.Text);
+                            product.image = ImageBox.Text; // Modify as needed
+                            product.Quantity = int.Parse(ProductQuantityBox.Text);
 
-                        _productService.UpdateProduct(updatedProduct);
+                            _productService.UpdateProduct(product);
+                            selectedRow.Cells["ProductName"].Value = ProductNameBox.Text;
+                            selectedRow.Cells["Price"].Value = decimal.Parse(ProductPriceBox.Text);
+                            selectedRow.Cells["Quantity"].Value = int.Parse(ProductQuantityBox.Text);
+                            selectedRow.Cells["CategoryId"].Value = int.Parse(CategoryIdBox.Text);
+                            selectedRow.Cells["Image"].Value = ImageBox.Text;
+                            MessageBox.Show("Product updated successfully.");
+                            LoadProduct();
+                            // Clear the TextBoxes after updating the row
+                            ProductNameBox.Text = "";
+                            ProductPriceBox.Text = "";
+                            ProductQuantityBox.Text = "";
+                            CategoryIdBox.Text = "";
+                            ImageBox.Text = "";
 
-                        // Clear the TextBoxes after updating the row
-                        ProductNameBox.Text = "";
-                        ProductPriceBox.Text = "";
-                        ProductQuantityBox.Text = "";
-                        CategoryIdBox.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Category not found.");
+                        }
+
+                        
                     }
                     else
                     {
@@ -154,8 +168,7 @@ namespace E_Commerce.Presentation
             }
             catch (Exception ex)
             {
-                // Handle exceptions if needed
-                //MessageBox.Show($"An error occurred: {ex.Message}");
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
 

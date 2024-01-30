@@ -39,6 +39,7 @@ namespace E_Commerce.Application.Service
 
         public void UpdateCart(CartDetailsDTO cartDetailsDTO)
         {
+            
             _cartDetailsRepository.Update(AutoMapping.MapCartDetails(cartDetailsDTO));
             _cartDetailsRepository.save();
         }

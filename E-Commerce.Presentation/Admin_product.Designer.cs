@@ -49,6 +49,8 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            label2 = new Label();
+            ImageBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
             SuspendLayout();
@@ -61,6 +63,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(734, 268);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellClick += dataGridView2_CellClick;
             // 
             // label1
             // 
@@ -293,12 +296,33 @@
             Navebar.Size = new Size(1025, 48);
             Navebar.TabIndex = 35;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.CausesValidation = false;
+            label2.Location = new Point(16, 326);
+            label2.Name = "label2";
+            label2.Size = new Size(40, 15);
+            label2.TabIndex = 37;
+            label2.Text = "Image";
+            // 
+            // ImageBox
+            // 
+            ImageBox.CausesValidation = false;
+            ImageBox.Location = new Point(16, 343);
+            ImageBox.Margin = new Padding(3, 2, 3, 2);
+            ImageBox.Name = "ImageBox";
+            ImageBox.Size = new Size(210, 23);
+            ImageBox.TabIndex = 36;
+            // 
             // Admin_product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1025, 461);
+            Controls.Add(label2);
+            Controls.Add(ImageBox);
             Controls.Add(Navebar);
             Controls.Add(DeleteProduct);
             Controls.Add(EditProduct);
@@ -345,5 +369,7 @@
         private Button PTregister;
         private Button BTlogin;
         private Panel Navebar;
+        private Label label2;
+        private TextBox ImageBox;
     }
 }

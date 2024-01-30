@@ -45,6 +45,8 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            label1 = new Label();
+            Imagebox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             Navebar.SuspendLayout();
             SuspendLayout();
@@ -57,6 +59,7 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(761, 288);
             dataGridView2.TabIndex = 1;
+            dataGridView2.CellClick += dataGridView2_CellClick;
             // 
             // DeleteCtegorey
             // 
@@ -257,12 +260,33 @@
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 22;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            label1.Location = new Point(41, 344);
+            label1.Name = "label1";
+            label1.Size = new Size(44, 18);
+            label1.TabIndex = 24;
+            label1.Text = "Image";
+            // 
+            // Imagebox
+            // 
+            Imagebox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
+            Imagebox.Location = new Point(41, 373);
+            Imagebox.Margin = new Padding(3, 2, 3, 2);
+            Imagebox.Name = "Imagebox";
+            Imagebox.Size = new Size(184, 23);
+            Imagebox.TabIndex = 23;
+            // 
             // Admin_Category_Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1032, 499);
+            Controls.Add(label1);
+            Controls.Add(Imagebox);
             Controls.Add(Navebar);
             Controls.Add(label14);
             Controls.Add(CatogeryDescriptionBox);
@@ -299,5 +323,7 @@
         private Button PTregister;
         private Button BTlogin;
         private Panel Navebar;
+        private Label label1;
+        private TextBox Imagebox;
     }
 }
