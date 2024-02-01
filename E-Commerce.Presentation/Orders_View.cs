@@ -23,40 +23,28 @@ namespace E_Commerce.Presentation
     public partial class Orders_View : Form
     {
         static IOrderService _orderService;
+        static IOrderItemService _orderItemService;
         public Orders_View()
         {
             var container = AutoFact.Inject();
             _orderService = container.Resolve<IOrderService>();
+            _orderItemService = container.Resolve<IOrderItemService>();
             InitializeComponent();
         }
 
         private void Orders_View_Load(object sender, EventArgs e)
         {
             var Ord = _orderService.GetAll().ToList();
-            //OrderdataGridView.DataSource = Ord;
-
-
-           
             var OrderIds = Ord.Select(Order => Order.Id).ToList();
-
-           
-           
-
-           
-
             var result = Ord
     .Select(Order => new
     {
-        OrderDate = Order.OrderDate,
-        //NoOfProducts = Order.NoOfProducts,       
-        Status = Order.Status,
-        TotalPrice = Order.TotalPrice,
+        Order.OrderDate,     
+        Order.Status,
+         Order.TotalPrice,
+    }).ToList();
+        OrderdataGridView.DataSource = result;
        
-
-    })
-    .ToList();
-            OrderdataGridView.DataSource = result;
-
         }
 
 

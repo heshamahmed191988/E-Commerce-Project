@@ -68,7 +68,7 @@ namespace E_Commerce.Presentation
             product.ProductName,
             product.Price,
             product.image,
-            CategoryName = product.category,
+            CategoryName = product.category.CategoryName,
             State = product.Quantity <= 5 ? "Out of Stack": "Available"
         })
         .ToList();

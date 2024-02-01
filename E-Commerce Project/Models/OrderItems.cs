@@ -14,6 +14,7 @@ namespace E_Commerce_Project.Models
         public int productId { get; set; }
         [ForeignKey("Order")]
         public int OrderId { get; set; }
+        public int Quantity { get; set; }
         public virtual Product product { get; set; }
         public virtual Order Order { get; set; }
     }
