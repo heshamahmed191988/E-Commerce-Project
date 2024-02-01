@@ -65,10 +65,11 @@ namespace E_Commerce.Presentation
                 var result = Pro
         .Select(product => new 
         {
-            ProductName = product.ProductName,
-            Price = product.Price,
-            image = product.image,
-            CategoryName = product.category != null ? product.category.CategoryName : null
+            product.ProductName,
+            product.Price,
+            product.image,
+            CategoryName = product.category,
+            State = product.Quantity <= 5 ? "Out of Stack": "Available"
         })
         .ToList();
             ProductdataGridView.DataSource = result;
@@ -90,9 +91,12 @@ namespace E_Commerce.Presentation
 
         private void ProductdataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = ProductdataGridView.Rows[e.RowIndex];
-            Pro_Name.Text = row.Cells["ProductName"].Value.ToString();
-            Pro_Price.Text = row.Cells["Price"].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = ProductdataGridView.Rows[e.RowIndex];
+                Pro_Name.Text = row.Cells["ProductName"].Value.ToString();
+                Pro_Price.Text = row.Cells["Price"].Value.ToString();
+            }
 
 
         }

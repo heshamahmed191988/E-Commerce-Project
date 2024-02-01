@@ -58,32 +58,67 @@ namespace E_Commerce.Presentation
             OrderdataGridView.DataSource = result;
 
         }
-       
-        
+
+
         private void OrderdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
+            
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
 
-            // Populate textboxes with data from the selected row
-            ODate.Text = row.Cells["OrderDate"].Value.ToString();
-            NProduct.Text = row.Cells["Id"].Value.ToString();
-            OStates.Text = row.Cells["Status"].Value.ToString();
-            OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
-
-
+                  
+                    if (row.Cells["OrderDate"].Value != null &&
+                        row.Cells["Id"].Value != null &&
+                        row.Cells["Status"].Value != null &&
+                        row.Cells["TotalPrice"].Value != null)
+                    {
+                        // Populate textboxes with data from the selected row
+                        ODate.Text = row.Cells["OrderDate"].Value.ToString();
+                        NProduct.Text = row.Cells["Id"].Value.ToString();
+                        OStates.Text = row.Cells["Status"].Value.ToString();
+                        OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
+                    }
+                    else
+                    {
+                        // Handle the case where some cells are null
+                        MessageBox.Show("Selected row has missing or null values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+               
+            }
         }
-
         private void BOUpdate_Click(object sender, EventArgs e)
         {
 
-            int id = int.Parse(NProduct.Text);
+            if (int.TryParse(NProduct.Text, out int id))
+            {
+                OrderDTO orderDTO = _orderService.GetAll().FirstOrDefault(i => i.Id == id);
 
-            OrderDTO orderDTO = _orderService.GetAll().ToList().Where(i => i.Id == id).FirstOrDefault();
-            string Status = OStates.Text;
-            // OrderDTO orderDTO = _orderService.GetOrder(id);
-            orderDTO.Status = Status;
-            _orderService.UpdateOrder(orderDTO);
-            Orders_View_Load(sender, e);
+                if (orderDTO != null)
+                {
+                    string status = OStates.Text;
+
+                    if (!string.IsNullOrWhiteSpace(status))
+                    {
+                        orderDTO.Status = status;
+                        _orderService.UpdateOrder(orderDTO);
+                        Orders_View_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Status cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Order with the specified ID does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Show an error message if NProduct.Text is not a valid integer
+                MessageBox.Show("Invalid Order ID. Please enter a valid integer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

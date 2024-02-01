@@ -10,5 +10,6 @@ namespace E_Commerce.Application.Service
     public interface IOrderItemService
     {
         public void AddOrderItems(OrderItemDTO orderItemDTO);
+        public IQueryable<OrderItemDTO> GetAll();
     }
 }
