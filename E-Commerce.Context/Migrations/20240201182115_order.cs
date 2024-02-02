@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace E_Commerce.Context.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class order : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -145,7 +145,8 @@ namespace E_Commerce.Context.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     productId = table.Column<int>(type: "int", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false)
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

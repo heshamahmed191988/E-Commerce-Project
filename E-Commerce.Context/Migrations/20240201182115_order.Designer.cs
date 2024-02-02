@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commerce.Context.Migrations
 {
     [DbContext(typeof(E_CommerceContext))]
-    [Migration("20240125053558_initial")]
-    partial class initial
+    [Migration("20240201182115_order")]
+    partial class order
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -142,6 +142,9 @@ namespace E_Commerce.Context.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
                     b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<int>("productId")
@@ -288,13 +291,13 @@ namespace E_Commerce.Context.Migrations
 
             modelBuilder.Entity("E_Commerce_Project.Models.Product", b =>
                 {
-                    b.HasOne("E_Commerce_Project.Models.Category", "Category")
+                    b.HasOne("E_Commerce_Project.Models.Category", "category")
                         .WithMany("Products")
                         .HasForeignKey("categoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("category");
                 });
 
             modelBuilder.Entity("E_Commerce_Project.Models.Cart", b =>
@@ -321,7 +324,8 @@ namespace E_Commerce.Context.Migrations
 
             modelBuilder.Entity("E_Commerce_Project.Models.User", b =>
                 {
-                    b.Navigation("Cart");
+                    b.Navigation("Cart")
+                        .IsRequired();
 
                     b.Navigation("orders");
                 });

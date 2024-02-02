@@ -2,7 +2,6 @@
 using Autofac.Core;
 using E_Commerce.Application.Mapping;
 using E_Commerce.Application.Service;
-using E_Commerce.Context.Migrations;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
 using Microsoft.EntityFrameworkCore;
@@ -97,7 +96,7 @@ namespace E_Commerce.Presentation
 
                 _orderService.AddOrder(order);
 
-                int num = _orderService .GetAll().AsEnumerable().OrderByDescending(i => AutoMapping.MapOrder(i).Id).FirstOrDefault()?.Id ?? 0; ;
+                int num = _orderService.GetAll().AsEnumerable().OrderByDescending(i => AutoMapping.MapOrder(i).Id).FirstOrDefault()?.Id ?? 0; ;
 
                 if (num != 0)
                 {

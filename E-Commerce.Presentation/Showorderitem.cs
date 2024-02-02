@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using E_Commerce.Application.Mapping;
 using E_Commerce.Application.Service;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
@@ -19,27 +20,31 @@ namespace E_Commerce.Presentation
     {
         static IOrderItemService _orderItemService;
         static IOrderService _orderService;
+        static IProductService _productService;
         private int UserId;
         public Showorderitem(int UserId)
         {
             var container = AutoFact.Inject();
             _orderItemService = container.Resolve<IOrderItemService>();
-            _orderService = container.Resolve<IOrderService>(); 
+            _orderService = container.Resolve<IOrderService>();
+            _productService = container.Resolve<IProductService>();
             InitializeComponent();
             this.UserId = UserId;
         }
         private void  LoadOrderItems()
         {
             var Order = _orderService.GetAll().ToList().Where(i => i.UserID == UserId).ToList();
-            //var OrderItems = _orderItemService.GetAll().ToList().Where(i => i.OrderId==Order.Find(i.OrderId)).ToList();
+
             dataGridView1.DataSource = Order.Select(i => new
             {
                 i.OrderDate,
                 i.NoOfProducts,
                 i.Status
             }
-            ).ToList(); ;
+            ).ToList();
+            
         }
+
         private void Showorderitem_Load(object sender, EventArgs e)
         {
             LoadOrderItems();

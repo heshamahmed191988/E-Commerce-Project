@@ -141,6 +141,9 @@ namespace E_Commerce.Context.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.Property<int>("productId")
                         .HasColumnType("int");
 
