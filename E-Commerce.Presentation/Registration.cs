@@ -23,6 +23,9 @@ namespace E_Commerce.Presentation
         Form1 login = new Form1();
         public Registration()
         {
+          
+
+
             var container = AutoFact.Inject();
             _userService = container.Resolve<IUserService>();
             _cartService = container.Resolve<ICartService>();
@@ -92,7 +95,7 @@ namespace E_Commerce.Presentation
                 PhonMSG.Text = (!ValidatePhoneNumber(phone) || phone == null) ? "Phone must be 11 number" : "";
                 AddressMSG.Text = (address.Length == 0) ? "Enter your Adress,please" : "";
 
-                MessageBox.Show("Please Enter Correct Data");
+                //MessageBox.Show("Please Enter Correct Data");
             }
             else
             {
