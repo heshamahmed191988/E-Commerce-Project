@@ -63,7 +63,7 @@
             dataGridView2.Location = new Point(394, 121);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(600, 288);
+            dataGridView2.Size = new Size(600, 334);
             dataGridView2.TabIndex = 1;
             // 
             // DeleteCtegorey
@@ -109,7 +109,7 @@
             label14.AutoSize = true;
             label14.BackColor = Color.Transparent;
             label14.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            label14.Location = new Point(31, 243);
+            label14.Location = new Point(31, 211);
             label14.Name = "label14";
             label14.Size = new Size(219, 19);
             label14.TabIndex = 21;
@@ -118,7 +118,7 @@
             // CatogeryDescriptionBox
             // 
             CatogeryDescriptionBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CatogeryDescriptionBox.Location = new Point(31, 285);
+            CatogeryDescriptionBox.Location = new Point(31, 253);
             CatogeryDescriptionBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryDescriptionBox.Name = "CatogeryDescriptionBox";
             CatogeryDescriptionBox.Size = new Size(338, 31);
@@ -138,7 +138,7 @@
             // CatogeryNameBox
             // 
             CatogeryNameBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CatogeryNameBox.Location = new Point(31, 167);
+            CatogeryNameBox.Location = new Point(31, 153);
             CatogeryNameBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryNameBox.Name = "CatogeryNameBox";
             CatogeryNameBox.Size = new Size(338, 31);
@@ -280,7 +280,7 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(DeleteCtegorey);
-            panel1.Location = new Point(276, 415);
+            panel1.Location = new Point(269, 415);
             panel1.Name = "panel1";
             panel1.Size = new Size(102, 40);
             panel1.TabIndex = 23;
@@ -290,7 +290,7 @@
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(EditCtegorey);
-            panel2.Location = new Point(150, 415);
+            panel2.Location = new Point(143, 415);
             panel2.Name = "panel2";
             panel2.Size = new Size(102, 40);
             panel2.TabIndex = 24;
@@ -300,7 +300,7 @@
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Controls.Add(AddCtegorey);
-            panel3.Location = new Point(31, 415);
+            panel3.Location = new Point(24, 415);
             panel3.Name = "panel3";
             panel3.Size = new Size(102, 40);
             panel3.TabIndex = 25;
@@ -310,7 +310,7 @@
             Image.AutoSize = true;
             Image.BackColor = Color.Transparent;
             Image.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            Image.Location = new Point(34, 328);
+            Image.Location = new Point(34, 313);
             Image.Name = "Image";
             Image.Size = new Size(119, 19);
             Image.TabIndex = 26;
@@ -319,7 +319,7 @@
             // Imagebox
             // 
             Imagebox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Imagebox.Location = new Point(31, 365);
+            Imagebox.Location = new Point(31, 350);
             Imagebox.Margin = new Padding(3, 2, 3, 2);
             Imagebox.Name = "Imagebox";
             Imagebox.Size = new Size(338, 31);

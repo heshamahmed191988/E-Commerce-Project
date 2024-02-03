@@ -175,7 +175,7 @@ namespace E_Commerce.Presentation
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(241, 432);
+            button1.Location = new Point(225, 448);
             button1.Name = "button1";
             button1.Size = new Size(135, 47);
             button1.TabIndex = 13;
@@ -188,7 +188,7 @@ namespace E_Commerce.Presentation
             nameMsg.BackColor = Color.Transparent;
             nameMsg.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             nameMsg.ForeColor = Color.Red;
-            nameMsg.Location = new Point(479, 66);
+            nameMsg.Location = new Point(160, 92);
             nameMsg.Name = "nameMsg";
             nameMsg.Size = new Size(0, 15);
             nameMsg.TabIndex = 15;
@@ -199,7 +199,7 @@ namespace E_Commerce.Presentation
             EmailMsg.BackColor = Color.Transparent;
             EmailMsg.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             EmailMsg.ForeColor = Color.Red;
-            EmailMsg.Location = new Point(479, 192);
+            EmailMsg.Location = new Point(160, 224);
             EmailMsg.Name = "EmailMsg";
             EmailMsg.Size = new Size(0, 15);
             EmailMsg.TabIndex = 16;
@@ -210,7 +210,7 @@ namespace E_Commerce.Presentation
             PassMSg.BackColor = Color.Transparent;
             PassMSg.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             PassMSg.ForeColor = Color.Red;
-            PassMSg.Location = new Point(479, 263);
+            PassMSg.Location = new Point(160, 289);
             PassMSg.Name = "PassMSg";
             PassMSg.Size = new Size(0, 15);
             PassMSg.TabIndex = 17;
@@ -218,7 +218,7 @@ namespace E_Commerce.Presentation
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(160, 373);
+            comboBox1.Location = new Point(160, 381);
             comboBox1.Margin = new Padding(4, 6, 4, 6);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(313, 37);
@@ -231,7 +231,7 @@ namespace E_Commerce.Presentation
             PhonMSG.BackColor = Color.Transparent;
             PhonMSG.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             PhonMSG.ForeColor = Color.Red;
-            PhonMSG.Location = new Point(479, 127);
+            PhonMSG.Location = new Point(160, 159);
             PhonMSG.Name = "PhonMSG";
             PhonMSG.Size = new Size(0, 15);
             PhonMSG.TabIndex = 19;
@@ -243,7 +243,7 @@ namespace E_Commerce.Presentation
             AddressMSG.BackColor = Color.Transparent;
             AddressMSG.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             AddressMSG.ForeColor = Color.Red;
-            AddressMSG.Location = new Point(479, 328);
+            AddressMSG.Location = new Point(160, 352);
             AddressMSG.Name = "AddressMSG";
             AddressMSG.Size = new Size(0, 15);
             AddressMSG.TabIndex = 20;
@@ -255,7 +255,7 @@ namespace E_Commerce.Presentation
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(681, 450);
+            linkLabel1.Location = new Point(366, 526);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(50, 29);
             linkLabel1.TabIndex = 22;
@@ -266,7 +266,7 @@ namespace E_Commerce.Presentation
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(492, 450);
+            label1.Location = new Point(177, 526);
             label1.Name = "label1";
             label1.Size = new Size(183, 29);
             label1.TabIndex = 21;
@@ -277,7 +277,7 @@ namespace E_Commerce.Presentation
             AutoScaleDimensions = new SizeF(9F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(886, 523);
+            ClientSize = new Size(566, 582);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
             Controls.Add(AddressMSG);

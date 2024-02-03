@@ -87,12 +87,14 @@ namespace E_Commerce.Presentation
             var cartItems = load().ToList();
             if (cartItems != null && cartItems.Any())
             {
-                var order = new OrderDTO() {
+                var order = new OrderDTO()
+                {
                     NoOfProducts = productsNo,
-                    TotalPrice = totalPrice, 
-                    Status = "processing", 
+                    TotalPrice = totalPrice,
+                    Status = "processing",
                     OrderDate = currentDate,
-                    UserID = UserId };
+                    UserID = UserId
+                };
 
                 _orderService.AddOrder(order);
 
@@ -117,9 +119,9 @@ namespace E_Commerce.Presentation
                         }
                         else
                         {
-                           
+
                         }
-                    } 
+                    }
                     MessageBox.Show("Order Added");
                 }
                 else
@@ -152,20 +154,20 @@ namespace E_Commerce.Presentation
             string name = label5.Text;
             var product = _ProductService.SearchProduct(name).FirstOrDefault();
 
-            if (product != null )
+            if (product != null)
             {
                 var cartitemDelete = _cartDetailsService.GetCartItems().AsNoTracking().ToList().FirstOrDefault(i => i.productID == product.Id);
 
                 if (cartitemDelete != null)
                 {
-                   
+
                     DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
                     {
                         _cartDetailsService.RemoveProductFromCart(cartitemDelete);
                         var x = load();
-                        
+
                     }
                 }
                 else
@@ -234,6 +236,11 @@ namespace E_Commerce.Presentation
         {
             Showorderitem showorder = new Showorderitem(UserId);
             showorder.Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

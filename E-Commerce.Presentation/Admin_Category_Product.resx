@@ -188,7 +188,7 @@
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeQAAACOCAYAAADgtntxAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAArthJREFUeF7tvQdglUW6Pv5vv3vv7grJ6b2lEJogKihW7LrurhXbWtay9ra6fe/d
+        vgAADr4B6kKxwAAArthJREFUeF7tvQdglUW6Pv5vv3vv7grJ6b2lEJogKihW7LrurhXbWtay9ra6fe/d
         u31dda2IFMUuLYGEJPTeCT29N3pvIRAgvP/nmTlfchIOSMAV2XzRhzlfm/LOzPvMO/X/EhETJkyYMGHC
         xBlG3JsmTJgwYcKEiW8WcW+aMGHChAkTJr5ZxL1pwoQJEyZMmPhmEfemCRMmTJgwYeKbRdybJkyYMGHC
         hIlvFnFvniqaDhz4TmNDQ5f9e/Yk7tu509awa5f14P793zva3Pz/xHvfhAkTJv6VOHr06P/dBtBF7dF8
@@ -940,7 +940,7 @@
   <data name="panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAACEEAAAKUCAYAAADhWLS1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAA/7JJREFUeF7s/edjnNd1Lnyff+BItFOO7cS2bFmFVCHFKrGDAEGiF6IRvffOClaA
+        DgAACw4BQL7hQQAA/7JJREFUeF7s/edjnNd1Lnyff+BItFOO7cS2bFmFVCHFKrGDAEGiF6IRvffOClaA
         vfdewd57r6JE2bJkO5Hj2Iod21FylMR5lKIo5egkz/Oud/aAAw4GFzB76t5DXh9+iT2WyAsbc8/MXmvN
         vv+HiBARERERERERERERERERERFFPPggERERERERERERERERERERUaSBDxIRERERERERERERERERERFF
         GvggERERERERERERERERERERUaSBDxIRERERERERERERERERERFFGvggERERERERERERERERERERUaSB
@@ -2976,7 +2976,7 @@
   <data name="panel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAACEEAAAKUCAYAAADhWLS1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAA/7JJREFUeF7s/edjnNd1Lnyff+BItFOO7cS2bFmFVCHFKrGDAEGiF6IRvffOClaA
+        DgAACw4BQL7hQQAA/7JJREFUeF7s/edjnNd1Lnyff+BItFOO7cS2bFmFVCHFKrGDAEGiF6IRvffOClaA
         vfdewd57r6JE2bJkO5Hj2Iod21FylMR5lKIo5egkz/Oud/aAAw4GFzB76t5DXh9+iT2WyAsbc8/MXmvN
         vv+HiBARERERERERERERERERERFFPPggERERERERERERERERERERUaSBDxIRERERERERERERERERERFF
         GvggERERERERERERERERERERUaSBDxIRERERERERERERERERERFFGvggERERERERERERERERERERUaSB

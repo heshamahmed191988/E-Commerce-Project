@@ -56,9 +56,9 @@
             // OrderdataGridView
             // 
             OrderdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrderdataGridView.Location = new Point(333, 121);
+            OrderdataGridView.Location = new Point(452, 121);
             OrderdataGridView.Name = "OrderdataGridView";
-            OrderdataGridView.Size = new Size(680, 282);
+            OrderdataGridView.Size = new Size(579, 282);
             OrderdataGridView.TabIndex = 0;
             OrderdataGridView.CellClick += OrderdataGridView_CellContentClick;
             OrderdataGridView.CellContentClick += OrderdataGridView_CellContentClick;
@@ -76,9 +76,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI Emoji", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(57, 111);
+            groupBox1.Location = new Point(30, 111);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(257, 292);
+            groupBox1.Size = new Size(401, 292);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Edit Your Orders";
@@ -87,29 +87,33 @@
             // OTotalPrice
             // 
             OTotalPrice.AutoSize = true;
-            OTotalPrice.Location = new Point(123, 164);
+            OTotalPrice.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
+            OTotalPrice.ForeColor = Color.DarkGreen;
+            OTotalPrice.Location = new Point(207, 165);
             OTotalPrice.Name = "OTotalPrice";
-            OTotalPrice.Size = new Size(80, 17);
+            OTotalPrice.Size = new Size(0, 17);
             OTotalPrice.TabIndex = 11;
-            OTotalPrice.Text = "Total Price";
             // 
             // ODate
             // 
             ODate.AutoSize = true;
-            ODate.Location = new Point(123, 39);
+            ODate.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
+            ODate.ForeColor = Color.DarkRed;
+            ODate.Location = new Point(207, 43);
             ODate.Name = "ODate";
-            ODate.Size = new Size(89, 17);
+            ODate.Size = new Size(0, 17);
             ODate.TabIndex = 10;
-            ODate.Text = "Order Date ";
+            ODate.Click += ODate_Click;
             // 
             // Total_Price
             // 
             Total_Price.AutoSize = true;
-            Total_Price.Location = new Point(22, 164);
+            Total_Price.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            Total_Price.Location = new Point(36, 165);
             Total_Price.Name = "Total_Price";
-            Total_Price.Size = new Size(80, 17);
+            Total_Price.Size = new Size(122, 23);
             Total_Price.TabIndex = 9;
-            Total_Price.Text = "Total Price";
+            Total_Price.Text = "Total Price :";
             // 
             // BOUpdate
             // 
@@ -120,7 +124,7 @@
             BOUpdate.FlatAppearance.MouseOverBackColor = Color.Transparent;
             BOUpdate.FlatStyle = FlatStyle.Flat;
             BOUpdate.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BOUpdate.Location = new Point(41, 213);
+            BOUpdate.Location = new Point(117, 211);
             BOUpdate.Name = "BOUpdate";
             BOUpdate.Size = new Size(171, 51);
             BOUpdate.TabIndex = 8;
@@ -130,42 +134,45 @@
             // 
             // OStates
             // 
-            OStates.Location = new Point(150, 118);
+            OStates.Location = new Point(207, 119);
             OStates.Name = "OStates";
-            OStates.Size = new Size(100, 25);
+            OStates.Size = new Size(160, 25);
             OStates.TabIndex = 7;
             // 
             // NProduct
             // 
-            NProduct.Location = new Point(150, 76);
+            NProduct.Location = new Point(207, 77);
             NProduct.Name = "NProduct";
-            NProduct.Size = new Size(100, 25);
+            NProduct.Size = new Size(160, 25);
             NProduct.TabIndex = 5;
             // 
             // Order_Status
             // 
             Order_Status.AutoSize = true;
-            Order_Status.Location = new Point(22, 118);
+            Order_Status.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            Order_Status.Location = new Point(36, 119);
             Order_Status.Name = "Order_Status";
-            Order_Status.Size = new Size(94, 17);
+            Order_Status.Size = new Size(138, 23);
             Order_Status.TabIndex = 3;
-            Order_Status.Text = "Order Status";
+            Order_Status.Text = "Order Status :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(22, 76);
+            label2.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            label2.Location = new Point(36, 79);
             label2.Name = "label2";
-            label2.Size = new Size(122, 17);
+            label2.Size = new Size(165, 23);
             label2.TabIndex = 1;
             label2.Text = "No Of Products :";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 39);
+            label1.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            label1.Location = new Point(36, 40);
             label1.Name = "label1";
-            label1.Size = new Size(93, 17);
+            label1.Size = new Size(124, 23);
             label1.TabIndex = 0;
             label1.Text = "Order Date :";
             // 

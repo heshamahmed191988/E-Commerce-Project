@@ -64,10 +64,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(389, 98);
+            dataGridView1.Location = new Point(397, 140);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(613, 268);
+            dataGridView1.Size = new Size(613, 296);
             dataGridView1.TabIndex = 1;
             // 
             // label1
@@ -76,7 +76,7 @@
             label1.BackColor = Color.Transparent;
             label1.CausesValidation = false;
             label1.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            label1.Location = new Point(15, 274);
+            label1.Location = new Point(23, 316);
             label1.Name = "label1";
             label1.Size = new Size(125, 19);
             label1.TabIndex = 31;
@@ -86,7 +86,7 @@
             // 
             CategoryIdBox.CausesValidation = false;
             CategoryIdBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CategoryIdBox.Location = new Point(214, 269);
+            CategoryIdBox.Location = new Point(222, 311);
             CategoryIdBox.Margin = new Padding(3, 2, 3, 2);
             CategoryIdBox.Name = "CategoryIdBox";
             CategoryIdBox.Size = new Size(138, 29);
@@ -97,7 +97,7 @@
             label13.AutoSize = true;
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            label13.Location = new Point(15, 222);
+            label13.Location = new Point(23, 264);
             label13.Name = "label13";
             label13.Size = new Size(184, 19);
             label13.TabIndex = 29;
@@ -106,7 +106,7 @@
             // ProductQuantityBox
             // 
             ProductQuantityBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ProductQuantityBox.Location = new Point(214, 217);
+            ProductQuantityBox.Location = new Point(222, 259);
             ProductQuantityBox.Margin = new Padding(3, 2, 3, 2);
             ProductQuantityBox.Name = "ProductQuantityBox";
             ProductQuantityBox.Size = new Size(138, 29);
@@ -117,7 +117,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            label12.Location = new Point(15, 169);
+            label12.Location = new Point(23, 211);
             label12.Name = "label12";
             label12.Size = new Size(148, 19);
             label12.TabIndex = 27;
@@ -126,7 +126,7 @@
             // ProductPriceBox
             // 
             ProductPriceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ProductPriceBox.Location = new Point(214, 164);
+            ProductPriceBox.Location = new Point(222, 206);
             ProductPriceBox.Margin = new Padding(3, 2, 3, 2);
             ProductPriceBox.Name = "ProductPriceBox";
             ProductPriceBox.Size = new Size(138, 29);
@@ -137,7 +137,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            label11.Location = new Point(15, 81);
+            label11.Location = new Point(23, 123);
             label11.Name = "label11";
             label11.Size = new Size(145, 19);
             label11.TabIndex = 25;
@@ -146,7 +146,7 @@
             // ProductNameBox
             // 
             ProductNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ProductNameBox.Location = new Point(15, 111);
+            ProductNameBox.Location = new Point(23, 153);
             ProductNameBox.Margin = new Padding(3, 2, 3, 2);
             ProductNameBox.Name = "ProductNameBox";
             ProductNameBox.Size = new Size(337, 29);
@@ -316,7 +316,7 @@
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1025, 48);
+            Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 35;
             // 
             // panel3
@@ -324,7 +324,7 @@
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Controls.Add(AddProduct);
-            panel3.Location = new Point(20, 354);
+            panel3.Location = new Point(28, 396);
             panel3.Name = "panel3";
             panel3.Size = new Size(102, 40);
             panel3.TabIndex = 38;
@@ -334,7 +334,7 @@
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(EditProduct);
-            panel2.Location = new Point(131, 354);
+            panel2.Location = new Point(139, 396);
             panel2.Name = "panel2";
             panel2.Size = new Size(102, 40);
             panel2.TabIndex = 37;
@@ -344,7 +344,7 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(DeleteProduct);
-            panel1.Location = new Point(259, 354);
+            panel1.Location = new Point(267, 396);
             panel1.Name = "panel1";
             panel1.Size = new Size(102, 40);
             panel1.TabIndex = 36;
@@ -355,7 +355,7 @@
             Image.BackColor = Color.Transparent;
             Image.CausesValidation = false;
             Image.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            Image.Location = new Point(15, 317);
+            Image.Location = new Point(23, 359);
             Image.Name = "Image";
             Image.Size = new Size(119, 19);
             Image.TabIndex = 39;
@@ -365,7 +365,7 @@
             // 
             ImageBox.CausesValidation = false;
             ImageBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ImageBox.Location = new Point(214, 312);
+            ImageBox.Location = new Point(222, 354);
             ImageBox.Margin = new Padding(3, 2, 3, 2);
             ImageBox.Name = "ImageBox";
             ImageBox.Size = new Size(138, 29);
@@ -377,7 +377,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1025, 418);
+            ClientSize = new Size(1032, 499);
             Controls.Add(ImageBox);
             Controls.Add(Image);
             Controls.Add(panel3);

@@ -91,8 +91,10 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(217, 164);
+            button1.Location = new Point(166, 177);
             button1.Name = "button1";
             button1.Size = new Size(155, 54);
             button1.TabIndex = 4;
@@ -102,7 +104,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(112, 250);
+            label3.Location = new Point(146, 248);
             label3.Name = "label3";
             label3.Size = new Size(134, 15);
             label3.TabIndex = 5;
@@ -111,7 +113,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(300, 249);
+            linkLabel1.Location = new Point(286, 248);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(50, 15);
             linkLabel1.TabIndex = 6;

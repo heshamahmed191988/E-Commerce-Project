@@ -55,7 +55,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(301, 78);
+            dataGridView1.Location = new Point(358, 135);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(580, 220);
             dataGridView1.TabIndex = 0;
@@ -66,7 +66,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label1.Location = new Point(24, 123);
+            label1.Location = new Point(45, 135);
             label1.Name = "label1";
             label1.Size = new Size(138, 23);
             label1.TabIndex = 1;
@@ -78,12 +78,11 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label2.Location = new Point(24, 165);
+            label2.Location = new Point(45, 177);
             label2.Name = "label2";
             label2.Size = new Size(103, 23);
             label2.TabIndex = 2;
             label2.Text = "Total Price:";
-            //label2.Click += label2_Click;
             // 
             // button1
             // 
@@ -94,7 +93,7 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(39, 236);
+            button1.Location = new Point(78, 238);
             button1.Name = "button1";
             button1.Size = new Size(183, 49);
             button1.TabIndex = 3;
@@ -107,7 +106,7 @@
             prodNo.BackColor = Color.Transparent;
             prodNo.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
             prodNo.ForeColor = SystemColors.AppWorkspace;
-            prodNo.Location = new Point(180, 129);
+            prodNo.Location = new Point(201, 141);
             prodNo.Name = "prodNo";
             prodNo.Size = new Size(0, 13);
             prodNo.TabIndex = 4;
@@ -118,11 +117,10 @@
             price.BackColor = Color.Transparent;
             price.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
             price.ForeColor = SystemColors.WindowFrame;
-            price.Location = new Point(180, 171);
+            price.Location = new Point(201, 183);
             price.Name = "price";
             price.Size = new Size(0, 13);
             price.TabIndex = 5;
-           // price.Click += price_Click;
             // 
             // PTlogout
             // 
@@ -168,7 +166,7 @@
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(914, 48);
+            Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 16;
             // 
             // label4
@@ -255,7 +253,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label3.Location = new Point(301, 315);
+            label3.Location = new Point(46, 334);
             label3.Name = "label3";
             label3.Size = new Size(142, 23);
             label3.TabIndex = 17;
@@ -264,7 +262,7 @@
             // ChangeQuantity
             // 
             ChangeQuantity.FormattingEnabled = true;
-            ChangeQuantity.Location = new Point(450, 318);
+            ChangeQuantity.Location = new Point(201, 337);
             ChangeQuantity.Margin = new Padding(4, 6, 4, 6);
             ChangeQuantity.Name = "ChangeQuantity";
             ChangeQuantity.Size = new Size(60, 23);
@@ -272,11 +270,16 @@
             // 
             // Remove
             // 
-            Remove.Location = new Point(587, 317);
+            Remove.BackgroundImage = (Image)resources.GetObject("Remove.BackgroundImage");
+            Remove.BackgroundImageLayout = ImageLayout.Stretch;
+            Remove.FlatAppearance.BorderSize = 0;
+            Remove.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Remove.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Remove.FlatStyle = FlatStyle.Flat;
+            Remove.Location = new Point(179, 372);
             Remove.Name = "Remove";
-            Remove.Size = new Size(75, 23);
+            Remove.Size = new Size(128, 48);
             Remove.TabIndex = 20;
-            Remove.Text = "Remove";
             Remove.UseVisualStyleBackColor = true;
             Remove.Click += Remove_Click;
             // 
@@ -285,20 +288,29 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label5.Location = new Point(665, 316);
+            label5.Location = new Point(46, 98);
             label5.Name = "label5";
             label5.Size = new Size(70, 23);
             label5.TabIndex = 21;
             label5.Text = "Prod.Id";
+            label5.Click += label5_Click;
             // 
             // update
             // 
-            update.Location = new Point(516, 317);
+            update.BackColor = Color.Transparent;
+            update.BackgroundImage = (Image)resources.GetObject("update.BackgroundImage");
+            update.BackgroundImageLayout = ImageLayout.Stretch;
+            update.FlatAppearance.BorderSize = 0;
+            update.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            update.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            update.FlatStyle = FlatStyle.Flat;
+            update.Font = new Font("Stencil", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            update.Location = new Point(45, 371);
             update.Name = "update";
-            update.Size = new Size(75, 23);
+            update.Size = new Size(128, 48);
             update.TabIndex = 22;
-            update.Text = "update";
-            update.UseVisualStyleBackColor = true;
+            update.Text = "Edit";
+            update.UseVisualStyleBackColor = false;
             update.Click += update_Click;
             // 
             // UserCart
@@ -307,7 +319,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(914, 379);
+            ClientSize = new Size(1032, 499);
             Controls.Add(update);
             Controls.Add(label5);
             Controls.Add(Remove);
