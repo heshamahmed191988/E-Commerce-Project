@@ -24,7 +24,7 @@ namespace E_Commerce.Presentation
 {
     public partial class Admin_product : Form
     {
-        // private readonly ICategoryService _categoryService;
+        
 
         private readonly IProductService _productService;
 
@@ -103,14 +103,16 @@ namespace E_Commerce.Presentation
         }
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-            // Populate textboxes with data from the selected row
-            ProductNameBox.Text = row.Cells["ProductName"].Value.ToString();
-            ProductPriceBox.Text = row.Cells["Price"].Value.ToString();
-            ProductQuantityBox.Text = row.Cells["Quantity"].Value.ToString();
-            CategoryIdBox.Text = row.Cells["CategoryId"].Value.ToString();
-            ImageBox.Text = row.Cells["Image"].Value.ToString();
+                ProductNameBox.Text = row.Cells["ProductName"].Value.ToString();
+                ProductPriceBox.Text = row.Cells["Price"].Value.ToString();
+                ProductQuantityBox.Text = row.Cells["Quantity"].Value.ToString();
+                CategoryIdBox.Text = row.Cells["CategoryId"].Value.ToString();
+                ImageBox.Text = row.Cells["Image"].Value.ToString();
+            }
         }
         private void EditProduct_Click(object sender, EventArgs e)
         {

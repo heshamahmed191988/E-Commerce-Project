@@ -48,13 +48,13 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            button2 = new Button();
             button1 = new Button();
             panel3 = new Panel();
             panel2 = new Panel();
             panel1 = new Panel();
             Image = new Label();
             ImageBox = new TextBox();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
             panel3.SuspendLayout();
@@ -70,6 +70,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(613, 296);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellClick += dataGridView2_CellClick;
             // 
             // label1
             // 
@@ -308,6 +309,22 @@
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 35;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(585, 5);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 41;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             button1.BackColor = Color.Black;
@@ -376,22 +393,6 @@
             ImageBox.Name = "ImageBox";
             ImageBox.Size = new Size(138, 29);
             ImageBox.TabIndex = 40;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Black;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(585, 5);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 38);
-            button2.TabIndex = 41;
-            button2.Text = "Stack";
-            button2.UseVisualStyleBackColor = false;
             // 
             // Admin_product
             // 

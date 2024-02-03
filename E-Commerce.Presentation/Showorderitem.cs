@@ -34,12 +34,15 @@ namespace E_Commerce.Presentation
         private void LoadOrderItems()
         {
             var Order = _orderService.GetAll().ToList().Where(i => i.UserID == UserId).ToList();
-
+            dataGridView2.DataSource = null;
             dataGridView1.DataSource = Order.Select(i => new
             {
+                OrderNumber=i.Id,
                 i.OrderDate,
                 i.NoOfProducts,
+                i.TotalPrice,
                 i.Status
+                
             }
             ).ToList();
 
@@ -52,7 +55,20 @@ namespace E_Commerce.Presentation
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            if (e.RowIndex > 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                OrderId.Text= row.Cells["OrderNumber"].Value.ToString();
+                if (OrderId.Text != null)
+                {
+                   int orderId = int.Parse(OrderId.Text);
+                   var orderItems = _orderItemService.GetAll().ToList().Where(i => i.OrderId == orderId).ToList();
+                    dataGridView2.DataSource = null;
+                    dataGridView2.DataSource = orderItems.Select(i =>new {i.productId,i.Quantity }).ToList();
+                }
+                
+            }
+            
 
 
         }

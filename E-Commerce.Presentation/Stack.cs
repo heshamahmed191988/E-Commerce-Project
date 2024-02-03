@@ -31,7 +31,13 @@ namespace E_Commerce.Presentation
                 var products = _productService.GetAll().ToList().Where(i => i.Quantity < 5).ToList();
 
 
-                dataGridView1.DataSource = products;
+                dataGridView1.DataSource = products.Select(i => new
+                {
+                    i.Id,
+                    i.ProductName, i.Quantity,i.Price,
+                    i.categoryID,
+                    i.image
+                });
 
             }
             else

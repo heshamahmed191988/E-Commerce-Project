@@ -41,14 +41,14 @@
             label2 = new Label();
             label1 = new Label();
             Navebar = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             PTorders = new Button();
             PTlogout = new Button();
             PTcategory = new Button();
             PTproduct = new Button();
             PTregister = new Button();
             BTlogin = new Button();
-            button1 = new Button();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)OrderdataGridView).BeginInit();
             groupBox1.SuspendLayout();
             Navebar.SuspendLayout();
@@ -156,6 +156,7 @@
             Order_Status.Size = new Size(146, 19);
             Order_Status.TabIndex = 3;
             Order_Status.Text = "Order Status :";
+            Order_Status.Click += Order_Status_Click;
             // 
             // label2
             // 
@@ -163,9 +164,9 @@
             label2.Font = new Font("Stencil", 12F, FontStyle.Bold);
             label2.Location = new Point(36, 79);
             label2.Name = "label2";
-            label2.Size = new Size(162, 19);
+            label2.Size = new Size(99, 19);
             label2.TabIndex = 1;
-            label2.Text = "No Of Products :";
+            label2.Text = "ORDER ID :";
             // 
             // label1
             // 
@@ -193,6 +194,39 @@
             Navebar.Name = "Navebar";
             Navebar.Size = new Size(1060, 48);
             Navebar.TabIndex = 15;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(589, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 22;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 5);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 38);
+            button1.TabIndex = 21;
+            button1.UseVisualStyleBackColor = false;
             // 
             // PTorders
             // 
@@ -295,39 +329,6 @@
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
             BTlogin.UseVisualStyleBackColor = false;
             BTlogin.Click += BTlogin_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Black;
-            button1.BackgroundImage = Properties.Resources.logo1;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(12, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 38);
-            button1.TabIndex = 21;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Black;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(589, 7);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 38);
-            button2.TabIndex = 22;
-            button2.Text = "Stack";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // Orders_View
             // 

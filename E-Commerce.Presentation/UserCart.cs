@@ -60,17 +60,14 @@ namespace E_Commerce.Presentation
                 quantity = i.Quantity
             }
             ).ToList();
+            
             return cartItems;
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void UserCart_Load(object sender, EventArgs e)
+        private void changedValues()
         {
             var cartItems = load();
-
+             totalPrice = 0;
+             productsNo = 0;
             foreach (var item in cartItems)
             {
                 var product = _ProductService.GetProduct(item.productID);
@@ -79,64 +76,20 @@ namespace E_Commerce.Presentation
             }
             price.Text = totalPrice.ToString();
             prodNo.Text = productsNo.ToString();
-
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            DateTime currentDate = DateTime.Now;
-            var cartItems = load().ToList();
-            if (cartItems != null && cartItems.Any())
-            {
-                var order = new OrderDTO()
-                {
-                    NoOfProducts = productsNo,
-                    TotalPrice = totalPrice,
-                    Status = "processing",
-                    OrderDate = currentDate,
-                    UserID = UserId
-                };
+            this.Close();
+        }
 
-                _orderService.AddOrder(order);
+        private void UserCart_Load(object sender, EventArgs e)
+        {
+            changedValues();
 
-                int num = _orderService.GetAll().AsEnumerable().OrderByDescending(i => AutoMapping.MapOrder(i).Id).FirstOrDefault()?.Id ?? 0; ;
-
-                if (num != 0)
-                {
-
-                    foreach (var item in cartItems)
-                    {
-                        var product = _ProductService.GetProduct(item.productID);
-                        if (product != null)
-                        {
-                            OrderItemDTO orderitems = new OrderItemDTO()
-                            {
-                                productId = product.Id,
-                                OrderId = num
-                            };
-                            _orderItemService.AddOrderItems(orderitems);
-                            _cartDetailsService.RemoveProductFromCart(item);
-                            dataGridView1.DataSource = null;
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                    MessageBox.Show("Order Added");
-                }
-                else
-                {
-                    MessageBox.Show("Failed to retrieve Order ID.");
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("No items in the cart.");
-            }
 
         }
+
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -180,6 +133,7 @@ namespace E_Commerce.Presentation
             {
                 MessageBox.Show("Product not found or has an invalid ID.");
             }
+            changedValues();
         }
 
         private void update_Click(object sender, EventArgs e)
@@ -231,8 +185,65 @@ namespace E_Commerce.Presentation
             {
                 MessageBox.Show("Product not found.");
             }
+            changedValues();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime currentDate = DateTime.Now;
+            var cartItems = load().ToList();
+            
+            if (cartItems != null && cartItems.Any())
+            {
+                var order = new OrderDTO()
+                {
+                    NoOfProducts = productsNo,
+                    TotalPrice = totalPrice,
+                    Status = "processing",
+                    OrderDate = currentDate,
+                    UserID = UserId
+                };
 
+                _orderService.AddOrder(order);
+
+                int num = _orderService.GetAll().AsEnumerable().OrderByDescending(i => AutoMapping.MapOrder(i).Id).FirstOrDefault()?.Id ?? 0; ;
+
+                if (num != 0)
+                {
+
+                    foreach (var item in cartItems)
+                    {
+                        var product = _ProductService.GetProduct(item.productID);
+                        if (product != null)
+                        {
+                            OrderItemDTO orderitems = new OrderItemDTO()
+                            {
+                                productId = item.productID,
+                                OrderId = num,
+                                Quantity = item.Quantity
+                            };
+                            _orderItemService.AddOrderItems(orderitems);
+                            _cartDetailsService.RemoveProductFromCart(item);
+                            dataGridView1.DataSource = null;
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    MessageBox.Show("Order Added");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to retrieve Order ID.");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No items in the cart.");
+            }
+
+        }
         private void PTorders_Click(object sender, EventArgs e)
         {
             Showorderitem showorder = new Showorderitem(UserId);
@@ -253,16 +264,16 @@ namespace E_Commerce.Presentation
 
         private void PTproduct_Click(object sender, EventArgs e)
         {
-            //Home_User home_User = new Home_User(cartId, userId);
-            //home_User.Show();
-            //this.Hide();
+            Home_User home_User = new Home_User(cartId, UserId);
+            home_User.Show();
+            this.Hide();
         }
 
         private void PTcategory_Click(object sender, EventArgs e)
         {
-            //UserCart userCart = new UserCart(cartId, userId);
-            //userCart.Show();
-            //this.Hide();
+            UserCart userCart = new UserCart(cartId, UserId);
+            userCart.Show();
+            this.Hide();
         }
     }
 }

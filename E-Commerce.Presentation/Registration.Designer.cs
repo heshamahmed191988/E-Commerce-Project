@@ -55,6 +55,7 @@ namespace E_Commerce.Presentation
             label1 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -137,7 +138,7 @@ namespace E_Commerce.Presentation
             Email.BackColor = Color.LightBlue;
             Email.Location = new Point(160, 184);
             Email.Name = "Email";
-            Email.Size = new Size(313, 37);
+            Email.Size = new Size(313, 26);
             Email.TabIndex = 7;
             // 
             // pass
@@ -145,7 +146,7 @@ namespace E_Commerce.Presentation
             pass.BackColor = Color.LightBlue;
             pass.Location = new Point(160, 249);
             pass.Name = "pass";
-            pass.Size = new Size(313, 37);
+            pass.Size = new Size(313, 26);
             pass.TabIndex = 8;
             pass.TextChanged += pass_TextChanged;
             // 
@@ -154,7 +155,7 @@ namespace E_Commerce.Presentation
             Phone.BackColor = Color.White;
             Phone.Location = new Point(160, 119);
             Phone.Name = "Phone";
-            Phone.Size = new Size(313, 37);
+            Phone.Size = new Size(313, 26);
             Phone.TabIndex = 10;
             // 
             // Address
@@ -162,7 +163,7 @@ namespace E_Commerce.Presentation
             Address.BackColor = Color.LightBlue;
             Address.Location = new Point(160, 314);
             Address.Name = "Address";
-            Address.Size = new Size(313, 37);
+            Address.Size = new Size(313, 26);
             Address.TabIndex = 11;
             // 
             // UserName
@@ -170,7 +171,7 @@ namespace E_Commerce.Presentation
             UserName.BackColor = Color.White;
             UserName.Location = new Point(160, 52);
             UserName.Name = "UserName";
-            UserName.Size = new Size(313, 37);
+            UserName.Size = new Size(313, 26);
             UserName.TabIndex = 12;
             // 
             // button1
@@ -231,7 +232,7 @@ namespace E_Commerce.Presentation
             comboBox1.Location = new Point(160, 381);
             comboBox1.Margin = new Padding(4, 6, 4, 6);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(313, 37);
+            comboBox1.Size = new Size(313, 28);
             comboBox1.TabIndex = 18;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -268,7 +269,7 @@ namespace E_Commerce.Presentation
             linkLabel1.BackColor = Color.Transparent;
             linkLabel1.Location = new Point(366, 526);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(50, 29);
+            linkLabel1.Size = new Size(53, 20);
             linkLabel1.TabIndex = 22;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Login";
@@ -280,7 +281,7 @@ namespace E_Commerce.Presentation
             label1.BackColor = Color.Transparent;
             label1.Location = new Point(177, 526);
             label1.Name = "label1";
-            label1.Size = new Size(183, 29);
+            label1.Size = new Size(216, 20);
             label1.TabIndex = 21;
             label1.Text = "Already have an account?";
             // 
@@ -306,13 +307,24 @@ namespace E_Commerce.Presentation
             pictureBox2.TabIndex = 24;
             pictureBox2.TabStop = false;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Location = new Point(352, 415);
+            label8.Name = "label8";
+            label8.Size = new Size(175, 20);
+            label8.TabIndex = 25;
+            label8.Text = "Registrate as a User";
+            // 
             // Registration
             // 
-            AutoScaleDimensions = new SizeF(9F, 29F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(566, 582);
+            Controls.Add(label8);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(linkLabel1);
@@ -335,7 +347,7 @@ namespace E_Commerce.Presentation
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Registration";
             Text = "Registration";
@@ -371,5 +383,6 @@ namespace E_Commerce.Presentation
         private Label label1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Label label8;
     }
 }

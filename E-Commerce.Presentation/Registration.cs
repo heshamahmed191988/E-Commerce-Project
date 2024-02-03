@@ -30,7 +30,7 @@ namespace E_Commerce.Presentation
             comboBox1.Items.Insert(0, "0");
             comboBox1.Items.Add("1");
             // comboBox1.Items.Add("false");
-            comboBox1.SelectedIndex = 1;
+            comboBox1.SelectedIndex = 0;
         }
         #region functions
         static bool ContainsSpecialCharacter(string password)

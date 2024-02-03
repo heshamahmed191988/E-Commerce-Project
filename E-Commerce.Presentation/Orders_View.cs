@@ -37,12 +37,13 @@ namespace E_Commerce.Presentation
             var Ord = _orderService.GetAll().ToList();
             var OrderIds = Ord.Select(Order => Order.Id).ToList();
             var result = Ord
-    .Select(Order => new
-    {
-        Order.OrderDate,
-        Order.Status,
-        Order.TotalPrice,
-    }).ToList();
+        .Select(Order => new
+        {
+            Order.Id,
+            Order.OrderDate,
+            Order.Status,
+            Order.TotalPrice,
+        }).ToList();
             OrderdataGridView.DataSource = result;
 
         }
@@ -77,10 +78,10 @@ namespace E_Commerce.Presentation
         }
         private void BOUpdate_Click(object sender, EventArgs e)
         {
-
-            if (int.TryParse(NProduct.Text, out int id))
+            int Id = int.Parse(NProduct.Text);
+            if (Id!=0)
             {
-                OrderDTO orderDTO = _orderService.GetAll().FirstOrDefault(i => i.Id == id);
+                OrderDTO orderDTO = _orderService.GetAll().ToList().FirstOrDefault(i => i.Id == Id);
 
                 if (orderDTO != null)
                 {
@@ -90,22 +91,23 @@ namespace E_Commerce.Presentation
                     {
                         orderDTO.Status = status;
                         _orderService.UpdateOrder(orderDTO);
+                        MessageBox.Show("Updated");
                         Orders_View_Load(sender, e);
                     }
                     else
                     {
-                        MessageBox.Show("Status cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Status cannot be empty.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Order with the specified ID does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Order with the specified ID does not exist.");
                 }
             }
             else
             {
                 // Show an error message if NProduct.Text is not a valid integer
-                MessageBox.Show("Invalid Order ID. Please enter a valid integer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid Order ID. Please enter a valid integer.");
             }
         }
 
@@ -167,6 +169,11 @@ namespace E_Commerce.Presentation
         {
             Stack stack = new Stack();
             stack.Show();
+        }
+
+        private void Order_Status_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
