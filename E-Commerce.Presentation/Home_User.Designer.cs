@@ -114,6 +114,7 @@
             // 
             // productQuantity
             // 
+            productQuantity.BackColor = SystemColors.Control;
             productQuantity.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             productQuantity.FormattingEnabled = true;
             productQuantity.Location = new Point(167, 152);
@@ -159,7 +160,7 @@
             Pro_Price.BackColor = Color.Transparent;
             Pro_Price.Font = new Font("MS Gothic", 12F, FontStyle.Bold);
             Pro_Price.ForeColor = Color.ForestGreen;
-            Pro_Price.Location = new Point(169, 109);
+            Pro_Price.Location = new Point(156, 102);
             Pro_Price.Name = "Pro_Price";
             Pro_Price.Size = new Size(0, 16);
             Pro_Price.TabIndex = 9;
@@ -168,11 +169,11 @@
             // 
             Pro_Name.AutoSize = true;
             Pro_Name.BackColor = Color.Transparent;
-            Pro_Name.Font = new Font("MS Gothic", 12F, FontStyle.Bold);
+            Pro_Name.Font = new Font("MS Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pro_Name.ForeColor = Color.DarkRed;
-            Pro_Name.Location = new Point(169, 55);
+            Pro_Name.Location = new Point(156, 54);
             Pro_Name.Name = "Pro_Name";
-            Pro_Name.Size = new Size(0, 16);
+            Pro_Name.Size = new Size(0, 13);
             Pro_Name.TabIndex = 8;
             // 
             // textBox1

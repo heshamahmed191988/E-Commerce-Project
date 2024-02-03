@@ -1,5 +1,6 @@
 ﻿using E_Commerce.Context.Migrations;
 using E_Commerce_Project.Models;
+using Forms_ProjectVC_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +52,21 @@ namespace E_Commerce.Presentation
 
             // Display the next image
             pictureBox1.Image = sliderImages[currentIndex];
-           
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

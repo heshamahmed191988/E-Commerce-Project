@@ -21,7 +21,7 @@ namespace E_Commerce.Presentation
             var container = AutoFact.Inject();
             _productService = container.Resolve<IProductService>();
             InitializeComponent();
-       
+
         }
         private void LoadProduct()
         {
@@ -32,7 +32,7 @@ namespace E_Commerce.Presentation
 
 
                 dataGridView1.DataSource = products;
-               
+
             }
             else
             {
@@ -47,6 +47,11 @@ namespace E_Commerce.Presentation
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 

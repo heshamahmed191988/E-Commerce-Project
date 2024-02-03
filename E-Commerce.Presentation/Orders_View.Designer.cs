@@ -75,7 +75,7 @@
             groupBox1.Controls.Add(Order_Status);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI Emoji", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(30, 111);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(401, 292);
@@ -108,10 +108,10 @@
             // Total_Price
             // 
             Total_Price.AutoSize = true;
-            Total_Price.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            Total_Price.Font = new Font("Stencil", 12F, FontStyle.Bold);
             Total_Price.Location = new Point(36, 165);
             Total_Price.Name = "Total_Price";
-            Total_Price.Size = new Size(122, 23);
+            Total_Price.Size = new Size(129, 19);
             Total_Price.TabIndex = 9;
             Total_Price.Text = "Total Price :";
             // 
@@ -136,43 +136,43 @@
             // 
             OStates.Location = new Point(207, 119);
             OStates.Name = "OStates";
-            OStates.Size = new Size(160, 25);
+            OStates.Size = new Size(160, 27);
             OStates.TabIndex = 7;
             // 
             // NProduct
             // 
             NProduct.Location = new Point(207, 77);
             NProduct.Name = "NProduct";
-            NProduct.Size = new Size(160, 25);
+            NProduct.Size = new Size(160, 27);
             NProduct.TabIndex = 5;
             // 
             // Order_Status
             // 
             Order_Status.AutoSize = true;
-            Order_Status.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            Order_Status.Font = new Font("Stencil", 12F, FontStyle.Bold);
             Order_Status.Location = new Point(36, 119);
             Order_Status.Name = "Order_Status";
-            Order_Status.Size = new Size(138, 23);
+            Order_Status.Size = new Size(146, 19);
             Order_Status.TabIndex = 3;
             Order_Status.Text = "Order Status :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            label2.Font = new Font("Stencil", 12F, FontStyle.Bold);
             label2.Location = new Point(36, 79);
             label2.Name = "label2";
-            label2.Size = new Size(165, 23);
+            label2.Size = new Size(162, 19);
             label2.TabIndex = 1;
             label2.Text = "No Of Products :";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Kristen ITC", 12F, FontStyle.Bold);
+            label1.Font = new Font("Stencil", 12F, FontStyle.Bold);
             label1.Location = new Point(36, 40);
             label1.Name = "label1";
-            label1.Size = new Size(124, 23);
+            label1.Size = new Size(124, 19);
             label1.TabIndex = 0;
             label1.Text = "Order Date :";
             // 

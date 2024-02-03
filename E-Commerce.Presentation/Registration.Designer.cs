@@ -60,11 +60,11 @@ namespace E_Commerce.Presentation
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label2.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(60, 381);
+            label2.Location = new Point(37, 381);
             label2.Name = "label2";
-            label2.Size = new Size(55, 29);
+            label2.Size = new Size(69, 22);
             label2.TabIndex = 1;
             label2.Text = "Status";
             // 
@@ -72,11 +72,11 @@ namespace E_Commerce.Presentation
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label3.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(60, 192);
+            label3.Location = new Point(37, 192);
             label3.Name = "label3";
-            label3.Size = new Size(50, 29);
+            label3.Size = new Size(61, 22);
             label3.TabIndex = 2;
             label3.Text = "Email";
             // 
@@ -84,11 +84,11 @@ namespace E_Commerce.Presentation
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label4.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(60, 322);
+            label4.Location = new Point(37, 322);
             label4.Name = "label4";
-            label4.Size = new Size(68, 29);
+            label4.Size = new Size(87, 22);
             label4.TabIndex = 3;
             label4.Text = "Address";
             // 
@@ -96,11 +96,11 @@ namespace E_Commerce.Presentation
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label5.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(60, 257);
+            label5.Location = new Point(37, 257);
             label5.Name = "label5";
-            label5.Size = new Size(77, 29);
+            label5.Size = new Size(100, 22);
             label5.TabIndex = 4;
             label5.Text = "Password";
             // 
@@ -108,11 +108,11 @@ namespace E_Commerce.Presentation
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label6.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(60, 127);
+            label6.Location = new Point(37, 127);
             label6.Name = "label6";
-            label6.Size = new Size(56, 29);
+            label6.Size = new Size(67, 22);
             label6.TabIndex = 5;
             label6.Text = "Phone";
             // 
@@ -120,16 +120,17 @@ namespace E_Commerce.Presentation
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label7.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label7.ForeColor = SystemColors.ActiveCaptionText;
-            label7.Location = new Point(60, 60);
+            label7.Location = new Point(37, 60);
             label7.Name = "label7";
-            label7.Size = new Size(82, 29);
+            label7.Size = new Size(103, 22);
             label7.TabIndex = 6;
             label7.Text = "Username";
             // 
             // Email
             // 
+            Email.BackColor = Color.LightBlue;
             Email.Location = new Point(160, 184);
             Email.Name = "Email";
             Email.Size = new Size(313, 37);
@@ -137,6 +138,7 @@ namespace E_Commerce.Presentation
             // 
             // pass
             // 
+            pass.BackColor = Color.LightBlue;
             pass.Location = new Point(160, 249);
             pass.Name = "pass";
             pass.Size = new Size(313, 37);
@@ -145,6 +147,7 @@ namespace E_Commerce.Presentation
             // 
             // Phone
             // 
+            Phone.BackColor = Color.White;
             Phone.Location = new Point(160, 119);
             Phone.Name = "Phone";
             Phone.Size = new Size(313, 37);
@@ -152,6 +155,7 @@ namespace E_Commerce.Presentation
             // 
             // Address
             // 
+            Address.BackColor = Color.LightBlue;
             Address.Location = new Point(160, 314);
             Address.Name = "Address";
             Address.Size = new Size(313, 37);
@@ -159,6 +163,7 @@ namespace E_Commerce.Presentation
             // 
             // UserName
             // 
+            UserName.BackColor = Color.White;
             UserName.Location = new Point(160, 52);
             UserName.Name = "UserName";
             UserName.Size = new Size(313, 37);
@@ -217,6 +222,7 @@ namespace E_Commerce.Presentation
             // 
             // comboBox1
             // 
+            comboBox1.BackColor = Color.LightBlue;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(160, 381);
             comboBox1.Margin = new Padding(4, 6, 4, 6);
@@ -255,6 +261,7 @@ namespace E_Commerce.Presentation
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.Transparent;
             linkLabel1.Location = new Point(366, 526);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(50, 29);
@@ -266,6 +273,7 @@ namespace E_Commerce.Presentation
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Location = new Point(177, 526);
             label1.Name = "label1";
             label1.Size = new Size(183, 29);
@@ -276,6 +284,7 @@ namespace E_Commerce.Presentation
             // 
             AutoScaleDimensions = new SizeF(9F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(566, 582);
             Controls.Add(linkLabel1);

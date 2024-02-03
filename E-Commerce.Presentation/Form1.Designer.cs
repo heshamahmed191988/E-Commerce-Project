@@ -66,22 +66,20 @@
             // 
             userName.BackColor = SystemColors.ActiveCaption;
             userName.BorderStyle = BorderStyle.None;
-            userName.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            userName.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userName.Location = new Point(166, 59);
-            userName.Multiline = true;
             userName.Name = "userName";
-            userName.Size = new Size(272, 23);
+            userName.Size = new Size(223, 22);
             userName.TabIndex = 2;
             // 
             // pass
             // 
             pass.BackColor = SystemColors.ActiveCaption;
             pass.BorderStyle = BorderStyle.None;
-            pass.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            pass.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pass.Location = new Point(166, 109);
-            pass.Multiline = true;
             pass.Name = "pass";
-            pass.Size = new Size(272, 23);
+            pass.Size = new Size(223, 22);
             pass.TabIndex = 3;
             pass.TextChanged += pass_TextChanged;
             // 
@@ -94,7 +92,7 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(166, 177);
+            button1.Location = new Point(181, 163);
             button1.Name = "button1";
             button1.Size = new Size(155, 54);
             button1.TabIndex = 4;
@@ -104,6 +102,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Location = new Point(146, 248);
             label3.Name = "label3";
             label3.Size = new Size(134, 15);
@@ -113,6 +112,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.Transparent;
             linkLabel1.Location = new Point(286, 248);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(50, 15);
@@ -125,8 +125,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(500, 358);
+            ClientSize = new Size(490, 369);
             Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(button1);

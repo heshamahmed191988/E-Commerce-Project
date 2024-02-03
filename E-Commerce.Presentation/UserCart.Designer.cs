@@ -48,8 +48,12 @@
             Remove = new Button();
             label5 = new Label();
             update = new Button();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -57,7 +61,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(358, 135);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(580, 220);
+            dataGridView1.Size = new Size(306, 220);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -66,7 +70,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label1.Location = new Point(45, 135);
+            label1.Location = new Point(17, 32);
             label1.Name = "label1";
             label1.Size = new Size(138, 23);
             label1.TabIndex = 1;
@@ -78,7 +82,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label2.Location = new Point(45, 177);
+            label2.Location = new Point(17, 74);
             label2.Name = "label2";
             label2.Size = new Size(103, 23);
             label2.TabIndex = 2;
@@ -93,7 +97,7 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(78, 238);
+            button1.Location = new Point(50, 135);
             button1.Name = "button1";
             button1.Size = new Size(183, 49);
             button1.TabIndex = 3;
@@ -106,7 +110,7 @@
             prodNo.BackColor = Color.Transparent;
             prodNo.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
             prodNo.ForeColor = SystemColors.AppWorkspace;
-            prodNo.Location = new Point(201, 141);
+            prodNo.Location = new Point(173, 38);
             prodNo.Name = "prodNo";
             prodNo.Size = new Size(0, 13);
             prodNo.TabIndex = 4;
@@ -117,7 +121,7 @@
             price.BackColor = Color.Transparent;
             price.Font = new Font("SimSun-ExtB", 9.75F, FontStyle.Bold);
             price.ForeColor = SystemColors.WindowFrame;
-            price.Location = new Point(201, 183);
+            price.Location = new Point(173, 80);
             price.Name = "price";
             price.Size = new Size(0, 13);
             price.TabIndex = 5;
@@ -253,7 +257,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label3.Location = new Point(46, 334);
+            label3.Location = new Point(18, 55);
             label3.Name = "label3";
             label3.Size = new Size(142, 23);
             label3.TabIndex = 17;
@@ -262,10 +266,10 @@
             // ChangeQuantity
             // 
             ChangeQuantity.FormattingEnabled = true;
-            ChangeQuantity.Location = new Point(201, 337);
+            ChangeQuantity.Location = new Point(175, 50);
             ChangeQuantity.Margin = new Padding(4, 6, 4, 6);
             ChangeQuantity.Name = "ChangeQuantity";
-            ChangeQuantity.Size = new Size(60, 23);
+            ChangeQuantity.Size = new Size(60, 28);
             ChangeQuantity.TabIndex = 19;
             // 
             // Remove
@@ -276,7 +280,7 @@
             Remove.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Remove.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Remove.FlatStyle = FlatStyle.Flat;
-            Remove.Location = new Point(179, 372);
+            Remove.Location = new Point(145, 150);
             Remove.Name = "Remove";
             Remove.Size = new Size(128, 48);
             Remove.TabIndex = 20;
@@ -287,12 +291,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold);
-            label5.Location = new Point(46, 98);
+            label5.Font = new Font("Goudy Stout", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(424, 81);
             label5.Name = "label5";
-            label5.Size = new Size(70, 23);
+            label5.Size = new Size(0, 32);
             label5.TabIndex = 21;
-            label5.Text = "Prod.Id";
             label5.Click += label5_Click;
             // 
             // update
@@ -305,7 +308,7 @@
             update.FlatAppearance.MouseOverBackColor = Color.Transparent;
             update.FlatStyle = FlatStyle.Flat;
             update.Font = new Font("Stencil", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            update.Location = new Point(45, 371);
+            update.Location = new Point(11, 149);
             update.Name = "update";
             update.Size = new Size(128, 48);
             update.TabIndex = 22;
@@ -313,24 +316,48 @@
             update.UseVisualStyleBackColor = false;
             update.Click += update_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(prodNo);
+            groupBox1.Controls.Add(price);
+            groupBox1.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(30, 135);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(279, 220);
+            groupBox1.TabIndex = 23;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Info Cart";
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = Color.Transparent;
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(ChangeQuantity);
+            groupBox2.Controls.Add(update);
+            groupBox2.Controls.Add(Remove);
+            groupBox2.Font = new Font("Showcard Gothic", 12F);
+            groupBox2.Location = new Point(720, 135);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(279, 220);
+            groupBox2.TabIndex = 24;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "update Cart";
+            // 
             // UserCart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1032, 499);
-            Controls.Add(update);
+            ClientSize = new Size(1032, 435);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(label5);
-            Controls.Add(Remove);
-            Controls.Add(ChangeQuantity);
-            Controls.Add(label3);
             Controls.Add(Navebar);
-            Controls.Add(price);
-            Controls.Add(prodNo);
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "UserCart";
             Text = "UserCart";
@@ -338,6 +365,10 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             Navebar.ResumeLayout(false);
             Navebar.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -365,5 +396,7 @@
         private Button Remove;
         private Label label5;
         private Button update;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
     }
 }
