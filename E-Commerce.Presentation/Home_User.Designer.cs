@@ -45,7 +45,7 @@
             userDTOBindingSource = new BindingSource(components);
             button1 = new Button();
             Navebar = new Panel();
-            label4 = new Label();
+            button2 = new Button();
             PTorders = new Button();
             PTlogout = new Button();
             PTcart = new Button();
@@ -234,7 +234,7 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcart);
@@ -247,18 +247,22 @@
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 16;
             // 
-            // label4
+            // button2
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
+            button2.BackColor = Color.Black;
+            button2.BackgroundImage = Properties.Resources.logo1;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(12, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 24;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // PTorders
             // 
@@ -269,7 +273,7 @@
             PTorders.ForeColor = Color.White;
             PTorders.Image = (Image)resources.GetObject("PTorders.Image");
             PTorders.ImageAlign = ContentAlignment.MiddleLeft;
-            PTorders.Location = new Point(480, 6);
+            PTorders.Location = new Point(358, 5);
             PTorders.Name = "PTorders";
             PTorders.Size = new Size(118, 38);
             PTorders.TabIndex = 18;
@@ -302,7 +306,7 @@
             PTcart.ForeColor = Color.White;
             PTcart.Image = (Image)resources.GetObject("PTcart.Image");
             PTcart.ImageAlign = ContentAlignment.MiddleLeft;
-            PTcart.Location = new Point(358, 5);
+            PTcart.Location = new Point(471, 7);
             PTcart.Name = "PTcart";
             PTcart.Size = new Size(118, 38);
             PTcart.TabIndex = 17;
@@ -383,7 +387,6 @@
             product.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -404,12 +407,12 @@
         private BindingSource userDTOBindingSource;
         private Button button1;
         private Panel Navebar;
-        private Label label4;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcart;
         private Button PTproduct;
         private Button PTregister;
         private Button BTlogin;
+        private Button button2;
     }
 }

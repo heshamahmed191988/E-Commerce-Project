@@ -37,7 +37,6 @@
             CatogeryDescriptionBox = new TextBox();
             label15 = new Label();
             CatogeryNameBox = new TextBox();
-            label4 = new Label();
             PTorders = new Button();
             PTlogout = new Button();
             PTcategory = new Button();
@@ -45,11 +44,13 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            button1 = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             Image = new Label();
             Imagebox = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             Navebar.SuspendLayout();
             panel1.SuspendLayout();
@@ -143,19 +144,6 @@
             CatogeryNameBox.Name = "CatogeryNameBox";
             CatogeryNameBox.Size = new Size(338, 31);
             CatogeryNameBox.TabIndex = 18;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
             // 
             // PTorders
             // 
@@ -262,7 +250,8 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
+            Navebar.Controls.Add(button1);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcategory);
@@ -274,6 +263,23 @@
             Navebar.Name = "Navebar";
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 22;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 7);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 38);
+            button1.TabIndex = 20;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -325,6 +331,23 @@
             Imagebox.Size = new Size(338, 31);
             Imagebox.TabIndex = 27;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(592, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 21;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Admin_Category_Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -349,7 +372,6 @@
             Text = "Admin Category";
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -366,7 +388,6 @@
         private TextBox CatogeryDescriptionBox;
         private Label label15;
         private TextBox CatogeryNameBox;
-        private Label label4;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcategory;
@@ -379,5 +400,7 @@
         private Panel panel3;
         private Label Image;
         private TextBox Imagebox;
+        private Button button1;
+        private Button button2;
     }
 }

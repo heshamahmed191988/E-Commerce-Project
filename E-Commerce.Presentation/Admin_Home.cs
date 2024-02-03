@@ -90,16 +90,16 @@ namespace E_Commerce.Presentation
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Move to the next image
-           
-                currentIndex = (currentIndex + 1) % sliderImages.Length;
 
-                // Display the next image
-                slider.Image = sliderImages[currentIndex];
-                ProductImg.Image = productImages[currentIndex];
-                CategorysImg.Image = categoryImages[currentIndex];
-                OrderImg.Image = orderImages[currentIndex];
-           
-            
+            currentIndex = (currentIndex + 1) % sliderImages.Length;
+
+            // Display the next image
+            slider.Image = sliderImages[currentIndex];
+            ProductImg.Image = productImages[currentIndex];
+            CategorysImg.Image = categoryImages[currentIndex];
+            OrderImg.Image = orderImages[currentIndex];
+
+
 
         }
 
@@ -182,6 +182,19 @@ namespace E_Commerce.Presentation
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stack stack = new Stack();
+            stack.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
         }
     }
 

@@ -32,8 +32,10 @@
             dataGridView1 = new DataGridView();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -56,7 +58,7 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(12, 49);
+            button1.Location = new Point(12, 150);
             button1.Name = "button1";
             button1.Size = new Size(141, 64);
             button1.TabIndex = 4;
@@ -74,6 +76,17 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = Properties.Resources.logo3;
+            pictureBox3.Location = new Point(12, 12);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(94, 84);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 26;
+            pictureBox3.TabStop = false;
+            // 
             // Stack
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -81,6 +94,7 @@
             BackgroundImage = Properties.Resources.bg2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(604, 349);
+            Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
@@ -90,6 +104,7 @@
             Load += Stack_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -98,5 +113,6 @@
         private DataGridView dataGridView1;
         private Button button1;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }

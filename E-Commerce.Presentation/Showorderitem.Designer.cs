@@ -32,9 +32,11 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             button1 = new Button();
+            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -86,6 +88,17 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = Properties.Resources.logo3;
+            pictureBox4.Location = new Point(792, 12);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(74, 67);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 26;
+            pictureBox4.TabStop = false;
+            // 
             // Showorderitem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -93,6 +106,7 @@
             BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(878, 362);
+            Controls.Add(pictureBox4);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox2);
@@ -104,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -113,5 +128,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button button1;
+        private PictureBox pictureBox4;
     }
 }

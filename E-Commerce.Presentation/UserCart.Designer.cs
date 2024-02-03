@@ -38,7 +38,7 @@
             PTlogout = new Button();
             PTregister = new Button();
             Navebar = new Panel();
-            label4 = new Label();
+            button2 = new Button();
             PTorders = new Button();
             PTcategory = new Button();
             PTproduct = new Button();
@@ -135,7 +135,7 @@
             PTlogout.ForeColor = Color.White;
             PTlogout.Image = (Image)resources.GetObject("PTlogout.Image");
             PTlogout.ImageAlign = ContentAlignment.MiddleLeft;
-            PTlogout.Location = new Point(862, 7);
+            PTlogout.Location = new Point(969, 7);
             PTlogout.Name = "PTlogout";
             PTlogout.Size = new Size(34, 38);
             PTlogout.TabIndex = 19;
@@ -150,7 +150,7 @@
             PTregister.ForeColor = Color.White;
             PTregister.Image = (Image)resources.GetObject("PTregister.Image");
             PTregister.ImageAlign = ContentAlignment.MiddleLeft;
-            PTregister.Location = new Point(738, 6);
+            PTregister.Location = new Point(845, 6);
             PTregister.Name = "PTregister";
             PTregister.Size = new Size(118, 38);
             PTregister.TabIndex = 15;
@@ -160,7 +160,7 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcategory);
@@ -173,18 +173,22 @@
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 16;
             // 
-            // label4
+            // button2
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
+            button2.BackColor = Color.Black;
+            button2.BackgroundImage = Properties.Resources.logo1;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(12, 5);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 24;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // PTorders
             // 
@@ -192,10 +196,10 @@
             PTorders.FlatAppearance.BorderSize = 0;
             PTorders.FlatStyle = FlatStyle.Flat;
             PTorders.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PTorders.ForeColor = Color.Red;
+            PTorders.ForeColor = Color.White;
             PTorders.Image = (Image)resources.GetObject("PTorders.Image");
             PTorders.ImageAlign = ContentAlignment.MiddleLeft;
-            PTorders.Location = new Point(480, 6);
+            PTorders.Location = new Point(344, 6);
             PTorders.Name = "PTorders";
             PTorders.Size = new Size(118, 38);
             PTorders.TabIndex = 18;
@@ -209,15 +213,16 @@
             PTcategory.FlatAppearance.BorderSize = 0;
             PTcategory.FlatStyle = FlatStyle.Flat;
             PTcategory.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PTcategory.ForeColor = Color.White;
+            PTcategory.ForeColor = Color.Red;
             PTcategory.Image = (Image)resources.GetObject("PTcategory.Image");
             PTcategory.ImageAlign = ContentAlignment.MiddleLeft;
-            PTcategory.Location = new Point(358, 5);
+            PTcategory.Location = new Point(468, 5);
             PTcategory.Name = "PTcategory";
             PTcategory.Size = new Size(118, 38);
             PTcategory.TabIndex = 17;
-            PTcategory.Text = "   Category";
+            PTcategory.Text = "Cart";
             PTcategory.UseVisualStyleBackColor = false;
+            PTcategory.Click += PTcategory_Click;
             // 
             // PTproduct
             // 
@@ -234,6 +239,7 @@
             PTproduct.TabIndex = 16;
             PTproduct.Text = "  Product";
             PTproduct.UseVisualStyleBackColor = false;
+            PTproduct.Click += PTproduct_Click;
             // 
             // BTlogin
             // 
@@ -244,7 +250,7 @@
             BTlogin.ForeColor = Color.White;
             BTlogin.Image = (Image)resources.GetObject("BTlogin.Image");
             BTlogin.ImageAlign = ContentAlignment.MiddleLeft;
-            BTlogin.Location = new Point(636, 5);
+            BTlogin.Location = new Point(743, 5);
             BTlogin.Name = "BTlogin";
             BTlogin.Size = new Size(92, 38);
             BTlogin.TabIndex = 14;
@@ -266,10 +272,10 @@
             // ChangeQuantity
             // 
             ChangeQuantity.FormattingEnabled = true;
-            ChangeQuantity.Location = new Point(175, 50);
+            ChangeQuantity.Location = new Point(167, 55);
             ChangeQuantity.Margin = new Padding(4, 6, 4, 6);
             ChangeQuantity.Name = "ChangeQuantity";
-            ChangeQuantity.Size = new Size(60, 28);
+            ChangeQuantity.Size = new Size(76, 28);
             ChangeQuantity.TabIndex = 19;
             // 
             // Remove
@@ -364,7 +370,6 @@
             Load += UserCart_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -380,7 +385,6 @@
         private Label label2;
         private Button button1;
         private Label prodNo;
-        private Label label4;
         private Label price;
         private Button PTlogout;
         private Button PTregister;
@@ -398,5 +402,6 @@
         private Button update;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private Button button2;
     }
 }

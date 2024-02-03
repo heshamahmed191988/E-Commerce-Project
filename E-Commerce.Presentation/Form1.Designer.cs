@@ -36,6 +36,10 @@
             button1 = new Button();
             label3 = new Label();
             linkLabel1 = new LinkLabel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,6 +125,28 @@
             linkLabel1.Text = " Sign up";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked_1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = E_Commerce.Presentation.Properties.Resources.logo3;
+            pictureBox1.Location = new Point(12, 195);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(156, 139);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(415, 17);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 64);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -128,8 +154,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(490, 369);
-            Controls.Add(linkLabel1);
             Controls.Add(label3);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(linkLabel1);
             Controls.Add(button1);
             Controls.Add(pass);
             Controls.Add(userName);
@@ -140,6 +168,8 @@
             Name = "Form1";
             Text = "Log In";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -153,5 +183,7 @@
         private Button button1;
         private Label label3;
         private LinkLabel linkLabel1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

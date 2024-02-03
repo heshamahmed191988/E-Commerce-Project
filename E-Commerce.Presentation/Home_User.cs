@@ -175,14 +175,14 @@ namespace E_Commerce.Presentation
         {
             UserCart userCart = new UserCart(cartId, userId);
             userCart.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void PTproduct_Click(object sender, EventArgs e)
         {
             Home_User home_User = new Home_User(cartId, userId);
             home_User.Show();
-            //this.Hide();
+            this.Hide();
 
         }
 
@@ -190,13 +190,14 @@ namespace E_Commerce.Presentation
         {
             Showorderitem orderItems = new Showorderitem(userId);
             orderItems.Show();
+          
         }
 
         private void PTcart_Click(object sender, EventArgs e)
         {
             UserCart userCart = new UserCart(cartId, userId);
             userCart.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void BTlogin_Click(object sender, EventArgs e)
@@ -223,6 +224,13 @@ namespace E_Commerce.Presentation
         private void Filter_by_Name_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
         }
     }
 }

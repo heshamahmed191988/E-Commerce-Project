@@ -162,5 +162,11 @@ namespace E_Commerce.Presentation
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stack stack = new Stack();
+            stack.Show();
+        }
     }
 }

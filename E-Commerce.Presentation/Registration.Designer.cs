@@ -53,7 +53,11 @@ namespace E_Commerce.Presentation
             userDTOBindingSource = new BindingSource(components);
             linkLabel1 = new LinkLabel();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -280,6 +284,28 @@ namespace E_Commerce.Presentation
             label1.TabIndex = 21;
             label1.Text = "Already have an account?";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.logo3;
+            pictureBox1.Location = new Point(15, 431);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(156, 139);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(491, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 64);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 24;
+            pictureBox2.TabStop = false;
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(9F, 29F);
@@ -287,6 +313,8 @@ namespace E_Commerce.Presentation
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(566, 582);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
             Controls.Add(AddressMSG);
@@ -313,6 +341,8 @@ namespace E_Commerce.Presentation
             Text = "Registration";
             Load += Registration_Load;
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -339,5 +369,7 @@ namespace E_Commerce.Presentation
         private BindingSource userDTOBindingSource;
         private LinkLabel linkLabel1;
         private Label label1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

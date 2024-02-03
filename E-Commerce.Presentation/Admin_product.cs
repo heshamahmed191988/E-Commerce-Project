@@ -275,5 +275,11 @@ namespace E_Commerce.Presentation
             this.Hide();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+        }
     }
 }

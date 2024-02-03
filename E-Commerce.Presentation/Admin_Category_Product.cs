@@ -300,6 +300,19 @@ namespace E_Commerce.Presentation
             form1.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stack stack = new   Stack();
+            stack.Show();
+        }
     }
 
 

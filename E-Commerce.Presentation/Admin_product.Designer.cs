@@ -41,7 +41,6 @@
             DeleteProduct = new Label();
             EditProduct = new Label();
             AddProduct = new Label();
-            label4 = new Label();
             PTorders = new Button();
             PTlogout = new Button();
             PTcategory = new Button();
@@ -49,11 +48,13 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            button1 = new Button();
             panel3 = new Panel();
             panel2 = new Panel();
             panel1 = new Panel();
             Image = new Label();
             ImageBox = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             Navebar.SuspendLayout();
             panel3.SuspendLayout();
@@ -188,19 +189,6 @@
             AddProduct.TextAlign = ContentAlignment.MiddleCenter;
             AddProduct.Click += AddProduct_Click;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
-            // 
             // PTorders
             // 
             PTorders.BackColor = Color.Black;
@@ -306,7 +294,8 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
+            Navebar.Controls.Add(button1);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcategory);
@@ -318,6 +307,23 @@
             Navebar.Name = "Navebar";
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 35;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(3, 6);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 38);
+            button1.TabIndex = 21;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel3
             // 
@@ -371,6 +377,22 @@
             ImageBox.Size = new Size(138, 29);
             ImageBox.TabIndex = 40;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(585, 5);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 41;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // Admin_product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -400,7 +422,6 @@
             Load += Admin_product_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -422,7 +443,6 @@
         private Label DeleteProduct;
         private Label EditProduct;
         private Label AddProduct;
-        private Label label4;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcategory;
@@ -435,5 +455,7 @@
         private Panel panel1;
         private Label Image;
         private TextBox ImageBox;
+        private Button button1;
+        private Button button2;
     }
 }

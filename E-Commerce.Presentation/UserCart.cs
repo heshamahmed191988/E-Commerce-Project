@@ -6,6 +6,7 @@ using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -241,6 +242,27 @@ namespace E_Commerce.Presentation
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+        }
+
+        private void PTproduct_Click(object sender, EventArgs e)
+        {
+            //Home_User home_User = new Home_User(cartId, userId);
+            //home_User.Show();
+            //this.Hide();
+        }
+
+        private void PTcategory_Click(object sender, EventArgs e)
+        {
+            //UserCart userCart = new UserCart(cartId, userId);
+            //userCart.Show();
+            //this.Hide();
         }
     }
 }
