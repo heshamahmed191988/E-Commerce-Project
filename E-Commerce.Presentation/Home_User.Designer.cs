@@ -45,7 +45,7 @@
             userDTOBindingSource = new BindingSource(components);
             button1 = new Button();
             Navebar = new Panel();
-            label4 = new Label();
+            button2 = new Button();
             PTorders = new Button();
             PTlogout = new Button();
             PTcart = new Button();
@@ -73,11 +73,11 @@
             // 
             ProductName.AutoSize = true;
             ProductName.BackColor = Color.Transparent;
-            ProductName.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ProductName.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             ProductName.ForeColor = Color.Black;
-            ProductName.Location = new Point(19, 40);
+            ProductName.Location = new Point(17, 48);
             ProductName.Name = "ProductName";
-            ProductName.Size = new Size(94, 15);
+            ProductName.Size = new Size(133, 22);
             ProductName.TabIndex = 2;
             ProductName.Text = "Product Name : ";
             // 
@@ -85,11 +85,11 @@
             // 
             Price.AutoSize = true;
             Price.BackColor = Color.Transparent;
-            Price.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Price.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             Price.ForeColor = Color.Black;
-            Price.Location = new Point(19, 79);
+            Price.Location = new Point(17, 102);
             Price.Name = "Price";
-            Price.Size = new Size(93, 15);
+            Price.Size = new Size(129, 22);
             Price.TabIndex = 6;
             Price.Text = "Product Price : ";
             // 
@@ -105,18 +105,19 @@
             product.Controls.Add(Price);
             product.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             product.ForeColor = Color.Black;
-            product.Location = new Point(47, 152);
+            product.Location = new Point(24, 152);
             product.Name = "product";
-            product.Size = new Size(242, 240);
+            product.Size = new Size(265, 299);
             product.TabIndex = 9;
             product.TabStop = false;
             product.Text = "Product";
             // 
             // productQuantity
             // 
+            productQuantity.BackColor = SystemColors.Control;
             productQuantity.Font = new Font("Bahnschrift Condensed", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             productQuantity.FormattingEnabled = true;
-            productQuantity.Location = new Point(152, 108);
+            productQuantity.Location = new Point(167, 152);
             productQuantity.Name = "productQuantity";
             productQuantity.Size = new Size(65, 24);
             productQuantity.TabIndex = 13;
@@ -125,11 +126,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(19, 112);
+            label1.Location = new Point(17, 151);
             label1.Name = "label1";
-            label1.Size = new Size(105, 15);
+            label1.Size = new Size(143, 22);
             label1.TabIndex = 12;
             label1.Text = "Product Quantity:";
             // 
@@ -145,7 +146,7 @@
             Add_Card.FlatStyle = FlatStyle.Flat;
             Add_Card.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             Add_Card.ForeColor = Color.Transparent;
-            Add_Card.Location = new Point(46, 170);
+            Add_Card.Location = new Point(52, 216);
             Add_Card.Name = "Add_Card";
             Add_Card.Size = new Size(154, 52);
             Add_Card.TabIndex = 10;
@@ -157,29 +158,29 @@
             // 
             Pro_Price.AutoSize = true;
             Pro_Price.BackColor = Color.Transparent;
-            Pro_Price.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Pro_Price.ForeColor = Color.Moccasin;
-            Pro_Price.Location = new Point(118, 80);
+            Pro_Price.Font = new Font("MS Gothic", 12F, FontStyle.Bold);
+            Pro_Price.ForeColor = Color.ForestGreen;
+            Pro_Price.Location = new Point(156, 102);
             Pro_Price.Name = "Pro_Price";
-            Pro_Price.Size = new Size(0, 15);
+            Pro_Price.Size = new Size(0, 16);
             Pro_Price.TabIndex = 9;
             // 
             // Pro_Name
             // 
             Pro_Name.AutoSize = true;
             Pro_Name.BackColor = Color.Transparent;
-            Pro_Name.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Pro_Name.ForeColor = Color.Moccasin;
-            Pro_Name.Location = new Point(119, 42);
+            Pro_Name.Font = new Font("MS Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pro_Name.ForeColor = Color.DarkRed;
+            Pro_Name.Location = new Point(156, 54);
             Pro_Name.Name = "Pro_Name";
-            Pro_Name.Size = new Size(0, 15);
+            Pro_Name.Size = new Size(0, 13);
             Pro_Name.TabIndex = 8;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(141, 105);
+            textBox1.Location = new Point(150, 108);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(148, 23);
+            textBox1.Size = new Size(139, 23);
             textBox1.TabIndex = 10;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -187,13 +188,14 @@
             // 
             Filter_by_Name.AutoSize = true;
             Filter_by_Name.BackColor = Color.Transparent;
-            Filter_by_Name.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Filter_by_Name.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             Filter_by_Name.ForeColor = Color.Black;
-            Filter_by_Name.Location = new Point(41, 108);
+            Filter_by_Name.Location = new Point(24, 106);
             Filter_by_Name.Name = "Filter_by_Name";
-            Filter_by_Name.Size = new Size(87, 15);
+            Filter_by_Name.Size = new Size(120, 22);
             Filter_by_Name.TabIndex = 11;
             Filter_by_Name.Text = "Filter by Name";
+            Filter_by_Name.Click += Filter_by_Name_Click;
             // 
             // label2
             // 
@@ -221,7 +223,7 @@
             button1.Font = new Font("Forte", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleRight;
-            button1.Location = new Point(78, 432);
+            button1.Location = new Point(76, 478);
             button1.Name = "button1";
             button1.Size = new Size(160, 40);
             button1.TabIndex = 15;
@@ -232,7 +234,7 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcart);
@@ -245,18 +247,22 @@
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 16;
             // 
-            // label4
+            // button2
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
+            button2.BackColor = Color.Black;
+            button2.BackgroundImage = Properties.Resources.logo1;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(12, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 24;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // PTorders
             // 
@@ -267,7 +273,7 @@
             PTorders.ForeColor = Color.White;
             PTorders.Image = (Image)resources.GetObject("PTorders.Image");
             PTorders.ImageAlign = ContentAlignment.MiddleLeft;
-            PTorders.Location = new Point(480, 6);
+            PTorders.Location = new Point(358, 5);
             PTorders.Name = "PTorders";
             PTorders.Size = new Size(118, 38);
             PTorders.TabIndex = 18;
@@ -300,7 +306,7 @@
             PTcart.ForeColor = Color.White;
             PTcart.Image = (Image)resources.GetObject("PTcart.Image");
             PTcart.ImageAlign = ContentAlignment.MiddleLeft;
-            PTcart.Location = new Point(358, 5);
+            PTcart.Location = new Point(471, 7);
             PTcart.Name = "PTcart";
             PTcart.Size = new Size(118, 38);
             PTcart.TabIndex = 17;
@@ -381,7 +387,6 @@
             product.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -402,12 +407,12 @@
         private BindingSource userDTOBindingSource;
         private Button button1;
         private Panel Navebar;
-        private Label label4;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcart;
         private Button PTproduct;
         private Button PTregister;
         private Button BTlogin;
+        private Button button2;
     }
 }

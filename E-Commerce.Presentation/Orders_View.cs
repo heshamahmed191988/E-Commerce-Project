@@ -39,40 +39,40 @@ namespace E_Commerce.Presentation
             var result = Ord
     .Select(Order => new
     {
-        Order.OrderDate,     
+        Order.OrderDate,
         Order.Status,
-         Order.TotalPrice,
+        Order.TotalPrice,
     }).ToList();
-        OrderdataGridView.DataSource = result;
-       
+            OrderdataGridView.DataSource = result;
+
         }
 
 
         private void OrderdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
 
-                  
-                    if (row.Cells["OrderDate"].Value != null &&
-                        row.Cells["Id"].Value != null &&
-                        row.Cells["Status"].Value != null &&
-                        row.Cells["TotalPrice"].Value != null)
-                    {
-                        // Populate textboxes with data from the selected row
-                        ODate.Text = row.Cells["OrderDate"].Value.ToString();
-                        NProduct.Text = row.Cells["Id"].Value.ToString();
-                        OStates.Text = row.Cells["Status"].Value.ToString();
-                        OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
-                    }
-                    else
-                    {
-                        // Handle the case where some cells are null
-                        MessageBox.Show("Selected row has missing or null values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-               
+
+                if (row.Cells["OrderDate"].Value != null &&
+                    row.Cells["Id"].Value != null &&
+                    row.Cells["Status"].Value != null &&
+                    row.Cells["TotalPrice"].Value != null)
+                {
+                    // Populate textboxes with data from the selected row
+                    ODate.Text = row.Cells["OrderDate"].Value.ToString();
+                    NProduct.Text = row.Cells["Id"].Value.ToString();
+                    OStates.Text = row.Cells["Status"].Value.ToString();
+                    OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
+                }
+                else
+                {
+                    // Handle the case where some cells are null
+                    MessageBox.Show("Selected row has missing or null values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
         private void BOUpdate_Click(object sender, EventArgs e)
@@ -156,6 +156,17 @@ namespace E_Commerce.Presentation
             Registration registration = new Registration();
             registration.Show();
             this.Hide();
+        }
+
+        private void ODate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stack stack = new Stack();
+            stack.Show();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace E_Commerce.Presentation
             InitializeComponent();
             this.UserId = UserId;
         }
-        private void  LoadOrderItems()
+        private void LoadOrderItems()
         {
             var Order = _orderService.GetAll().ToList().Where(i => i.UserID == UserId).ToList();
 
@@ -42,7 +42,7 @@ namespace E_Commerce.Presentation
                 i.Status
             }
             ).ToList();
-            
+
         }
 
         private void Showorderitem_Load(object sender, EventArgs e)
@@ -55,6 +55,11 @@ namespace E_Commerce.Presentation
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

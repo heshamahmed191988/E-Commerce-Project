@@ -41,13 +41,14 @@
             label2 = new Label();
             label1 = new Label();
             Navebar = new Panel();
-            label4 = new Label();
             PTorders = new Button();
             PTlogout = new Button();
             PTcategory = new Button();
             PTproduct = new Button();
             PTregister = new Button();
             BTlogin = new Button();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)OrderdataGridView).BeginInit();
             groupBox1.SuspendLayout();
             Navebar.SuspendLayout();
@@ -56,9 +57,9 @@
             // OrderdataGridView
             // 
             OrderdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrderdataGridView.Location = new Point(333, 121);
+            OrderdataGridView.Location = new Point(452, 121);
             OrderdataGridView.Name = "OrderdataGridView";
-            OrderdataGridView.Size = new Size(680, 282);
+            OrderdataGridView.Size = new Size(579, 282);
             OrderdataGridView.TabIndex = 0;
             OrderdataGridView.CellClick += OrderdataGridView_CellContentClick;
             OrderdataGridView.CellContentClick += OrderdataGridView_CellContentClick;
@@ -75,10 +76,10 @@
             groupBox1.Controls.Add(Order_Status);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI Emoji", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(57, 111);
+            groupBox1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(30, 111);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(257, 292);
+            groupBox1.Size = new Size(401, 292);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Edit Your Orders";
@@ -87,29 +88,33 @@
             // OTotalPrice
             // 
             OTotalPrice.AutoSize = true;
-            OTotalPrice.Location = new Point(123, 164);
+            OTotalPrice.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
+            OTotalPrice.ForeColor = Color.DarkGreen;
+            OTotalPrice.Location = new Point(207, 165);
             OTotalPrice.Name = "OTotalPrice";
-            OTotalPrice.Size = new Size(80, 17);
+            OTotalPrice.Size = new Size(0, 17);
             OTotalPrice.TabIndex = 11;
-            OTotalPrice.Text = "Total Price";
             // 
             // ODate
             // 
             ODate.AutoSize = true;
-            ODate.Location = new Point(123, 39);
+            ODate.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
+            ODate.ForeColor = Color.DarkRed;
+            ODate.Location = new Point(207, 43);
             ODate.Name = "ODate";
-            ODate.Size = new Size(89, 17);
+            ODate.Size = new Size(0, 17);
             ODate.TabIndex = 10;
-            ODate.Text = "Order Date ";
+            ODate.Click += ODate_Click;
             // 
             // Total_Price
             // 
             Total_Price.AutoSize = true;
-            Total_Price.Location = new Point(22, 164);
+            Total_Price.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            Total_Price.Location = new Point(36, 165);
             Total_Price.Name = "Total_Price";
-            Total_Price.Size = new Size(80, 17);
+            Total_Price.Size = new Size(129, 19);
             Total_Price.TabIndex = 9;
-            Total_Price.Text = "Total Price";
+            Total_Price.Text = "Total Price :";
             // 
             // BOUpdate
             // 
@@ -120,7 +125,7 @@
             BOUpdate.FlatAppearance.MouseOverBackColor = Color.Transparent;
             BOUpdate.FlatStyle = FlatStyle.Flat;
             BOUpdate.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BOUpdate.Location = new Point(41, 213);
+            BOUpdate.Location = new Point(117, 211);
             BOUpdate.Name = "BOUpdate";
             BOUpdate.Size = new Size(171, 51);
             BOUpdate.TabIndex = 8;
@@ -130,49 +135,53 @@
             // 
             // OStates
             // 
-            OStates.Location = new Point(150, 118);
+            OStates.Location = new Point(207, 119);
             OStates.Name = "OStates";
-            OStates.Size = new Size(100, 25);
+            OStates.Size = new Size(160, 27);
             OStates.TabIndex = 7;
             // 
             // NProduct
             // 
-            NProduct.Location = new Point(150, 76);
+            NProduct.Location = new Point(207, 77);
             NProduct.Name = "NProduct";
-            NProduct.Size = new Size(100, 25);
+            NProduct.Size = new Size(160, 27);
             NProduct.TabIndex = 5;
             // 
             // Order_Status
             // 
             Order_Status.AutoSize = true;
-            Order_Status.Location = new Point(22, 118);
+            Order_Status.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            Order_Status.Location = new Point(36, 119);
             Order_Status.Name = "Order_Status";
-            Order_Status.Size = new Size(94, 17);
+            Order_Status.Size = new Size(146, 19);
             Order_Status.TabIndex = 3;
-            Order_Status.Text = "Order Status";
+            Order_Status.Text = "Order Status :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(22, 76);
+            label2.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label2.Location = new Point(36, 79);
             label2.Name = "label2";
-            label2.Size = new Size(122, 17);
+            label2.Size = new Size(162, 19);
             label2.TabIndex = 1;
             label2.Text = "No Of Products :";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 39);
+            label1.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label1.Location = new Point(36, 40);
             label1.Name = "label1";
-            label1.Size = new Size(93, 17);
+            label1.Size = new Size(124, 19);
             label1.TabIndex = 0;
             label1.Text = "Order Date :";
             // 
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
+            Navebar.Controls.Add(button1);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcategory);
@@ -184,19 +193,6 @@
             Navebar.Name = "Navebar";
             Navebar.Size = new Size(1060, 48);
             Navebar.TabIndex = 15;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
             // 
             // PTorders
             // 
@@ -300,6 +296,39 @@
             BTlogin.UseVisualStyleBackColor = false;
             BTlogin.Click += BTlogin_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 5);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 38);
+            button1.TabIndex = 21;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(589, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 22;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Orders_View
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -317,7 +346,6 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -335,12 +363,13 @@
         private Label ODate;
         private Label OTotalPrice;
         private Panel Navebar;
-        private Label label4;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcategory;
         private Button PTproduct;
         private Button PTregister;
         private Button BTlogin;
+        private Button button1;
+        private Button button2;
     }
 }

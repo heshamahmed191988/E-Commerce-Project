@@ -37,7 +37,6 @@
             CatogeryDescriptionBox = new TextBox();
             label15 = new Label();
             CatogeryNameBox = new TextBox();
-            label4 = new Label();
             PTorders = new Button();
             PTlogout = new Button();
             PTcategory = new Button();
@@ -45,11 +44,13 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            button1 = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             Image = new Label();
             Imagebox = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             Navebar.SuspendLayout();
             panel1.SuspendLayout();
@@ -63,7 +64,7 @@
             dataGridView2.Location = new Point(394, 121);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(600, 288);
+            dataGridView2.Size = new Size(600, 334);
             dataGridView2.TabIndex = 1;
             // 
             // DeleteCtegorey
@@ -109,7 +110,7 @@
             label14.AutoSize = true;
             label14.BackColor = Color.Transparent;
             label14.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            label14.Location = new Point(31, 243);
+            label14.Location = new Point(31, 211);
             label14.Name = "label14";
             label14.Size = new Size(219, 19);
             label14.TabIndex = 21;
@@ -118,7 +119,7 @@
             // CatogeryDescriptionBox
             // 
             CatogeryDescriptionBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CatogeryDescriptionBox.Location = new Point(31, 285);
+            CatogeryDescriptionBox.Location = new Point(31, 253);
             CatogeryDescriptionBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryDescriptionBox.Name = "CatogeryDescriptionBox";
             CatogeryDescriptionBox.Size = new Size(338, 31);
@@ -138,24 +139,11 @@
             // CatogeryNameBox
             // 
             CatogeryNameBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CatogeryNameBox.Location = new Point(31, 167);
+            CatogeryNameBox.Location = new Point(31, 153);
             CatogeryNameBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryNameBox.Name = "CatogeryNameBox";
             CatogeryNameBox.Size = new Size(338, 31);
             CatogeryNameBox.TabIndex = 18;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
             // 
             // PTorders
             // 
@@ -262,7 +250,8 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
+            Navebar.Controls.Add(button1);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcategory);
@@ -275,12 +264,29 @@
             Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 22;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 7);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 38);
+            button1.TabIndex = 20;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(DeleteCtegorey);
-            panel1.Location = new Point(276, 415);
+            panel1.Location = new Point(269, 415);
             panel1.Name = "panel1";
             panel1.Size = new Size(102, 40);
             panel1.TabIndex = 23;
@@ -290,7 +296,7 @@
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(EditCtegorey);
-            panel2.Location = new Point(150, 415);
+            panel2.Location = new Point(143, 415);
             panel2.Name = "panel2";
             panel2.Size = new Size(102, 40);
             panel2.TabIndex = 24;
@@ -300,7 +306,7 @@
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Controls.Add(AddCtegorey);
-            panel3.Location = new Point(31, 415);
+            panel3.Location = new Point(24, 415);
             panel3.Name = "panel3";
             panel3.Size = new Size(102, 40);
             panel3.TabIndex = 25;
@@ -310,7 +316,7 @@
             Image.AutoSize = true;
             Image.BackColor = Color.Transparent;
             Image.Font = new Font("Stencil", 12F, FontStyle.Bold);
-            Image.Location = new Point(34, 328);
+            Image.Location = new Point(34, 313);
             Image.Name = "Image";
             Image.Size = new Size(119, 19);
             Image.TabIndex = 26;
@@ -319,11 +325,28 @@
             // Imagebox
             // 
             Imagebox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Imagebox.Location = new Point(31, 365);
+            Imagebox.Location = new Point(31, 350);
             Imagebox.Margin = new Padding(3, 2, 3, 2);
             Imagebox.Name = "Imagebox";
             Imagebox.Size = new Size(338, 31);
             Imagebox.TabIndex = 27;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(592, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 21;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // Admin_Category_Product
             // 
@@ -349,7 +372,6 @@
             Text = "Admin Category";
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -366,7 +388,6 @@
         private TextBox CatogeryDescriptionBox;
         private Label label15;
         private TextBox CatogeryNameBox;
-        private Label label4;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcategory;
@@ -379,5 +400,7 @@
         private Panel panel3;
         private Label Image;
         private TextBox Imagebox;
+        private Button button1;
+        private Button button2;
     }
 }

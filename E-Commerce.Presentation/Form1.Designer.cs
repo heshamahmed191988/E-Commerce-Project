@@ -36,6 +36,10 @@
             button1 = new Button();
             label3 = new Label();
             linkLabel1 = new LinkLabel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -66,22 +70,20 @@
             // 
             userName.BackColor = SystemColors.ActiveCaption;
             userName.BorderStyle = BorderStyle.None;
-            userName.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            userName.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userName.Location = new Point(166, 59);
-            userName.Multiline = true;
             userName.Name = "userName";
-            userName.Size = new Size(272, 23);
+            userName.Size = new Size(223, 22);
             userName.TabIndex = 2;
             // 
             // pass
             // 
             pass.BackColor = SystemColors.ActiveCaption;
             pass.BorderStyle = BorderStyle.None;
-            pass.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
+            pass.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pass.Location = new Point(166, 109);
-            pass.Multiline = true;
             pass.Name = "pass";
-            pass.Size = new Size(272, 23);
+            pass.Size = new Size(223, 22);
             pass.TabIndex = 3;
             pass.TextChanged += pass_TextChanged;
             // 
@@ -91,8 +93,10 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(217, 164);
+            button1.Location = new Point(181, 163);
             button1.Name = "button1";
             button1.Size = new Size(155, 54);
             button1.TabIndex = 4;
@@ -102,7 +106,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(112, 250);
+            label3.BackColor = Color.Transparent;
+            label3.Location = new Point(146, 248);
             label3.Name = "label3";
             label3.Size = new Size(134, 15);
             label3.TabIndex = 5;
@@ -111,7 +116,8 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(300, 249);
+            linkLabel1.BackColor = Color.Transparent;
+            linkLabel1.Location = new Point(286, 248);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(50, 15);
             linkLabel1.TabIndex = 6;
@@ -119,14 +125,39 @@
             linkLabel1.Text = " Sign up";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked_1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = E_Commerce.Presentation.Properties.Resources.logo3;
+            pictureBox1.Location = new Point(12, 195);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(156, 139);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(415, 17);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 64);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 25;
+            pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(500, 358);
-            Controls.Add(linkLabel1);
+            ClientSize = new Size(490, 369);
             Controls.Add(label3);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(linkLabel1);
             Controls.Add(button1);
             Controls.Add(pass);
             Controls.Add(userName);
@@ -137,6 +168,8 @@
             Name = "Form1";
             Text = "Log In";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -150,5 +183,7 @@
         private Button button1;
         private Label label3;
         private LinkLabel linkLabel1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

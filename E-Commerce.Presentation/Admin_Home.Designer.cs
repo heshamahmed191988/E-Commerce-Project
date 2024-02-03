@@ -33,16 +33,15 @@
             groupBox1 = new GroupBox();
             label1 = new Label();
             GoCategory = new Button();
-            pictureBox1 = new PictureBox();
+            CategorysImg = new PictureBox();
             groupBox2 = new GroupBox();
             label2 = new Label();
             GoProducts = new Button();
-            pictureBox2 = new PictureBox();
+            ProductImg = new PictureBox();
             groupBox3 = new GroupBox();
             label3 = new Label();
             GoOrders = new Button();
-            pictureBox3 = new PictureBox();
-            label4 = new Label();
+            OrderImg = new PictureBox();
             PTorders = new Button();
             PTlogout = new Button();
             PTcategory = new Button();
@@ -50,14 +49,16 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
+            button2 = new Button();
             slider = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CategorysImg).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ProductImg).BeginInit();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)OrderImg).BeginInit();
             Navebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)slider).BeginInit();
             SuspendLayout();
@@ -67,11 +68,11 @@
             groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(GoCategory);
-            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(CategorysImg);
             groupBox1.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(183, 225);
+            groupBox1.Location = new Point(29, 305);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(208, 270);
+            groupBox1.Size = new Size(425, 409);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Categorys";
@@ -84,8 +85,9 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Showcard Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(42, 182);
+            label1.Location = new Point(151, 312);
             label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.No;
             label1.Size = new Size(57, 18);
             label1.TabIndex = 2;
             label1.Text = "Go To";
@@ -101,7 +103,7 @@
             GoCategory.FlatStyle = FlatStyle.Flat;
             GoCategory.Font = new Font("Rockwell Extra Bold", 15F);
             GoCategory.ForeColor = Color.Black;
-            GoCategory.Location = new Point(11, 182);
+            GoCategory.Location = new Point(120, 312);
             GoCategory.Margin = new Padding(8, 3, 3, 3);
             GoCategory.Name = "GoCategory";
             GoCategory.Padding = new Padding(0, 20, 0, 0);
@@ -112,30 +114,33 @@
             GoCategory.UseVisualStyleBackColor = true;
             GoCategory.Click += button1_Click;
             // 
-            // pictureBox1
+            // CategorysImg
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Cursor = Cursors.No;
-            pictureBox1.Location = new Point(0, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(206, 136);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            CategorysImg.BackgroundImageLayout = ImageLayout.Stretch;
+            CategorysImg.Cursor = Cursors.No;
+            CategorysImg.Image = Properties.Resources.category4;
+            CategorysImg.Location = new Point(0, 22);
+            CategorysImg.Name = "CategorysImg";
+            CategorysImg.Size = new Size(425, 263);
+            CategorysImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            CategorysImg.TabIndex = 0;
+            CategorysImg.TabStop = false;
+            CategorysImg.Click += CategorysImg_Click;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(GoProducts);
-            groupBox2.Controls.Add(pictureBox2);
+            groupBox2.Controls.Add(ProductImg);
             groupBox2.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(410, 225);
+            groupBox2.Location = new Point(480, 305);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(208, 270);
+            groupBox2.Size = new Size(425, 409);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Products";
+            groupBox2.Enter += groupBox2_Enter;
             // 
             // label2
             // 
@@ -144,7 +149,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Showcard Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Goldenrod;
-            label2.Location = new Point(47, 182);
+            label2.Location = new Point(167, 312);
             label2.Name = "label2";
             label2.Size = new Size(57, 18);
             label2.TabIndex = 2;
@@ -160,7 +165,7 @@
             GoProducts.FlatAppearance.MouseOverBackColor = Color.Transparent;
             GoProducts.FlatStyle = FlatStyle.Flat;
             GoProducts.Font = new Font("Rockwell Extra Bold", 15F);
-            GoProducts.Location = new Point(11, 182);
+            GoProducts.Location = new Point(131, 312);
             GoProducts.Margin = new Padding(8, 3, 3, 3);
             GoProducts.Name = "GoProducts";
             GoProducts.Padding = new Padding(0, 20, 0, 0);
@@ -171,27 +176,29 @@
             GoProducts.UseVisualStyleBackColor = true;
             GoProducts.Click += GoProducts_Click;
             // 
-            // pictureBox2
+            // ProductImg
             // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Cursor = Cursors.No;
-            pictureBox2.Location = new Point(0, 22);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(206, 136);
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            ProductImg.BackgroundImageLayout = ImageLayout.Stretch;
+            ProductImg.Cursor = Cursors.No;
+            ProductImg.Image = Properties.Resources.Product3;
+            ProductImg.Location = new Point(0, 22);
+            ProductImg.Name = "ProductImg";
+            ProductImg.Size = new Size(425, 263);
+            ProductImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            ProductImg.TabIndex = 0;
+            ProductImg.TabStop = false;
+            ProductImg.Click += ProductImg_Click;
             // 
             // groupBox3
             // 
             groupBox3.BackColor = Color.Transparent;
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(GoOrders);
-            groupBox3.Controls.Add(pictureBox3);
+            groupBox3.Controls.Add(OrderImg);
             groupBox3.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(639, 225);
+            groupBox3.Location = new Point(927, 305);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(208, 270);
+            groupBox3.Size = new Size(425, 409);
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             groupBox3.Text = "Orders";
@@ -203,7 +210,7 @@
             label3.FlatStyle = FlatStyle.Flat;
             label3.Font = new Font("Showcard Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Goldenrod;
-            label3.Location = new Point(47, 182);
+            label3.Location = new Point(172, 312);
             label3.Name = "label3";
             label3.Size = new Size(57, 18);
             label3.TabIndex = 2;
@@ -219,7 +226,7 @@
             GoOrders.FlatAppearance.MouseOverBackColor = Color.Transparent;
             GoOrders.FlatStyle = FlatStyle.Flat;
             GoOrders.Font = new Font("Rockwell Extra Bold", 15F);
-            GoOrders.Location = new Point(11, 182);
+            GoOrders.Location = new Point(136, 312);
             GoOrders.Margin = new Padding(8, 3, 3, 3);
             GoOrders.Name = "GoOrders";
             GoOrders.Padding = new Padding(0, 20, 0, 0);
@@ -230,29 +237,18 @@
             GoOrders.UseVisualStyleBackColor = true;
             GoOrders.Click += GoOrders_Click;
             // 
-            // pictureBox3
+            // OrderImg
             // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Cursor = Cursors.No;
-            pictureBox3.Location = new Point(0, 22);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(206, 136);
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(48, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
+            OrderImg.BackgroundImageLayout = ImageLayout.Stretch;
+            OrderImg.Cursor = Cursors.No;
+            OrderImg.Image = Properties.Resources.order2;
+            OrderImg.Location = new Point(0, 22);
+            OrderImg.Name = "OrderImg";
+            OrderImg.Size = new Size(425, 263);
+            OrderImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            OrderImg.TabIndex = 0;
+            OrderImg.TabStop = false;
+            OrderImg.Click += OrderImg_Click;
             // 
             // PTorders
             // 
@@ -280,7 +276,7 @@
             PTlogout.ForeColor = Color.White;
             PTlogout.Image = (Image)resources.GetObject("PTlogout.Image");
             PTlogout.ImageAlign = ContentAlignment.MiddleLeft;
-            PTlogout.Location = new Point(979, 7);
+            PTlogout.Location = new Point(1331, 7);
             PTlogout.Name = "PTlogout";
             PTlogout.Size = new Size(34, 38);
             PTlogout.TabIndex = 19;
@@ -330,7 +326,7 @@
             PTregister.ForeColor = Color.White;
             PTregister.Image = (Image)resources.GetObject("PTregister.Image");
             PTregister.ImageAlign = ContentAlignment.MiddleLeft;
-            PTregister.Location = new Point(855, 6);
+            PTregister.Location = new Point(1207, 6);
             PTregister.Name = "PTregister";
             PTregister.Size = new Size(118, 38);
             PTregister.TabIndex = 15;
@@ -347,7 +343,7 @@
             BTlogin.ForeColor = Color.White;
             BTlogin.Image = (Image)resources.GetObject("BTlogin.Image");
             BTlogin.ImageAlign = ContentAlignment.MiddleLeft;
-            BTlogin.Location = new Point(753, 5);
+            BTlogin.Location = new Point(1105, 5);
             BTlogin.Name = "BTlogin";
             BTlogin.Size = new Size(92, 38);
             BTlogin.TabIndex = 1;
@@ -359,7 +355,8 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button1);
+            Navebar.Controls.Add(button2);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcategory);
@@ -369,15 +366,32 @@
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1045, 48);
+            Navebar.Size = new Size(1382, 48);
             Navebar.TabIndex = 14;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(604, 6);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 22;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // slider
             // 
             slider.Image = Properties.Resources.Slide4;
-            slider.Location = new Point(183, 67);
+            slider.Location = new Point(149, 49);
             slider.Name = "slider";
-            slider.Size = new Size(662, 152);
+            slider.Size = new Size(1083, 236);
             slider.SizeMode = PictureBoxSizeMode.StretchImage;
             slider.TabIndex = 15;
             slider.TabStop = false;
@@ -385,15 +399,33 @@
             // 
             // timer1
             // 
+            timer1.Interval = 2000;
             timer1.Tick += timer1_Tick;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 38);
+            button1.TabIndex = 23;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // Admin_Home
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.Control;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1045, 542);
+            ClientSize = new Size(1382, 750);
             Controls.Add(slider);
             Controls.Add(Navebar);
             Controls.Add(groupBox3);
@@ -407,15 +439,14 @@
             Load += Admin_Home_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CategorysImg).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ProductImg).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)OrderImg).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)slider).EndInit();
             ResumeLayout(false);
         }
@@ -423,18 +454,17 @@
         #endregion
 
         private GroupBox groupBox1;
-        private PictureBox pictureBox1;
+        private PictureBox CategorysImg;
         private Button GoCategory;
         private Label label1;
         private GroupBox groupBox2;
         private Label label2;
         private Button GoProducts;
-        private PictureBox pictureBox2;
+        private PictureBox ProductImg;
         private GroupBox groupBox3;
         private Label label3;
         private Button GoOrders;
-        private PictureBox pictureBox3;
-        private Label label4;
+        private PictureBox OrderImg;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcategory;
@@ -444,5 +474,7 @@
         private Panel Navebar;
         private PictureBox slider;
         private System.Windows.Forms.Timer timer1;
+        private Button button2;
+        private Button button1;
     }
 }

@@ -53,18 +53,22 @@ namespace E_Commerce.Presentation
             userDTOBindingSource = new BindingSource(components);
             linkLabel1 = new LinkLabel();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label2.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(60, 381);
+            label2.Location = new Point(37, 381);
             label2.Name = "label2";
-            label2.Size = new Size(55, 29);
+            label2.Size = new Size(69, 22);
             label2.TabIndex = 1;
             label2.Text = "Status";
             // 
@@ -72,11 +76,11 @@ namespace E_Commerce.Presentation
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label3.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(60, 192);
+            label3.Location = new Point(37, 192);
             label3.Name = "label3";
-            label3.Size = new Size(50, 29);
+            label3.Size = new Size(61, 22);
             label3.TabIndex = 2;
             label3.Text = "Email";
             // 
@@ -84,11 +88,11 @@ namespace E_Commerce.Presentation
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label4.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(60, 322);
+            label4.Location = new Point(37, 322);
             label4.Name = "label4";
-            label4.Size = new Size(68, 29);
+            label4.Size = new Size(87, 22);
             label4.TabIndex = 3;
             label4.Text = "Address";
             // 
@@ -96,11 +100,11 @@ namespace E_Commerce.Presentation
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label5.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(60, 257);
+            label5.Location = new Point(37, 257);
             label5.Name = "label5";
-            label5.Size = new Size(77, 29);
+            label5.Size = new Size(100, 22);
             label5.TabIndex = 4;
             label5.Text = "Password";
             // 
@@ -108,11 +112,11 @@ namespace E_Commerce.Presentation
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label6.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(60, 127);
+            label6.Location = new Point(37, 127);
             label6.Name = "label6";
-            label6.Size = new Size(56, 29);
+            label6.Size = new Size(67, 22);
             label6.TabIndex = 5;
             label6.Text = "Phone";
             // 
@@ -120,16 +124,17 @@ namespace E_Commerce.Presentation
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Urdu Typesetting", 12F, FontStyle.Bold);
+            label7.Font = new Font("Arial Rounded MT Bold", 14.25F);
             label7.ForeColor = SystemColors.ActiveCaptionText;
-            label7.Location = new Point(60, 60);
+            label7.Location = new Point(37, 60);
             label7.Name = "label7";
-            label7.Size = new Size(82, 29);
+            label7.Size = new Size(103, 22);
             label7.TabIndex = 6;
             label7.Text = "Username";
             // 
             // Email
             // 
+            Email.BackColor = Color.LightBlue;
             Email.Location = new Point(160, 184);
             Email.Name = "Email";
             Email.Size = new Size(313, 37);
@@ -137,6 +142,7 @@ namespace E_Commerce.Presentation
             // 
             // pass
             // 
+            pass.BackColor = Color.LightBlue;
             pass.Location = new Point(160, 249);
             pass.Name = "pass";
             pass.Size = new Size(313, 37);
@@ -145,6 +151,7 @@ namespace E_Commerce.Presentation
             // 
             // Phone
             // 
+            Phone.BackColor = Color.White;
             Phone.Location = new Point(160, 119);
             Phone.Name = "Phone";
             Phone.Size = new Size(313, 37);
@@ -152,6 +159,7 @@ namespace E_Commerce.Presentation
             // 
             // Address
             // 
+            Address.BackColor = Color.LightBlue;
             Address.Location = new Point(160, 314);
             Address.Name = "Address";
             Address.Size = new Size(313, 37);
@@ -159,6 +167,7 @@ namespace E_Commerce.Presentation
             // 
             // UserName
             // 
+            UserName.BackColor = Color.White;
             UserName.Location = new Point(160, 52);
             UserName.Name = "UserName";
             UserName.Size = new Size(313, 37);
@@ -175,7 +184,7 @@ namespace E_Commerce.Presentation
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(241, 432);
+            button1.Location = new Point(225, 448);
             button1.Name = "button1";
             button1.Size = new Size(135, 47);
             button1.TabIndex = 13;
@@ -188,7 +197,7 @@ namespace E_Commerce.Presentation
             nameMsg.BackColor = Color.Transparent;
             nameMsg.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             nameMsg.ForeColor = Color.Red;
-            nameMsg.Location = new Point(479, 66);
+            nameMsg.Location = new Point(160, 92);
             nameMsg.Name = "nameMsg";
             nameMsg.Size = new Size(0, 15);
             nameMsg.TabIndex = 15;
@@ -199,7 +208,7 @@ namespace E_Commerce.Presentation
             EmailMsg.BackColor = Color.Transparent;
             EmailMsg.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             EmailMsg.ForeColor = Color.Red;
-            EmailMsg.Location = new Point(479, 192);
+            EmailMsg.Location = new Point(160, 224);
             EmailMsg.Name = "EmailMsg";
             EmailMsg.Size = new Size(0, 15);
             EmailMsg.TabIndex = 16;
@@ -210,15 +219,16 @@ namespace E_Commerce.Presentation
             PassMSg.BackColor = Color.Transparent;
             PassMSg.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             PassMSg.ForeColor = Color.Red;
-            PassMSg.Location = new Point(479, 263);
+            PassMSg.Location = new Point(160, 289);
             PassMSg.Name = "PassMSg";
             PassMSg.Size = new Size(0, 15);
             PassMSg.TabIndex = 17;
             // 
             // comboBox1
             // 
+            comboBox1.BackColor = Color.LightBlue;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(160, 373);
+            comboBox1.Location = new Point(160, 381);
             comboBox1.Margin = new Padding(4, 6, 4, 6);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(313, 37);
@@ -231,7 +241,7 @@ namespace E_Commerce.Presentation
             PhonMSG.BackColor = Color.Transparent;
             PhonMSG.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             PhonMSG.ForeColor = Color.Red;
-            PhonMSG.Location = new Point(479, 127);
+            PhonMSG.Location = new Point(160, 159);
             PhonMSG.Name = "PhonMSG";
             PhonMSG.Size = new Size(0, 15);
             PhonMSG.TabIndex = 19;
@@ -243,7 +253,7 @@ namespace E_Commerce.Presentation
             AddressMSG.BackColor = Color.Transparent;
             AddressMSG.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             AddressMSG.ForeColor = Color.Red;
-            AddressMSG.Location = new Point(479, 328);
+            AddressMSG.Location = new Point(160, 352);
             AddressMSG.Name = "AddressMSG";
             AddressMSG.Size = new Size(0, 15);
             AddressMSG.TabIndex = 20;
@@ -255,7 +265,8 @@ namespace E_Commerce.Presentation
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(681, 450);
+            linkLabel1.BackColor = Color.Transparent;
+            linkLabel1.Location = new Point(366, 526);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(50, 29);
             linkLabel1.TabIndex = 22;
@@ -266,18 +277,44 @@ namespace E_Commerce.Presentation
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(492, 450);
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(177, 526);
             label1.Name = "label1";
             label1.Size = new Size(183, 29);
             label1.TabIndex = 21;
             label1.Text = "Already have an account?";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.logo3;
+            pictureBox1.Location = new Point(15, 431);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(156, 139);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(491, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 64);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 24;
+            pictureBox2.TabStop = false;
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(9F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(886, 523);
+            ClientSize = new Size(566, 582);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
             Controls.Add(AddressMSG);
@@ -304,6 +341,8 @@ namespace E_Commerce.Presentation
             Text = "Registration";
             Load += Registration_Load;
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -330,5 +369,7 @@ namespace E_Commerce.Presentation
         private BindingSource userDTOBindingSource;
         private LinkLabel linkLabel1;
         private Label label1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
