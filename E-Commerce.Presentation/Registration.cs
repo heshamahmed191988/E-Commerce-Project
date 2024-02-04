@@ -30,7 +30,7 @@ namespace E_Commerce.Presentation
             comboBox1.Items.Insert(0, "0");
             comboBox1.Items.Add("1");
             // comboBox1.Items.Add("false");
-            comboBox1.SelectedIndex = 1;
+            comboBox1.SelectedIndex = 0;
         }
         #region functions
         static bool ContainsSpecialCharacter(string password)
@@ -132,6 +132,12 @@ namespace E_Commerce.Presentation
         private void pass_TextChanged(object sender, EventArgs e)
         {
             pass.PasswordChar = '*';
+        }
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

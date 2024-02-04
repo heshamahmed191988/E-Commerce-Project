@@ -17,6 +17,7 @@ namespace E_Commerce_Project.Models
         public int Quantity { get; set; }
         [ForeignKey("Category")]
         public int categoryID { get; set; }
+        
         public virtual Category category { get; set; }
         public virtual IQueryable<OrderItems> OrderItems { get; set; }
         //cart details

@@ -1,4 +1,6 @@
-﻿using Forms_ProjectVC_;
+﻿using E_Commerce.Context.Migrations;
+using E_Commerce_Project.Models;
+using Forms_ProjectVC_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,29 +16,34 @@ namespace E_Commerce.Presentation
     public partial class Admin_Home : Form
     {
 
-        private Image[] images = { Properties.Resources.Slide1, Properties.Resources.Slide2, Properties.Resources.Slide3, Properties.Resources.Slide4 };
+
+        private Image[] sliderImages = { Properties.Resources.Slide1, Properties.Resources.Slide2, Properties.Resources.Slide3, Properties.Resources.Slide4 };
+        private Image[] productImages = { Properties.Resources.Product1, Properties.Resources.Product2, Properties.Resources.Product3, Properties.Resources.Product4 };
+        private Image[] categoryImages = { Properties.Resources.category1, Properties.Resources.category2, Properties.Resources.category3, Properties.Resources.category4 };
+        private Image[] orderImages = { Properties.Resources.order1, Properties.Resources.order2, Properties.Resources.order3, Properties.Resources.order4 };
 
         // Index to keep track of the current image
         private int currentIndex = 0;
         public Admin_Home()
         {
             InitializeComponent();
+            InitializeSlider();
+        }
+        private void InitializeSlider()
+        {
+            // Set the initial images
+            slider.Image = sliderImages[currentIndex];
+            ProductImg.Image = productImages[currentIndex];
+            CategorysImg.Image = categoryImages[currentIndex];
+            OrderImg.Image = orderImages[currentIndex];
 
-
-            // Set the initial image
-            slider.Image = images[currentIndex];
             // Set the interval for the timer (in milliseconds)
-            timer1.Interval = 4000; // Change images every 2 seconds
+            /*timer1.Interval = 2000; */// Change images every 2 seconds
+                                        // Attach event handler for timer tick
+            timer1.Tick += timer1_Tick;
             // Start the timer
             timer1.Start();
-            // Attach event handler for timer tick
-            timer1.Tick += timer1_Tick;
-
-
-
-
         }
-
         private void Admin_Home_Load(object sender, EventArgs e)
         {
 
@@ -83,14 +90,17 @@ namespace E_Commerce.Presentation
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Move to the next image
-            currentIndex++;
-            // If we reached the end of the array, start from the beginning
-            if (currentIndex >= images.Length)
-            {
-                currentIndex = 0;
-            }
+
+            currentIndex = (currentIndex + 1) % sliderImages.Length;
+
             // Display the next image
-            slider.Image = images[currentIndex];
+            slider.Image = sliderImages[currentIndex];
+            ProductImg.Image = productImages[currentIndex];
+            CategorysImg.Image = categoryImages[currentIndex];
+            OrderImg.Image = orderImages[currentIndex];
+
+
+
         }
 
         private void slider_Click(object sender, EventArgs e)
@@ -151,6 +161,39 @@ namespace E_Commerce.Presentation
         {
             Form1 form1 = new Form1();
             form1.Show();
+            this.Hide();
+        }
+
+        private void ProductImg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CategorysImg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderImg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stack stack = new Stack();
+            stack.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
             this.Hide();
         }
     }

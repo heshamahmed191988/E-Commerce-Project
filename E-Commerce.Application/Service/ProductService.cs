@@ -23,8 +23,7 @@ namespace E_Commerce.Application.Service
 
         public void AddProduct(ProductDTO productDTO)
         {
-            var AddedData = _mapper.Map<Product>(productDTO);
-            var Data = _productRepository.Add(AddedData);
+            _productRepository.Add(AutoMapping.MapProduct(productDTO));
             _productRepository.save();
         }
 
@@ -71,17 +70,13 @@ namespace E_Commerce.Application.Service
 
         public void RemoveProduct(ProductDTO productDTO)
         {
-            var AddedData = _mapper.Map<Product>(productDTO);
-
-             _productRepository.Delete(AddedData);
+            _productRepository.Delete(AutoMapping.MapProduct(productDTO));
             _productRepository.save();
         }
 
         public void UpdateProduct(ProductDTO productDTO)
         {
-            var AddedData = _mapper.Map<Product>(productDTO);
-
-            _productRepository.Update(AddedData);
+            _productRepository.Update(AutoMapping.MapProduct(productDTO));
             _productRepository.save();
         }
         public IQueryable<ProductDTO> SearchProduct(string item)

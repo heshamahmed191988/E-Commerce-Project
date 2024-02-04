@@ -5,7 +5,7 @@
 namespace E_Commerce.Context.Migrations
 {
     /// <inheritdoc />
-    public partial class Project : Migration
+    public partial class data : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

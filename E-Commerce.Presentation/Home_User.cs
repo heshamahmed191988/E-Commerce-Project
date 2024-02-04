@@ -33,7 +33,7 @@ namespace E_Commerce.Presentation
             _ProductService = container.Resolve<IProductService>();
             _cartService = container.Resolve<ICartService>();
             _cartDetailsService = container.Resolve<ICartDetailsService>();
-            _categoryService= container.Resolve<ICategoryService>();    
+            _categoryService = container.Resolve<ICategoryService>();
             InitializeComponent();
             productQuantity.Items.Insert(0, "1");
             productQuantity.Items.Add("2");
@@ -62,15 +62,16 @@ namespace E_Commerce.Presentation
                 product.category = categories.FirstOrDefault(category => category.Id == product.categoryID);
             }
 
-                var result = Pro
-        .Select(product => new 
-        {
-            ProductName = product.ProductName,
-            Price = product.Price,
-            image = product.image,
-            CategoryName = product.category != null ? product.category.CategoryName : null
-        })
-        .ToList();
+            var result = Pro
+    .Select(product => new
+    {
+        product.ProductName,
+        product.Price,
+        product.image,
+        CategoryName = product.category.CategoryName,
+        State = product.Quantity <= 5 ? "Out of Stack" : "Available"
+    })
+    .ToList();
             ProductdataGridView.DataSource = result;
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,9 +91,12 @@ namespace E_Commerce.Presentation
 
         private void ProductdataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = ProductdataGridView.Rows[e.RowIndex];
-            Pro_Name.Text = row.Cells["ProductName"].Value.ToString();
-            Pro_Price.Text = row.Cells["Price"].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = ProductdataGridView.Rows[e.RowIndex];
+                Pro_Name.Text = row.Cells["ProductName"].Value.ToString();
+                Pro_Price.Text = row.Cells["Price"].Value.ToString();
+            }
 
 
         }
@@ -134,7 +138,7 @@ namespace E_Commerce.Presentation
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-         
+
 
 
         }
@@ -145,7 +149,7 @@ namespace E_Commerce.Presentation
             var pro = _ProductService.SearchProduct(Pro_Name.Text).FirstOrDefault();
             int quantity = int.Parse(productQuantity.Text);
             var currentItem = cartAllItems.Where(i => i.productID == pro.Id).FirstOrDefault();
-            if (currentItem!=null)
+            if (currentItem != null)
             {
                 currentItem.Quantity += quantity;
                 _cartDetailsService.UpdateCart(currentItem);
@@ -153,7 +157,7 @@ namespace E_Commerce.Presentation
             }
             else
             {
-               // MessageBox.Show("stop");
+                // MessageBox.Show("stop");
                 if (pro != null && cartId != 0 && quantity != 0)
                 {
                     var cartItem = new CartDetailsDTO() { cartID = cartId, productID = pro.Id, Quantity = quantity };
@@ -171,14 +175,14 @@ namespace E_Commerce.Presentation
         {
             UserCart userCart = new UserCart(cartId, userId);
             userCart.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void PTproduct_Click(object sender, EventArgs e)
         {
             Home_User home_User = new Home_User(cartId, userId);
             home_User.Show();
-            //this.Hide();
+            this.Hide();
 
         }
 
@@ -186,13 +190,14 @@ namespace E_Commerce.Presentation
         {
             Showorderitem orderItems = new Showorderitem(userId);
             orderItems.Show();
+          
         }
 
         private void PTcart_Click(object sender, EventArgs e)
         {
             UserCart userCart = new UserCart(cartId, userId);
             userCart.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void BTlogin_Click(object sender, EventArgs e)
@@ -213,6 +218,18 @@ namespace E_Commerce.Presentation
         {
             Registration registration = new Registration();
             registration.Show();
+            this.Hide();
+        }
+
+        private void Filter_by_Name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
             this.Hide();
         }
     }

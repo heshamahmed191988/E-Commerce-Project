@@ -20,34 +20,75 @@ namespace E_Commerce.Infrustructure.Repository
         }
         public T Add(T entity)
         {
+            var entry = _Entity.Entry(entity);
+
+            if (entry.State != EntityState.Detached)
+            {
+                entry.State = EntityState.Detached;
+            }
             return _Entity.Add(entity).Entity;
         }
 
         public void Delete(T entity)
         {
+            var entry = _Entity.Entry(entity);
+
+            if (entry.State != EntityState.Detached)
+            {
+                entry.State = EntityState.Detached;
+            }
             _Entity.Remove(entity);
         }
 
         public IQueryable<T> GetAll()
         {
 
-            return _Entity.AsNoTracking(); 
+            return _Entity.AsNoTracking();
         }
 
         public T GetByID(Tid id)
         {
-            return _Entity.Find(id);
-           
+            var entity = _Entity.Find(id);
+
+            if (entity != null)
+            {
+                _Entity.Entry(entity).State = EntityState.Detached;
+            }
+
+            return entity;
         }
+    
 
         public T Update(T entity)
         {
+            var entry = _Entity.Entry(entity);
+
+            if (entry.State != EntityState.Detached)
+            {
+                entry.State = EntityState.Detached;
+                
+            }
             return _Entity.Update(entity).Entity;
         }
         public int save()
         {
 
-            return _context.SaveChanges();
+            try
+            {
+                int result = _context.SaveChanges();
+
+                // Detach all entities from the context
+                foreach (var entry in _context.ChangeTracker.Entries())
+                {
+                    entry.State = EntityState.Detached;
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
        

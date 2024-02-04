@@ -61,10 +61,10 @@ namespace E_Commerce.Application.Mapping
                 Price=product.Price,
                 image=product.image,
                 Quantity=product.Quantity,
+                //category=product.category,
                 categoryID=product.categoryID,
-               
-                //CartDetails=product.CartDetails,
-                //OrderItems=product.OrderItems,
+                CartDetails=product.CartDetails,
+                OrderItems=product.OrderItems,
             };
         }
      public static OrderDTO MapOrderDTO(Order order)
@@ -126,7 +126,8 @@ namespace E_Commerce.Application.Mapping
                 OrderId = orderItems.OrderId,
                 productId = orderItems.productId,
                 Order = orderItems.Order,
-                product=orderItems.product
+                product=orderItems.product,
+                Quantity=orderItems.Quantity
 
             };
         }
@@ -164,7 +165,7 @@ namespace E_Commerce.Application.Mapping
             };
 
         }
-     public static Product MapProduct(ProductDTO productDto,CategoryDTO categoryDTO)
+     public static Product MapProduct(ProductDTO productDto)
         {
             if (productDto == null)
             {
@@ -175,11 +176,12 @@ namespace E_Commerce.Application.Mapping
                 Id = productDto.Id,
                 ProductName = productDto.ProductName,
                 Price = productDto.Price,
-                Quantity = productDto.Quantity,
                 image = productDto.image,
+                Quantity = productDto.Quantity,
+               // category = productDto.category,
                 categoryID = productDto.categoryID,
-                //OrderItems=productDto.OrderItems,
-                //CartDetails=productDto.CartDetails,
+                CartDetails = productDto.CartDetails,
+                OrderItems = productDto.OrderItems,
             };
         }
      public static Order MapOrder(OrderDTO orderDTO)
@@ -240,7 +242,8 @@ namespace E_Commerce.Application.Mapping
                 OrderId = orderItemsDTO.OrderId,
                 productId = orderItemsDTO.productId,
                 Order=orderItemsDTO.Order,
-                product=orderItemsDTO.product
+                product=orderItemsDTO.product,
+                Quantity=orderItemsDTO.Quantity,
 
             };
         }

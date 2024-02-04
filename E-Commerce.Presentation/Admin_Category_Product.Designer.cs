@@ -37,7 +37,6 @@
             CatogeryDescriptionBox = new TextBox();
             label15 = new Label();
             CatogeryNameBox = new TextBox();
-            label4 = new Label();
             PTorders = new Button();
             PTlogout = new Button();
             PTcategory = new Button();
@@ -45,98 +44,107 @@
             PTregister = new Button();
             BTlogin = new Button();
             Navebar = new Panel();
-            label1 = new Label();
+            button2 = new Button();
+            button1 = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            Image = new Label();
             Imagebox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             Navebar.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(288, 161);
+            dataGridView2.Location = new Point(394, 121);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(870, 384);
+            dataGridView2.Size = new Size(600, 334);
             dataGridView2.TabIndex = 1;
+            dataGridView2.CellClick += dataGridView2_CellClick;
             // 
             // DeleteCtegorey
             // 
-            DeleteCtegorey.AutoSize = true;
-            DeleteCtegorey.Location = new Point(603, 588);
+            DeleteCtegorey.BackColor = Color.Transparent;
+            DeleteCtegorey.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeleteCtegorey.Location = new Point(0, 0);
             DeleteCtegorey.Name = "DeleteCtegorey";
-            DeleteCtegorey.Size = new Size(53, 20);
-            DeleteCtegorey.TabIndex = 9;
-            DeleteCtegorey.Text = "Delete";
+            DeleteCtegorey.Size = new Size(102, 40);
+            DeleteCtegorey.TabIndex = 2;
+            DeleteCtegorey.TextAlign = ContentAlignment.MiddleCenter;
             DeleteCtegorey.Click += DeleteCtegorey_Click;
             // 
             // EditCtegorey
             // 
-            EditCtegorey.AutoSize = true;
-            EditCtegorey.Location = new Point(528, 588);
+            EditCtegorey.BackColor = Color.Transparent;
+            EditCtegorey.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EditCtegorey.ForeColor = Color.White;
+            EditCtegorey.Location = new Point(0, 0);
             EditCtegorey.Name = "EditCtegorey";
-            EditCtegorey.Size = new Size(35, 20);
+            EditCtegorey.Size = new Size(102, 40);
             EditCtegorey.TabIndex = 8;
             EditCtegorey.Text = "Edit";
+            EditCtegorey.TextAlign = ContentAlignment.MiddleCenter;
             EditCtegorey.Click += EditCtegorey_Click;
             // 
             // AddCtegorey
             // 
-            AddCtegorey.AutoSize = true;
-            AddCtegorey.Location = new Point(463, 588);
+            AddCtegorey.AutoEllipsis = true;
+            AddCtegorey.BackColor = Color.Transparent;
+            AddCtegorey.Font = new Font("Arial Rounded MT Bold", 14.25F);
+            AddCtegorey.ForeColor = Color.White;
+            AddCtegorey.Location = new Point(3, 0);
             AddCtegorey.Name = "AddCtegorey";
-            AddCtegorey.Size = new Size(37, 20);
+            AddCtegorey.Size = new Size(102, 40);
             AddCtegorey.TabIndex = 6;
             AddCtegorey.Text = "Add";
+            AddCtegorey.TextAlign = ContentAlignment.MiddleCenter;
             AddCtegorey.Click += AddCtegorey_Click;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            label14.Location = new Point(47, 333);
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label14.Location = new Point(31, 211);
             label14.Name = "label14";
-            label14.Size = new Size(132, 18);
+            label14.Size = new Size(219, 19);
             label14.TabIndex = 21;
-            label14.Text = "Catogery Description";
+            label14.Text = "Catogery Description:";
             // 
             // CatogeryDescriptionBox
             // 
-            CatogeryDescriptionBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            CatogeryDescriptionBox.Location = new Point(47, 372);
+            CatogeryDescriptionBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CatogeryDescriptionBox.Location = new Point(31, 253);
+            CatogeryDescriptionBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryDescriptionBox.Name = "CatogeryDescriptionBox";
-            CatogeryDescriptionBox.Size = new Size(210, 23);
+            CatogeryDescriptionBox.Size = new Size(338, 31);
             CatogeryDescriptionBox.TabIndex = 20;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            label15.Location = new Point(47, 229);
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Stencil", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(31, 121);
             label15.Name = "label15";
-            label15.Size = new Size(97, 18);
+            label15.Size = new Size(154, 19);
             label15.TabIndex = 19;
-            label15.Text = "Catogery Name";
+            label15.Text = "Catogery Name:";
             // 
             // CatogeryNameBox
             // 
-            CatogeryNameBox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            CatogeryNameBox.Location = new Point(47, 267);
+            CatogeryNameBox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CatogeryNameBox.Location = new Point(31, 153);
+            CatogeryNameBox.Margin = new Padding(3, 2, 3, 2);
             CatogeryNameBox.Name = "CatogeryNameBox";
-            CatogeryNameBox.Size = new Size(210, 23);
+            CatogeryNameBox.Size = new Size(338, 31);
             CatogeryNameBox.TabIndex = 18;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Enabled = false;
-            label4.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(55, 16);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 25);
-            label4.TabIndex = 20;
-            label4.Text = "Logo/Name";
             // 
             // PTorders
             // 
@@ -147,10 +155,9 @@
             PTorders.ForeColor = Color.White;
             PTorders.Image = (Image)resources.GetObject("PTorders.Image");
             PTorders.ImageAlign = ContentAlignment.MiddleLeft;
-            PTorders.Location = new Point(549, 8);
-            PTorders.Margin = new Padding(3, 4, 3, 4);
+            PTorders.Location = new Point(480, 6);
             PTorders.Name = "PTorders";
-            PTorders.Size = new Size(135, 51);
+            PTorders.Size = new Size(118, 38);
             PTorders.TabIndex = 18;
             PTorders.Text = "  Orders";
             PTorders.UseVisualStyleBackColor = false;
@@ -165,10 +172,9 @@
             PTlogout.ForeColor = Color.White;
             PTlogout.Image = (Image)resources.GetObject("PTlogout.Image");
             PTlogout.ImageAlign = ContentAlignment.MiddleLeft;
-            PTlogout.Location = new Point(1119, 9);
-            PTlogout.Margin = new Padding(3, 4, 3, 4);
+            PTlogout.Location = new Point(979, 7);
             PTlogout.Name = "PTlogout";
-            PTlogout.Size = new Size(39, 51);
+            PTlogout.Size = new Size(34, 38);
             PTlogout.TabIndex = 19;
             PTlogout.UseVisualStyleBackColor = false;
             PTlogout.Click += PTlogout_Click;
@@ -182,10 +188,9 @@
             PTcategory.ForeColor = Color.Red;
             PTcategory.Image = (Image)resources.GetObject("PTcategory.Image");
             PTcategory.ImageAlign = ContentAlignment.MiddleLeft;
-            PTcategory.Location = new Point(409, 7);
-            PTcategory.Margin = new Padding(3, 4, 3, 4);
+            PTcategory.Location = new Point(358, 5);
             PTcategory.Name = "PTcategory";
-            PTcategory.Size = new Size(135, 51);
+            PTcategory.Size = new Size(118, 38);
             PTcategory.TabIndex = 17;
             PTcategory.Text = "   Category";
             PTcategory.UseVisualStyleBackColor = false;
@@ -200,10 +205,9 @@
             PTproduct.ForeColor = Color.White;
             PTproduct.Image = (Image)resources.GetObject("PTproduct.Image");
             PTproduct.ImageAlign = ContentAlignment.MiddleLeft;
-            PTproduct.Location = new Point(267, 7);
-            PTproduct.Margin = new Padding(3, 4, 3, 4);
+            PTproduct.Location = new Point(234, 5);
             PTproduct.Name = "PTproduct";
-            PTproduct.Size = new Size(135, 51);
+            PTproduct.Size = new Size(118, 38);
             PTproduct.TabIndex = 16;
             PTproduct.Text = "  Product";
             PTproduct.UseVisualStyleBackColor = false;
@@ -218,10 +222,9 @@
             PTregister.ForeColor = Color.White;
             PTregister.Image = (Image)resources.GetObject("PTregister.Image");
             PTregister.ImageAlign = ContentAlignment.MiddleLeft;
-            PTregister.Location = new Point(977, 8);
-            PTregister.Margin = new Padding(3, 4, 3, 4);
+            PTregister.Location = new Point(855, 6);
             PTregister.Name = "PTregister";
-            PTregister.Size = new Size(135, 51);
+            PTregister.Size = new Size(118, 38);
             PTregister.TabIndex = 15;
             PTregister.Text = "  Register";
             PTregister.UseVisualStyleBackColor = false;
@@ -236,10 +239,9 @@
             BTlogin.ForeColor = Color.White;
             BTlogin.Image = (Image)resources.GetObject("BTlogin.Image");
             BTlogin.ImageAlign = ContentAlignment.MiddleLeft;
-            BTlogin.Location = new Point(861, 7);
-            BTlogin.Margin = new Padding(3, 4, 3, 4);
+            BTlogin.Location = new Point(753, 5);
             BTlogin.Name = "BTlogin";
-            BTlogin.Size = new Size(105, 51);
+            BTlogin.Size = new Size(92, 38);
             BTlogin.TabIndex = 14;
             BTlogin.Text = "LogIn";
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
@@ -249,7 +251,8 @@
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
-            Navebar.Controls.Add(label4);
+            Navebar.Controls.Add(button2);
+            Navebar.Controls.Add(button1);
             Navebar.Controls.Add(PTorders);
             Navebar.Controls.Add(PTlogout);
             Navebar.Controls.Add(PTcategory);
@@ -258,51 +261,121 @@
             Navebar.Controls.Add(BTlogin);
             Navebar.Dock = DockStyle.Top;
             Navebar.Location = new Point(0, 0);
-            Navebar.Margin = new Padding(3, 4, 3, 4);
             Navebar.Name = "Navebar";
-            Navebar.Size = new Size(1179, 64);
+            Navebar.Size = new Size(1032, 48);
             Navebar.TabIndex = 22;
             // 
-            // label1
+            // button2
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            label1.Location = new Point(47, 458);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 18);
-            label1.TabIndex = 24;
-            label1.Text = "Image";
+            button2.BackColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(592, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 38);
+            button2.TabIndex = 21;
+            button2.Text = "Stack";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = Properties.Resources.logo1;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 7);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 38);
+            button1.TabIndex = 20;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(DeleteCtegorey);
+            panel1.Location = new Point(269, 415);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(102, 40);
+            panel1.TabIndex = 23;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(EditCtegorey);
+            panel2.Location = new Point(143, 415);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(102, 40);
+            panel2.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(AddCtegorey);
+            panel3.Location = new Point(24, 415);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(102, 40);
+            panel3.TabIndex = 25;
+            // 
+            // Image
+            // 
+            Image.AutoSize = true;
+            Image.BackColor = Color.Transparent;
+            Image.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            Image.Location = new Point(34, 313);
+            Image.Name = "Image";
+            Image.Size = new Size(119, 19);
+            Image.TabIndex = 26;
+            Image.Text = "Image Path:";
             // 
             // Imagebox
             // 
-            Imagebox.Font = new Font("Sitka Text", 9F, FontStyle.Bold);
-            Imagebox.Location = new Point(47, 497);
+            Imagebox.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Imagebox.Location = new Point(31, 350);
+            Imagebox.Margin = new Padding(3, 2, 3, 2);
             Imagebox.Name = "Imagebox";
-            Imagebox.Size = new Size(210, 23);
-            Imagebox.TabIndex = 23;
+            Imagebox.Size = new Size(338, 31);
+            Imagebox.TabIndex = 27;
             // 
             // Admin_Category_Product
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1179, 665);
-            Controls.Add(label1);
+            ClientSize = new Size(1032, 499);
             Controls.Add(Imagebox);
+            Controls.Add(Image);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(Navebar);
             Controls.Add(label14);
             Controls.Add(CatogeryDescriptionBox);
             Controls.Add(label15);
             Controls.Add(CatogeryNameBox);
-            Controls.Add(DeleteCtegorey);
-            Controls.Add(EditCtegorey);
-            Controls.Add(AddCtegorey);
             Controls.Add(dataGridView2);
+            Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Admin_Category_Product";
-            Text = "Admin_Category_Product";
+            Text = "Admin Category";
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             Navebar.ResumeLayout(false);
-            Navebar.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -316,7 +389,6 @@
         private TextBox CatogeryDescriptionBox;
         private Label label15;
         private TextBox CatogeryNameBox;
-        private Label label4;
         private Button PTorders;
         private Button PTlogout;
         private Button PTcategory;
@@ -324,7 +396,12 @@
         private Button PTregister;
         private Button BTlogin;
         private Panel Navebar;
-        private Label label1;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Label Image;
         private TextBox Imagebox;
+        private Button button1;
+        private Button button2;
     }
 }

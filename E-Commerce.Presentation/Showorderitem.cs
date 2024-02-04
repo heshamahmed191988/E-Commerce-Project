@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using E_Commerce.Application.Mapping;
 using E_Commerce.Application.Service;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
@@ -19,26 +20,34 @@ namespace E_Commerce.Presentation
     {
         static IOrderItemService _orderItemService;
         static IOrderService _orderService;
+        static IProductService _productService;
         private int UserId;
         public Showorderitem(int UserId)
         {
             var container = AutoFact.Inject();
             _orderItemService = container.Resolve<IOrderItemService>();
-            _orderService = container.Resolve<IOrderService>(); 
+            _orderService = container.Resolve<IOrderService>();
+            _productService = container.Resolve<IProductService>();
             InitializeComponent();
             this.UserId = UserId;
         }
-        private void  LoadOrderItems()
+        private void LoadOrderItems()
         {
             var Order = _orderService.GetAll().ToList().Where(i => i.UserID == UserId).ToList();
+            dataGridView2.DataSource = null;
             dataGridView1.DataSource = Order.Select(i => new
             {
+                OrderNumber=i.Id,
                 i.OrderDate,
                 i.NoOfProducts,
+                i.TotalPrice,
                 i.Status
+                
             }
-            ).ToList(); ;
+            ).ToList();
+
         }
+
         private void Showorderitem_Load(object sender, EventArgs e)
         {
             LoadOrderItems();
@@ -46,9 +55,27 @@ namespace E_Commerce.Presentation
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            if (e.RowIndex > 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                OrderId.Text= row.Cells["OrderNumber"].Value.ToString();
+                if (OrderId.Text != null)
+                {
+                   int orderId = int.Parse(OrderId.Text);
+                   var orderItems = _orderItemService.GetAll().ToList().Where(i => i.OrderId == orderId).ToList();
+                    dataGridView2.DataSource = null;
+                    dataGridView2.DataSource = orderItems.Select(i =>new {i.productId,i.Quantity }).ToList();
+                }
+                
+            }
+            
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

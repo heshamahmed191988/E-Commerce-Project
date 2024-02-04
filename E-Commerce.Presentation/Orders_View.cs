@@ -23,43 +23,92 @@ namespace E_Commerce.Presentation
     public partial class Orders_View : Form
     {
         static IOrderService _orderService;
+        static IOrderItemService _orderItemService;
         public Orders_View()
         {
             var container = AutoFact.Inject();
             _orderService = container.Resolve<IOrderService>();
+            _orderItemService = container.Resolve<IOrderItemService>();
             InitializeComponent();
         }
 
         private void Orders_View_Load(object sender, EventArgs e)
         {
             var Ord = _orderService.GetAll().ToList();
-            OrderdataGridView.DataSource = Ord;
+            var OrderIds = Ord.Select(Order => Order.Id).ToList();
+            var result = Ord
+        .Select(Order => new
+        {
+            Order.Id,
+            Order.OrderDate,
+            Order.Status,
+            Order.TotalPrice,
+        }).ToList();
+            OrderdataGridView.DataSource = result;
+
         }
+
 
         private void OrderdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
 
-            // Populate textboxes with data from the selected row
-            ODate.Text = row.Cells["OrderDate"].Value.ToString();
-            NProduct.Text = row.Cells["Id"].Value.ToString();
-            OStates.Text = row.Cells["Status"].Value.ToString();
-            OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = OrderdataGridView.Rows[e.RowIndex];
 
 
+                if (row.Cells["OrderDate"].Value != null &&
+                    row.Cells["Id"].Value != null &&
+                    row.Cells["Status"].Value != null &&
+                    row.Cells["TotalPrice"].Value != null)
+                {
+                    // Populate textboxes with data from the selected row
+                    ODate.Text = row.Cells["OrderDate"].Value.ToString();
+                    NProduct.Text = row.Cells["Id"].Value.ToString();
+                    OStates.Text = row.Cells["Status"].Value.ToString();
+                    OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
+                }
+                else
+                {
+                    // Handle the case where some cells are null
+                    MessageBox.Show("Selected row has missing or null values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
-
         private void BOUpdate_Click(object sender, EventArgs e)
         {
+            int Id = int.Parse(NProduct.Text);
+            if (Id!=0)
+            {
+                OrderDTO orderDTO = _orderService.GetAll().ToList().FirstOrDefault(i => i.Id == Id);
 
-            int id = int.Parse(NProduct.Text);
+                if (orderDTO != null)
+                {
+                    string status = OStates.Text;
 
-            OrderDTO orderDTO = _orderService.GetAll().ToList().Where(i => i.Id == id).FirstOrDefault();
-            string Status = OStates.Text;
-            // OrderDTO orderDTO = _orderService.GetOrder(id);
-            orderDTO.Status = Status;
-            _orderService.UpdateOrder(orderDTO);
-            Orders_View_Load(sender, e);
+                    if (!string.IsNullOrWhiteSpace(status))
+                    {
+                        orderDTO.Status = status;
+                        _orderService.UpdateOrder(orderDTO);
+                        MessageBox.Show("Updated");
+                        Orders_View_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Status cannot be empty.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Order with the specified ID does not exist.");
+                }
+            }
+            else
+            {
+                // Show an error message if NProduct.Text is not a valid integer
+                MessageBox.Show("Invalid Order ID. Please enter a valid integer.");
+            }
         }
 
 
@@ -109,6 +158,22 @@ namespace E_Commerce.Presentation
             Registration registration = new Registration();
             registration.Show();
             this.Hide();
+        }
+
+        private void ODate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stack stack = new Stack();
+            stack.Show();
+        }
+
+        private void Order_Status_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
