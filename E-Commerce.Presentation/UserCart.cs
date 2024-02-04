@@ -4,6 +4,7 @@ using E_Commerce.Application.Mapping;
 using E_Commerce.Application.Service;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
+using Forms_ProjectVC_;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.VisualBasic.ApplicationServices;
@@ -60,14 +61,14 @@ namespace E_Commerce.Presentation
                 quantity = i.Quantity
             }
             ).ToList();
-            
+
             return cartItems;
         }
         private void changedValues()
         {
             var cartItems = load();
-             totalPrice = 0;
-             productsNo = 0;
+            totalPrice = 0;
+            productsNo = 0;
             foreach (var item in cartItems)
             {
                 var product = _ProductService.GetProduct(item.productID);
@@ -89,7 +90,7 @@ namespace E_Commerce.Presentation
 
         }
 
-        
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -191,7 +192,7 @@ namespace E_Commerce.Presentation
         {
             DateTime currentDate = DateTime.Now;
             var cartItems = load().ToList();
-            
+
             if (cartItems != null && cartItems.Any())
             {
                 var order = new OrderDTO()
@@ -242,7 +243,7 @@ namespace E_Commerce.Presentation
             {
                 MessageBox.Show("No items in the cart.");
             }
-
+            cartItems = load();
         }
         private void PTorders_Click(object sender, EventArgs e)
         {
@@ -273,6 +274,20 @@ namespace E_Commerce.Presentation
         {
             UserCart userCart = new UserCart(cartId, UserId);
             userCart.Show();
+            this.Hide();
+        }
+
+        private void BTlogin_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void PTregister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
             this.Hide();
         }
     }

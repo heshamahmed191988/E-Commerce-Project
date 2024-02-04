@@ -3,6 +3,7 @@ using E_Commerce.Application.Mapping;
 using E_Commerce.Application.Service;
 using E_Commerce.DTOS.DTOS;
 using E_Commerce_Project.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,16 +56,22 @@ namespace E_Commerce.Presentation
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+           if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 OrderId.Text= row.Cells["OrderNumber"].Value.ToString();
-                if (OrderId.Text != null)
+                if (OrderId.Text!=null)
                 {
                    int orderId = int.Parse(OrderId.Text);
                    var orderItems = _orderItemService.GetAll().ToList().Where(i => i.OrderId == orderId).ToList();
+                    var products = _productService.GetAll().ToList();
+                    var productIds = orderItems.Select(i => i.productId).ToList();
+                    foreach ( var product in orderItems )
+                    {
+                        product.product = products.FirstOrDefault(i => i.Id == product.productId);
+                    }
                     dataGridView2.DataSource = null;
-                    dataGridView2.DataSource = orderItems.Select(i =>new {i.productId,i.Quantity }).ToList();
+                    dataGridView2.DataSource = orderItems.Select(i =>new { ProductName=i.product.ProductName,i.Quantity }).ToList();
                 }
                 
             }

@@ -88,6 +88,7 @@ namespace E_Commerce.Presentation
                     };
 
                     _productService.AddProduct(newproduct);
+                    MessageBox.Show("Product Added");
                     LoadProduct();
 
                 }

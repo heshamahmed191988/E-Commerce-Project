@@ -156,6 +156,7 @@
             PTregister.TabIndex = 15;
             PTregister.Text = "  Register";
             PTregister.UseVisualStyleBackColor = false;
+            PTregister.Click += PTregister_Click;
             // 
             // Navebar
             // 
@@ -257,6 +258,7 @@
             BTlogin.Text = "LogIn";
             BTlogin.TextAlign = ContentAlignment.MiddleRight;
             BTlogin.UseVisualStyleBackColor = false;
+            BTlogin.Click += BTlogin_Click;
             // 
             // label3
             // 

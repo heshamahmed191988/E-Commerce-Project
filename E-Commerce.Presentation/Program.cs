@@ -16,7 +16,7 @@ namespace E_Commerce.Presentation
             // see https://aka.ms/applicationconfiguration.
              ApplicationConfiguration.Initialize();
 
-            System.Windows.Forms.Application.Run(new Registration());
+            System.Windows.Forms.Application.Run(new Home());
 
 
            // Application.Run(new Login());

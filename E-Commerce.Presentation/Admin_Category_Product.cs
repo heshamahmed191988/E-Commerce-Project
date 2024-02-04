@@ -90,6 +90,7 @@ namespace E_Commerce.Presentation
                     };
 
                     _categoryService.AddCategory(newCategory);
+                    MessageBox.Show("Category Added");
                     LoadCategories();
                 }
                 else

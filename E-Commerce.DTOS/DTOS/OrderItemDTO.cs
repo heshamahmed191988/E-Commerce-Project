@@ -16,7 +16,7 @@ namespace E_Commerce.DTOS.DTOS
         [ForeignKey("Order")]
         public int OrderId { get; set; }
         public int Quantity { get; set; }
-        public Product product { get; set; }
+        public ProductDTO product { get; set; }
         public Order Order { get; set; }
     }
 }

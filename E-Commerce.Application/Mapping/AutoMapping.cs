@@ -126,7 +126,7 @@ namespace E_Commerce.Application.Mapping
                 OrderId = orderItems.OrderId,
                 productId = orderItems.productId,
                 Order = orderItems.Order,
-                product=orderItems.product,
+                //product=orderItems.product,
                 Quantity=orderItems.Quantity
 
             };
@@ -242,7 +242,7 @@ namespace E_Commerce.Application.Mapping
                 OrderId = orderItemsDTO.OrderId,
                 productId = orderItemsDTO.productId,
                 Order=orderItemsDTO.Order,
-                product=orderItemsDTO.product,
+                //product=orderItemsDTO.product,
                 Quantity=orderItemsDTO.Quantity,
 
             };
