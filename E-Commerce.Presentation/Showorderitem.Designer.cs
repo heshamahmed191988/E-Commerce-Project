@@ -120,7 +120,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(544, 105);
+            label1.Location = new Point(539, 105);
             label1.Name = "label1";
             label1.Size = new Size(133, 20);
             label1.TabIndex = 29;
@@ -132,7 +132,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(122, 105);
+            label2.Location = new Point(92, 105);
             label2.Name = "label2";
             label2.Size = new Size(127, 20);
             label2.TabIndex = 30;
