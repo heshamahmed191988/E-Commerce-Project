@@ -52,7 +52,7 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.Exit1;
+            
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -79,7 +79,7 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = Properties.Resources.logo3;
+         
             pictureBox3.Location = new Point(12, 12);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(94, 84);
@@ -91,7 +91,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.bg2;
+       
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(604, 349);
             Controls.Add(pictureBox3);

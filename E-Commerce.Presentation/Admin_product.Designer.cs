@@ -328,7 +328,7 @@
             // button1
             // 
             button1.BackColor = Color.Black;
-            button1.BackgroundImage = Properties.Resources.logo1;
+          
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
