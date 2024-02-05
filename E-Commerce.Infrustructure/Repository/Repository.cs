@@ -31,7 +31,7 @@ namespace E_Commerce.Infrustructure.Repository
         public IQueryable<T> GetAll()
         {
 
-            return _Entity; //(IQueryable<T>)_Entity.ToList();
+            return _Entity.AsNoTracking(); //(IQueryable<T>)_Entity.ToList();
         }
 
         public T GetByID(Tid id)
@@ -46,6 +46,9 @@ namespace E_Commerce.Infrustructure.Repository
         public int save()
         {
             return _context.SaveChanges();
+            
         }
+   
+        
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commerce.Context.Migrations
 {
     [DbContext(typeof(E_CommerceContext))]
-    [Migration("20240121051235_initial")]
+    [Migration("20240125053558_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -58,6 +58,9 @@ namespace E_Commerce.Context.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<int>("cartID")
                         .HasColumnType("int");
@@ -213,10 +216,10 @@ namespace E_Commerce.Context.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("type")
+                    b.Property<int>("type")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 

@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using E_Commerce.Application.Service;
 using E_Commerce.DTOS.DTOS;
+using Forms_ProjectVC_;
 using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,20 @@ namespace E_Commerce.Presentation
     public partial class Registration : Form
     {
         static IUserService _userService;
+        static ICartService _cartService;
+        Form1 login = new Form1();
         public Registration()
         {
             var container = AutoFact.Inject();
             _userService = container.Resolve<IUserService>();
+            _cartService = container.Resolve<ICartService>();
             InitializeComponent();
+            comboBox1.Items.Insert(0, "0");
+            comboBox1.Items.Add("1");
+            // comboBox1.Items.Add("false");
+            comboBox1.SelectedIndex = 1;
         }
+        #region functions
         static bool ContainsSpecialCharacter(string password)
         {
             return Regex.IsMatch(password, "[!@#$%^&*(),.?\":{}|<>]");
@@ -35,51 +44,94 @@ namespace E_Commerce.Presentation
         }
         static bool ValidatePassword(string password)
         {
+            //pass.Text = "*";
             // Check if the password meets the specified criteria
             return ContainsDigit(password) &&
                   ContainsSpecialCharacter(password);
         }
         static bool ValidatePhoneNumber(string phoneNumber)
-        { 
+        {
             string pattern = @"^01[0-2,5]{1}[0-9]{8}$";
             Regex regex = new Regex(pattern);
             return regex.IsMatch(phoneNumber);
         }
-         void clearForm()
+        void clearForm()
         {
-           // string username = UserName.Text;
+            // string username = UserName.Text;
             UserName.Text = null;
             Email.Text = null;
             pass.Text = null;
             Phone.Text = null;
             Address.Text = null;
-             Status.Text= null;
+            // comboBox1.Text = null;
         }
 
+        #endregion
         private void button1_Click(object sender, EventArgs e)
         {
             string username = UserName.Text;
             string email = Email.Text;
-            string phone=Phone.Text;
+            string phone = Phone.Text;
             string password = pass.Text;
             string address = Address.Text;
-            string type = Status.Text; /////////
-            bool result = bool.Parse(type);
-            UserDTO u1 = new UserDTO() { UserName = username,Email=email,Phone=phone, Password=password,Address=address,type= result };
-            if (!(username.Length > 5) & !email.Contains("@.") & !ValidatePassword(password) &!ValidatePhoneNumber(phone)  )
+            string type = comboBox1.Text; /////////
+            int result = int.Parse(type);
+            UserDTO u1 = new UserDTO() { UserName = username, Email = email, Phone = phone, Password = password, Address = address, type = result };
+            
+
+            #region condition edit
+            if (username.Length < 5 ||
+            !email.Contains("@") || email == null ||
+            !ValidatePassword(password) || password == null ||
+            !ValidatePhoneNumber(phone) || phone == null ||
+            address.Length == 0)
             {
-                MessageBox.Show("your data is Invalid");
-                
+                nameMsg.Text = (username.Length < 5) ? "*" : "";
+                EmailMsg.Text = (!email.Contains("@") || email == null) ? "*" : "";
+                PassMSg.Text = (!ValidatePassword(password) || password == null) ? "*" : "";
+                PhonMSG.Text = (!ValidatePhoneNumber(phone) || phone == null) ? "*" : "";
+                AddressMSG.Text = (address.Length == 0) ? "*" : "";
+
+                MessageBox.Show("Please Enter Correct Data");
             }
             else
             {
-                _userService.AddUser(u1);
-                MessageBox.Show("Thank you for your Registration");
+                UserDTO user = _userService.AddUser(u1);
+                var uId = _userService.GetUser(username, password)?.Id; // Added null-conditional operator (?)
+                if (uId != null)
+                {
+                    CartDTO c1 = new CartDTO() { Quantity = 0, Status = "Empty", UserId = uId.Value }; // Assuming UserId is not nullable
+                    _cartService.AddCart(c1);
+                }
+                MessageBox.Show("thank you!");
                 clearForm();
-
             }
+            #endregion
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login.Show();
+        }
 
+        private void Registration_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void PhonMSG_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pass_TextChanged(object sender, EventArgs e)
+        {
+            pass.PasswordChar = '*';
         }
     }
 }

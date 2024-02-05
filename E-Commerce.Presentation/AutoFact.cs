@@ -23,11 +23,14 @@ namespace E_Commerce.Presentation
             builder.RegisterType<CartRepository>().As<ICartRepository>();
             builder.RegisterType<OrderRepository>().As<IOrderRepository>();
             builder.RegisterType<CartDetailsRepository>().As<ICartDetailsRepository>();
+            builder.RegisterType<OrderItemRepository>().As<IOrderItemRepository>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<CategoryService>().As<ICategoryService>();
             builder.RegisterType<ProductService>().As<IProductService>();
             builder.RegisterType<CartService>().As<ICartService>();
             builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<CartDetailsService>().As<ICartDetailsService>();
+            builder.RegisterType<OrderItemService>().As<IOrderItemService>();
             builder.RegisterType<E_CommerceContext>().As<E_CommerceContext>();
 
             return builder.Build();

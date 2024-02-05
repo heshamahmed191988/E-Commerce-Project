@@ -14,7 +14,8 @@ namespace E_Commerce_Project.Models
         public int cartID { get; set; }
         [ForeignKey("Product")]
         public int productID { get; set; }
-        public Cart cart { get; set; }
-        public Product Product { get; set; }
+        public int Quantity { get; set; }
+        public virtual Cart cart { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

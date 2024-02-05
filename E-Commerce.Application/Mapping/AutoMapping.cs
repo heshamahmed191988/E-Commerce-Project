@@ -27,7 +27,7 @@ namespace E_Commerce.Application.Mapping
                 { Id = user.Id,
                  UserName=user.UserName,
                  Email=user.Email,Phone=user.Phone,
-                 Password=user.Password,Address=user.Address };
+                 Password=user.Password,type=user.type,Address=user.Address };
             }
      public static CategoryDTO MapCategoryDTO(Category category)
         {
@@ -98,8 +98,11 @@ namespace E_Commerce.Application.Mapping
             {
                 Id = cartDetails.Id,
                 cartID=cartDetails.cartID,
-                productID=cartDetails.productID
+                productID=cartDetails.productID,
+                Quantity = cartDetails.Quantity
                 
+
+
             };
         }
      public static OrderItemDTO MapOrderItemDTO(OrderItems orderItems)
@@ -129,7 +132,8 @@ namespace E_Commerce.Application.Mapping
                 Email=userDTO.Email,
                  Phone = userDTO.Phone,
                 Password=userDTO.Password,
-                Address=userDTO.Address
+                Address=userDTO.Address,
+                type = userDTO.type
 
             };
 
@@ -205,7 +209,9 @@ namespace E_Commerce.Application.Mapping
             {
                 Id = cartDetailsDto.Id,
                 cartID = cartDetailsDto.cartID,
-                productID = cartDetailsDto.productID
+                productID = cartDetailsDto.productID,
+                Quantity = cartDetailsDto.Quantity
+               // productName = cartDetailsDto.Product.ProductName
 
             };
         }

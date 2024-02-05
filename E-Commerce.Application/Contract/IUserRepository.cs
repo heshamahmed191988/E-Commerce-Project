@@ -9,5 +9,6 @@ namespace E_Commerce.Application.Contract
 {
     public interface IUserRepository:Irepository<User,int>
     {
+      public User GetUser(string username , string password);
     }
 }

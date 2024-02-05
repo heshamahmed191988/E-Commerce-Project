@@ -18,6 +18,9 @@ namespace E_Commerce.Context.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.1")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -55,6 +58,9 @@ namespace E_Commerce.Context.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<int>("cartID")
                         .HasColumnType("int");
@@ -210,10 +216,10 @@ namespace E_Commerce.Context.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("type")
+                    b.Property<int>("type")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 
@@ -315,7 +321,8 @@ namespace E_Commerce.Context.Migrations
 
             modelBuilder.Entity("E_Commerce_Project.Models.User", b =>
                 {
-                    b.Navigation("Cart");
+                    b.Navigation("Cart")
+                        .IsRequired();
 
                     b.Navigation("orders");
                 });
