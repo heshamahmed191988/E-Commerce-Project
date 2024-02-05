@@ -11,7 +11,6 @@ namespace E_Commerce.DTOS.DTOS
     public class CartDTO
     {
         public int Id { get; set; }
-         [ForeignKey("User")]
         public int UserId { get; set; }
         public int Quantity { get; set; }
         public string Status { get; set; }

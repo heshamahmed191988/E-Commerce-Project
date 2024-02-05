@@ -17,7 +17,6 @@ namespace E_Commerce.Application.Service
         public UserDTO AddUser(UserDTO userDTO);
         public void UpdateUser(UserDTO userDTO);
         public void RemoveUser(UserDTO userDTO);
-        //public UserDTO SearchUser(string username);
 
     }
 }

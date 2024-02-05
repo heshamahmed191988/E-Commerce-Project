@@ -16,7 +16,6 @@ namespace E_Commerce.DTOS.DTOS
        
         public int Quantity { get; set; }
         public string image { get; set; }
-        //[ForeignKey("Category")]
         public int categoryID { get; set; }
         public virtual CategoryDTO category { get; set; }
         public virtual IQueryable<CartDetails> CartDetails { get; set; }

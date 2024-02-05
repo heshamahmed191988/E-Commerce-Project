@@ -15,7 +15,6 @@ namespace E_Commerce.DTOS.DTOS
         public int NoOfProducts { get; set; }
         public string Status { get; set; }
         public int TotalPrice { get; set; }
-        //[ForeignKey("User")]
         public int UserID { get; set; }
         public virtual User User { get; set; }
         public virtual IQueryable<OrderItemDTO> OrderItems { get; set; }

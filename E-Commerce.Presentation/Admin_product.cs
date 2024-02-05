@@ -24,7 +24,7 @@ namespace E_Commerce.Presentation
 {
     public partial class Admin_product : Form
     {
-        
+
 
         private readonly IProductService _productService;
 
@@ -283,6 +283,12 @@ namespace E_Commerce.Presentation
             Home home = new Home();
             home.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stack stack = new Stack();
+            stack.Show();
         }
     }
 }

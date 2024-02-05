@@ -42,7 +42,7 @@ namespace E_Commerce.Presentation
             }
             else
             {
-                MessageBox.Show("No categories found.");
+                MessageBox.Show("No products found.");
             }
         }
         private void Stack_Load(object sender, EventArgs e)

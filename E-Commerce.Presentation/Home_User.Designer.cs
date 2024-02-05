@@ -169,11 +169,11 @@
             // 
             Pro_Name.AutoSize = true;
             Pro_Name.BackColor = Color.Transparent;
-            Pro_Name.Font = new Font("MS Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pro_Name.Font = new Font("MS Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pro_Name.ForeColor = Color.DarkRed;
             Pro_Name.Location = new Point(156, 54);
             Pro_Name.Name = "Pro_Name";
-            Pro_Name.Size = new Size(0, 13);
+            Pro_Name.Size = new Size(0, 11);
             Pro_Name.TabIndex = 8;
             // 
             // textBox1
