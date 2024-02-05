@@ -140,6 +140,7 @@
             PTlogout.Size = new Size(34, 38);
             PTlogout.TabIndex = 19;
             PTlogout.UseVisualStyleBackColor = false;
+            PTlogout.Click += PTlogout_Click;
             // 
             // PTregister
             // 

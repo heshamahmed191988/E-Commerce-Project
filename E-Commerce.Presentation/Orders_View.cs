@@ -78,30 +78,34 @@ namespace E_Commerce.Presentation
         }
         private void BOUpdate_Click(object sender, EventArgs e)
         {
-            int Id = int.Parse(NProduct.Text);
-            if (Id!=0)
+           // int Id = int.Parse(NProduct.Text);
+            if (int.TryParse(NProduct.Text, out int Id))
             {
-                OrderDTO orderDTO = _orderService.GetAll().ToList().FirstOrDefault(i => i.Id == Id);
-
-                if (orderDTO != null)
+                if (Id != 0 )
                 {
-                    string status = OStates.Text;
+                    OrderDTO orderDTO = _orderService.GetAll().ToList().FirstOrDefault(i => i.Id == Id);
 
-                    if (!string.IsNullOrWhiteSpace(status))
+                    if (orderDTO != null)
                     {
-                        orderDTO.Status = status;
-                        _orderService.UpdateOrder(orderDTO);
-                        MessageBox.Show("Updated");
-                        Orders_View_Load(sender, e);
+                        string status = OStates.Text;
+
+
+                        if (!string.IsNullOrEmpty(status))
+                        {
+                            orderDTO.Status = status;
+                            _orderService.UpdateOrder(orderDTO);
+                            MessageBox.Show("Updated");
+                            Orders_View_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Status cannot be empty.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Status cannot be empty.");
+                        MessageBox.Show("Order with the specified ID does not exist.");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Order with the specified ID does not exist.");
                 }
             }
             else

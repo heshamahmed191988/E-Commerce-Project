@@ -98,11 +98,11 @@
             // ODate
             // 
             ODate.AutoSize = true;
-            ODate.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
+            ODate.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ODate.ForeColor = Color.DarkRed;
             ODate.Location = new Point(207, 43);
             ODate.Name = "ODate";
-            ODate.Size = new Size(0, 17);
+            ODate.Size = new Size(0, 13);
             ODate.TabIndex = 10;
             ODate.Click += ODate_Click;
             // 
