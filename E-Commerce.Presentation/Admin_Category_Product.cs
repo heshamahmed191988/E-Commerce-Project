@@ -186,17 +186,6 @@ namespace E_Commerce.Presentation
             }
         }
 
-
-        /*   private CategoryDTO ConvertToDTO(E_Commerce_Project.Models.Category entity)
-           {
-               return new CategoryDTO
-               {
-                   CategoryName = entity.CategoryName,
-                   Description = entity.Description,
-               };
-           }*/
-
-
         private void DeleteCtegorey_Click(object sender, EventArgs e)
         {
             if (dataGridView2.SelectedRows.Count > 0)
@@ -311,7 +300,7 @@ namespace E_Commerce.Presentation
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Stack stack = new   Stack();
+            Stack stack = new Stack();
             stack.Show();
         }
     }

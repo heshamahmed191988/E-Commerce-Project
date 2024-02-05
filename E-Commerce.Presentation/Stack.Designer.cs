@@ -40,12 +40,15 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(158, 49);
+            dataGridView1.Location = new Point(137, 65);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 72;
-            dataGridView1.Size = new Size(287, 242);
+            dataGridView1.Size = new Size(350, 242);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -58,7 +61,7 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(12, 150);
+            button1.Location = new Point(0, 152);
             button1.Name = "button1";
             button1.Size = new Size(141, 64);
             button1.TabIndex = 4;
@@ -69,9 +72,9 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(450, 12);
+            pictureBox1.Location = new Point(492, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(154, 120);
+            pictureBox1.Size = new Size(112, 84);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
