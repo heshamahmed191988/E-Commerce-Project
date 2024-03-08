@@ -64,8 +64,8 @@ namespace E_Commerce.Presentation
                 {
                     // Populate textboxes with data from the selected row
                     ODate.Text = row.Cells["OrderDate"].Value.ToString();
-                    NProduct.Text = row.Cells["Id"].Value.ToString();
-                    OStates.Text = row.Cells["Status"].Value.ToString();
+                    label3.Text = row.Cells["Id"].Value.ToString();
+                    comboBox1.Text = row.Cells["Status"].Value.ToString();
                     OTotalPrice.Text = row.Cells["TotalPrice"].Value.ToString();
                 }
                 else
@@ -79,7 +79,7 @@ namespace E_Commerce.Presentation
         private void BOUpdate_Click(object sender, EventArgs e)
         {
            // int Id = int.Parse(NProduct.Text);
-            if (int.TryParse(NProduct.Text, out int Id))
+            if (int.TryParse(label3.Text, out int Id))
             {
                 if (Id != 0 )
                 {
@@ -87,7 +87,7 @@ namespace E_Commerce.Presentation
 
                     if (orderDTO != null)
                     {
-                        string status = OStates.Text;
+                        string status = comboBox1.Text;
 
 
                         if (!string.IsNullOrEmpty(status))

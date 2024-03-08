@@ -31,15 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders_View));
             OrderdataGridView = new DataGridView();
             groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
+            label3 = new Label();
             OTotalPrice = new Label();
             ODate = new Label();
             Total_Price = new Label();
             BOUpdate = new Button();
-            OStates = new TextBox();
-            NProduct = new TextBox();
             Order_Status = new Label();
             label2 = new Label();
             label1 = new Label();
+            OStates = new TextBox();
+            NProduct = new TextBox();
             Navebar = new Panel();
             button2 = new Button();
             button1 = new Button();
@@ -67,12 +69,12 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(OTotalPrice);
             groupBox1.Controls.Add(ODate);
             groupBox1.Controls.Add(Total_Price);
             groupBox1.Controls.Add(BOUpdate);
-            groupBox1.Controls.Add(OStates);
-            groupBox1.Controls.Add(NProduct);
             groupBox1.Controls.Add(Order_Status);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
@@ -84,6 +86,24 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Edit Your Orders";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Processing", "Shipped", "Delivered" });
+            comboBox1.Location = new Point(207, 119);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 28);
+            comboBox1.TabIndex = 13;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Stencil", 12F, FontStyle.Bold);
+            label3.Location = new Point(176, 79);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 19);
+            label3.TabIndex = 12;
             // 
             // OTotalPrice
             // 
@@ -133,20 +153,6 @@
             BOUpdate.UseVisualStyleBackColor = true;
             BOUpdate.Click += BOUpdate_Click;
             // 
-            // OStates
-            // 
-            OStates.Location = new Point(207, 119);
-            OStates.Name = "OStates";
-            OStates.Size = new Size(160, 27);
-            OStates.TabIndex = 7;
-            // 
-            // NProduct
-            // 
-            NProduct.Location = new Point(207, 77);
-            NProduct.Name = "NProduct";
-            NProduct.Size = new Size(160, 27);
-            NProduct.TabIndex = 5;
-            // 
             // Order_Status
             // 
             Order_Status.AutoSize = true;
@@ -178,6 +184,20 @@
             label1.TabIndex = 0;
             label1.Text = "Order Date :";
             // 
+            // OStates
+            // 
+            OStates.Location = new Point(136, 83);
+            OStates.Name = "OStates";
+            OStates.Size = new Size(160, 23);
+            OStates.TabIndex = 7;
+            // 
+            // NProduct
+            // 
+            NProduct.Location = new Point(247, 54);
+            NProduct.Name = "NProduct";
+            NProduct.Size = new Size(160, 23);
+            NProduct.TabIndex = 5;
+            // 
             // Navebar
             // 
             Navebar.BackColor = Color.Black;
@@ -208,7 +228,7 @@
             button2.Name = "button2";
             button2.Size = new Size(118, 38);
             button2.TabIndex = 22;
-            button2.Text = "Stack";
+            button2.Text = "Stock";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -340,6 +360,8 @@
             Controls.Add(Navebar);
             Controls.Add(groupBox1);
             Controls.Add(OrderdataGridView);
+            Controls.Add(NProduct);
+            Controls.Add(OStates);
             Name = "Orders_View";
             Text = "Orders_View";
             Load += Orders_View_Load;
@@ -348,6 +370,7 @@
             groupBox1.PerformLayout();
             Navebar.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -372,5 +395,7 @@
         private Button BTlogin;
         private Button button1;
         private Button button2;
+        private Label label3;
+        private ComboBox comboBox1;
     }
 }

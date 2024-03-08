@@ -32,7 +32,6 @@ namespace E_Commerce.Presentation
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
-            label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -47,7 +46,6 @@ namespace E_Commerce.Presentation
             nameMsg = new Label();
             EmailMsg = new Label();
             PassMSg = new Label();
-            comboBox1 = new ComboBox();
             PhonMSG = new Label();
             AddressMSG = new Label();
             userDTOBindingSource = new BindingSource(components);
@@ -55,23 +53,10 @@ namespace E_Commerce.Presentation
             label1 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)userDTOBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(37, 381);
-            label2.Name = "label2";
-            label2.Size = new Size(69, 22);
-            label2.TabIndex = 1;
-            label2.Text = "Status";
             // 
             // label3
             // 
@@ -225,17 +210,6 @@ namespace E_Commerce.Presentation
             PassMSg.Size = new Size(0, 15);
             PassMSg.TabIndex = 17;
             // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = Color.LightBlue;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(160, 381);
-            comboBox1.Margin = new Padding(4, 6, 4, 6);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(313, 28);
-            comboBox1.TabIndex = 18;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
             // PhonMSG
             // 
             PhonMSG.AutoSize = true;
@@ -267,7 +241,7 @@ namespace E_Commerce.Presentation
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.Transparent;
-            linkLabel1.Location = new Point(366, 526);
+            linkLabel1.Location = new Point(396, 526);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(53, 20);
             linkLabel1.TabIndex = 22;
@@ -279,7 +253,7 @@ namespace E_Commerce.Presentation
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Location = new Point(177, 526);
+            label1.Location = new Point(174, 526);
             label1.Name = "label1";
             label1.Size = new Size(216, 20);
             label1.TabIndex = 21;
@@ -307,16 +281,6 @@ namespace E_Commerce.Presentation
             pictureBox2.TabIndex = 24;
             pictureBox2.TabStop = false;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Location = new Point(352, 415);
-            label8.Name = "label8";
-            label8.Size = new Size(175, 20);
-            label8.TabIndex = 25;
-            label8.Text = "Registrate as a User";
-            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(10F, 20F);
@@ -324,14 +288,12 @@ namespace E_Commerce.Presentation
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(566, 582);
-            Controls.Add(label8);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
             Controls.Add(AddressMSG);
             Controls.Add(PhonMSG);
-            Controls.Add(comboBox1);
             Controls.Add(PassMSg);
             Controls.Add(EmailMsg);
             Controls.Add(nameMsg);
@@ -346,7 +308,6 @@ namespace E_Commerce.Presentation
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Registration";
@@ -360,7 +321,6 @@ namespace E_Commerce.Presentation
         }
 
         #endregion
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
@@ -375,7 +335,6 @@ namespace E_Commerce.Presentation
         private Label nameMsg;
         private Label EmailMsg;
         private Label PassMSg;
-        private ComboBox comboBox1;
         private Label PhonMSG;
         private Label AddressMSG;
         private BindingSource userDTOBindingSource;
@@ -383,6 +342,5 @@ namespace E_Commerce.Presentation
         private Label label1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Label label8;
     }
 }

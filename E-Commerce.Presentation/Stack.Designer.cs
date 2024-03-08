@@ -102,8 +102,8 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Margin = new Padding(2);
-            Name = "Stack";
-            Text = "Stack";
+            Name = "Out Of Stock Products";
+            Text = "Out Of Stock Products";
             Load += Stack_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

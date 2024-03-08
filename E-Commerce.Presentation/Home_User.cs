@@ -69,7 +69,7 @@ namespace E_Commerce.Presentation
         product.Price,
         product.image,
         CategoryName = product.category.CategoryName,
-        State = product.Quantity <= 5 ? "Out of Stack" : "Available"
+        State = product.Quantity <= 5 ? "Out of Stock" : "Available"
     })
     .ToList();
             ProductdataGridView.DataSource = result;
