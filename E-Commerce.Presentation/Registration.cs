@@ -27,10 +27,10 @@ namespace E_Commerce.Presentation
             _userService = container.Resolve<IUserService>();
             _cartService = container.Resolve<ICartService>();
             InitializeComponent();
-            comboBox1.Items.Insert(0, "0");
-            comboBox1.Items.Add("1");
+            //comboBox1.Items.Insert(0, "0");
+            //comboBox1.Items.Add("1");
             // comboBox1.Items.Add("false");
-            comboBox1.SelectedIndex = 0;
+           // comboBox1.SelectedIndex = 0;
         }
         #region functions
         static bool ContainsSpecialCharacter(string password)
@@ -64,6 +64,11 @@ namespace E_Commerce.Presentation
             Phone.Text = null;
             Address.Text = null;
             // comboBox1.Text = null;
+            nameMsg.Text = null;
+            EmailMsg.Text = null;
+            PassMSg.Text = null;
+            PhonMSG.Text = null;
+            AddressMSG.Text = null;
         }
 
         #endregion
@@ -74,9 +79,9 @@ namespace E_Commerce.Presentation
             string phone = Phone.Text;
             string password = pass.Text;
             string address = Address.Text;
-            string type = comboBox1.Text; /////////
-            int result = int.Parse(type);
-            UserDTO u1 = new UserDTO() { UserName = username, Email = email, Phone = phone, Password = password, Address = address, type = result };
+           // string type = comboBox1.Text; /////////
+            //int result = int.Parse(type);
+            UserDTO u1 = new UserDTO() { UserName = username, Email = email, Phone = phone, Password = password, Address = address, type = 0 };
             
 
             #region condition edit
